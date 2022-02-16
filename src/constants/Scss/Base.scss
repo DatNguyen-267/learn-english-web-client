@@ -1,0 +1,75 @@
+:root {
+    --primary-color: #2cccff;
+    --orange-color: #f05123;
+    --white-color: #fff;
+    --brown-color: #D17B00;
+    --purple-color: #CE82FF;
+    --green-color: #00CB7E;
+    --red-color: #FF014E;
+    --pink-color: #fe2c55;
+    --blue-color: #00C5F9;
+    --blue-color-2: #04afdf;
+    --black-color: #000;
+    --gray-color: #666;
+    --gray-color-2: #e9ecef;
+    --gray-color-3: #f1f1f1;
+    /* Text */
+    --text-color: #333;
+    --text-color-2: #4c4c4c;
+    --sub-text-color: #afafaf;
+    --sub-text-color-2: #919191;
+    
+    /* General */
+    --btn-color: #f05123;
+    --invalid-color: #f33a58;
+    --plum-color: #b80257;
+    
+    --border-color: #E5E5E5;
+    --border-color-2: #bbb8b8;
+    --border-color-3: #929191;
+}
+
+* {
+    box-sizing: inherit;
+    
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+html {
+    /* Hack font size 1rem = 10px */
+    /* font-size: 62.5%;
+    line-height: 1.6rem; */
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+.body {
+    display: flex;
+    flex-direction: row;
+}
+.body-content {
+    padding-top: 16px;
+    padding-right: 40px;
+    padding-left: 20px;
+    flex: 1;
+}
+.btn {
+    outline: none !important;
+    background-color: var(--blue-color-2) !important;
+    color: white !important;
+    border-radius: 5px !important;
+    font-size: 16px !important;
+}
+.btn-main {
+    background-color: var(--pink-color) !important;
+}
+.app {
+    padding-top: 36px;
+}
