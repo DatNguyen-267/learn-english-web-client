@@ -1,24 +1,18 @@
 import { useEffect, useState } from "react";
 import { connect, useDispatch } from "react-redux";
 import { BrowserRouter, Route, Routes, Navigate, useLocation } from "react-router-dom";
-import testApi from "./api/testApi";
+import testApi, { testGetWord } from "./api/testApi";
 import HomePage from './pages/HomePage/HomePage'
 import CoursePage from './pages/CoursePage/CoursePage'
 import Header from "./components/Header/Header";
 import SideBar from "./components/SideBar/SideBar";
 import { useSelector } from "react-redux";
 import * as courseAction from './redux/actions/index'
+import axios from "axios";
 
 function App() {
-    const dispatch = useDispatch()
-    const course = useSelector(state => state.course)
     
-    useEffect(() => {
-        dispatch(courseAction.getCoursesRequest())
-    }, [])
-    
-    console.log(course) 
-    
+
     return (
         <div >
             <BrowserRouter>
