@@ -9,6 +9,7 @@ import SideBar from "./components/SideBar/SideBar";
 import { useSelector } from "react-redux";
 import * as courseAction from './redux/actions/index'
 import axios from "axios";
+import PracticeListenPage from "./pages/PracticeListenPage/PracticeListenPage";
 
 function App() {
     
@@ -29,6 +30,7 @@ function App() {
                             {/* Navigate là chuyển hướng về trang khác */}
                             <Route path="/home" element={<HomePage />}></Route>
                             <Route path="/course" element={<CoursePage />}></Route>
+                            <Route path="/practice-listen" element={<PracticeListenPage/>}></Route>
                         </Routes>
                     </div>
 

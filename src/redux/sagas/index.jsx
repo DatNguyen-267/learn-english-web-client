@@ -25,9 +25,21 @@ function* createCourse(action) {
   }
 }
 
+function* fetchPracticeListen(action) {
+  try {
+    const ls = yield call(api.fetchPracticeListen)
+    console.log(ls)
+    yield put(actions.getPracticeListenSuccess(ls.data))
+  }
+  catch(err) {
+    yield put(actions.getPracticeListenFailure)
+  }
+}
 function *mySaga() {
   yield takeLatest(actionTypes.FETCH_COURSE_REQUEST, fetchCourse)
   yield takeLatest(actionTypes.CREATE_COURSE_REQUEST, createCourse)
+
+  yield takeLatest(actionTypes.FETCH_PRACTICE_LISTEN_REQUEST, fetchPracticeListen)
 }
 
 export default mySaga

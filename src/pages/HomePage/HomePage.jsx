@@ -11,6 +11,7 @@ function HomePage() {
             likeCount: 3,
         }))
     })
+
     return (
         <div>
             Đây là trang chủ
