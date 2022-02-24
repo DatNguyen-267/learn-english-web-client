@@ -5,13 +5,15 @@ npm install --save-dev node-sass
 # Material UI
 npm install @mui/material @emotion/react @emotion/styled
 npm install @mui/icons-material
+# Dev tool
+npm install --save redux-devtools-extension
+# Connect react router
+npm i history
 
 ## Page
-
 /courses/*
 feature: /courses/vocabulary
 feature: /courses/grammar
-
 
 
 
