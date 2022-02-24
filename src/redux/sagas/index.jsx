@@ -32,7 +32,18 @@ function* fetchPracticeListen(action) {
     yield put(actions.getPracticeListenSuccess(ls.data))
   }
   catch(err) {
-    yield put(actions.getPracticeListenFailure)
+    yield put(actions.getPracticeListenFailure(err))
+  }
+}
+function* fetchListenCourse(action) {
+  try {
+    const id = action.id
+    const ls = yield call(api.fetchLsCourse,{id})
+    console.log(ls)
+    yield put(actions.getListenCourseSuccess(ls.data))
+  }
+  catch(err) {
+    yield put(actions.getListenCourseFailure(err))
   }
 }
 function *mySaga() {
@@ -40,6 +51,7 @@ function *mySaga() {
   yield takeLatest(actionTypes.CREATE_COURSE_REQUEST, createCourse)
 
   yield takeLatest(actionTypes.FETCH_PRACTICE_LISTEN_REQUEST, fetchPracticeListen)
+  yield takeLatest(actionTypes.FETCH_LISTEN_COURSE_REQUEST, fetchListenCourse)
 }
 
 export default mySaga

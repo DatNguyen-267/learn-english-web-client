@@ -6,3 +6,5 @@ export const fetchCourses = () => axios.get(`${URL}/courses`)
 export const createCourses = (payload) => axios.post(`${URL}/courses`, payload)
 
 export const fetchPracticeListen = () => axios.get(`${URL}/listen-topic`)
+
+export const fetchLsCourse = ({id}) => axios.get(`${URL}/listen-topic/course/${id}`)

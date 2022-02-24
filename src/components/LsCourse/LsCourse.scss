@@ -11,18 +11,11 @@
     position: relative;
     padding: 20px 20px 5px 30px;
 }   
-.course__name {
-    font-size: 19px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: #201F1F;
-    cursor: pointer;
-}
-.course__part{
+.course__name{
     cursor: pointer;
     border-radius: 10px;
-    max-width: 180px;
-    padding: 17px 10px;
+    width: 180px;
+    height: 100px;
     align-items: center;
     text-align: center;
     /* background-color:blueviolet; */
@@ -30,6 +23,18 @@
     color: var(--white-color);
     font-size: 25px;
     font-weight: 700;
+    display: table;
+}
+.course__name-content{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+.course__name-content span{  
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
 }
 .course__part i{
     margin-right: 15px;

@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import * as courseAction from './redux/actions/index'
 import axios from "axios";
 import PracticeListenPage from "./pages/PracticeListenPage/PracticeListenPage";
+import ListenCoursePage from "./pages/ListenCoursePage/ListenCoursePage"
 
 function App() {
     
@@ -31,6 +32,7 @@ function App() {
                             <Route path="/home" element={<HomePage />}></Route>
                             <Route path="/course" element={<CoursePage />}></Route>
                             <Route path="/practice-listen" element={<PracticeListenPage/>}></Route>
+                            <Route path="/practice-listen/:id/part" element={<ListenCoursePage/>}></Route>
                         </Routes>
                     </div>
 

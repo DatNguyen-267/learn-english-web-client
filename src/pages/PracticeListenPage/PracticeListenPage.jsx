@@ -9,18 +9,17 @@ import * as actions from './../../redux/actions/index'
 
 function PracticeListenPage() {
     const dispatch = useDispatch()
-    const ls = useSelector(state => state.practiceListen.data )
-    console.log(ls)
     useEffect(()=>{
         dispatch(actions.getPracticeListenRequest())
     },[dispatch])
     
+    const ls = useSelector(state => state.practiceListen.data )
     return (
-        <div class="app">
-            <div class="listen">
-                <div class="listen__header">
-                    <div class="listen__header-content">
-                        <div class="listen__header-content__title">
+        <div className="app">
+            <div className="listen">
+                <div className="listen__header">
+                    <div className="listen__header-content">
+                        <div className="listen__header-content__title">
                             <h2>
                                 Luyện nghe
                             </h2>
@@ -30,8 +29,8 @@ function PracticeListenPage() {
                         </div>
                     </div>
                 </div>
-                <div class="listen__content">        
-                    <div class="topic">
+                <div className="listen__content">        
+                    <div className="topic">
                        {
                            ls.map((item)=>{
                                 return(

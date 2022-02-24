@@ -1,23 +1,31 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './LsCourse.scss'
 function LsCourse({course}) {
-    
     return (
-        <div class="course" >
-            <div class="course__header">
-                <div class="course__name">{course.name}</div>
-                <div class="course__learning">
-                    Đã xem
+        <div className="col l-4 m-4 c-6">
+            <div className="course" >
+                <div className="course__header">
+                    <div className="course__learning">
+                        Đã xem
+                    </div>
+                    <Link to={`/practice-listen/${course._id}/part`}>
+                        <div className="course__name">
+                            <div className="course__name-content">
+                                <span>
+                                    {course.name}
+                                </span>
+                            </div>
+                        </div>
+                    </Link>
                 </div>
-                <div class="course__part">
-                    {course.name}
+                <div className="course__body">
+                    <div className="course__info">
+                        <div className="course__lesson-number">{course.amount_part} lesson</div>
+                    </div>
                 </div>
-            </div>
-            <div class="course__body">
-                <div class="course__info">
-                    <div class="course__lesson-number">{course.amount_part} lesson</div>
-                </div>
-            </div>
+            </div>   
         </div>
     );
 }
