@@ -10,6 +10,9 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 // import Loading from "./components/Loading/Loading";
 // import { Loading_1 } from "./components/Loading/Loading_1";
 // import { Loading_2 } from "./components/Loading/Loading_2";
+import { useSelector } from "react-redux";
+import * as courseAction from './redux/actions/index'
+import PracticeListenPage from "./pages/PracticeListenPage/PracticeListenPage";
 
 function App() {
   const loading = true
@@ -30,9 +33,7 @@ function App() {
               <Route path="*" element={<NotFoundFage />}></Route>
             </Routes>
           </div>
-
         </div>
-        
     </div>
   );
 }

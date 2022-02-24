@@ -8,6 +8,7 @@ function HomePage() {
     const createCourse = React.useCallback(()=> {
         
     })
+
     return (
         <div className='grid wide'>
             Đây là trang chủ
