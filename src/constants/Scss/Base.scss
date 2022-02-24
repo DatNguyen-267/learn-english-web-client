@@ -1,21 +1,32 @@
 :root {
-    --primary-color: #2cccff;
+    --primary-color: #ffbb00;
     --orange-color: #f05123;
     --white-color: #fff;
     --brown-color: #D17B00;
     --purple-color: #CE82FF;
-    --green-color: #00CB7E;
+    --green-color: #18e094;
+    --green-color-2: #00CB7E;
+    --green-color-3: #74d8c1;
+    --green-color-4: #00EC98;
     --red-color: #FF014E;
     --pink-color: #fe2c55;
     --blue-color: #00C5F9;
     --blue-color-2: #04afdf;
     --black-color: #000;
     --gray-color: #666;
+    --gray-color-1: #8d8d8d;
     --gray-color-2: #e9ecef;
     --gray-color-3: #f1f1f1;
+
+    --dark-blue: #183153;
+    --dark-blue-2: #252337;
+    --dark-blue-3: #3f3d56;
     /* Text */
     --text-color: #333;
+    --text-color-primary: #293749;
     --text-color-2: #4c4c4c;
+    --text-color-3: #242424;
+    --text-color-4: #292929;
     --sub-text-color: #afafaf;
     --sub-text-color-2: #919191;
     
@@ -28,7 +39,25 @@
     --border-color-2: #bbb8b8;
     --border-color-3: #929191;
 }
+/* KEY FRAME */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes slidein {
+    from {
+        transform: translate(-50%,0);
+    }
 
+    to {
+        transform: translate(-50%, -50%);
+    }
+}
+/*  */
 * {
     box-sizing: inherit;
     
@@ -52,24 +81,122 @@ body {
 }
 .body {
     display: flex;
-    flex-direction: row;
+    padding-top: 66px;
+    padding-bottom: 16px;
+    width: 100%;
+    height: 100%;
 }
-.body-content {
+.main-content {
+    padding-top: 24px;
+    padding-bottom: 16px;
+    width: 100%;
+    height: 100%;
+
+}
+.page {
     padding-top: 16px;
-    padding-right: 40px;
-    padding-left: 20px;
-    flex: 1;
+    padding-bottom: 200px;
 }
+/* .content {
+    
+    padding-top: 16px;
+    padding-bottom: 200px;
+} */
 .btn {
-    outline: none !important;
-    background-color: var(--blue-color-2) !important;
-    color: white !important;
-    border-radius: 5px !important;
-    font-size: 16px !important;
+    height: 46px;
+    width: 184px;
+    outline: none;
+    background-color: var(--primary-color) ;
+    color: rgb(41, 42, 46);
+    border-radius: 10px;
+    font-size: 16px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: rgba(0 ,0 ,0 , 10%) 0px -4px 0px inset;
 }
-.btn-main {
-    background-color: var(--pink-color) !important;
+.btn-close {
+    font-size: 32px;
+    font-weight: 900;
+    color : rgb(0, 165, 122);
+    cursor: pointer;
 }
 .app {
     padding-top: 36px;
 }
+/* MODAL */
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+}
+.modal-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.modal-body{
+    position: relative;
+    min-width: 300px;
+    min-height: 300px;
+    margin: auto;
+    background-color: white;
+    z-index: 999;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    border-radius: 8px;
+}
+.modal-iner{
+    padding: 12px 36px;
+}
+
+/* PROGRESS BAR */
+.progress-custome[value]::-webkit-progress-bar {
+    background-color: #e2e2e2;
+    border-radius: 99px;
+    /* box-shadow: 0 2px 3px rgba(0,0,0,.5) inset; */
+}
+.progress-custome[value]::-webkit-progress-value {
+    position: relative;
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+    background-color: var(--primary-color);
+    border-radius: inherit;
+    animation: animate-stripes 5s linear infinite;
+}
+@keyframes animate-stripes { 100% { background-position: -100px 0; } }
+.progress-custome .progress-bar {
+    background-color: whiteSmoke;
+    border-radius: 3px;
+    box-shadow: 0 2px 3px rgba(0,0,0,.5) inset;
+    width: 100%; height:20px;
+}
+
+.progress-custome .progress-bar span {
+    background-color: royalblue;
+    border-radius: 3px;
+    display: block;
+    text-indent: -9999px;
+}
+.progress-percent {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.8);
+    /* color: var(--primary-color); */
+}
+/* .progress-percent[data-value] { 
+    position: relative; 
+}
+.progress-percent[data-value]:after {
+    content: attr(data-value) '%';
+    position: absolute; 
+    right:0;
+} */
