@@ -38,6 +38,7 @@ function *handleLogout(payload) {
 }
 
 function *watchLoginFlow() {
+  console.log('ok')
   while(true) {
     const isLoggedIn = Boolean(localStorage.getItem('access_token'))
     if (!isLoggedIn) {

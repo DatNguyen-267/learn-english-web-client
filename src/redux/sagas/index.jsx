@@ -19,7 +19,7 @@ function *mySaga() {
     authSaga(),
     checkLoggedIn(),
   ])
-  yield takeLatest(actionTypes.FETCH_PRACTICE_LISTEN_REQUEST, fetchPracticeListen)
+  // yield takeLatest(actionTypes.FETCH_PRACTICE_LISTEN_REQUEST, fetchPracticeListen)
 }
 
 export default mySaga
