@@ -51,7 +51,6 @@ function *watchLoginFlow() {
     console.log('take logout')
     yield call(handleLogout, logout.payload) // blocking
   }
-  
 }
 
 export function* authSaga(){
