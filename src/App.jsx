@@ -1,15 +1,12 @@
-import { useEffect, useState } from "react";
-import { connect, useDispatch, useSelector } from "react-redux";
+
 import { BrowserRouter, Route, Routes, Navigate, useLocation, Router, Outlet } from "react-router-dom";
 import HomePage from './pages/HomePage/HomePage'
 import CoursePage from './pages/CoursePage/CoursePage'
 import Header from "./components/Header/Header";
 import NotFoundFage from "./pages/NotFoundPage/NotFoundPage";
-import LoginPage from "./pages/LoginPage/LoginPage";
-// import history from "./redux/history";
-// import Loading from "./components/Loading/Loading";
 // import { Loading_1 } from "./components/Loading/Loading_1";
-// import { Loading_2 } from "./components/Loading/Loading_2";
+import * as courseAction from './redux/actions/index'
+import PracticeListenPage from "./pages/PracticeListenPage/PracticeListenPage";
 
 function App() {
   const loading = true
@@ -30,9 +27,7 @@ function App() {
               <Route path="*" element={<NotFoundFage />}></Route>
             </Routes>
           </div>
-
         </div>
-        
     </div>
   );
 }

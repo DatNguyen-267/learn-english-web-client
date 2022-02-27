@@ -3,7 +3,6 @@ import {  takeLatest ,call, put, fork, all } from 'redux-saga/effects'
 import { authSaga, checkLoggedIn } from './authSaga'
 import courseSaga from './courseSaga'
 
-
 // function* fetchPracticeListen(action) {
 //   try {
 //     const ls = yield call(api.fetchPracticeListen)
