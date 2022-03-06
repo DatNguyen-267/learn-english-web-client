@@ -13,6 +13,8 @@ import LoginPage from './pages/LoginPage/LoginPage';
 import HomePage from './pages/HomePage/HomePage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import CoursePage from './pages/CoursePage/CoursePage';
+import { RegisterPage } from './pages/RegisterPage/RegisterPage';
+import { ActivePage } from './pages/ActivePage/ActivePage';
 
 
 ReactDOM.render(
@@ -26,6 +28,8 @@ ReactDOM.render(
               <Route path="course" element={<CoursePage />}></Route> */}
             </Route>
             <Route path="/login" element={<LoginPage />}></Route>
+            <Route path="/register" element={<RegisterPage />}></Route>
+            <Route path="/user/activate/:activation_token" element={<ActivePage />}></Route>
           </Routes>
       </React.StrictMode>
     </BrowserRouter>

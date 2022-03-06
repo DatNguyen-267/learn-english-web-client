@@ -1,36 +1,44 @@
 import { fork, take, takeLatest, call, delay, put } from "redux-saga/effects";
+import { postLogin } from "../../api";
 import history from "../history";
 import * as actionTypes from './../../constants/actionTypes'
 import * as actions from './../actions/index'
 
 export function *checkLoggedIn() {
-  // yield delay(1000) // fake gọi api
   const isLoggedIn = Boolean(localStorage.getItem('access_token'))
   if (isLoggedIn) {
-    yield put(actions.login_success({
-      id: 1, 
-      name: 'test'
-    }))
+    yield put(actions.login_success(
+      JSON.parse(localStorage.getItem('access_token'))))
   }
 }
-function *handleLogin(payload) {
+function  *handleLogin(payload) {
   try {
-    console.log('handle login')
-    localStorage.setItem('access_token', 'fake_token')
-    yield put(actions.login_success({
-      id: 1, 
-      name: 'test'
-    }))
-    const {navigate} = payload
-    navigate('/home')
-    console.log(navigate)
+    const {email, password} = payload
+    let data;
+    yield call(async ()=> {
+        data = await postLogin(
+        {
+          email: email,
+          password: password,
+        }).then((res) => res.data)
+      console.log(data)
+    })
+    if (data.isAuth) {
+      localStorage.setItem('access_token',JSON.stringify(data.user))
+      yield put(actions.login_success(data.user))
+      const {navigate} = payload
+      navigate('/home')
+      // window.location.href('/home')
+    }
+    else {
+      yield put(actions.login_failure('Tên đăng nhập hoặc mật khẩu không chính xác'))
+    }
   } catch (error) {
     yield put(actions.login_failure(error))
   }
 }
 
 function *handleLogout(payload) {
-  console.log('handle logout')
   localStorage.removeItem('access_token')
   // yield delay(500)
   const { navigate } = payload
@@ -38,7 +46,6 @@ function *handleLogout(payload) {
 }
 
 function *watchLoginFlow() {
-  console.log('ok')
   while(true) {
     const isLoggedIn = Boolean(localStorage.getItem('access_token'))
     if (!isLoggedIn) {
@@ -47,9 +54,7 @@ function *watchLoginFlow() {
       yield fork(handleLogin,login_request_action.payload) // non-blocking
     }
     // Đợi logout
-    console.log('waiting logout')
     const logout = yield take(actionTypes.LOGOUT)  
-    console.log('take logout')
     yield call(handleLogout, logout.payload) // blocking
   }
 }

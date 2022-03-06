@@ -9,15 +9,8 @@ npm install @mui/icons-material
 npm install --save redux-devtools-extension
 # Connect react router
 npm i history
-
-## Page
-/courses/*
-feature: /courses/vocabulary
-feature: /courses/grammar
-
-
-
-auth / authentication
-- login
-- sign up / register
-- forget password
+# Formik, Yup
+npm install --save yup
+npm install --save formik
+# JSON WEB TOKEN 
+npm install jsonwebtoken --save

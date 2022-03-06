@@ -3,7 +3,8 @@ import * as actionTypes from './../../constants/actionTypes'
 const initialState = {
   isLogging: false,
   isLogged: false,
-  currentUser: undefined
+  currentUser: undefined,
+  error: '',
 }
 
 export default function authReducer(state = initialState, action) {
@@ -12,6 +13,7 @@ export default function authReducer(state = initialState, action) {
       return {
         ...state,
         isLogging: true,
+        error: '',
       }
     case actionTypes.LOGIN_SUCCESS: {
       return {
@@ -19,12 +21,14 @@ export default function authReducer(state = initialState, action) {
         isLogged: true,
         isLogging: false,
         currentUser: action.payload,
+        error: '',
       }
     }
     case actionTypes.LOGIN_FAILURE: {
       return {
         ...state,
         isLogging: false,
+        error: action.payload,
       }
     }
     case actionTypes.LOGOUT: {
