@@ -7,6 +7,7 @@ import NotFoundFage from "./pages/NotFoundPage/NotFoundPage";
 // import { Loading_1 } from "./components/Loading/Loading_1";
 import * as courseAction from './redux/actions/index'
 import PracticeListenPage from "./pages/PracticeListenPage/PracticeListenPage";
+import ListenCoursePage from "./pages/ListenCoursePage/ListenCoursePage";
 
 function App() {
   const loading = true
@@ -24,6 +25,8 @@ function App() {
               <Route path="home" element={<HomePage />}></Route>
               {/* <Route path="/login" element={<LoginPage />}></Route> */}
               <Route path="course" element={<CoursePage />}></Route>
+              <Route path="practice-listen" element={<PracticeListenPage/>}></Route>
+              <Route path="practice-listen/course/:id" element={<ListenCoursePage/>}></Route>
               <Route path="*" element={<NotFoundFage />}></Route>
             </Routes>
           </div>

@@ -13,6 +13,7 @@ import LoginPage from './pages/LoginPage/LoginPage';
 import HomePage from './pages/HomePage/HomePage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import CoursePage from './pages/CoursePage/CoursePage';
+import ListenQuestionPage from './pages/ListenQuestionPage/ListenQuestionPage';
 
 
 ReactDOM.render(
@@ -26,6 +27,7 @@ ReactDOM.render(
               <Route path="course" element={<CoursePage />}></Route> */}
             </Route>
             <Route path="/login" element={<LoginPage />}></Route>
+            <Route path="/practice-listen/part/:id" element={<ListenQuestionPage />}></Route>
           </Routes>
       </React.StrictMode>
     </BrowserRouter>

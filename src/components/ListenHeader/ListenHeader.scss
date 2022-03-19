@@ -1,0 +1,40 @@
+/* ----HEADER---- */
+.ls-header {
+    position: fixed;
+    height: 70px;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    background-color:var(--blue-color-3);
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    font-weight: bold;
+}
+.ls-header-content{
+    height: 70px;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+.ls-header__title{
+    display: flex;
+    flex: 1;
+    font-size: 14px;
+}
+.ls-header__title i{
+    transform: scale(2.3) translateY(11px);
+    color: var(--white-color)
+}
+.ls-header__title h1{
+    color: var(--text-color);
+    margin-left: 18px;
+   
+}
+.ls-header__active__close{
+    font-size: 18px;
+    transform: scale(2);
+    color: #fff;
+}
+
