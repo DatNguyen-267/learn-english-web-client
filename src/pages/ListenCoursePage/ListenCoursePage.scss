@@ -1,7 +1,6 @@
 *{
     margin: 0;
 }
-
 /* ----APP---- */
 .app{
     padding-left:140px;
@@ -10,7 +9,7 @@
 }
 
 /* -----HEADER--- */
-.listen__header {
+.listen-part__header {
     margin-top: 0px !important;
     margin-bottom: 15px;
     display: flex;
@@ -18,7 +17,7 @@
     align-items: center;
     height: 150px;
 }
-.listen__header-content{
+.listen-part__header-content{
     border: 1px solid var(--border-color);
     border-radius: 15px;
     box-shadow: rgb(222, 224, 228) 0px 4px 2px;
@@ -29,41 +28,43 @@
     width: 100%;
     line-height: 40px;
 }
-.listen__header-content__title{
+.listen-part__header-content__title{
     margin-left: 25px;
     flex: 1;
 }
-.listen__header-content__title h2{
+.listen-part__header-content__title h2{
     font-weight: 900;
-    font-size: 25px;
+    font-size: 28px;
 }
-.listen__header-content__title p{
-    font-size: 16px;
+.listen-part__header-content__title p{
+    font-size: 20px;
     color: var(--sub-text-color-2);
 }
-.listen__header-content__img{
+.listen-part__header-content__img{
     width: 550px;
     height: 100%;
     width: 365px;
     margin-right: 100px;
 }
-.listen__header-content__img img{
+.listen-part__header-content__img img{
     width: 100%;
     height: 100%;
     
 } 
 /* ----VOCABULARY: -CONTENT---- */
-.listen__content {
+.listen-part__content {
     background-color: white;
     padding-top: 35px ;
     margin-top: 1px !important;
     border-radius: 5px;
 }
 
-/* ----VOCABULARY: -CONTENT: -COURSE-GROUP---- */
-.topic{
+/* ----VOCABULARY: -CONTENT: Parts---- */
+.parts{
     margin: 0;
 }
+
+
 
 
 

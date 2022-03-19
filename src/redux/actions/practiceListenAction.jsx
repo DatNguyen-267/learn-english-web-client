@@ -17,3 +17,43 @@ export const getPracticeListenFailure = (error) => {
     error
   }
 }
+
+// Fetch Course listen
+export const getListenCourseRequest = (id) => {
+  return {
+    type: actionTypes.FETCH_LISTEN_COURSE_REQUEST,
+    id
+  }
+}
+export const getListenCourseSuccess = (payload) => {
+  return {
+    type: actionTypes.FETCH_LISTEN_COURSE_SUCCESS,
+    payload
+  }
+}
+export const getListenCourseFailure = (error) => {
+  return {
+    type: actionTypes.FETCH_LISTEN_COURSE_FAILURE,
+    error
+  }
+}
+
+// Fetch Part listen
+export const getListenPartRequest = (id) => {
+  return {
+    type: actionTypes.FETCH_LISTEN_PART_REQUEST,
+    id
+  }
+}
+export const getListenPartSuccess = (payload) => {
+  return {
+    type: actionTypes.FETCH_LISTEN_PART_SUCCESS,
+    payload
+  }
+}
+export const getListenPartFailure = (error) => {
+  return {
+    type: actionTypes.FETCH_LISTEN_PART_FAILURE,
+    error
+  }
+}

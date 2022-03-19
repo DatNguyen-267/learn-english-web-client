@@ -7,6 +7,7 @@ import NotFoundFage from "./pages/NotFoundPage/NotFoundPage";
 import { Loading_1 } from "./components/Loading/Loading_1";
 import * as courseAction from './redux/actions/index'
 import PracticeListenPage from "./pages/PracticeListenPage/PracticeListenPage";
+
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import * as actions from "./redux/actions/index";
@@ -17,6 +18,9 @@ import { UserPage } from "./pages/UserPage/UserPage";
 import GrammarPage from './pages/CoursePage/GrammarPage'  
 import { VocaPage } from "./pages/VocaPage/VocaPage";
 axios.defaults.withCredentials = true;
+
+import ListenCoursePage from "./pages/ListenCoursePage/ListenCoursePage";
+
 function App() {
   
   const loading = useSelector(state => state.loading)
@@ -64,6 +68,8 @@ function App() {
               <Route path="course/grammar" element={<GrammarPage></GrammarPage>}></Route>
               <Route path="course/voca/:id" element={<VocaPage />}></Route>
               <Route path="course" element={<CoursePage />}></Route>
+              <Route path="practice-listen" element={<PracticeListenPage/>}></Route>
+              <Route path="practice-listen/course/:id" element={<ListenCoursePage/>}></Route>
               <Route path="*" element={<NotFoundFage />}></Route>
             </Routes>
           </div>
