@@ -17,10 +17,10 @@ import { fetchUser } from "./api";
 import { UserPage } from "./pages/UserPage/UserPage";
 import GrammarPage from './pages/CoursePage/GrammarPage'  
 import { VocaPage } from "./pages/VocaPage/VocaPage";
-axios.defaults.withCredentials = true;
 
 import ListenCoursePage from "./pages/ListenCoursePage/ListenCoursePage";
 
+axios.defaults.withCredentials = true;
 function App() {
   
   const loading = useSelector(state => state.loading)
