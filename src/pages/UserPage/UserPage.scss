@@ -1,0 +1,37 @@
+.user-page .container {
+  display: flex;
+  flex-direction: column;
+  
+}
+.user-page .infor {
+  padding: 16px 0;
+  // border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.user-page .general {
+  
+  padding: 16px 0;
+
+}
+.user-page .avatar {
+  width: 100%;
+  padding: 50%;
+  border-radius: 99px;
+  background-image: url("https://i.pinimg.com/originals/7c/c7/a6/7cc7a630624d20f7797cb4c8e93c09c1.png") ;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.user-page .infor-detail{
+  padding: 8px 0;
+}
+.user-page .infor-detail i {
+  font-size: 14px;
+  opacity: 0.5;
+  margin-right: 6px;
+}
+.user-page .infor-name{
+  font-size: 24px;
+}
+.user-page .infor-email{
+  opacity: 0.7;
+}

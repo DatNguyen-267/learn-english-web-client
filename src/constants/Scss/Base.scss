@@ -1,6 +1,8 @@
 :root {
     --primary-color: #ffbb00;
     --orange-color: #f05123;
+    // --orange-color: #6c47ff;
+    --sub-primary-color: #6c47ff;
     --white-color: #fff;
     --brown-color: #D17B00;
     --purple-color: #CE82FF;
@@ -113,7 +115,7 @@ body {
     border: none;
     font-weight: 600;
     cursor: pointer;
-    box-shadow: rgba(0 ,0 ,0 , 10%) 0px -4px 0px inset;
+    box-shadow: rgba(0 ,0 ,0 , 0.2) 0px -2px 0px inset;
 }
 .btn-close {
     font-size: 32px;
@@ -200,3 +202,83 @@ body {
     position: absolute; 
     right:0;
 } */
+.base__form-container {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    margin: auto;
+    height: 650px;
+    border-radius: 10px;
+}
+.base__form-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    padding: 16px 8px;
+}
+.base__form-header div {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--dark-blue);
+}
+.base__form {
+    display: flex;
+    margin: 0 auto;
+    width: 500px;
+}
+.base__form-group {
+display: flex;
+flex-direction: column;
+width: 100%;
+margin-bottom: 16px;
+}
+.base__form-group > label {
+color: gray;
+padding: 4px 0;
+}
+.base__form-group > input {
+padding: 8px 8px;
+outline: none;
+border-radius: 5px;
+border: 1px solid gray;
+}
+.base__form > button {
+margin-top: 32px;
+width: 180px;
+height: 40px;
+background-color: var(--dark-blue);
+color: white;
+font-size: 16px;
+font-weight: 600;
+border: none;
+border-radius: 10px;
+cursor: pointer;
+}
+.base__form .base__form-error-message {
+    margin-top: 0px;
+    color: var(--invalid-color);
+    font-size: 14px;
+    font-weight: 600;
+}
+.base__group {
+
+}
+.base__group-title {
+    font-size: 20px;
+    padding: 24px 0;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.base__page-heading {
+    margin-bottom: 24px;
+}
+.base__page-heading h1 {
+    margin: 4px 0;
+    font-weight: 800;
+}

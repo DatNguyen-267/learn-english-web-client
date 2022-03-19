@@ -26,6 +26,7 @@ header {
     position: fixed;
     width: 100vw;
     background-color: white;
+    z-index: 999999;
 }
 .navbar__logo{
     display: flex;
