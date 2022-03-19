@@ -1,38 +1,22 @@
-import * as actionTypes from './../../constants/actionTypes'
+import * as actionTypes from '../../constants/actionTypes'
 
 const initialState = {
-  data: ['1', '2'],
-  isLoading: false,
+  voca: undefined,
+  grammar: undefined,
+  isSuccess: false,
 }
 export default function courseReducer(state = initialState, action) {
   switch (action.type) {
-    case actionTypes.FETCH_COURSE_REQUEST:
+    case actionTypes.GET_ALL_VOCA_SUCCESS:
       return {
         ...state,
-        isLoading: true,
+        voca: action.payload,
+        isSuccess: true,
       }
-    case actionTypes.FETCH_COURSE_SUCCESS: {
+    case actionTypes.GET_ALL_VOCA_FAILURE: {
       return {
         ...state,
-        isLoading: false,
-        data: action.payload,
-      }
-    }
-    case actionTypes.FETCH_COURSE_FAILURE: {
-      return {
-        ...state,
-        isLoading: false,
-      }
-    }
-    case actionTypes.CREATE_COURSE_SUCCESS: {
-      return {
-        ...state,
-        data: [...state.data, action.payload]
-      }
-    }
-    case actionTypes.CREATE_COURSE_FAILURE: {
-      return {
-        ...state,
+        isSuccess: false,
       }
     }
     default: 

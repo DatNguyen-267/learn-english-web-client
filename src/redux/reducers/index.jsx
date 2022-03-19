@@ -4,7 +4,9 @@ import courseReducer from "./courseReducer";
 import loadingReducer from "./loadingReducer";
 import practiceListenReducer from "./practiceListenReducer"
 import tokenReducer from "./tokenReducer";
+import topicReducer from "./topicReducer";
 import userReducer from "./userReducer";
+import vocaReducer from "./vocaReducer";
 
 const rootReducer = combineReducers({
     course: courseReducer,
@@ -12,7 +14,9 @@ const rootReducer = combineReducers({
     practiceListen: practiceListenReducer,
     loading: loadingReducer,
     token: tokenReducer,
-    user: userReducer
+    user: userReducer,
+    voca: vocaReducer,
+    topic: topicReducer,
 })
 
 export default rootReducer

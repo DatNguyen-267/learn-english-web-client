@@ -57,62 +57,71 @@ export const RegisterPage = () => {
     } catch (error) {
       {
         error.response.data.message &&
-        setRegister({
-          ...register, err: error.response.data.message
-        })
+          setRegister({
+            ...register, err: error.response.data.message
+          })
         console.log(error.response.data.message)
       }
     }
   }
   const emailInput = useRef()
   return (
-    <div>
+    <div style={{margin: 50}}>
+      
+
       {register.err != "" && ErrMsg(register.err)}
       {register.success != "" && SuccessMsg(register.success)}
       <div>
-        <Formik className='base__form'
-          initialValues={initialValues}
-          onSubmit={handleRegister}
-          validate={validate}
-        >
-          <Form className='base__form'>
-            <div className="base__form-group">
-              <label htmlFor="name">Tên</label>
-              <Field type="text" id='name' name='name'></Field>
-              <ErrorMessage name='name'>
-                {(err) => <div className='base__form-error-message'>{err}</div>}
-              </ErrorMessage>
-            </div>
+        <div className='base__form-container'>
+          <div className='base__form-header'>
+            <div>Đăng ký</div>
+          </div>
+          <Formik className='base__form'
+            initialValues={initialValues}
+            onSubmit={handleRegister}
+            validate={validate}
+          >
+            <Form className='base__form'>
+              <div className="base__form-group">
+                <label htmlFor="name">Tên</label>
+                <Field placeholder="example1" type="text" id='name' name='name'></Field>
+                <ErrorMessage name='name'>
+                  {(err) => <div className='base__form-error-message'>{err}</div>}
+                </ErrorMessage>
+              </div>
 
-            <div className="base__form-group">
-              <label htmlFor="email">Email</label>
-              <Field type="text" id='email' name='email' />
-              <ErrorMessage name='email'>
-                {(err) => <div className='base__form-error-message'>{err}</div>}
-              </ErrorMessage>
-            </div>
+              <div className="base__form-group">
+                <label htmlFor="email">Email</label>
+                <Field placeholder="example1@gmail.com" type="text" id='email' name='email' />
+                <ErrorMessage name='email'>
+                  {(err) => <div className='base__form-error-message'>{err}</div>}
+                </ErrorMessage>
+              </div>
 
-            <div className="base__form-group">
-              <label htmlFor="password">Mật khẩu</label>
-              <Field type="password" id='password' name='password' />
-              <ErrorMessage name='password'>
-                {(err) => <div className='base__form-error-message'>{err}</div>}
-              </ErrorMessage>
-            </div>
+              <div className="base__form-group">
+                <label htmlFor="password">Mật khẩu</label>
+                <Field placeholder="example1" type="password" id='password' name='password' />
+                <ErrorMessage name='password'>
+                  {(err) => <div className='base__form-error-message'>{err}</div>}
+                </ErrorMessage>
+              </div>
 
-            <div className="base__form-group">
-              <label htmlFor="repassword">Nhập lại mật khẩu</label>
-              <Field type="password" id='repassword' name='repassword' />
-              <ErrorMessage name='repassword'>
-                {(err) => <div className='base__form-error-message'>{err}</div>}
-              </ErrorMessage>
-            </div>
-            <button type='submit' >Đăng ký</button>
-            <br />
-            <p>Đã có tài khoản <Link to="/login">Đăng nhập</Link></p>
-          </Form>
+              <div className="base__form-group">
+                <label htmlFor="repassword">Nhập lại mật khẩu</label>
+                <Field placeholder="example1" type="password" id='repassword' name='repassword' />
+                <ErrorMessage name='repassword'>
+                  {(err) => <div className='base__form-error-message'>{err}</div>}
+                </ErrorMessage>
+              </div>
+              <button type='submit' >Đăng ký</button>
+              <br />
+              <p>Đã có tài khoản <Link to="/login">Đăng nhập</Link></p>
+            </Form>
 
-        </Formik>
+          </Formik>
+
+        </div>
+
 
       </div>
     </div>

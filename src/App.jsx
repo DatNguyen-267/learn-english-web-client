@@ -13,7 +13,9 @@ import * as actions from "./redux/actions/index";
 import axios from "axios";
 import {SERVER_URL} from './constants/index'
 import { fetchUser } from "./api";
-
+import { UserPage } from "./pages/UserPage/UserPage";
+import GrammarPage from './pages/CoursePage/GrammarPage'  
+import { VocaPage } from "./pages/VocaPage/VocaPage";
 axios.defaults.withCredentials = true;
 function App() {
   
@@ -45,7 +47,7 @@ function App() {
       }
       getUser();
     }
-  }, [token, dispatch])
+  }, [token])
   return (
     <div >
         {/* {loading.isLoading ? (<Loading_1/>) : ""} */}
@@ -58,7 +60,9 @@ function App() {
               {/* <Route path="*" element={<Navigate to="/home" />}></Route> */}
               {/* Navigate là chuyển hướng về trang khác */}
               <Route path="home" element={<HomePage />}></Route>
-              {/* <Route path="/login" element={<LoginPage />}></Route> */}
+              <Route path="/user-infor" element={<UserPage />}></Route>
+              <Route path="course/grammar" element={<GrammarPage></GrammarPage>}></Route>
+              <Route path="course/voca/:id" element={<VocaPage />}></Route>
               <Route path="course" element={<CoursePage />}></Route>
               <Route path="*" element={<NotFoundFage />}></Route>
             </Routes>

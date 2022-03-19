@@ -16,7 +16,6 @@ import { loadingSaga } from './loadingSaga'
 // }
 function *mySaga() {
   yield all([
-    courseSaga(),
     authSaga(),
   ])
   // yield takeLatest(actionTypes.FETCH_PRACTICE_LISTEN_REQUEST, fetchPracticeListen)

@@ -34,7 +34,7 @@ function LoginPage () {
         password: user.password})
       localStorage.setItem('firstLogin', true)
       dispath(actions.login_success())
-      navigate('/home')
+      navigate('/course')
     } catch (error) {
       {error.response.data.msg &&
       setUser({...user, err:error.response.data.msg})}
@@ -99,10 +99,12 @@ function LoginPage () {
                   onChange={handleOnChange}/>
               </div>
             </div>
-            <a href="#" className="btn-forget" >Forget Password</a>
+            
             <button className="btn btn-login" type="button" onClick={handleLoginClick}>Đăng nhập</button>
-            <br />
-            <p>Tạo tài khoản mới? <Link to="/register">Đăng ký</Link></p> 
+            <p href="#" className="btn-forget" >
+              <Link to="/forgot">Quên mật khẩu</Link>
+            </p>
+            <p className='pass-to-register'>Tạo tài khoản mới? <Link to="/register">Đăng ký</Link></p> 
           </form>
         </div>
       </div>

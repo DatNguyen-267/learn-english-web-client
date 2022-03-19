@@ -27,7 +27,7 @@ function  *handleLogin(payload) {
       localStorage.setItem('access_token',JSON.stringify(data.user))
       yield put(actions.login_success(data.user))
       const {navigate} = payload
-      navigate('/home')
+      navigate('/course')
       // window.location.href('/home')
     }
     else {

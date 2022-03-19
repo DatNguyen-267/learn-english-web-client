@@ -15,6 +15,10 @@ import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import CoursePage from './pages/CoursePage/CoursePage';
 import { RegisterPage } from './pages/RegisterPage/RegisterPage';
 import { ActivePage } from './pages/ActivePage/ActivePage';
+import { ForgotPage } from './pages/ActivePage/ForgotPage';
+import { ResetPage } from './pages/ActivePage/ResetPage';
+import { UserPage } from './pages/UserPage/UserPage';
+import { VocaLearnPage } from './pages/LearningPage/VocaLearnPage';
 
 
 ReactDOM.render(
@@ -29,7 +33,11 @@ ReactDOM.render(
             </Route>
             <Route path="/login" element={<LoginPage />}></Route>
             <Route path="/register" element={<RegisterPage />}></Route>
+            <Route path="/forgot" element={<ForgotPage />}></Route>
+
+            <Route path="/user/reset/:access_token" element={<ResetPage/>}></Route>
             <Route path="/user/activate/:activation_token" element={<ActivePage />}></Route>
+            <Route path="/learning/voca" element={<VocaLearnPage />}></Route>
           </Routes>
       </React.StrictMode>
     </BrowserRouter>

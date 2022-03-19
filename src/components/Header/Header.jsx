@@ -3,91 +3,49 @@ import './Header.scss'
 import { Link, BrowserRouter, Route, Routes, Navigate, useLocation, useParams, useNavigate } from "react-router-dom";
 import { useSelector ,useDispatch } from 'react-redux';
 import * as actions from './../../redux/actions/index'
+import axios from 'axios';
+import {SERVER_URL} from './../../constants/index'
 function Header() {
   const auth = useSelector(state => state.auth)
-  const {user, isLogged} = auth
-
 
   const dispatch = useDispatch()
   const navigate = useNavigate()
   let temp 
-  const handleLogout = () => {
-    // console.log('handle logout')
-    dispatch(actions.logout({
-      navigate: navigate
-    }))
+  const handleLogout = async() => {
+    try {
+      await axios.get(`${SERVER_URL}/user/logout`)
+      localStorage.removeItem('firstLogin')
+      dispatch(actions.logout())
+      navigate('/login')
+    } catch (error) {
+      // window.location.href = '/'
+      console.log("Logout failure")
+    }
+    
   }
-  // if (auth.isLogged) {
-  //   temp = (
-  //   <div className="navbar__action">
-  //     <i className="fas fa-bell navbar__action-notify"></i>
-  //     <img className="navbar__action-avatar" src="https://cdn.fullstack.edu.vn/f8-production/user_photos/165533/62011642e39d5.jpg" alt=""></img>
-  //     <div className="tippy-0">
-  //         <div className="menu__user">
-  //             <div className="menu__user-header">
-  //                 <img className="menu__user-header-img" src="https://cdn.fullstack.edu.vn/f8-production/user_photos/165533/62011642e39d5.jpg" alt=""></img>
-  //                 <div className="menu__user-header-info">
-  //                     <div className="menu__user-header-name">Nguyen Dat</div>
-  //                     <div className="menu__user-header-id">ID: 19520040</div>
-  //                 </div>
-  //             </div>
-  //             <div className="menu__user-body">
-  //                 <div className="menu__user-group">
-  //                     <hr />
-  //                     <a className="menu__user-group-item">Khóa học của tôi</a>
-  //                     <a className="menu__user-group-item">Trang của tôi</a>
-  //                 </div>
-  //                 <div className="menu__user-group">
-  //                     <hr />
-  //                     <div className="menu__user-group-item" onClick={handleLogout}>Đăng xuất</div>
-  //                 </div>
-  //             </div>
-  //         </div>
-  //     </div>
-  //   </div> )
-  // }
-  // else {
-  //   temp = (
-  //     <div className="navbar__action">
-  //       <Link to="/login" className="navbar__action-login">Đăng nhập</Link>
-  //     </div>
-  //     )
-  // }
-  // useEffect(()=> {
-  //   if (auth.isLogged) {
-  //     // const script = document.createElement('script');
-  //     // script.type = 'text/javascript';
-  //     // script.appendChild(
-  //     //   document.createTextNode(`
-          
-  //     //     `)
-  //     //   )
-  //     // script.async = true;
-  //     // document.body.appendChild(script);
-  //     // return () => {
-  //     //   document.body.removeChild(script);
-  //     // }
-  //     let avatar = document.querySelector(".navbar__action-avatar")
-  //     let tippy = document.querySelector(".tippy-0")
-  //     let menu = document.querySelector(".menu__user")
+  useEffect(()=> {
+    if (auth.isLogged) {
+      let avatar = document.querySelector(".navbar__action-avatar")
+      let tippy = document.querySelector(".tippy-0")
+      let menu = document.querySelector(".menu__user")
       
-  //     function blurFunc() {
-  //       tippy.style.display = "none"
-  //     }
-  //     avatar.addEventListener('click',() => {
-  //       tippy.style.display = "block"
-  //     })
-  //     avatar.addEventListener('blur', blurFunc)
+      function blurFunc() {
+        tippy.style.display = "none"
+      }
+      avatar.addEventListener('click',() => {
+        tippy.style.display = "block"
+      })
+      avatar.addEventListener('blur', blurFunc)
       
-  //     window.addEventListener('mousedown', function(event) {
-  //       if (event.target === avatar && tippy.style.display === "none") {
-  //         tippy.style.display = "block";}
-  //       // } else if (event.target != menu ) {
-  //       //   tippy.style.display = 'none';
-  //       // }
-  //     });
-  //   }
-  // }, [])
+      window.addEventListener('mousedown', function(event) {
+        if (event.target === avatar && tippy.style.display === "none") {
+          tippy.style.display = "block";}
+        // } else if (event.target != menu ) {
+        //   tippy.style.display = 'none';
+        // }
+      });
+    }
+  }, [auth.isLogged])
   return (
     <header>
       <div className="grid wide">
@@ -122,8 +80,35 @@ function Header() {
               </li>
             </ul>
           </div>
-          {user}
-          
+          {auth.isLogged && <div className="navbar__action">
+              <i className="fas fa-bell navbar__action-notify"></i>
+              <img className="navbar__action-avatar" src="https://i.pinimg.com/originals/7c/c7/a6/7cc7a630624d20f7797cb4c8e93c09c1.png" alt=""></img>
+              <div className="tippy-0">
+                <div className="menu__user">
+                    <div className="menu__user-header">
+                        <img className="menu__user-header-img" src="https://i.pinimg.com/originals/7c/c7/a6/7cc7a630624d20f7797cb4c8e93c09c1.png" alt=""></img>
+                        <div className="menu__user-header-info">
+                            <div className="menu__user-header-name">Nguyen Dat</div>
+                            <div className="menu__user-header-id">ID: 19520040</div>
+                        </div>
+                    </div>
+                    <div className="menu__user-body">
+                        <div className="menu__user-group">
+                            <hr />
+                            <a className="menu__user-group-item">Khóa học của tôi</a>
+                            <a className="menu__user-group-item">Trang của tôi</a>
+                        </div>
+                        <div className="menu__user-group">
+                            <hr />
+                            <div className="menu__user-group-item" onClick={handleLogout}>Đăng xuất</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>} 
+          {!auth.isLogged && <div className="navbar__action">
+              <Link to="/login" className="navbar__action-login">Đăng nhập</Link>
+            </div>}
         </div>
       </div>
     </header>
