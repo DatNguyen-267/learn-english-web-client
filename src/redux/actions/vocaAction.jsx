@@ -16,3 +16,7 @@ export const getTopicSuccess = (payload) =>
 {
   return { type: actionTypes.GET_TOPIC_SUCCESS, payload}
 }
+export const updateTopicSuccess = (payload) => 
+{
+  return { type: actionTypes.UPDATE_TOPIC_SUCCESS, payload}
+}

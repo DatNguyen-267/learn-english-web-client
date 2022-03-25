@@ -16,7 +16,7 @@ const initialUser = {
   success: "",
 }
 
-// axios.defaults.withCredentials = true;
+axios.defaults.withCredentials = true;
 function LoginPage () {
   const navigate = useNavigate()
   const dispath = useDispatch()
@@ -31,7 +31,7 @@ function LoginPage () {
     try {
       const res = await axios.post(`${'http://localhost:5000'}/user/login`, {
         email: user.email,
-        password: user.password})
+        password: user.password}, {withCredentials: true})
       localStorage.setItem('firstLogin', true)
       dispath(actions.login_success())
       navigate('/course')

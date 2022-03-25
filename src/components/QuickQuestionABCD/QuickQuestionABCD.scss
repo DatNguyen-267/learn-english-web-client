@@ -1,47 +1,33 @@
-.quick-q-listen{
-
+.quick-q {
+  font-family: "Open Sans", sans-serif;
 }
-.quick-q-listen__header{
+.quick-q__header{
   font-size: 24px;
   color: #666;
 }
-.quick-q-listen__container{
+.quick-q__container{
   display: flex;
-  margin-top: 16px;
+  flex-direction: column;
 }
-.quick-q-listen__icon{
-  flex: 60%;
-  padding: 16px 16px;
-}
-.quick-q-listen__icon div {
-  border-radius: 99px;
+.quick-q-question {
+  padding: 36px 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #FDEDC2;
-  height: 100%;
-  border-top-right-radius: 125px;
-  border-top-left-radius: 115px;
-  border-bottom-left-radius: 120px;
-  border-bottom-right-radius: 120px;
+  font-size: 36px;
+  font-weight: 700;
+  color: #333;
 }
-.quick-q-listen__icon img {
-  height: 100px;
-  width: 100px;
-  transform: rotate(-13deg);
-  opacity: 0.8 ;
-  cursor: pointer;
-}
-.quick-q-listen__icon img:hover {
-  transform: rotate(-13deg) scale(1.3);
-}
-.quick-q-listen__options{
+
+
+.quick-q__options{
   width: 100%;
+  padding: 0 2px;
 }
-.quick-q-listen__answer{
+.quick-q__answer{
   display: flex;
   padding: 16px 16px;
-  margin: 14px 8px;
+  margin: 14px 0px;
   cursor: pointer;
   border-radius: 10px;
   align-items: center;
@@ -50,25 +36,25 @@
   border: 2px solid #d4d4d4;
   box-shadow: rgb(207, 207, 207) 0px 3px 0px;
 }
-.quick-q-listen__answer.success {
+.quick-q__answer.success {
   background-color: rgba(63, 168, 165, 0.6);
   border: 2px solid #349592;
   box-shadow: #349592 0px 3px 0px;
 }
-.quick-q-listen__answer.error {
+.quick-q__answer.error {
   
   background-color: rgba(245, 159, 153, 0.6);
   border: 2px solid #f05d6b;
   box-shadow: #f05d6b 0px 3px 0px;
 }
-.quick-q-listen__answer.error .quick-q-listen__answer-title {
+.quick-q__answer.error .quick-q__answer-title {
   background-color: #f05d6b;
 }
-.quick-q-listen__answer.success .quick-q-listen__answer-title {
+.quick-q__answer.success .quick-q__answer-title {
   background-color: #349592;
 }
 
-.quick-q-listen__answer-title{
+.quick-q__answer-title{
   position: absolute;
   left: 0;
   margin-left: 24px;
@@ -80,8 +66,8 @@
   font-weight: 600;
 }
 
-.quick-q-listen__answer-content{
-  font-size: 24px;
+.quick-q__answer-content{
+  font-size: 22px;
   font-weight: 600;
   color: #333;
 }

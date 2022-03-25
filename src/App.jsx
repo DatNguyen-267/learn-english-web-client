@@ -31,7 +31,9 @@ function App() {
     const firstLogin = localStorage.getItem('firstLogin')
     if (firstLogin) {
       const getToken = async() => {
-        const res = await axios.get(`http://localhost:5000/user/refresh_token`)
+        const res = await axios.get(`http://localhost:5000/user/refresh_token`, {
+          withCredentials: true,
+        })
         console.log("Lấy token thành công")
         dispatch(actions.getToken(res.data.access_token))
         dispatch(actions.login_success())

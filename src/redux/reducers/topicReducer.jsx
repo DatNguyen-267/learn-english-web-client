@@ -3,6 +3,7 @@ import * as actionTypes from './../../constants/actionTypes'
 const initialState = {
   data: undefined,
   error: '',
+  isUpdate: false,
 }
 
 export default function topicReducer(state = initialState, action) {
@@ -16,6 +17,12 @@ export default function topicReducer(state = initialState, action) {
       return {
         ...state,
         error: action.error,
+      }
+      case actionTypes.UPDATE_TOPIC_SUCCESS:
+      return {
+        ...state,
+        data: action.payload,
+        isUpdate: true,
       }
     default:
       return state
