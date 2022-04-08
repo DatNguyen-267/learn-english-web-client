@@ -6,6 +6,7 @@ import * as actions from './../actions/index'
 export default function* practiceListenSaga() {
   yield takeLatest(actionTypes.FETCH_PRACTICE_LISTEN_REQUEST, fetchPracticeListen)
   yield takeLatest(actionTypes.FETCH_LISTEN_COURSE_REQUEST, fetchListenCourse)
+  yield takeLatest(actionTypes.FETCH_LISTEN_PART_REQUEST, fetchListenPart)
 }
 
 function* fetchPracticeListen(action) {
@@ -28,5 +29,17 @@ function* fetchListenCourse(action) {
   }
   catch(err) {
     yield put(actions.getListenCourseFailure(err))
+  }
+}
+
+function* fetchListenPart(action) {
+  try {
+    const id = action.id
+    const ls = yield call(api.fetchLsPart,{id})
+    console.log("part: ",ls)
+    yield put(actions.getListenPartSuccess(ls.data))
+  }
+  catch(err) {
+    yield put(actions.getListenPartFailure(err))
   }
 }

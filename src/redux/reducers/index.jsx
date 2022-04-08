@@ -3,7 +3,9 @@ import authReducer from "./authReducer";
 import courseReducer from "./courseReducer";
 import loadingReducer from "./loadingReducer";
 import listenCourseReducer from "./listenCourseReducer";
-import practiceListenReducer from "./practiceListenReducer"
+import practiceListenReducer from "./practiceListenReducer";
+import listenPartReducer from "./listenPartReducer";
+
 import tokenReducer from "./tokenReducer";
 import topicReducer from "./topicReducer";
 import userReducer from "./userReducer";
@@ -22,6 +24,7 @@ const rootReducer = combineReducers({
     voca: vocaReducer,
     topic: topicReducer,
     listenCourse: listenCourseReducer,
+    listenPart: listenPartReducer,
     auth: authReducer,
     speak: speakReducer,
     popup: popUpReducer,

@@ -3,12 +3,14 @@
 /* ----APP---- */
 .app{
     padding-top:  70px;
-    padding-bottom: 130px; 
+    padding-bottom: 110px; 
     background-color: white;
 }
-// .container{
-//     display:block;
-// }
+
+.container_lsquestion{
+    display:block;
+}
+
 .container__header{
     align-items: center;
     justify-content: center;
@@ -16,7 +18,7 @@
 }
 .container__header__title{
     display: flex;
-    margin: 20px 0 13px 0;
+    margin: 5px 0 10px 0;
     width: 100%;
     padding: 0 100px;
 }
@@ -32,3 +34,9 @@
     color: #58CC02;
 }
 
+.container__content{
+    overflow: hidden;
+}
+.container__content__questions{
+    display: flex;        
+}
