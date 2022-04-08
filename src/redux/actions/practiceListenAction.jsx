@@ -57,3 +57,17 @@ export const getListenPartFailure = (error) => {
     error
   }
 }
+
+export const setQuestionPlaying = (value) => {
+  return {
+    type: actionTypes.SET_QUESTION_PLAYING,
+    value
+  }
+}
+
+export const setQuestionTrue = (value) => {
+  return {
+    type: actionTypes.SET_QUESTION_TRUE,
+    value
+  }
+}

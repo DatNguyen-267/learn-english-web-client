@@ -12,35 +12,35 @@
     padding: 20px 20px 5px 30px;
 
 }   
-.part__name {
-    font-size: 25px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: var(--text-color);
+// .part__name {
+//     font-size: 25px;
+//     font-weight: 700;
+//     margin-bottom: 20px;
+//     color: var(--text-color);
     
-}
-.part__source{
+// }
+.part__name{
     border-radius: 20px;
-    width: 165px;
-    height: 75px;
+    width: 195px;
+    height: 85px;
     background: linear-gradient(75deg, rgb(27, 192, 156) 35%, rgb(96, 211, 186));
     color: var(--white-color);
     font-size: 22px;
     font-weight: 700;
     display: table;
 }
-.source__icon,
-.source__content{
+.name__icon,
+.name__content{
     display: table-cell;
     vertical-align: middle;
 }
-.source__content span{  
+.name__content span{  
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     overflow: hidden;
 }
-.part__source i{
+.part__name i{
     margin-right: 10px;
     margin-left: 10px;
 }
