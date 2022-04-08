@@ -47,7 +47,7 @@ function Header() {
     }
   }, [auth.isLogged])
   return (
-    <header>
+    <div className='main-header'>
       <div className="grid wide">
         <div className="navbar">
           <div className="navbar__logo">
@@ -111,7 +111,7 @@ function Header() {
             </div>}
         </div>
       </div>
-    </header>
+    </div>
   );
 }
 

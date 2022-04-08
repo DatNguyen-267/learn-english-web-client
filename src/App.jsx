@@ -19,14 +19,18 @@ import GrammarPage from './pages/CoursePage/GrammarPage'
 import { VocaPage } from "./pages/VocaPage/VocaPage";
 
 import ListenCoursePage from "./pages/ListenCoursePage/ListenCoursePage";
+import { PopUpLogin } from "./util/PopUpLogin/PopUpLogin";
+import { VocaLearnPage } from "./pages/LearningPage/VocaLearnPage";
 
 axios.defaults.withCredentials = true;
 function App() {
-  
   const loading = useSelector(state => state.loading)
   const dispatch = useDispatch()
   const token = useSelector(state => state.token)
   const auth = useSelector(state => state.auth)
+  const popup = useSelector(state => state.popup)
+  
+
   useEffect(()=> {
     const firstLogin = localStorage.getItem('firstLogin')
     if (firstLogin) {
@@ -40,23 +44,25 @@ function App() {
       }
       getToken()
     }
-  }, [auth.isLogged, dispatch])
+    console.log("bắt unloading");
+    dispatch(actions.unLoadingRequest())
+  }, [])
   useEffect(()=> {
     if(token) {
       const getUser = () => {
-        console.log(token)
+        // console.log(token)
         return fetchUser(token).then((res)=> {
           dispatch(actions.get_user(res.data))
-          console.log(res)
+          // console.log(res)
         })
-        
       }
       getUser();
     }
-  }, [token])
+  }, [auth.isLogged])
   return (
     <div >
-        {/* {loading.isLoading ? (<Loading_1/>) : ""} */}
+        { popup.login &&<PopUpLogin></PopUpLogin>}
+        {loading.isLoading ? (<Loading_1/>) : ""}
         <Header></Header>
         <div className="body">
           {/* Nội dung trang */}

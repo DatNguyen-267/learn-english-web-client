@@ -1,29 +1,11 @@
 import * as actionTypes from './../../constants/actionTypes'
 
-const initialState = {
-  data: undefined,
-  error: '',
-  isUpdate: false,
-}
+const initialState = null
 
 export default function topicReducer(state = initialState, action) {
   switch (action.type) {
     case actionTypes.GET_TOPIC_SUCCESS:
-      return {
-        ...state,
-        data: action.payload,
-      }
-      case actionTypes.GET_TOPIC_FAILURE:
-      return {
-        ...state,
-        error: action.error,
-      }
-      case actionTypes.UPDATE_TOPIC_SUCCESS:
-      return {
-        ...state,
-        data: action.payload,
-        isUpdate: true,
-      }
+      return action.payload
     default:
       return state
   }

@@ -1,17 +1,17 @@
 import * as actionTypes from "../../constants/actionTypes";
 
-export const loading_request = () => {
+export const onLoading = () => {
     return {
-        type: actionTypes.LOADING_REQUEST,
+        type: actionTypes.ONLOADING,
     }
 }
-export const loading = () => {
+export const unLoadingRequest = () => {
     return {
-        type: actionTypes.LOADING,
+        type: actionTypes.UNLOADING_REQUEST,
     }
 }
-export const unloading = () => {
+export const unLoadingSuccess = () => {
     return {
-        type: actionTypes.UNLOADING,
+        type: actionTypes.UNLOADING_SUCCESS,
     }
 }

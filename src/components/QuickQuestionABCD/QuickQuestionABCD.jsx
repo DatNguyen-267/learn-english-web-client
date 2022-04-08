@@ -1,24 +1,17 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './QuickQuestionABCD.scss'
-export const QuickQuestionABCD = ({ data,dataId, handleAnswerQ }) => {
-  const [isAnswer, setIsAnswer] = useState(false)
-    // const btn = e.currentTarget
-    // console.log(btn.getAttribute('data-answer'))
-    // if (isAnswer === false) {
-    //   if (btn.getAttribute('data-answer') === "false") {
-    //     btn.classList.add("error")
-    //     const allBtn = document.querySelectorAll(".quick-q__answer")
-    //     for (let index = 0; index < allBtn.length; index++) {
-    //       if (allBtn[index].getAttribute('data-answer') === "true") {
-    //         allBtn[index].classList.add("success")
-    //       }
-    //     }
-    //   }
-    //   else btn.classList.add("success")
-    //   setIsAnswer(true)
-    //   handleAnswerQ(false)
-    // }
+export const QuickQuestionABCD = ({ index, question, word, handleAnswerQ }) => {
 
+  useEffect(()=> {
+    const allBtn = document.querySelectorAll(`.quick-q__answer`);
+      for (let i = 0; i < allBtn.length; i++) {
+        allBtn[i].classList.remove("success")
+        allBtn[i].classList.remove("error")
+        // allBtn[i].addEventListener('click', (event) => {
+        //   event.preventDefault();
+        // });
+      }
+  }, [word])
   return (
     <div className='quick-q'>
       <div className="quick-q__header">
@@ -26,24 +19,24 @@ export const QuickQuestionABCD = ({ data,dataId, handleAnswerQ }) => {
       </div>
       <div className="quick-q__container">
         <div className='quick-q-question'>
-          {data ? data.q : ""}
+          {word ? word.english : ""}
         </div>
         <div className="quick-q__options">
-          <div className="quick-q__answer" data-answer-index={dataId} onClick={handleAnswerQ}>
+          <div className="quick-q__answer" data-index={index} onClick={handleAnswerQ}>
             <div className="quick-q__answer-title">A</div>
-            <div className="quick-q__answer-content" >{data ? data.a : ""}</div>
+            <div className="quick-q__answer-content" >{question ? question.a : ""}</div>
           </div>
-          <div className="quick-q__answer" data-answer-index={dataId} onClick={handleAnswerQ}>
+          <div className="quick-q__answer" data-index={index} onClick={handleAnswerQ}>
             <div className="quick-q__answer-title">B</div>
-            <div className="quick-q__answer-content" >{data ? data.b : ""}</div>
+            <div className="quick-q__answer-content" >{question ? question.b : ""}</div>
           </div>
-          <div className="quick-q__answer" data-answer-index={dataId} onClick={handleAnswerQ}>
+          <div className="quick-q__answer" data-index={index} onClick={handleAnswerQ}>
             <div className="quick-q__answer-title">C</div>
-            <div className="quick-q__answer-content" >{data ? data.c : ""}</div>
+            <div className="quick-q__answer-content" >{question ? question.c : ""}</div>
           </div>
-          <div className="quick-q__answer" data-answer-index={dataId} onClick={handleAnswerQ}>
+          <div className="quick-q__answer" data-index={index} onClick={handleAnswerQ}>
             <div className="quick-q__answer-title">D</div>
-            <div className="quick-q__answer-content" >{data ? data.d : ""}</div>
+            <div className="quick-q__answer-content" >{question ? question.d : ""}</div>
           </div>
         </div>
       </div>

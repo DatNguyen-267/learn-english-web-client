@@ -1,5 +1,5 @@
 body {
-  background-color: #FCFAF2;
+  // background-color: #FCFAF2;
 }
 .sub-header {
   background-color: #349592;
@@ -41,7 +41,7 @@ body {
 }
 // CONTENT CHÍNH
 .voca-learning-content {
-  padding-top: 66px;
+  padding-top: 16px;
   display: flex;
   flex-direction: column;
   width: 960px;
@@ -54,7 +54,7 @@ body {
 }
 .learn__header{
   width: 100%;
-  padding: 16px 0;
+  padding: 4px 0;
   display: flex;
 }
 .learn__header-pg-bar,
@@ -64,6 +64,10 @@ body {
   border: none;
   color: white;
   flex: 85%; 
+}
+.learn__header-pg-bar progress {
+  animation:animate-stripe 5s linear infinite;
+
 }
 .progress-custome[value]::-webkit-progress-value {
   background-color: #349592;

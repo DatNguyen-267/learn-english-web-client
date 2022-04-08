@@ -22,12 +22,15 @@ export const VocaLearning = () => {
   let [index, setIndex] = useState(0)
   let [listComponent, setListComponent] = useState([])
   let [isEnd, setIsEnd] = useState(false)
-
+  let [process, setProcess] = useState(0)
   const rootTopic = useSelector(state => state.topic)
+  const { speak, speakSlow } = useSelector(state => state.speak)
+
+
   const handleNext = (e) => {
-    console.log(currentData.countWord)
-    console.log(currentData.countQ)
-    console.log(list[index])
+    // console.log(currentData.countWord)
+    // console.log(currentData.countQ)
+    // console.log(list[index])
     if (currentData.countWord + 1 === stack.words.length &&
       currentData.countQ + 1 <= stack.questions.length) {
       console.log("Đang trong trường hợp cuối cùng")
@@ -39,12 +42,14 @@ export const VocaLearning = () => {
             ...currentData,
             countQ: currentData.countQ + 1,
           })
+          setProcess(Math.round((process + (1 / (2 * stack.words.length) * 100))))
         }
       }
       else if (list[index].type === "Question") {
         if (list[index].isCorrect) {
           if (currentData.countQ + 1 === stack.questions.length) {
             setIsEnd(!isEnd)
+            setProcess(Math.round((process + (1 / (2 * stack.words.length) * 100))))
           }
           else if (currentData.countQ + 1 < stack.questions.length) {
             list.push({ type: "Question", isCorrect: null })
@@ -53,6 +58,7 @@ export const VocaLearning = () => {
               ...currentData,
               countQ: currentData.countQ + 1,
             })
+            setProcess(Math.round((process + (1 / (2 * stack.words.length) * 100))))
           }
         }
         else {
@@ -64,34 +70,34 @@ export const VocaLearning = () => {
     else
       if (index >= 2) {
         if (list[index].type === "Word") {
+
           if (list[index - 1].type === "Word") {
-            console.log("Trường hợp W-W ---- +1Q")
             list.push({ type: "Question", isCorrect: null })
             setList([...list])
             setCurrentData({
               ...currentData,
               countQ: currentData.countQ + 1,
             })
+            setProcess(Math.round((process + (1 / (2 * stack.words.length) * 100))))
           }
           else if (list[index - 1].type === "Question" && list[index - 1].isCorrect) {
-            console.log("Trường hợp Q(true)-W ---- +1W")
             list.push({ type: "Word" })
             setList([...list])
             setCurrentData({
               ...currentData,
               countWord: currentData.countWord + 1,
             })
+            setProcess(Math.round((process + (1 / (2 * stack.words.length) * 100))))
           }
           else if (list[index - 1].type === "Question" && !list[index - 1].isCorrect) {
-            console.log("Trường hợp Q(false)-W")
             list.push({ type: "Question", isCorrect: null })
             setList([...list])
           }
         }
         else if (list[index].type === "Question") {
           if (list[index].isCorrect) {
+            setProcess(Math.round((process + (1 / (2 * stack.words.length) * 100))))
             if (currentData.countQ % 2 !== 0) {
-              console.log("Trường hợp đã hoàn thành 2 Q +1W")
               list.push({ type: "Word" })
               setList([...list])
               setCurrentData({
@@ -100,7 +106,6 @@ export const VocaLearning = () => {
               })
             }
             else if (currentData.countQ % 2 === 0) {
-              console.log("Trường hợp đã hoàn thành 1 Q +1Q")
               list.push({ type: "Question", isCorrect: null })
               setList([...list])
               setCurrentData({
@@ -110,11 +115,13 @@ export const VocaLearning = () => {
             }
           }
           else {
-            console.log("Trường hợp trả lời sai")
             list.push({ type: "Word" })
             setList([...list])
           }
         }
+      }
+      else if (index < 2) {
+        setProcess(Math.round((process + (1 / (2 * stack.words.length) * 100))))
       }
     // tăng index lên mỗi lần next
     setIndex(index + 1)
@@ -164,7 +171,9 @@ export const VocaLearning = () => {
       listComponent.push({ component: "VocaInfo", data: stack.words[1], className: "slide-item" })
       listComponent.push({ component: "QuickQuestionABCD", data: stack.questions[0], className: "slide-item" })
       setListComponent([...listComponent])
+
     }
+    console.log("Render success");
   }, [rootTopic, rootTopic.isUpdate])
 
   const addComponent = () => {
@@ -247,13 +256,55 @@ export const VocaLearning = () => {
       addComponent()
     }
   }
-  console.log(stack)
-  console.log(listComponent)
-  console.log(list)
-  console.log(currentData)
-  console.log(index)
+  const handleIDontKnow = (e) => {
+    const answer = stack.questions[currentData.countQ].answer.toUpperCase()
+    const allBtn = document.querySelectorAll(`[data-answer-index="${index}"]`);
+    for (let index = 0; index < allBtn.length; index++) {
+      if (answer === allBtn[index].querySelector('.quick-q__answer-title').textContent) {
+        allBtn[index].classList.add("success")
+        break
+      }
+    }
+    list[index].isCorrect = false
+    setList([...list])
+    addComponent()
+  }
+  // console.log(stack)
+  // console.log(listComponent)
+  // console.log(list)
+  // console.log(currentData)
+  // console.log(index)
+  useEffect(() => {
+    console.log(list)
+    console.log(currentData)
+    console.log(index)
+    console.log(stack);
+    if (index !== -1 && stack.words.length > 0) {
+      if (list[index] && (list[index].type === "Word")) {
+        speak.text = stack.words[currentData.countWord].english;
+        speechSynthesis.speak(speak)
+      }
+      else if (list[index] && (list[index].type === "Question")) {
+        speak.text = stack.words[currentData.countQ].english;
+        speechSynthesis.speak(speak)
+      }
+    }
+  }, [index])
   return (
     <div>
+      <div className="learn__header">
+        <div className="learn__header-pg-bar">
+          <progress className="progress-custome" id="progress" value={process} max="100">
+            <div className="progress-bar">
+              <span>80%</span>
+            </div>
+          </progress>
+        </div>
+        {/* THÔNG TIN BAO NHIÊU % */}
+        <div className="info-percent">
+          <span>{process}%</span>
+        </div>
+      </div>
       {!isEnd && (
         <div className="learn__body">
           {/* THÔNG TIN CƠ BẢN CỦA TỪ VỰNG */}
@@ -283,7 +334,7 @@ export const VocaLearning = () => {
               </button>)}
             {/* Button tôi không biết */}
             {list[index] && (list[index].type === "Question" && list[index].isCorrect === null) ?
-              (<button className="btn learn__body-action-btn no">
+              (<button className="btn learn__body-action-btn no" onClick={handleIDontKnow}>
                 <span>Tôi không biết</span>
               </button>) : ""}
             {/* Button save */}

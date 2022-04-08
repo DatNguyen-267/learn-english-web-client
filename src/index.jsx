@@ -21,6 +21,7 @@ import { ResetPage } from './pages/ActivePage/ResetPage';
 import { UserPage } from './pages/UserPage/UserPage';
 import { VocaLearnPage } from './pages/LearningPage/VocaLearnPage';
 import ListenQuestionPage from './pages/ListenQuestionPage/ListenQuestionPage';
+import { ProgressBar } from './util/ProgressBar/ProgressBar';
 
 
 ReactDOM.render(
@@ -40,6 +41,7 @@ ReactDOM.render(
             <Route path="/user/activate/:activation_token" element={<ActivePage />}></Route>
             <Route path="/learning/voca" element={<VocaLearnPage />}></Route>
             <Route path="/practice-listen/part/:id" element={<ListenQuestionPage />}></Route>
+            <Route path="/test" element={<ProgressBar />}></Route>
           </Routes>
       </React.StrictMode>
     </BrowserRouter>

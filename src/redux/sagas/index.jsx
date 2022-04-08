@@ -2,8 +2,9 @@
 import {  takeLatest ,call, put, fork, all } from 'redux-saga/effects'
 import { authSaga, checkLoggedIn } from './authSaga'
 import courseSaga from './courseSaga'
-import { loadingSaga } from './loadingSaga'
+import loadingSaga from './loadingSaga'
 import practiceListenSaga from './practiceListenSaga'
+import { settingSpeakSaga } from './settingSpeakSaga'
 
 
 function *mySaga() {
@@ -11,6 +12,8 @@ function *mySaga() {
     authSaga(),
     checkLoggedIn(),
     practiceListenSaga(),
+    settingSpeakSaga(),
+    loadingSaga(),
   ])
 }
 

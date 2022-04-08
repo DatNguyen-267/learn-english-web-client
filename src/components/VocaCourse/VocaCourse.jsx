@@ -3,9 +3,11 @@ import {Link} from 'react-router-dom'
 import './VocaCourse.scss'
 export const VocaCourse = ({data}) => {
   return (
-    <div className="voca-course__item col l-3 m-2 c-12">
+    <div className="voca-course__item col l-3 m-4 c-12">
       <div className="voca-course__item-img" style={{ backgroundImage: `url("${data.image}")` }}>
-        <Link to={`voca/${data._id}`} className="btn voca-course__item-btn">Xem khóa học</Link>
+        <Link to={`voca/${data._id}`}>
+          <button className="btn voca-course__item-btn">Xem khóa học</button>
+          </Link>
       </div>
       <div className="voca-course__item-name">
         <Link to={`voca/${data._id}`}>{data.name}</Link>

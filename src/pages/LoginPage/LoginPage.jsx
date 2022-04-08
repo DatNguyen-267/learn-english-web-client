@@ -34,7 +34,13 @@ function LoginPage () {
         password: user.password}, {withCredentials: true})
       localStorage.setItem('firstLogin', true)
       dispath(actions.login_success())
-      navigate('/course')
+      dispath(actions.turn_off_popup_login())
+      try {
+        navigate(-1)
+      } catch (error) {
+        navigate('/course')
+      }
+      
     } catch (error) {
       {error.response.data.msg &&
       setUser({...user, err:error.response.data.msg})}

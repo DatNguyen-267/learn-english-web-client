@@ -1,24 +1,22 @@
 import * as actionTypes from './../../constants/actionTypes'
 
 const initialState = {
-  isRequest: false,
-  isLoading: false,
+  isLoading: true,
 }
 
 export default function loadingReducer(state = initialState, action) {
   switch (action.type) {
-    case actionTypes.LOADING_REQUEST:
+    case actionTypes.ONLOADING:
       return {
         ...state,
-        isRequest: true,
-      }
-    case actionTypes.LOADING:
-      return {
-        ...state,
-        isRequest: false,
         isLoading: true,
       }
-    case actionTypes.UNLOADING: {
+    case actionTypes.UNLOADING_REQUEST: {
+      return {
+        ...state,
+      }
+    }
+    case actionTypes.UNLOADING_SUCCESS: {
       return {
         ...state,
         isLoading: false,

@@ -1,20 +1,13 @@
-import * as api from '../../api'
-import {  takeLatest ,call, put, fork, all, take, delay } from 'redux-saga/effects'
+
+import { takeEvery, takeLatest, call, take, put, fork, all, delay } from 'redux-saga/effects'
 import * as actionTypes from './../../constants/actionTypes'
 import * as actions from './../actions/index'
 
-
-export function* loadingSaga(){
-  yield fork(watchLoading)
+export default function* loadingSaga() {
+  yield takeLatest(actionTypes.UNLOADING_REQUEST, unloadFunc)
 }
 
-function* watchLoading() {
-  while(true) {
-    yield take(actionTypes.LOADING_REQUEST)
-    yield delay(1000)
-    yield put(actions.loading())
-    yield delay(1500)
-    yield put(actions.unloading())
-  }
+function* unloadFunc() {
+  yield delay(1000)
+  yield put(actions.unLoadingSuccess())
 }
-
