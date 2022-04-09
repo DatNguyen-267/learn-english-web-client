@@ -59,17 +59,22 @@ function Header() {
           <div className="navbar__link">
             <ul className="navbar-list">
               <li className="navbar-item ">
-                <a href="" >
-                  <span>Home</span>
+                <a href="/course" >
+                  <span>Từ vựng</span>
                 </a>
               </li>
               <li className="navbar-item">
                 <a href="" >
-                  <span>Khóa học</span>
+                  <span>Ngữ pháp</span>
                 </a>
               </li>
               <li className="navbar-item" >
                 <a href="" className="active">
+                  <span>Luyện Nghe</span>
+                </a>
+              </li>
+              <li className="navbar-item" >
+                <a href="">
                   <span>Luyện Thi</span>
                 </a>
               </li>

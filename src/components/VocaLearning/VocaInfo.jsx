@@ -20,7 +20,8 @@ export const VocaInfo = ({ data , err}) => {
         </div>}
       <div className="learn__body-item">
         <div className="learn__body-item-content main">{data ? data.english : ""}
-          <i className="fas fa-volume-up" onClick={handleSpeech}></i>
+          <i className="learn__body-item-icon fas fa-volume-up" onClick={handleSpeech}></i>
+          <i className="learn__body-item-icon active fa fa-heart"></i>
         </div>
         <div className="sub-info">/bɔːrd/</div>
       </div>
