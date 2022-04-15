@@ -23,6 +23,9 @@ export const ProgressBar = ({process, total }) => {
     <div className='progress-custome-1'>
         <div className="progress__fill" style={{width: `${handleCal()}%`}}></div>
         <span className="progress__text">{process ? process.process: 0}/{total ? total:0}</span>
+        {/* <span className="progress__text">{process && total ? Math.round(process.process/total*100): 0}%</span> */}
+
+    
     </div>
 
   )

@@ -73,7 +73,7 @@ export const VocaLearnPage = () => {
             <div className="sub-header__left">
               <i className="fas fa-book-open"></i>
               <div className="sub-header__left-title">
-                {vocaCourseName} - {topic ? "" : ""}
+                {vocaCourseName} - {topic ? topic.name : ""}
               </div>
             </div>
             <div className="sub-header__right">
@@ -88,7 +88,7 @@ export const VocaLearnPage = () => {
           
 
           {/* PHẦN CONTENT CHÍNH */}
-          <VocaLearning_2 topic={topic}></VocaLearning_2>
+          <VocaLearning_2 topic={topic} courseId={courseId}></VocaLearning_2>
 
         </div>
 

@@ -1,10 +1,15 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { ErrMsg } from '../../util/Notify/Notification'
 import speak from '../../util/speech'
 import './VocaInfo.scss'
-export const VocaInfo = ({ data , err}) => {
+import axios from 'axios'
+import {SERVER_URL} from './../../constants/index'
+export const VocaInfo = ({ data, err }) => {
   const { speak, speakSlow } = useSelector(state => state.speak)
+  const token = useSelector(state => state.token)
+  const [isSave, setIsSave] = useState(data.isSave)
+
   const handleSpeech = () => {
     speak.text = data.english;
     speechSynthesis.speak(speak)
@@ -13,15 +18,56 @@ export const VocaInfo = ({ data , err}) => {
     speakSlow.text = data.example.sentense;
     speechSynthesis.speak(speakSlow)
   }
+  const handleSave = () => {
+    if (isSave === false) {
+      try {
+        const addWordToStore = async () => {
+          let res = await axios.post(`${SERVER_URL}/courses/voca/addWordToStore`,{
+            idWord: data._id
+          },{
+            headers: {Authorization: token}
+          })
+          if (res.data === "success" ) {
+            data.isSave = true
+            setIsSave(data.isSave)
+          }
+          console.log(res);
+        }
+        addWordToStore()
+      } catch (error) {
+  
+      }
+    }
+    else {
+      try {
+        const removeWordToStore = async () => {
+          let res = await axios.post(`${SERVER_URL}/courses/voca/removeWordOfStore`,{
+            idWord: data._id
+          },{
+            headers: {Authorization: token}
+          })
+          if (res.data === "success" ) {
+            data.isSave = false
+            setIsSave(data.isSave)
+          }
+          console.log(res);
+        }
+        removeWordToStore()
+      } catch (error) {
+  
+      }
+    }
+    
+  }
   return (
     <div className="learn__body-info">
       {err === true && <div className='learn__body-info-errMsg'>
         Bạn trả lời sai từ này
-        </div>}
+      </div>}
       <div className="learn__body-item">
         <div className="learn__body-item-content main">{data ? data.english : ""}
           <i className="learn__body-item-icon fas fa-volume-up" onClick={handleSpeech}></i>
-          <i className="learn__body-item-icon active fa fa-heart"></i>
+          <i className={`learn__body-item-icon fa fa-heart ${isSave ? "active" : ""}`} onClick={handleSave}></i>
         </div>
         <div className="sub-info">/bɔːrd/</div>
       </div>

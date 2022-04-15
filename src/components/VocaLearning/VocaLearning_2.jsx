@@ -5,11 +5,15 @@ import { QuickQuestionABCD } from '../QuickQuestionABCD/QuickQuestionABCD'
 import { QuickLsQuestion } from '../QuickQuestionABCD/QuickLsQuestion'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
+import axios from 'axios'
+import { toBeRequired } from '@testing-library/jest-dom/dist/matchers'
+import { SERVER_URL } from '../../constants'
+import { VocaLearningEnd } from './VocaLearningEnd'
 
-
-export const VocaLearning_2 = ({ topic }) => {
+export const VocaLearning_2 = ({ topic, courseId }) => {
   // redux state
   const { speak, speakSlow } = useSelector(state => state.speak)
+  const token = useSelector(state => state.token)
   // local state
   let [listCpn, setListCpn] = useState([])
   let [listData, setListData] = useState([])
@@ -17,9 +21,7 @@ export const VocaLearning_2 = ({ topic }) => {
   let [isEnd, setIsEnd] = useState(false)
   let [progress, setProgress] = useState(0)
   let [isCorrect, setIsCorrect] = useState(undefined)
-  console.log(listCpn);
-  // console.log(listData);
-  console.log(currentIndex);
+
   useEffect(() => {
     renderComponent()
   }, [topic])
@@ -36,7 +38,7 @@ export const VocaLearning_2 = ({ topic }) => {
             className: "slide-item first",
             word: word,
           })
-          
+
           newListData.push({ type: "Word" })
         }
         else if (index % 2 !== 0) {
@@ -129,7 +131,7 @@ export const VocaLearning_2 = ({ topic }) => {
     }
   }
   const findIndexOfWord = (word) => {
-    console.log(word)
+
     return topic.list_word.findIndex((item) => item._id === word._id)
   }
   const handleNext = async (e) => {
@@ -145,7 +147,7 @@ export const VocaLearning_2 = ({ topic }) => {
       if (listData[currentIndex + 1].type === "Word") {
         getNextAudio(listCpn[currentIndex + 1].word.english)
       }
-      console.log("tăng index");
+
       setCurrentIndex(currentIndex => currentIndex + 1)
       // const firstItem = document.querySelector('.slide-item.first')
       // if (!firstItem.style.marginLeft)
@@ -211,7 +213,7 @@ export const VocaLearning_2 = ({ topic }) => {
           })
         }
         else {
-          console.log("Thêm 1 từ khi quá length");
+
           listCpn.push({
             type: "word",
             className: "slide-item",
@@ -224,7 +226,7 @@ export const VocaLearning_2 = ({ topic }) => {
         }
 
         if (currentIndex + 2 < listCpn.length - 1) {
-          console.log("Thêm 1 Q khi chưa quá length");
+
           let isInsert = false
           for (let i = currentIndex + 2; i < listCpn.length; i++) {
             if ((listCpn[i].type === "word" && listCpn[i + 1].type === "word")
@@ -281,7 +283,7 @@ export const VocaLearning_2 = ({ topic }) => {
   }
 
   async function getNextAudio(sentence) {
-    console.log(sentence);
+
     let audio = new SpeechSynthesisUtterance(sentence);
     window.speechSynthesis.speak(audio);
 
@@ -383,11 +385,27 @@ export const VocaLearning_2 = ({ topic }) => {
       setListData([...listData])
     }
   }
-
+  useEffect(() => {
+    if (isEnd) {
+      try {
+        const sendCompletedTopic = async () => {
+          let req = await axios.post(`${SERVER_URL}/courses/voca/completedTopic`, {
+            idTopic: topic._id,
+            idVoca: courseId,
+            length: topic.list_word.length
+          }, {
+            headers: { Authorization: token }
+          })
+        }
+        sendCompletedTopic()
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  }, [isEnd])
   return (
     <div>
-
-      <div className="learn__header">
+      {!isEnd && <div className="learn__header">
         <div className="learn__header-pg-bar">
           <progress className="progress-custome" id="progress" value={progress} max="100">
             <div className="progress-bar">
@@ -395,11 +413,11 @@ export const VocaLearning_2 = ({ topic }) => {
             </div>
           </progress>
         </div>
-        {/* THÔNG TIN BAO NHIÊU % */}
         <div className="info-percent">
           <span>{progress}%</span>
         </div>
       </div>
+      }
       {!isEnd && <div className="learn__body">
         {/* THÔNG TIN CƠ BẢN CỦA TỪ VỰNG */}
         {/* <div className='slides'>
@@ -470,6 +488,8 @@ export const VocaLearning_2 = ({ topic }) => {
         </div>
       </div>}
 
+      {isEnd &&
+        <VocaLearningEnd topic={topic} courseId={courseId}></VocaLearningEnd>}
     </div>
   )
 }

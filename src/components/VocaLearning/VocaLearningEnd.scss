@@ -1,0 +1,117 @@
+.voca-ln-end__header{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.voca-ln-end__header-main-title{
+  font-size: 36px;
+  font-weight: 700;
+}
+.voca-ln-end__header-sub-title{
+  margin-bottom: 12px;
+}
+.voca-ln-end__header-option {
+
+}
+.voca-ln-end__header-btn-back,
+.voca-ln-end__header-btn-next{
+  padding: 10px 32px;
+  background-color: white;
+  border-radius: 5px;
+  // border: 1px solid var(--border-color-2);
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 0 10px;
+}
+.voca-ln-end__header-btn-back {
+  background-color: var(--dark-blue);
+  color: white;
+}
+.voca-ln-end__header-btn-next {
+  background-color: #349592;
+  color: white;
+}
+.voca-ln-end__container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 36px;
+}
+.voca-ln-end__container-list{
+  display: flex;
+  width: 70%;
+  flex-direction: column;
+  align-content: center;
+} 
+.voca-ln-end__container-head {
+  display: flex;
+  flex-direction: row;
+  // justify-content: space-between;
+}
+.voca-ln-end__container-head div:nth-child(1) {
+  width: 150px;
+}
+.voca-ln-end__container-head div:nth-child(2) {
+  flex: 1;
+}
+
+.voca-ln-end__container-item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 8px 0;
+  // justify-content: space-between;
+  border: 1px solid var(--border-color);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 24px 24px;
+  padding-bottom: 32px;
+  font-size: 20px;
+  border-radius: 10px;
+  cursor: default;
+}
+// .voca-ln-end__container-item:hover {
+//   transform: translateY(-2px);
+//   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 4px;
+
+// }
+.voca-ln-end__item-endlish{
+  width: 200px;
+  position: relative;
+} 
+.voca-ln-end__item-vietnamese{
+  flex: 1;
+}
+.voca-ln-end__item-option {
+  font-size: 16px;
+  
+  cursor: pointer;
+}
+.voca-ln-end__item-option i:nth-child(2) {
+  // color: var(--dark-blue);
+  padding: 13px 13px;
+  color: white;
+  border-radius: 99px;
+  background-color: var(--dark-blue);
+}
+.voca-ln-end__item-endlish div {
+  font-weight: 700;
+}
+.voca-ln-end__item-endlish span {
+  font-size: 13px;
+  margin-top: -4px;
+  position: absolute;
+}
+.voca-ln-end__item-option-heart {
+  margin-right: 12px;
+  padding: 12px 12px;
+  color: #7e7e7e;
+  border-radius: 99px;
+  background-color: white;
+  border: 1px solid #7e7e7e;
+}
+.voca-ln-end__item-option-heart.active {
+  background-color: var(--red-color);
+  color: white;
+  border: 1px solid var(--red-color);
+}

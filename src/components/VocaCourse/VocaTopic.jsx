@@ -8,7 +8,7 @@ import * as actions from './../../redux/actions/index'
 import { ProgressBar } from '../../util/ProgressBar/ProgressBar'
 
 axios.defaults.withCredentials = true
-export const VocaTopic = ({ data,process, index, vocaCourseId, vocaCourseName }) => {
+export const VocaTopic = ({ data, process, index, vocaCourseId, vocaCourseName }) => {
   const token = useSelector(state => state.token)
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -33,20 +33,31 @@ export const VocaTopic = ({ data,process, index, vocaCourseId, vocaCourseName })
     }
   }
   return (
-    <div className="col l-2-4 m-4 c-6">
-
+    <div className="col l-4 m-4 c-6">
       <div className="voca-topic-item" >
         {/* <div className="voca-topic-item__img"
           style="background-image: url('https://www.voca.vn/assets/file_upload/images/excited.jpg')">
         </div> */}
         <div className="voca-topic-info">
-          <div className="voca-topic-name">{data.name}</div>
-          {/* <div className="voca-topic-number">18 từ</div> */}
-          <div className='voca-topic-progress'>
-            <ProgressBar process={process} total={data.list_word.length}></ProgressBar>
+          <div className="voca-topic-info__left">
+            <div className="voca-topic-name">{data.name}
+              
+            </div>
+            {/* <div className="voca-topic-number">18 từ</div> */}
+            <div className='voca-topic-progress'>
+              <ProgressBar process={process} total={data.list_word.length}></ProgressBar>
+            </div>
           </div>
+          <div className="voca-topic-info__right">
+            {/* <button >Xem danh sách
+            </button> */}
+            <button onClick={handleClick}>Học
+              {/* <i class="fa fa-arrow-right"></i> */}
+            </button>
+          </div>
+            <div className='voca-topic-info__right-sub'>Danh sách từ</div>
           <div className='voca-topic-overlay'>
-            <button className='voca-topic-btn' onClick={handleClick}>Học ngay</button>
+            <button className='voca-topic-btn' >Học ngay</button>
           </div>
         </div>
       </div>
