@@ -13,15 +13,20 @@ import ListenQuestion3 from '../../components/ListenQuestion3/ListenQuestion3';
 function ListenQuestionPage() {
     const param = useParams()
     const id = param.id
+    console.log(param)
     const dispatch = useDispatch()
     useEffect(()=>{
+        dispatch(actions.getPracticeListenRequest())
         dispatch(actions.getListenPartRequest(id))
+        dispatch(actions.setQuestionPlaying(0))
+        dispatch(actions.setQuestionTrue(0))
     },[dispatch])
    
-   
+    const ls = useSelector(state => state.practiceListen.data )
     const data = useSelector(state => state.listenPart.data )
     const question_playing = useSelector(state => state.listenPart.question_playing )
     const question_true = useSelector(state => state.listenPart.question_true )
+    
     
   
     let lspart = {}
@@ -110,8 +115,8 @@ function ListenQuestionPage() {
     }
     return (
        <div>
-           <ListenHeader name = {lspart.name? lspart.name:""}></ListenHeader>
-            <div class="app">
+           <ListenHeader name = {lspart.name? lspart.name:""} part_id = {lspart._id} ls={ls}></ListenHeader>
+            <div class="app-question-listen">
                 <div class="container_lsquestion grid wide">
                     <div class="container__header">
                         <div class="container__header__title">

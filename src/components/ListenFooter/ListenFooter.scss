@@ -180,8 +180,6 @@
 .btn-next{
     width: 130px;
     height: 60px;
-    font-weight: bold;
-    font-size: 25px;
     color: var(--white-color);
     background:rgb(255, 194, 26) !important;
     border-radius: 10px;
@@ -192,6 +190,13 @@
     display: flex;
     transition: all 0.1s ease-out;
     cursor: pointer;
+
+}
+.btn-next span,
+.btn-previous span{
+  font-weight: bold;
+  font-size: 25px;
+  margin-top: 4px;
 }
 .btn-previous:hover,
 .btn-next:hover{

@@ -1,8 +1,7 @@
 
 /* ----APP---- */
-.app{
-    padding-left:140px;
-    padding-right:140px;
+.app-practice-listen{
+    padding:20px 0 0 0 ;
     background-color: white;
 }
 
@@ -24,7 +23,7 @@
     display: flex;
     height: 100%;
     width: 100%;
-    line-height: 40px;
+    line-height: 25px;
 }
 .listen__header-content__title{
     margin-left: 25px;
@@ -32,10 +31,10 @@
 }
 .listen__header-content__title h2{
     font-weight: 900;
-    font-size: 25px;
+    font-size: 28px;
 }
 .listen__header-content__title p{
-    font-size: 16px;
+    font-size: 20px;
     color: var(--sub-text-color-2);
 }
 .listen__header-content__img{

@@ -3,19 +3,24 @@ import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import './LsCourse.scss'
 function LsCourse({course}) {
+    
     return (
-        <div className="col l-4 m-4 c-6">
+        <div className="col l-6 m-6 c-12">
             <div className="course" >
+                
                 <div className="course__header">
-                    <Link to={`/practice-listen/course/${course._id}`}>
-                        <div className="course__name">
-                            <div className="course__name-content">
-                                <span>
-                                    {course.name}
+                    <div class="course__name">{course.name}</div>
+                    <div className="course__part">
+                        <div className="course__part-content">
+                            <Link to={`/practice-listen/course/${course._id}`}>
+                                <span className='span-1'>
+                                    <span dangerouslySetInnerHTML={{__html: course.icon}} />
+                                    Part {course.part}
                                 </span>
-                            </div>
+                            </Link>
+                           
                         </div>
-                    </Link>
+                    </div>
                 </div>
                 <div className="course__body">
                     <div className="course__info">
@@ -25,6 +30,7 @@ function LsCourse({course}) {
             </div>   
         </div>
     );
+   
 }
 
 export default LsCourse;

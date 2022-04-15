@@ -69,7 +69,7 @@ function Header() {
                 </a>
               </li>
               <li className="navbar-item" >
-                <a href="" className="active">
+                <a href="/practice-listen" className="active">
                   <span>Luyện Nghe</span>
                 </a>
               </li>

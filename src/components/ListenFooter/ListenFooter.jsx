@@ -75,7 +75,8 @@ function ListenFooter({onClickNext, onClickPre, question_playing, length, list_q
         const percentagePosition = (100 * 0) / audio.duration;
         timeline.style.backgroundSize = `${percentagePosition}% 100%`;
         timeline.value = percentagePosition;
-        
+        audio.pause();
+        playerButton.innerHTML = playIcon;
         
     }
     const onclickPre = ()=>{
@@ -87,15 +88,17 @@ function ListenFooter({onClickNext, onClickPre, question_playing, length, list_q
         const percentagePosition = (100 * 0) / audio.duration;
         timeline.style.backgroundSize = `${percentagePosition}% 100%`;
         timeline.value = percentagePosition;
+        audio.pause();
+        playerButton.innerHTML = playIcon;
         
     }
     return (
         <div class="ls-footer">
             <div class="grid wide ls-footer-content">
-                <button class="btn-previous btn-main" onClick={onclickPre} id='btn-scroll-left'>
+                <a href='#' class="btn-previous btn-main" onClick={onclickPre} id='btn-scroll-left'>
                     <i class="fas fa-angle-left"></i>
-                    Trước
-                </button>
+                    <span> Trước</span>
+                </a>
                 <div class="ls-footer__content__audio">
                     <div class="audio-player">
                         <audio onTimeUpdate={changeTimelinePosition} onEnded={audioEnded}
@@ -114,10 +117,10 @@ function ListenFooter({onClickNext, onClickPre, question_playing, length, list_q
                     </div>
 
                 </div>
-                <button class="btn-next btn-main" onClick={onclickNext} id="btn-scroll-right">
-                    Tiếp
+                <a href='#' class="btn-next btn-main" onClick={onclickNext} id="btn-scroll-right">
+                    <span>Tiếp</span>
                     <i class="fas fa-angle-right"></i>
-                </button>
+                </a>
 
             </div>
         </div>

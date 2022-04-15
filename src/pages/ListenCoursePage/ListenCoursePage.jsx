@@ -26,7 +26,7 @@ function ListenCoursePage() {
         list_part = lscourse.list_part
     }
     return (
-        <div className="app">
+        <div className="app-course-listen grid wide">
             <div className="listen-part">
                 <div className="listen-part__header">
                     <div className="listen-part__header-content">

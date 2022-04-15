@@ -1,14 +1,21 @@
 import React from 'react';
 import "./ListenMinQuestion.scss"
-function ListenMinQuestion({min_question, index, index_qs, setQuestionTrue, question_true}) {
+function ListenMinQuestion({min_question, index, index_qs, setQuestionTrue, question_true, toggleTranscript}) {
     const onclick=(value)=>{
-        const questions = document.querySelectorAll('.min-question')
-        const answers = questions[index_qs].querySelectorAll('.answers-item')
-        const questiontitle = questions[index_qs].querySelector('.min-question__title')
-        questiontitle.querySelector('span').classList.remove("hide-content")
+        if(index == -1){
+            index = index + 1
+        }
+       
+        const questions = document.querySelectorAll('.question-1-item')
+        const min_questions = questions[index_qs].querySelectorAll('.min-question')
+        const answers = min_questions[index].querySelectorAll('.answers-item')
+        const min_questiontitle = min_questions[index].querySelector('.min-question__title')
+        min_questiontitle.querySelector('span').classList.remove("hide-content")
+        
         answers.forEach(item => {
             item.lastChild.classList.remove("hide-content")
             const data = item.getAttribute('data-value')
+           
             if (data!=value && data != min_question.true_answer) {
                 item.classList.add("dont-choose-answer")
             }
@@ -27,16 +34,22 @@ function ListenMinQuestion({min_question, index, index_qs, setQuestionTrue, ques
                 })
                 
             }
-            
             item.querySelector('input').disabled=true
         })
-       
+        var amount_min_question_choose = 0;
+        min_questions.forEach(item => {
+            if(item.querySelector('input').disabled == true){
+                amount_min_question_choose += 1
+            }
+        })
+        console.log("amount_min_question_choose: ", amount_min_question_choose)
+        toggleTranscript(amount_min_question_choose)
     }
     const arr = ["A","B","C","D"]
     return (
         <div class="min-question">
             <div class="min-question__title">
-                Câu {index_qs+1}.{index == -1 ? '':index} <span className={min_question.hide_content === true? "hide-content":""}>{min_question.content}</span>
+                Câu {index_qs+1}.{index == -1 ? '':index+1} <span className={min_question.hide_content === true? "hide-content":""}>{min_question.content}</span>
             </div>
             <div class="min-question__answers row">
                 {
@@ -49,7 +62,7 @@ function ListenMinQuestion({min_question, index, index_qs, setQuestionTrue, ques
                                     <input type="radio" name={`radio${index_qs+1}.${index == -1 ? '':index}`} onClick={()=>onclick(item._id)}/>
                                 </div>
                                 <div class="answers-item__title">
-                                    <h2>{arr[index_min_qs]}</h2>
+                                    {arr[index_min_qs]}
                                 </div>
                                 <div class= {min_question.hide_answer === true?"answers-item__content hide-content":"answers-item__content"}>
                                     {item.content}

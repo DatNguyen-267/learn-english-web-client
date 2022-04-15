@@ -24,12 +24,13 @@
     font-size: 14px;
 }
 .ls-header__title i{
-    transform: scale(2.3) translateY(30px);
+    transform: scale(1.2);
+    margin-right: 15px;
     color: var(--white-color)
 }
 .ls-header__title h1{
     color: var(--text-color);
-    margin-left: 18px;
+    margin-left: 0px;
    
 }
 .ls-header__active__close{
