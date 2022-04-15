@@ -15,8 +15,8 @@ function PracticeListenPage() {
     
     const ls = useSelector(state => state.practiceListen.data )
     return (
-        <div className="app">
-            <div className="listen">
+        <div className="app-practice-listen grid wide">
+            <div className="listen ">
                 <div className="listen__header">
                     <div className="listen__header-content">
                         <div className="listen__header-content__title">

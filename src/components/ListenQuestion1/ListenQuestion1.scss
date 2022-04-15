@@ -14,6 +14,29 @@
     height: 320px;
     padding-bottom: 20px;
 }
+.question-1-item__transcript{
+    display: none;
+    width: calc(100%-100px);
+    margin-top: 30px;
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 20px 30px 10px 30px;
+    color: var(--text-color);
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(230, 227, 227);
+  
+}
+.question-1-item__transcript .transcript-title{
+    width: 100%;
+    font-size: 25px;
+    font-weight: 700;
+}
+.question-1-item__transcript .transcript-content{
+    width: 100%;
+    font-size: 20px;
+}
 
 
 

@@ -20,50 +20,50 @@
     font-size: 25px;
     font-weight: 900;
 }
-/* ----topic-ITEM: HEADER: FILTER---- */
-.topic__item__header__filter{
-    display: flex;
-}
-/* ----topic-ITEM: HEADER: Search---- */
-.topic__item__header__filter-search{
-    margin: 0;
-    border-radius:15px ;
-    border: 1px solid #cfcfcf;
-    background-color: #F7F7F7;
-    margin-right: 10px;
-    display: flex
-}
+// /* ----topic-ITEM: HEADER: FILTER---- */
+// .topic__item__header__filter{
+//     display: flex;
+// }
+// /* ----topic-ITEM: HEADER: Search---- */
+// .topic__item__header__filter-search{
+//     margin: 0;
+//     border-radius:15px ;
+//     border: 1px solid #cfcfcf;
+//     background-color: #F7F7F7;
+//     margin-right: 10px;
+//     display: flex
+// }
 
-.topic__item__header__filter-search-content input{
-    font-size: 17px;
-    font-weight: bold;
-    width: 227px;
-    height: 50px;
-    border: none;
-    padding-left: 40px;
-    background-color: transparent;
-}
-.topic__item__header__filter-search-content input::placeholder{
-    color: #979696;
-}
-.topic__item__header__filter-search-content input:focus{
-    outline: 0;
-}
-.topic__item__header__filter-search-content i{
-    color: #979696;
-    transform: translateX(200%)
-    translateY(-10%)
-    scale(1.5)
-}
-.topic__item__header__filter-search__btn{
-    font-size: 20px;
-    font-weight: bold;
-    background: #58CC02;
-    color: white;
-    border-radius: 10px;
-    border-bottom: 3px solid #58A700;
-    text-decoration: none;
-    text-align: center;
-    padding: 13px 25px 12px 25px;
-    transition: all 0.1s ease-out;
-}
+// .topic__item__header__filter-search-content input{
+//     font-size: 17px;
+//     font-weight: bold;
+//     width: 227px;
+//     height: 50px;
+//     border: none;
+//     padding-left: 40px;
+//     background-color: transparent;
+// }
+// .topic__item__header__filter-search-content input::placeholder{
+//     color: #979696;
+// }
+// .topic__item__header__filter-search-content input:focus{
+//     outline: 0;
+// }
+// .topic__item__header__filter-search-content i{
+//     color: #979696;
+//     transform: translateX(200%)
+//     translateY(-10%)
+//     scale(1.5)
+// }
+// .topic__item__header__filter-search__btn{
+//     font-size: 20px;
+//     font-weight: bold;
+//     background: #58CC02;
+//     color: white;
+//     border-radius: 10px;
+//     border-bottom: 3px solid #58A700;
+//     text-decoration: none;
+//     text-align: center;
+//     padding: 13px 25px 12px 25px;
+//     transition: all 0.1s ease-out;
+// }
