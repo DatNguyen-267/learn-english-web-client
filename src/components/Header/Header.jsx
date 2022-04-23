@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import './Header.scss'
 import { Link, BrowserRouter, Route, Routes, Navigate, useLocation, useParams, useNavigate } from "react-router-dom";
 import { useSelector ,useDispatch } from 'react-redux';
@@ -7,7 +7,8 @@ import axios from 'axios';
 import {SERVER_URL} from './../../constants/index'
 function Header() {
   const auth = useSelector(state => state.auth)
-
+  const [number ,setNumber] = useState(1)
+  console.log(number);
   const dispatch = useDispatch()
   const navigate = useNavigate()
   let temp 
@@ -46,6 +47,17 @@ function Header() {
       });
     }
   }, [auth.isLogged])
+  const handleClick = (e, number) => {
+    // try {
+    //   let item = document.querySelector('.navbar-item .active')
+    //   item.classList.remove('active')
+    // } catch (error) {
+      
+    // }
+    setNumber(number)
+    // console.log( e.currentTarget.children);
+    // e.currentTarget.firstChild.classList.add('active')
+  }
   return (
     <div className='main-header'>
       <div className="grid wide">
@@ -58,27 +70,27 @@ function Header() {
           </div>
           <div className="navbar__link">
             <ul className="navbar-list">
-              <li className="navbar-item ">
-                <a href="/course" >
+              <li onClick={(e) => handleClick(e, 1)} className="navbar-item">
+                <Link className={number === 1 ? "active" : ""} to="/course" >
                   <span>Từ vựng</span>
-                </a>
+                </Link>
               </li>
-              <li className="navbar-item">
-                <a href="" >
+              <li onClick={(e) => handleClick(e, 2)} className="navbar-item">
+                <Link className={number === 2 ? "active" : ""} to="/course/grammar" >
                   <span>Ngữ pháp</span>
-                </a>
+                </Link>
               </li>
-              <li className="navbar-item" >
-                <a href="/practice-listen" className="active">
+              <li onClick={(e) => handleClick(e, 3)} className="navbar-item" >
+                <Link className={number === 3 ? "active" : ""} to="/practice-listen">
                   <span>Luyện Nghe</span>
-                </a>
+                </Link>
               </li>
-              <li className="navbar-item" >
-                <a href="">
+              <li onClick={(e) => handleClick(e, 4)} className="navbar-item" >
+                <Link className={number === 4 ? "active" : ""} to="">
                   <span>Luyện Thi</span>
-                </a>
+                </Link>
               </li>
-              <li className="navbar-item">
+              <li onClick={handleClick} className="navbar-item">
                 <a href="">
                   <span>Của Tôi</span>
                 </a>

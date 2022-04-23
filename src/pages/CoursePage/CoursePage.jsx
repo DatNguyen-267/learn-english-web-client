@@ -31,19 +31,19 @@ function CoursePage() {
     <div className="grid wide">
       <div className="course-page">
         <div className="base__page-heading">
-          <h1>Khóa học</h1>
+          <h1>Từ vựng</h1>
           <span>Cung cấp các khóa học về từ vựng, ngữ pháp, đang thịnh hành trên trang web</span>
         </div>
-        <div className="course-page__tab">
+        {/* <div className="course-page__tab">
           <a className='course-page__tab-item active' href='#'>
             <i className="fas fa-book"></i>Từ vựng</a>
           <a className='course-page__tab-item' href='#'>
             <i className="fas fa-spell-check"></i>Ngữ pháp</a>
           <a className='course-page__tab-item' href='#'>
             <i className="fas fa-headphones"></i>Luyện nghe</a>
-        </div>
+        </div> */}
         <div className="base__group">
-          <div className="base__group-title">Từ vựng TOEIC</div>
+          <div className="base__group-title">  </div>
           {/* <div className="course-tool">
             <Search></Search>
             <button className='course-tool__quick-select active'>Tất cả</button>
