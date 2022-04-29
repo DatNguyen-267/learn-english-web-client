@@ -7,6 +7,7 @@ import axios from 'axios'
 import { SERVER_URL } from './../../constants/index'
 import * as actions from './../../redux/actions/index'
 import { VocaLearning_2 } from '../../components/VocaLearning/VocaLearning_2'
+import { Loading_1 } from '../../components/Loading/Loading_1'
 
 
 
@@ -19,8 +20,11 @@ export const VocaLearnPage = () => {
   const topicId = new URLSearchParams(search).get('topic-id')
   const vocaCourseName = new URLSearchParams(search).get('voca-course-name')
   const token = useSelector(state=> state.token)
+  const loading = useSelector(state => state.loading)
 
+  
   useEffect(()=> {
+    dispatch(actions.onLoading())
     const firstLogin = localStorage.getItem('firstLogin')
     if (firstLogin) {
       const getToken = async() => {
@@ -33,12 +37,9 @@ export const VocaLearnPage = () => {
       }
       getToken()
     }
-    console.log("bắt unloading");
-    dispatch(actions.unLoadingRequest())
+    // dispatch(actions.unLoadingRequest())
   }, [])
   useEffect(() => {
-    console.log("get api")
-    console.log(token);
     if (token) {
       try {
         const getTopic = async () => {
@@ -63,10 +64,14 @@ export const VocaLearnPage = () => {
         getTopic()
       } catch (error) { console.log(error) }
     }
+    dispatch(actions.unLoadingRequest())
+
   }, [token])
 
   return (
-    <div className='voca-learning-page'>
+    <div>
+      {loading.isLoading ? (<Loading_1/>) : ""}
+      <div className='voca-learning-page'>
       <header className="sub-header">
         <div className="grid wide">
           <div className="sub-header-contain">
@@ -94,5 +99,7 @@ export const VocaLearnPage = () => {
 
       </div>
     </div>
+    </div>
+    
   )
 }

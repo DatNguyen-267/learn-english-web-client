@@ -24,9 +24,9 @@ export const PopUpLogin = () => {
         </div>
         <div className="modal-body">
           {/* <button className='pop-up__btn-close' onClick={handleClose}>X</button> */}
-          <div className='pop-up__img'>
+          {/* <div className='pop-up__img'>
             <img src="https://www.seekpng.com/png/full/138-1388103_user-login-icon-login.png" alt="" />
-          </div>
+          </div> */}
           <div className='pop-up__title'>Vui lòng đăng nhập</div>
           <button className='pop-up__btn-login' onClick={handleClick}>Đăng nhập</button>
         </div>

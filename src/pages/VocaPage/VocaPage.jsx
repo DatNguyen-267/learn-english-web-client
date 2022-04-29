@@ -83,6 +83,18 @@ export const VocaPage = () => {
                   vocaCourseName={voca.data.name}
                 ></VocaTopic>)
               })}
+              {userProcess.voca === null && voca.data !== undefined &&
+              voca.data.list_topic.map((item, index) => {
+                return (<VocaTopic 
+                  process={null}
+                  key={index} 
+                  index={index} 
+                  data={item}
+                  vocaCourseId={voca.data._id}
+                  vocaCourseName={voca.data.name}
+                ></VocaTopic>)
+              })
+              }
             </div>
           </div>
         </div>

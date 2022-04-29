@@ -21,6 +21,7 @@ import { VocaPage } from "./pages/VocaPage/VocaPage";
 import ListenCoursePage from "./pages/ListenCoursePage/ListenCoursePage";
 import { PopUpLogin } from "./util/PopUpLogin/PopUpLogin";
 import { VocaLearnPage } from "./pages/LearningPage/VocaLearnPage";
+import { ListWordPage } from "./pages/ListWordPage/ListWordPage";
 
 axios.defaults.withCredentials = true;
 function App() {
@@ -76,6 +77,7 @@ function App() {
               <Route path="/user-infor" element={<UserPage />}></Route>
               <Route path="course/grammar" element={<GrammarPage></GrammarPage>}></Route>
               <Route path="course/voca/:id" element={<VocaPage />}></Route>
+              <Route path="course/voca/list-word" element={<ListWordPage />}></Route>
               <Route path="course" element={<CoursePage />}></Route>
               <Route path="practice-listen" element={<PracticeListenPage/>}></Route>
               <Route path="practice-listen/course/:id" element={<ListenCoursePage/>}></Route>
