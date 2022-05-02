@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import './VocaLearning.scss'
 import { VocaInfo } from './VocaInfo'
-import { QuickQuestionABCD } from '../QuickQuestionABCD/QuickQuestionABCD'
+import QuickQuestionABCD  from '../QuickQuestionABCD/QuickQuestionABCD'
 import { QuickLsQuestion } from '../QuickQuestionABCD/QuickLsQuestion'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'

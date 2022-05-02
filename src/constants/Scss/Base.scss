@@ -127,6 +127,9 @@ body {
     color : rgb(0, 165, 122);
     cursor: pointer;
 }
+.btn-back {
+    
+}
 .app {
     padding-top: 36px;
 }
@@ -177,6 +180,14 @@ body {
 }
 
 /* PROGRESS BAR */
+.progress-custome {
+    height: 30px;
+    width: 100%;
+    border: none;
+    color: white;
+    // flex: 85% 1;
+    animation: width 0.3s ease-in-out;
+}
 .progress-custome[value]::-webkit-progress-bar {
     background-color: #e2e2e2;
     border-radius: 99px;

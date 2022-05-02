@@ -1,32 +1,48 @@
 .ls-wd-pg.ls-wd-pg__ls {
-  font-family:'Montserrat',Arial,Helvetica,sans-serif;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  margin-top: 14px;
 }
-.ls-wd-pg.ls-wd-pg__ls:first-child{
+
+.ls-wd-pg.ls-wd-pg__ls:first-child {
   margin-top: -12px;
 }
+
+.ls-wd-pg-btn-back {
+  background-color: var(--dark-blue);
+  color: white;
+  padding: 4px 16px;
+  // border: 1px solid gray;
+  border-radius: 5px;
+}
+
 .ls-wd-pg__item {
-  margin-bottom: 4px;
+  // margin-bottom: 4px;
   padding: 16px;
   margin-left: -16px;
-  
+
 }
+
 .ls-wd-pg__item:hover {
   background-color: rgb(237, 237, 237);
   border-radius: 10px;
 }
+
 .ls-wd-pg__item-gr {
   font-size: 16px;
   font-weight: 400;
 }
+
 .ls-wd-pg__item-gr {
   display: flex;
   flex-direction: row;
   padding: 8px 0;
 }
+
 .ls-wd-pg__item-gr .ls-wd-pg__item-sub-head {
   margin-right: 8px;
   font-weight: bold;
 }
+
 .ls-wd-pg__item-audio {
   margin-top: 8px;
 }

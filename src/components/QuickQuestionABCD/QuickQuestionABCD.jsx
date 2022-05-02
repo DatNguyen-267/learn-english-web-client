@@ -1,17 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { memo, useEffect, useState } from 'react'
 import './QuickQuestionABCD.scss'
-export const QuickQuestionABCD = ({ index, question, word, handleAnswerQ }) => {
+const QuickQuestionABCD =({ index, question, word, handleAnswerQ, quest }) => {
 
   useEffect(()=> {
     const allBtn = document.querySelectorAll(`.quick-q__answer`);
       for (let i = 0; i < allBtn.length; i++) {
         allBtn[i].classList.remove("success")
         allBtn[i].classList.remove("error")
-        // allBtn[i].addEventListener('click', (event) => {
-        //   event.preventDefault();
-        // });
+        allBtn[i].style.pointerEvents = "auto"
       }
-  }, [word])
+  }, [word, quest])
   return (
     <div className='quick-q'>
       <div className="quick-q__header">
@@ -19,7 +17,7 @@ export const QuickQuestionABCD = ({ index, question, word, handleAnswerQ }) => {
       </div>
       <div className="quick-q__container">
         <div className='quick-q-question'>
-          {word ? word.english : ""}
+          {word ? word.english :(quest ? quest : "")}
         </div>
         <div className="quick-q__options">
           <div className="quick-q__answer" data-index={index} onClick={handleAnswerQ}>
@@ -45,3 +43,5 @@ export const QuickQuestionABCD = ({ index, question, word, handleAnswerQ }) => {
     </div>
   )
 }
+
+export default memo(QuickQuestionABCD)

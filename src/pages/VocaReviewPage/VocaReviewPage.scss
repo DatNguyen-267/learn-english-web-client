@@ -1,0 +1,80 @@
+.rv-pg .sub-header {
+  background-color: rgb(231, 105, 107);
+  // background-color: rgb(231, 234, 240);
+  // rgb(220, 220, 220)
+  color: var(--dark-blue);
+}
+
+.rv-pg .sub-header__left {
+
+}
+.rv-pg .sub-header__left i {
+  color: var(--dark-blue);
+}
+.rv-pg .sub-header__left-title {
+  color: var(--dark-blue);
+  font-weight: 600;
+}
+.rv-pg .sub-header__left-title {
+
+}
+.rv-pg .btn-close {
+  color: var(--dark-blue);
+}
+
+// PROGRESS
+.rv-pg-bd {
+  max-width: 50rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.rv-pg-bd__head{
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+}
+.rv-pg-bd__head-status {
+  display: flex;
+
+}
+.rv-pg-bd__head-status div {
+  margin-right: 12px;
+  font-weight: 700;
+}
+.rv-pg-bd__question {
+  margin-top: 12px;
+}
+.rv-pg-bd__head-status div:nth-child(1) {
+  // color: red;
+  color: #666;
+}
+.rv-pg-bd__head-status div:nth-child(2) {
+  color: #349592;
+}
+.rv-pg-bd__head-status div:nth-child(3) {
+  color: rgb(231, 105, 107);
+}
+.rv-pg-bd__pgr-bar{
+  height: 30px;
+  flex: 85%;
+}
+.rv-pg-bd__pgr-bar .progress-custome[value]::-webkit-progress-bar {
+  background-color: rgb(231, 234, 240);
+}
+.rv-pg-bd__pgr-bar .progress-custome[value]::-webkit-progress-value {
+  background-color: rgb(231, 105, 107);
+}
+.rv-pg-bd__progress {
+    background: rgb(231, 234, 240);
+    border-radius: 0.25rem;
+    height: 2rem;
+    overflow: hidden;
+    width: 100%;
+}
+.rv-pg-bd__progress-bar {
+  background: rgb(231, 105, 107);
+  border-radius: 0.25rem;
+  height: 2rem;
+  overflow: hidden;
+  transition: all 0.2s;
+}

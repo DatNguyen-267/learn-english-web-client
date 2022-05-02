@@ -8,6 +8,6 @@ export default function* loadingSaga() {
 }
 
 function* unloadFunc() {
-  yield delay(1000)
+  yield delay(500)
   yield put(actions.unLoadingSuccess())
 }

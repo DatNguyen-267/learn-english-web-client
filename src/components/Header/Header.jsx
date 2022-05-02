@@ -8,7 +8,6 @@ import {SERVER_URL} from './../../constants/index'
 function Header() {
   const auth = useSelector(state => state.auth)
   const [number ,setNumber] = useState(1)
-  console.log(number);
   const dispatch = useDispatch()
   const navigate = useNavigate()
   let temp 

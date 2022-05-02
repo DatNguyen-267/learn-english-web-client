@@ -3,9 +3,6 @@ import './ProgressBar.scss'
 export const ProgressBar = ({process, total }) => {
   
   const handleCal = () => {
-    console.log("func running");
-    console.log(total);
-    console.log(process);
     if (total && total !== 0) {
       if (process) {
         return process.process/total*100

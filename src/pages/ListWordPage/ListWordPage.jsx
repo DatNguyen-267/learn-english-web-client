@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import './ListWordPage.scss'
 import {SERVER_URL}  from './../../constants/index'
 import { useLocation } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 export const ListWordPage = () => {
   const [course, setCourse] = useState(undefined)
@@ -36,6 +37,7 @@ export const ListWordPage = () => {
         <h2>
           600 từ vựng toeic - Contract
         </h2>
+        <Link to={{pathname:`/course/voca/${courseId}`}} className="ls-wd-pg-btn-back">Quay lại</Link>
         <div className="ls-wd-pg ls-wd-pg__ls row">
           {listWord !== undefined && listWord.list_word.map((item, index)=> (
             <div className="col l-12">
@@ -55,7 +57,7 @@ export const ListWordPage = () => {
                 {item.meanings[0].vietnamese}
               </div>
               <div className="ls-wd-pg__item-audio">
-                <audio src="/audio.mp3" controls />
+                <audio src={`https://res.cloudinary.com/drwse3wye/video/upload/v1651304473/audio/${item.audio}.mp3`} controls />
               </div>
             </div>
           </div>
