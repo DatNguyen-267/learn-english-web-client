@@ -3,17 +3,18 @@ import './VocaReviewPage.scss'
 import React, { memo, useEffect, useMemo, useRef, useState } from 'react'
 import reactDom from 'react-dom'
 import QuickQuestionABCD from '../../components/QuickQuestionABCD/QuickQuestionABCD'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { SERVER_URL } from '../../constants'
 
 const TIME_OUT_ONE_QUESTION = 300
 const TIME_OUT_PERCENT = 3
-const DELAY_NEXT_QUESTION = 1800
+const DELAY_NEXT_QUESTION = 1500
 
 const VocaReviewPage = () => {
   const search = useLocation().search
   const lsTopic = new URLSearchParams(search).get('ls-id')
+  const courseId = new URLSearchParams(search).get('course-id')
   const [time, setTime] = useState(TIME_OUT_ONE_QUESTION)
   const [isStart, setIsStart] = useState(false)
   const [isEnd, setIsEnd] = useState(false)
@@ -21,7 +22,8 @@ const VocaReviewPage = () => {
   const [lsWord, setLsWord] = useState(null)
   const [lsQuestion, setLsQuestion] = useState(null)
   const myInterval = useRef(null)
-  const [result, setResult] = useState({correct: 0, incorrect: 0})
+  const [result, setResult] = useState({ correct: 0, incorrect: 0 })
+  const navigate = useNavigate()
 
   // console.log(lsQuestion);
   useMemo(() => {
@@ -61,15 +63,21 @@ const VocaReviewPage = () => {
       }
     });
     await delay(DELAY_NEXT_QUESTION)
-    setCount(prev => prev + 1)
-    setResult({...result, incorrect: result.incorrect + 1})
+    if (count + 1 === lsWord.length) {
+      setIsStart(false)
+      setIsEnd(true)
+    }
+    else
+      setCount(prev => prev + 1)
+    // setCount(prev => prev + 1)
+    setResult({ ...result, incorrect: result.incorrect + 1 })
   }
   const handleAnswerQ = async (e) => {
     let btn = e.currentTarget
     const answer = btn.querySelector(".quick-q__answer-title").textContent.toLowerCase()
     if (answer === lsQuestion[count].answer) {
       btn.classList.add("success")
-      setResult({...result, correct: result.correct + 1})
+      setResult({ ...result, correct: result.correct + 1 })
     }
     else {
       btn.classList.add("error")
@@ -81,17 +89,22 @@ const VocaReviewPage = () => {
           element.parentElement.classList.add("success")
         }
       });
-      setResult({...result, incorrect: result.incorrect + 1})
+      setResult({ ...result, incorrect: result.incorrect + 1 })
     }
     stopTimer()
     try {
       document.querySelector("#rv-pg__audio").play();
     } catch (error) {
-      
+
     }
 
     await delay(DELAY_NEXT_QUESTION)
-    setCount(prev => prev + 1)
+    if (count + 1 === lsWord.length) {
+      setIsStart(false)
+      setIsEnd(true)
+    }
+    else
+      setCount(prev => prev + 1)
   }
 
   const delay = ms => new Promise(res => setTimeout(res, ms));
@@ -139,26 +152,37 @@ const VocaReviewPage = () => {
     if (myInterval.current) clearInterval(myInterval.current)
     setTime(TIME_OUT_ONE_QUESTION)
   }
-
+  const handleRetry = () => {
+    window.location.reload()
+  }
+  const handleBack = () => {
+    navigate(`/course/voca/${courseId}`)
+  }
   // chạy timer khi đủ dữ liệu và sau mỗi lần next
+  // useEffect(() => {
+  //   if (lsWord && count === lsWord.length) {
+  //     setIsStart(false)
+  //     setIsEnd(true)
+  //   }
+  // }, [count])
   useEffect(() => {
-    if (lsWord &&  count === lsWord.length - 1) {
-      setIsStart(false)
-      setIsEnd(true)
-    }
-    else {
-      if (isStart) {
-        if (myInterval.current) clearInterval(myInterval.current)
-        setTime(TIME_OUT_ONE_QUESTION)
-        const newInterval = setInterval(() => {
-          runTimer();
-        }, 20)
-        myInterval.current = newInterval
-        return () => {
-          clearInterval(myInterval.current)
-        }
+    // if (lsWord && count === lsWord.length - 1) {
+    //   setIsStart(false)
+    //   setIsEnd(true)
+    // }
+    // else {
+    if (isStart) {
+      if (myInterval.current) clearInterval(myInterval.current)
+      setTime(TIME_OUT_ONE_QUESTION)
+      const newInterval = setInterval(() => {
+        runTimer();
+      }, 20)
+      myInterval.current = newInterval
+      return () => {
+        clearInterval(myInterval.current)
       }
     }
+    // }
   }, [isStart, count])
 
   // Load data về
@@ -191,7 +215,7 @@ const VocaReviewPage = () => {
               </div>
             </div>
             <div className="sub-header__right">
-              <div className="btn-close">✖</div>
+              <div className="btn-close" onClick={handleBack}>✖</div>
             </div>
           </div>
         </div>
@@ -199,48 +223,57 @@ const VocaReviewPage = () => {
 
       {/* CONTENT */}
       <div className='grid wide'>
-        <div className="rv-pg-bd">
-          {/* PROGRESS BAR */}
-          <div className="rv-pg-bd__head">
-            <div className='rv-pg-bd__head-status'>
-              <div>Số câu: {lsWord? lsWord.length : 0}</div>
-              <div>Đúng: {result? result.correct : 0}</div>
-              <div>Sai: {result? result.incorrect : 0}</div>
-              {/* <span>Sai: {count? count : 0}</span> */}
-            </div>
-
-            <div className="rv-pg-bd__pgr-bar">
-              <div className='rv-pg-bd__progress'>
-                <div className="rv-pg-bd__progress-bar" style={{ width: `${time / TIME_OUT_PERCENT}%` }}>
-
-                </div>
+        {!isEnd && (
+          <div className="rv-pg-bd">
+            {/* PROGRESS BAR */}
+            <div className="rv-pg-bd__head">
+              <div className='rv-pg-bd__head-status'>
+                <div>Số câu: {lsWord ? lsWord.length : 0}</div>
+                <div>Đúng: {result ? result.correct : 0}</div>
+                <div>Sai: {result ? result.incorrect : 0}</div>
+                {/* <span>Sai: {count? count : 0}</span> */}
               </div>
-              {/* <progress className="progress-custome" id="progress" value={time} max="TIME_OUT_ONE_QUESTION">
+              <div className="rv-pg-bd__pgr-bar">
+                <div className='rv-pg-bd__progress'>
+                  <div className="rv-pg-bd__progress-bar" style={{ width: `${time / TIME_OUT_PERCENT}%` }}>
+                  </div>
+                </div>
+                {/* <progress className="progress-custome" id="progress" value={time} max="TIME_OUT_ONE_QUESTION">
                 <div className="progress-bar">
                   <span>80%</span>
                 </div>
               </progress> */}
+              </div>
+            </div>
+            <div className="rv-pg-bd__question">
+              {lsWord && isEnd === false && lsQuestion && (<div>
+                <QuickQuestionABCD
+                  title="Chọn từ phù hợp với nghĩa sao đây"
+                  index={count}
+                  question={lsQuestion[count]}
+                  quest={lsWord[count].meanings[0].vietnamese}
+                  handleAnswerQ={handleAnswerQ}
+                ></QuickQuestionABCD>
+                <audio
+                  src={`https://res.cloudinary.com/drwse3wye/video/upload/v1651304473/audio/${lsWord[count].audio}.mp3`}
+                  style={{ display: 'none' }}
+                  id="rv-pg__audio"></audio>
+              </div>)}
             </div>
           </div>
-          <div className="rv-pg-bd__question">
+        )}
 
-            {lsWord && isEnd === false && lsQuestion && (<div>
-              <QuickQuestionABCD
-                title="Chọn từ phù hợp với nghĩa sao đây"
-                index={count}
-                question={lsQuestion[count]}
-                quest={lsWord[count].meanings[0].vietnamese}
-                handleAnswerQ={handleAnswerQ}
-              ></QuickQuestionABCD>
-              <audio
-                src={`https://res.cloudinary.com/drwse3wye/video/upload/v1651304473/audio/${lsWord[count].audio}.mp3`}
-                style={{ display: 'none' }}
-                id="rv-pg__audio"></audio>
-            </div>)}
-
+        {isEnd && (
+          <div className='rv-pg-bd__end'>
+            <div className='rv-pg-bd__end-head'>Hoàn Thành!</div>
+            <div className='rv-pg-bd__end-result'>{`Số câu đúng: ${result.correct}/${lsWord.length}`}</div>
+            <div className='rv-pg-bd__end-lsbtn'>
+              <button className='btn-retry' onClick={handleRetry}>Thử lại</button>
+              <button className='btn-back' onClick={handleBack}>Quay lại</button>
+            </div>
           </div>
+        )}
 
-        </div>
       </div>
     </div>
   )

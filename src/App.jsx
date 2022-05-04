@@ -81,6 +81,7 @@ function App() {
               <Route path="course" element={<CoursePage />}></Route>
               <Route path="practice-listen" element={<PracticeListenPage/>}></Route>
               <Route path="practice-listen/course/:id" element={<ListenCoursePage/>}></Route>
+              
               <Route path="*" element={<NotFoundFage />}></Route>
             </Routes>
           </div>

@@ -21,7 +21,7 @@ export const VocaLearnPage = () => {
   const vocaCourseName = new URLSearchParams(search).get('voca-course-name')
   const token = useSelector(state=> state.token)
   const loading = useSelector(state => state.loading)
-
+  const navigate = useNavigate()
   
   useEffect(()=> {
     dispatch(actions.onLoading())
@@ -67,7 +67,9 @@ export const VocaLearnPage = () => {
     dispatch(actions.unLoadingRequest())
 
   }, [token])
-
+  const handleBack = () => {
+    navigate(`/course/voca/${courseId}`)
+  }
   return (
     <div>
       {loading.isLoading ? (<Loading_1/>) : ""}
@@ -82,7 +84,7 @@ export const VocaLearnPage = () => {
               </div>
             </div>
             <div className="sub-header__right">
-              <div className="btn-close">✖</div>
+              <div className="btn-close" onClick={handleBack}>✖</div>
             </div>
           </div>
         </div>

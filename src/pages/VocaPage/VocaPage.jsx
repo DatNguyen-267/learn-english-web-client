@@ -21,7 +21,7 @@ export const VocaPage = () => {
   const [showReview, setshowReview] = useState(false)
   const [lsTopicPicked, setlsTopicPicked] = useState([])
 
-console.log(lsTopicPicked);
+
 
   useEffect(async () => {
     dispatch(actions.onLoading())
@@ -83,7 +83,7 @@ console.log(lsTopicPicked);
   }
 
   const handleAccept = () => {
-    navigate(`/voca-review?ls-id=${lsTopicPicked.join("-")}`)
+    navigate(`/voca-review?ls-id=${lsTopicPicked.join("-")}&course-id=${id}`)
   }
   return (
     <div className="grid wide">

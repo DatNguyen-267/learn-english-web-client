@@ -32,6 +32,9 @@ export const VocaTopic = ({ data, process, index, vocaCourseId, vocaCourseName }
 
     }
   }
+  const GoListWord = () => {
+    navigate(`/course/voca/list-word?course-id=${vocaCourseId}&topic-id=${data._id}`)
+  }
   return (
     <div className="col l-4 m-4 c-6">
       <div className="voca-topic-item" >
@@ -41,7 +44,7 @@ export const VocaTopic = ({ data, process, index, vocaCourseId, vocaCourseName }
         <div className="voca-topic-info">
           <div className="voca-topic-info__left">
             <div className="voca-topic-name">{data.name}
-              
+
             </div>
             {/* <div className="voca-topic-number">18 từ</div> */}
             <div className='voca-topic-progress'>
@@ -55,7 +58,7 @@ export const VocaTopic = ({ data, process, index, vocaCourseId, vocaCourseName }
               {/* <i class="fa fa-arrow-right"></i> */}
             </button>
           </div>
-            <div className='voca-topic-info__right-sub'>Danh sách từ</div>
+          <div className='voca-topic-info__right-sub' onClick={GoListWord}>Danh sách từ</div>
           <div className='voca-topic-overlay'>
             <button className='voca-topic-btn' >Học ngay</button>
           </div>

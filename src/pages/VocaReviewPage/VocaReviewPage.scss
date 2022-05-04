@@ -78,3 +78,37 @@
   overflow: hidden;
   transition: all 0.2s;
 }
+.rv-pg-bd__end {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+}
+.rv-pg-bd__end-head{
+  font-size: 36px;
+  font-weight: 600;
+
+}
+.rv-pg-bd__end-result{
+  font-size: 20px;
+}
+.rv-pg-bd__end-lsbtn{
+  margin-top: 16px;
+}
+.btn-retry, .btn-back {
+  width: 120px;
+  height: 36px;
+  margin: 0px 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+}
+.btn-retry{
+  background-color: var(--dark-blue);
+  color: white;
+}
+.btn-back{
+  background-color: #e0e0e0;
+}

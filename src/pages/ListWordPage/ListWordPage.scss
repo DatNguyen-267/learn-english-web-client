@@ -1,3 +1,17 @@
+.ls-wd-pg {
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+.ls-wd-pg h2 {
+  margin: 12px 0 ;
+}
+.ls-wd-pg__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .ls-wd-pg.ls-wd-pg__ls {
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   margin-top: 14px;
@@ -13,6 +27,11 @@
   padding: 4px 16px;
   // border: 1px solid gray;
   border-radius: 5px;
+  border: none;
+  width: 120px;
+  height: 36px;
+  cursor: pointer;
+  margin-bottom: 24px;
 }
 
 .ls-wd-pg__item {
