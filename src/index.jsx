@@ -22,6 +22,7 @@ import { UserPage } from './pages/UserPage/UserPage';
 import { VocaLearnPage } from './pages/LearningPage/VocaLearnPage';
 import ListenQuestionPage from './pages/ListenQuestionPage/ListenQuestionPage';
 import { ProgressBar } from './util/ProgressBar/ProgressBar';
+import ListenQuestionEnd from './components/ListenQuestionEnd/ListenQuestionEnd';
 
 
 ReactDOM.render(
@@ -42,6 +43,7 @@ ReactDOM.render(
             <Route path="/learning/voca" element={<VocaLearnPage />}></Route>
             <Route path="/practice-listen/part/:id" element={<ListenQuestionPage />}></Route>
             <Route path="/test" element={<ProgressBar />}></Route>
+            <Route path="/end" element={<ListenQuestionEnd/>}></Route>
           </Routes>
       </React.StrictMode>
     </BrowserRouter>

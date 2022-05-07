@@ -31,9 +31,9 @@ function ListenCoursePage() {
                 <div className="listen-part__header">
                     <div className="listen-part__header-content">
                         <div className="listen-part__header-content__title">
-                            <h2>
+                            <h1>
                                {lscourse? lscourse.name:''}
-                            </h2>
+                            </h1>
                             <p>
                                 Danh sách các part
                             </p>

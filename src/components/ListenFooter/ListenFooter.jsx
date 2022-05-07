@@ -12,8 +12,9 @@ function ListenFooter({onClickNext, onClickPre, question_playing, length, list_q
         muteIcon = `<i class="fas fa-volume-mute"></i>`;
     var currentTime = document.getElementById('currentTime'),
         durationTime = document.getElementById('durationTime');
-
+    
     const toggleAudio=()=> {
+       if(audio.duration){
         if (audio.paused) {
             audio.play();
             playerButton.innerHTML = pauseIcon;
@@ -22,9 +23,11 @@ function ListenFooter({onClickNext, onClickPre, question_playing, length, list_q
             audio.pause();
             playerButton.innerHTML = playIcon;
         }
+       }
     }
-
     const timeUpdateMusic=()=> {
+    
+       if(audio.duration){
 
         let durmin = Math.floor(audio.duration / 60);
         let dursec = Math.floor(audio.duration - durmin * 60);
@@ -46,19 +49,24 @@ function ListenFooter({onClickNext, onClickPre, question_playing, length, list_q
         durationTime.innerHTML = durmin + ":" + dursec;
         // Thời gian hiện tại của bài nhạc
         currentTime.innerHTML = curmin + ":" + cursec;
+       }
     }
     const changeTimelinePosition=()=> {
-        const percentagePosition = (100 * audio.currentTime) / audio.duration;
-        timeline.style.backgroundSize = `${percentagePosition}% 100%`;
-        timeline.value = percentagePosition;
+        if(audio.duration){
+            const percentagePosition = (100 * audio.currentTime) / audio.duration;
+            timeline.style.backgroundSize = `${percentagePosition}% 100%`;
+            timeline.value = percentagePosition;
+        }
     }
 
     const audioEnded=()=> {
         playerButton.innerHTML = playIcon;
     }
     const changeSeek=()=> {
-        const time = (timeline.value * audio.duration) / 100;
-        audio.currentTime = time;
+        if(audio.duration){
+            const time = (timeline.value * audio.duration) / 100;
+            audio.currentTime = time;
+        }
 
     }
     const toggleSound=()=> {
@@ -77,7 +85,10 @@ function ListenFooter({onClickNext, onClickPre, question_playing, length, list_q
         timeline.value = percentagePosition;
         audio.pause();
         playerButton.innerHTML = playIcon;
-        
+        // console.log(audio.duration)
+        durationTime.innerHTML = "00:00" ;
+        // Thời gian hiện tại của bài nhạc
+        currentTime.innerHTML =  "00:00" ;
     }
     const onclickPre = ()=>{
         console.log("footer: ", question_playing, " - ", length)
@@ -85,31 +96,39 @@ function ListenFooter({onClickNext, onClickPre, question_playing, length, list_q
             question_playing,
             length
         })
+        
         const percentagePosition = (100 * 0) / audio.duration;
         timeline.style.backgroundSize = `${percentagePosition}% 100%`;
         timeline.value = percentagePosition;
         audio.pause();
         playerButton.innerHTML = playIcon;
+        durationTime.innerHTML = "00:00" ;
+        // Thời gian hiện tại của bài nhạc
+        currentTime.innerHTML =  "00:00" ;
         
+    }
+    const onLoad= ()=>{
+        console.log("abc: ",audio.duration)
+        timeUpdateMusic()
     }
     return (
         <div class="ls-footer">
             <div class="grid wide ls-footer-content">
                 <a href='#' class="btn-previous btn-main" onClick={onclickPre} id='btn-scroll-left'>
                     <i class="fas fa-angle-left"></i>
-                    <span> Trước</span>
+                    <span> Pre</span>
                 </a>
                 <div class="ls-footer__content__audio">
                     <div class="audio-player">
-                        <audio onTimeUpdate={changeTimelinePosition} onEnded={audioEnded}
-                            src={(length>0 && list_question[question_playing].sound) ? list_question[question_playing].sound:""}></audio>
+                        <audio onTimeUpdate={changeTimelinePosition} onEnded={audioEnded} onLoadedData={onLoad}
+                            src={(length>0 && list_question[question_playing].sound) ? require(`../../assets/sound/${list_question[question_playing].sound}`):""}></audio>
                         <div class="controls">
                             <button class="player-button" onClick={toggleAudio}>
                                 <i class="fas fa-play"></i>
                             </button>
                             <span id="currentTime">00:00</span>
                             <input type="range" class="timeline" max="100" value="0" onChange={changeSeek}/>
-                            <span id="durationTime">00:00</span>
+                            <span id="durationTime" >00:00</span>
                             <button class="sound-button" onClick={toggleSound}>
                                 <i class="fas fa-volume-up"></i>
                             </button>
@@ -118,7 +137,7 @@ function ListenFooter({onClickNext, onClickPre, question_playing, length, list_q
 
                 </div>
                 <a href='#' class="btn-next btn-main" onClick={onclickNext} id="btn-scroll-right">
-                    <span>Tiếp</span>
+                    <span>Next</span>
                     <i class="fas fa-angle-right"></i>
                 </a>
 

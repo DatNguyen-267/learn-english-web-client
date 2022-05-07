@@ -20,9 +20,9 @@ function PracticeListenPage() {
                 <div className="listen__header">
                     <div className="listen__header-content">
                         <div className="listen__header-content__title">
-                            <h2>
+                            <h1>
                                 Luyện nghe
-                            </h2>
+                            </h1>
                             <p>
                                 Cung cấp các bài nghe theo từng Part
                             </p>

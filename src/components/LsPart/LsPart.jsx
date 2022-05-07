@@ -16,7 +16,7 @@ function LsPart({part}) {
                             </div>
                             <div className='name__content'>
                                 <span>
-                                    {part.name} 
+                                    {part.name}
                                 </span>
                             </div>
                         </div>

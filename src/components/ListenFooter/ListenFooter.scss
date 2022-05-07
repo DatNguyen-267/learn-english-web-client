@@ -10,7 +10,7 @@
     bottom: 0;
 }
 .ls-footer-content{
-    padding: 20px 0px 25px 0px;
+    padding: 5px 120px 5px 120px;
     height: 100%;
     width: 100%;
     z-index: 10;
@@ -20,12 +20,13 @@
 }
 /* ---AUDIO--- */
 .ls-footer__content__audio{
-    height: 60px;
-    padding: 5px 0px;
-    margin: 0px 50px;
-    border: 2px solid var(--border-color);
-    border-radius: 15px;
-    box-shadow: rgb(222, 224, 228) 2px 3px 2px;
+    height: 35px;
+    padding: 1px 0px;
+    margin: 0px 30px;
+    border: none;
+    // border: 2px solid var(--border-color);
+    // border-radius: 15px;
+    // box-shadow: rgb(222, 224, 228) 2px 3px 2px;
     flex: 1;
 }
 .ls-footer__content__audio audio{
@@ -35,8 +36,8 @@
 
 }
 .audio-player {
-    --player-button-width: 2.5em;
-    --sound-button-width: 2.5em;
+    --player-button-width: 2em;
+    --sound-button-width: 2em;
     --space: .5em;
     width: 100%;
     height: 100%;
@@ -46,12 +47,12 @@
     flex-direction: row;
     align-items: center;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 2px;
   }
   
   .player-button {
     border-radius: 50%;
-    padding: 0;
+    padding: 1px 0 1px 1px;
     width: var(--player-button-width);
     height: var(--player-button-width);
     cursor: pointer;
@@ -62,12 +63,12 @@
     margin-right: 10px;
   }
   .player-button i{
-    font-size: 13px;
+    font-size: 10px;
     color: var(--text-color-2);
   }
   
   .timeline {
-    margin:0px 15px;
+    margin:0px 10px;
     -webkit-appearance: none;
     width: calc(100% - (50px + var(--player-button-width) + var(--sound-button-width) + var(--space)));
     height: .5em;
@@ -169,22 +170,23 @@
 
   }
   .sound-button i{
-    font-size: 25px;
+    font-size: 20px;
   }
     #currentTime,
     #durationTime{
-        font-size: 20px;
+        margin-top: 2px;
+        font-size: 18px;
     }
 /* --BTN Next */
 .btn-previous,
 .btn-next{
-    width: 130px;
-    height: 60px;
+    width: 75px;
+    height: 35px;
     color: var(--white-color);
     background:rgb(255, 194, 26) !important;
     border-radius: 10px;
     border: none;
-    border-bottom: 5px solid rgb(190, 144, 17);
+    border-bottom: 3px solid rgb(190, 144, 17);
     align-items: center;
     justify-content: center;
     display: flex;
@@ -195,7 +197,7 @@
 .btn-next span,
 .btn-previous span{
   font-weight: bold;
-  font-size: 25px;
+  font-size: 18px;
   margin-top: 4px;
 }
 .btn-previous:hover,
@@ -203,10 +205,10 @@
     background-color:  rgb(224, 166, 4) !important
 }
 .btn-previous i{
-    margin-right: 7px ;
-    font-size: 30px;
+    margin-right: 5px ;
+    font-size: 20px;
 }
 .btn-next i{
-    margin-left: 7px ;
-    font-size: 30px;
+    margin-left: 5px ;
+    font-size: 20px;
 }

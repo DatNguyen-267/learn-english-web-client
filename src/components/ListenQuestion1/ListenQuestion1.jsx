@@ -1,5 +1,6 @@
 import React from 'react';
 import ListenMinQuestion from '../ListenMinQuestion/ListenMinQuestion';
+
 import "./ListenQuestion1.scss"
 function ListenQuestion1({question, index_qs, setQuestionTrue, question_true}) {
    
@@ -12,10 +13,12 @@ function ListenQuestion1({question, index_qs, setQuestionTrue, question_true}) {
             }
         }
     }
+    const img = question.img
     return (
         <div class="question-1-item">
-            {
-                question.img ?  <div class="question-1-item__header"> <img src={question.img} alt="image"/></div>:""
+            {   
+                question.img ?  
+                    <div class="question-1-item__header"> <img src={require(`../../assets/img/ls-question/${question.img}`)} alt="image"/></div>:""
             }
             <div class="question-1-item__content">
                {
