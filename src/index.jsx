@@ -42,7 +42,7 @@ ReactDOM.render(
             <Route path="/user/activate/:activation_token" element={<ActivePage />}></Route>
             <Route path="/learning/voca" element={<VocaLearnPage />}></Route>
             <Route path="/practice-listen/part/:id" element={<ListenQuestionPage />}></Route>
-            <Route path="/test" element={<ProgressBar />}></Route>
+            {/* <Route path="/test" element={<ProgressBar />}></Route> */}
             <Route path="/voca-review" element={<VocaReviewPage/>}></Route> 
             
           </Routes>

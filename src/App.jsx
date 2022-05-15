@@ -22,6 +22,8 @@ import ListenCoursePage from "./pages/ListenCoursePage/ListenCoursePage";
 import { PopUpLogin } from "./util/PopUpLogin/PopUpLogin";
 import { VocaLearnPage } from "./pages/LearningPage/VocaLearnPage";
 import { ListWordPage } from "./pages/ListWordPage/ListWordPage";
+import { TestPage } from "./pages/TestPage/TestPage";
+import { DoTestPage } from "./pages/TestPage/DoTestPage";
 
 axios.defaults.withCredentials = true;
 function App() {
@@ -81,6 +83,8 @@ function App() {
               <Route path="course" element={<CoursePage />}></Route>
               <Route path="practice-listen" element={<PracticeListenPage/>}></Route>
               <Route path="practice-listen/course/:id" element={<ListenCoursePage/>}></Route>
+              <Route path="test" element={<TestPage />}></Route>
+              <Route path="doing-test" element={<DoTestPage />}></Route>
               
               <Route path="*" element={<NotFoundFage />}></Route>
             </Routes>

@@ -1,0 +1,53 @@
+.test-item{
+  display: flex;
+  flex-direction: row;
+  padding: 8px 8px;
+  // border: solid 1px #333;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 0px 3px;
+  cursor: pointer;
+  margin-bottom: 36px;
+}
+.test-item__img{
+  padding-top:30%;
+  width: 30%;
+  height: 50px;
+  // background-image: url('https://sabercollege.edu/wp-content/uploads/2021/12/PTA_2022.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+}
+.test-item__gr {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 8px 16px;
+}
+.test-item__name{
+  font-size: 20px;
+  font-weight: 700;
+}
+.test-item__info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.test-item__time{
+  margin-right: 20px;
+  
+}
+
+.test-item__ques{
+  position: relative;
+}
+.test-item__ques::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -10px;
+  bottom: 0;
+  height: 60%;
+  transform: translateY(30%);
+  background-color: black;
+  border-left: 1px solid rgb(218, 218, 218);
+}
