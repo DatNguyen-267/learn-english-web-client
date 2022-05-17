@@ -1,33 +1,46 @@
-import React from 'react'
-import './Part2.scss'
+import React from "react";
+import "./Part2.scss";
 
-export const Part2 = () => {
+export const Part2 = ({ big_question, handleSelect }) => {
   return (
-    <div className='part1'>
-      <div className='part1__heading'>
-        <audio controls src='https://www.anhngumshoa.com/uploads/sound/2020/1.mp3'></audio>
+    <div className="part1">
+      <div className="part2__heading">
+        <audio
+          controls
+          src="https://www.anhngumshoa.com/uploads/sound/2020/1.mp3"
+        ></audio>
       </div>
-      <div className='part1__qs'>
-        <div className='part1__qs-title'>Question 1:</div>
-        <div className='part1__qs-ls'>
-          <label htmlFor=""  className='part1__qs-item active' >
-            <input type="radio" name="answer-question-1" id="1"/>
-            <strong>A</strong>
-          </label>
-          <label htmlFor=""  className='part1__qs-item'>
-            <input type="radio" name="answer-question-1" id="1"/>
-            <strong>B</strong>
-          </label>
-          <label htmlFor=""  className='part1__qs-item'>
-            <input type="radio" name="answer-question-1" id="1"/>
-            <strong>C</strong>
-          </label>
-          <label htmlFor=""  className='part1__qs-item'>
-            <input type="radio" name="answer-question-1" id="1"/>
-            <strong>D</strong>
-          </label>
-        </div>
-      </div>
+      {big_question &&
+        big_question.sm_questions.map((item, index) => {
+          return (
+            <div className="part1__qs" key={index}>
+              <div className="part1__qs-title">
+                Question {big_question.start + index}:
+              </div>
+              <div className="part1__qs-ls">
+                {["A", "B", "C"].map((ans, index2) => (
+                  <label
+                    key={index2}
+                    htmlFor={`question-${big_question.start + index}-${ans}`}
+                    className="part1__qs-item"
+                  >
+                    <input
+                      type="radio"
+                      name={`question-${big_question.start + index}`}
+                      id={`question-${big_question.start + index}-${ans}`}
+                      data-ans={ans.toLowerCase()}
+                      data-number={big_question.start + index}
+                      onChange={handleSelect}
+                    />
+                    <strong>
+                      {index2 === 0 ? "A" : index2 === 1 ? "B" : "C"}
+                    </strong>
+                  </label>
+                ))}
+              </div>
+            </div>
+          );
+        })}
     </div>
-  )
-}
+  );
+};
