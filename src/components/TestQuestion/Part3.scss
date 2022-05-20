@@ -1,8 +1,11 @@
 .part3 {
   // padding-bottom: 100px;
 }
+.part3__qs {
+  margin-bottom: 24px;
+}
 .part3__qs-title { 
-  display: flex;
+  // display: flex;
   margin-bottom: 12px;
 }
 .part3__qs-title div{
@@ -16,7 +19,7 @@
 .part3__qs-ls {
   display: flex;
   flex-direction: column;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 .part3__qs-item {
   cursor: pointer;
@@ -29,6 +32,16 @@
   background-color: red;
   color: white;
   border-color: red;
+}
+.part3__qs-item.correct strong{
+  border-color: #34a853;
+  background-color: #34a853;
+  color: white;
+}
+.part3__qs-item.incorrect strong{
+  border-color: #ea4335;
+  background-color: #ea4335;
+  color: white;
 }
 .part3__qs-item input {
   display: none;

@@ -3,17 +3,29 @@ import "./Part7.scss";
 export const Part7 = ({ big_question, handleSelect }) => {
   return (
     <div className="part1">
-      <img
+      {/* <img
         src="https://www.anhngumshoa.com/uploads/images/userfiles/2021/06/22/image.png"
         alt=""
         className="part6__img"
-      />
+      /> */}
+      {big_question &&
+        big_question.content.map((item, index) => (
+          <div
+            className="part_content"
+            dangerouslySetInnerHTML={{ __html: big_question.content[index] }}
+          ></div>
+        ))}
+
       {big_question &&
         big_question.sm_questions.map((item, index) => {
           return (
-            <div className="part3__qs" key={index}>
+            <div
+              className="part3__qs"
+              key={index}
+              id={index !== 0 ? `target-${big_question.start + index}` : ""}
+            >
               <div className="part1__qs-title">
-                <div>Question {big_question.start + index}:</div>
+                <b>Question {big_question.start + index}: </b>
               </div>
               <div className="part3__qs-ls">
                 {["A", "B", "C", "D"].map((ans, index2) => (
@@ -51,78 +63,16 @@ export const Part7 = ({ big_question, handleSelect }) => {
                   </label>
                 ))}
               </div>
+              <div className="qs-explanation" style={{ display: "none" }}>
+                <b>Explanation: </b>
+                <br />
+                <div
+                  dangerouslySetInnerHTML={{ __html: item.explanation }}
+                ></div>
+              </div>
             </div>
           );
         })}
-      {/* <div className="part1__qs-title">
-        <div>Question 1: </div>
-      </div>
-      <div className="part3__qs-ls">
-        <label htmlFor="" className="part3__qs-item active">
-          <input type="radio" name="answer-question-1" id="1" />
-          <strong>A</strong>
-          <div>A meeting room is occupied.</div>
-        </label>
-        <label htmlFor="" className="part3__qs-item">
-          <input type="radio" name="answer-question-1" id="1" />
-          <strong>B</strong>
-          <div>A meeting room is occupied.</div>
-        </label>
-        <label htmlFor="" className="part3__qs-item">
-          <input type="radio" name="answer-question-1" id="1" />
-          <strong>C</strong>
-          <div>A meeting room is occupied.</div>
-        </label>
-        <label htmlFor="" className="part3__qs-item">
-          <input type="radio" name="answer-question-1" id="1" />
-          <strong>D</strong>
-          <div>A meeting room is occupied.</div>
-        </label>
-      </div>
-      <div className="part3__qs-ls">
-        <label htmlFor="" className="part3__qs-item active">
-          <input type="radio" name="answer-question-1" id="1" />
-          <strong>A</strong>
-          <div>A meeting room is occupied.</div>
-        </label>
-        <label htmlFor="" className="part3__qs-item">
-          <input type="radio" name="answer-question-1" id="1" />
-          <strong>B</strong>
-          <div>A meeting room is occupied.</div>
-        </label>
-        <label htmlFor="" className="part3__qs-item">
-          <input type="radio" name="answer-question-1" id="1" />
-          <strong>C</strong>
-          <div>A meeting room is occupied.</div>
-        </label>
-        <label htmlFor="" className="part3__qs-item">
-          <input type="radio" name="answer-question-1" id="1" />
-          <strong>D</strong>
-          <div>A meeting room is occupied.</div>
-        </label>
-      </div>
-      <div className="part3__qs-ls">
-        <label htmlFor="" className="part3__qs-item active">
-          <input type="radio" name="answer-question-1" id="1" />
-          <strong>A</strong>
-          <div>A meeting room is occupied.</div>
-        </label>
-        <label htmlFor="" className="part3__qs-item">
-          <input type="radio" name="answer-question-1" id="1" />
-          <strong>B</strong>
-          <div>A meeting room is occupied.</div>
-        </label>
-        <label htmlFor="" className="part3__qs-item">
-          <input type="radio" name="answer-question-1" id="1" />
-          <strong>C</strong>
-          <div>A meeting room is occupied.</div>
-        </label>
-        <label htmlFor="" className="part3__qs-item">
-          <input type="radio" name="answer-question-1" id="1" />
-          <strong>D</strong>
-          <div>A meeting room is occupied.</div>
-        </label>
-      </div> */}
     </div>
   );
 };

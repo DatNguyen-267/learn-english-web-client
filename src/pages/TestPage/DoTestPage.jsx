@@ -13,10 +13,15 @@ import { SERVER_URL } from "./../../constants/index";
 export const DoTestPage = () => {
   const [exam, setExam] = useState(undefined);
   const [lsAns, setlsAns] = useState([]);
+  const [amount, setAmount] = useState(0);
+  const [showModel, setShowModel] = useState(false);
+  const [showAns, setShowAns] = useState(false);
+  // const [lsCheckAns, setlsCheckAns] = useState([]);
 
   useEffect(() => {
-    console.log(exam);
+    // console.log(exam);
     console.log(lsAns);
+    // console.log(lsAns.length);
   }, [exam, lsAns]);
   const handleSelect = (e) => {
     console.log(e.target);
@@ -31,8 +36,8 @@ export const DoTestPage = () => {
       listBtn[i].parentNode.classList.remove("active");
     }
     input.parentNode.classList.add("active");
-    lsAns[number - 1].useAns = ans;
-    setlsAns({ ...lsAns });
+    lsAns[number - 1].userAns = ans;
+    setlsAns([...lsAns]);
   };
   useEffect(() => {
     const getExam = async () => {
@@ -60,18 +65,97 @@ export const DoTestPage = () => {
         for (let j = 1; j <= end - start + 1; j++) {
           newLsAns.push({
             ans: tempExam.big_questions[i].sm_questions[j - 1].correctAns,
-            useAns: "",
+            userAns: "",
           });
         }
         count = count + element.sm_questions.length;
       }
       tempExam.count = count;
       setExam({ ...tempExam });
-      setlsAns({ ...newLsAns });
+      setlsAns([...newLsAns]);
+      setAmount(newLsAns.length);
     }
   }, [exam]);
+  const handleSubmit = () => {
+    for (let i = 0; i < lsAns.length; i++) {
+      const lsInput = document.querySelectorAll(
+        `input[name="question-${i + 1}"]`
+      );
+      for (let j = 0; j < lsInput.length; j++) {
+        lsInput[j].style.pointerEvents = "none";
+        lsInput[j].parentElement.style.pointerEvents = "none";
+      }
+
+      let inputChecked = null;
+      for (let j = 0; j < lsInput.length; j++) {
+        if (lsInput[j].checked === true) inputChecked = lsInput[j];
+      }
+      if (inputChecked) {
+        const userAns = inputChecked.getAttribute("data-ans");
+        if (lsAns[i].ans === lsAns[i].userAns) {
+          inputChecked.parentElement.classList.remove("active");
+          inputChecked.parentElement.classList.add("correct");
+          document
+            .querySelector(`#ls-nav-qs-${i + 1}`)
+            .classList.remove("active");
+          document
+            .querySelector(`#ls-nav-qs-${i + 1}`)
+            .classList.add("correct");
+        } else {
+          inputChecked.parentElement.classList.remove("active");
+          inputChecked.parentElement.classList.add("incorrect");
+          document
+            .querySelector(`#question-${i + 1}-${lsAns[i].ans.toUpperCase()}`)
+            .parentElement.classList.add("correct");
+          document
+            .querySelector(`#ls-nav-qs-${i + 1}`)
+            .classList.remove("active");
+          document
+            .querySelector(`#ls-nav-qs-${i + 1}`)
+            .classList.add("incorrect");
+        }
+      } else {
+        document
+          .querySelector(`#question-${i + 1}-${lsAns[i].ans.toUpperCase()}`)
+          .parentElement.classList.add("incorrect");
+        document
+          .querySelector(`#ls-nav-qs-${i + 1}`)
+          .classList.add("incorrect");
+      }
+    }
+    const lsExplain = document.querySelectorAll(".qs-explanation");
+    for (let i = 0; i < lsExplain.length; i++) {
+      lsExplain[i].style.display = "block";
+    }
+
+    setShowAns((prev) => !prev);
+    setShowModel((prev) => !prev);
+  };
+  const handlePopup = () => {
+    setShowModel(true);
+  };
+  const handleHidePopup = () => {
+    setShowModel(false);
+  };
   return (
     <div className="grid wide">
+      {showModel && (
+        <div className="pop-up">
+          <div className="modal">
+            <div className="modal-overlay" onClick={handleHidePopup}></div>
+            <div className="dg-ts-pg__modal-body modal-body">
+              <div className="dg-ts-pg__modal-title">
+                Bạn chắc chắn muốn nộp bài
+              </div>
+              <div className="dg-ts-pg__modal-option">
+                <button onClick={handleHidePopup}>No</button>
+                <button onClick={handleSubmit}>Yes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="dg-ts-pg ">
         <div className="dg-ts-pg__left">
           <div className="dg-ts-pg__heading">Practice Full Test TOEIC</div>
@@ -89,16 +173,20 @@ export const DoTestPage = () => {
               PART 1: Look at the picture and listen to the sentences. Choose
               the sentence that best describes the picture:
             </div>
+
             {exam &&
               exam.count &&
               exam.big_questions.map((item, index) => {
                 if (item.type === "Part1") {
                   return (
-                    <Part1
-                      key={index}
-                      big_question={item}
-                      handleSelect={handleSelect}
-                    ></Part1>
+                    <div key={index} id={`target-${item.start}`}>
+                      <Part1
+                        showAns={showAns}
+                        big_question={item}
+                        handleSelect={handleSelect}
+                        // lsCheckAns={}
+                      ></Part1>
+                    </div>
                   );
                 }
               })}
@@ -111,11 +199,12 @@ export const DoTestPage = () => {
               exam.big_questions.map((item, index) => {
                 if (item.type === "Part2") {
                   return (
-                    <Part2
-                      key={index}
-                      big_question={item}
-                      handleSelect={handleSelect}
-                    ></Part2>
+                    <div key={index} id={`target-${item.start}`}>
+                      <Part2
+                        big_question={item}
+                        handleSelect={handleSelect}
+                      ></Part2>
+                    </div>
                   );
                 }
               })}
@@ -128,11 +217,12 @@ export const DoTestPage = () => {
               exam.big_questions.map((item, index) => {
                 if (item.type === "Part3") {
                   return (
-                    <Part3
-                      key={index}
-                      big_question={item}
-                      handleSelect={handleSelect}
-                    ></Part3>
+                    <div key={index} id={`target-${item.start}`}>
+                      <Part3
+                        big_question={item}
+                        handleSelect={handleSelect}
+                      ></Part3>
+                    </div>
                   );
                 }
               })}
@@ -145,11 +235,12 @@ export const DoTestPage = () => {
               exam.big_questions.map((item, index) => {
                 if (item.type === "Part4") {
                   return (
-                    <Part4
-                      key={index}
-                      big_question={item}
-                      handleSelect={handleSelect}
-                    ></Part4>
+                    <div key={index} id={`target-${item.start}`}>
+                      <Part4
+                        big_question={item}
+                        handleSelect={handleSelect}
+                      ></Part4>
+                    </div>
                   );
                 }
               })}
@@ -161,11 +252,12 @@ export const DoTestPage = () => {
               exam.big_questions.map((item, index) => {
                 if (item.type === "Part5") {
                   return (
-                    <Part5
-                      key={index}
-                      big_question={item}
-                      handleSelect={handleSelect}
-                    ></Part5>
+                    <div key={index} id={`target-${item.start}`}>
+                      <Part5
+                        big_question={item}
+                        handleSelect={handleSelect}
+                      ></Part5>
+                    </div>
                   );
                 }
               })}
@@ -177,11 +269,12 @@ export const DoTestPage = () => {
               exam.big_questions.map((item, index) => {
                 if (item.type === "Part6") {
                   return (
-                    <Part6
-                      key={index}
-                      big_question={item}
-                      handleSelect={handleSelect}
-                    ></Part6>
+                    <div key={index} id={`target-${item.start}`}>
+                      <Part6
+                        big_question={item}
+                        handleSelect={handleSelect}
+                      ></Part6>
+                    </div>
                   );
                 }
               })}
@@ -193,37 +286,60 @@ export const DoTestPage = () => {
               exam.big_questions.map((item, index) => {
                 if (item.type === "Part7") {
                   return (
-                    <Part7
-                      key={index}
-                      big_question={item}
-                      handleSelect={handleSelect}
-                    ></Part7>
+                    <div key={index} id={`target-${item.start}`}>
+                      <Part7
+                        big_question={item}
+                        handleSelect={handleSelect}
+                      ></Part7>
+                    </div>
                   );
                 }
               })}
           </div>
           <div className="dg-ts-pg__footer">
-            <button>Chấm điểm</button>
+            {!showAns && <button onClick={handlePopup}>Chấm điểm</button>}
           </div>
         </div>
         <div className="dg-ts-pg__right">
           <div className="dg-ts-pg__right-heading">
             <div className="dg-ts-pg__right-heading-submit">
-              <i class="fa fa-check"></i> Chấm điểm
+              <i className="fa fa-check"></i> Chấm điểm
             </div>
             <div className="dg-ts-pg__right-heading-time">01 : 30 : 00</div>
           </div>
           <div className="dg-ts-pg__right-ls">
             {/* <div className="row"> */}
-            {Array.apply(null, Array(150))
-              .map(function (x, i) {
-                return i;
-              })
-              .map((item, index) => (
+            {/* {amount !== 0 &&
+              Array.apply(null, Array(amount))
+                .map(function (x, i) {
+                  return i;
+                })
+                .map((item, index) => (
+                  // <div className="" key={index}>
+                  <a
+                    className="dg-ts-pg__right-item"
+                    key={index}
+                    href={`#target-${index + 1}`}
+                  >
+                    <div> {item + 1}</div>
+                  </a>
+                  // </div>
+                ))} */}
+            {lsAns.length > 0 &&
+              lsAns.map((item, index) => (
                 // <div className="" key={index}>
-                <div className="dg-ts-pg__right-item">
-                  <div> {item + 1}</div>
-                </div>
+                <a
+                  className={
+                    item.userAns !== ""
+                      ? " dg-ts-pg__right-item active"
+                      : " dg-ts-pg__right-item"
+                  }
+                  id={`ls-nav-qs-${index + 1}`}
+                  key={index}
+                  href={`#target-${index + 1}`}
+                >
+                  <div> {index + 1}</div>
+                </a>
                 // </div>
               ))}
             {/* </div> */}

@@ -13,11 +13,16 @@ export const Part3 = ({ big_question, handleSelect }) => {
       {big_question &&
         big_question.sm_questions.map((item, index) => {
           return (
-            <div className="part3__qs" key={index}>
+            <div
+              className="part3__qs"
+              key={index}
+              id={index !== 0 ? `target-${big_question.start + index}` : ""}
+            >
               <div className="part3__qs-title">
-                <div>Question {big_question.start + index}:</div>
-                <span> {item.content}</span>
+                <b>Question {big_question.start + index}: </b>
+                {item.content}
               </div>
+
               <div className="part3__qs-ls">
                 {["A", "B", "C", "D"].map((ans, index2) => (
                   <label
@@ -57,6 +62,13 @@ export const Part3 = ({ big_question, handleSelect }) => {
             </div>
           );
         })}
+      <div className="qs-explanation" style={{ display: "none" }}>
+        <b>Explanation: </b>
+        <br />
+        <div
+          dangerouslySetInnerHTML={{ __html: big_question.explanation }}
+        ></div>
+      </div>
     </div>
   );
 };

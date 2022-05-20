@@ -3,17 +3,23 @@ import "./Part6.scss";
 export const Part6 = ({ big_question, handleSelect }) => {
   return (
     <div className="part1">
-      <img
-        src="https://www.anhngumshoa.com/uploads/images/userfiles/2021/06/22/image.png"
-        alt=""
-        className="part6__img"
-      />
+      {big_question &&
+        big_question.content.map((item, index) => (
+          <div
+            className="part_content"
+            dangerouslySetInnerHTML={{ __html: big_question.content[index] }}
+          ></div>
+        ))}
       {big_question &&
         big_question.sm_questions.map((item, index) => {
           return (
-            <div className="part3__qs" key={index}>
+            <div
+              className="part3__qs"
+              key={index}
+              id={index !== 0 ? `target-${big_question.start + index}` : ""}
+            >
               <div className="part1__qs-title">
-                <div>Question {big_question.start + index}:</div>
+                <b>Question {big_question.start + index}:</b>
               </div>
               <div className="part3__qs-ls">
                 {["A", "B", "C", "D"].map((ans, index2) => (
@@ -50,6 +56,13 @@ export const Part6 = ({ big_question, handleSelect }) => {
                     </div>
                   </label>
                 ))}
+              </div>
+              <div className="qs-explanation" style={{ display: "none" }}>
+                <b>Explanation: </b>
+                <br />
+                <div
+                  dangerouslySetInnerHTML={{ __html: item.explanation }}
+                ></div>
               </div>
             </div>
           );

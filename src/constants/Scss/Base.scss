@@ -45,6 +45,9 @@
     --border-color-2: #bbb8b8;
     --border-color-3: #929191;
 }
+html {
+    scroll-behavior:smooth;
+  }
 /* KEY FRAME */
 @keyframes fadeIn {
     from {
