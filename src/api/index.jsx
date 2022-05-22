@@ -17,3 +17,6 @@ export const fetchLsCourse = ({id}) => axios.get(`${URL}/listen-topic/course/${i
 export const fetchLsPart = ({id}) => axios.get(`${URL}/listen-topic/part/${id}`)
 
 
+export const fetchGrammar = () => axios.get(`${URL}/grammar-topic`)
+export const findTopicGrammar = ({id}) => axios.get(`${URL}/grammar-topic/${id}`)
+

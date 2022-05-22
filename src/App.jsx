@@ -15,7 +15,8 @@ import axios from "axios";
 import {SERVER_URL} from './constants/index'
 import { fetchUser } from "./api";
 import { UserPage } from "./pages/UserPage/UserPage";
-import GrammarPage from './pages/CoursePage/GrammarPage'  
+import GrammarPage from './pages/GrammarPage/GrammarPage';  
+import LearnGrammarPage from './pages/GrammarPage/LearnGrammarPage';  
 import { VocaPage } from "./pages/VocaPage/VocaPage";
 
 import ListenCoursePage from "./pages/ListenCoursePage/ListenCoursePage";
@@ -74,7 +75,8 @@ function App() {
               {/* Navigate là chuyển hướng về trang khác */}
               <Route path="home" element={<HomePage />}></Route>
               <Route path="/user-infor" element={<UserPage />}></Route>
-              <Route path="course/grammar" element={<GrammarPage></GrammarPage>}></Route>
+              <Route path="grammar" element={<GrammarPage></GrammarPage>}></Route>
+              <Route path="grammar/:id" element={<LearnGrammarPage></LearnGrammarPage>}></Route>
               <Route path="course/voca/:id" element={<VocaPage />}></Route>
               <Route path="course" element={<CoursePage />}></Route>
               <Route path="practice-listen" element={<PracticeListenPage/>}></Route>

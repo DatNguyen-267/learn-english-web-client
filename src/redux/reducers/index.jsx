@@ -14,6 +14,8 @@ import speakReducer from "./speakReducer";
 import popUpReducer from "./popUpReducer";
 import userProcessReducer from "./userProcessReducer";
 
+import grammarReducer from "./grammarReducer";
+import grammarTopicReducer from "./grammarTopicReducer";
 
 const rootReducer = combineReducers({
     course: courseReducer,
@@ -28,7 +30,9 @@ const rootReducer = combineReducers({
     auth: authReducer,
     speak: speakReducer,
     popup: popUpReducer,
-    userProcess: userProcessReducer
+    userProcess: userProcessReducer,
+    grammar: grammarReducer,
+    grammarTopic: grammarTopicReducer
 })
 
 export default rootReducer

@@ -5,6 +5,7 @@ import courseSaga from './courseSaga'
 import loadingSaga from './loadingSaga'
 import practiceListenSaga from './practiceListenSaga'
 import { settingSpeakSaga } from './settingSpeakSaga'
+import grammarSaga from './grammarSaga'
 
 
 function *mySaga() {
@@ -14,6 +15,7 @@ function *mySaga() {
     practiceListenSaga(),
     settingSpeakSaga(),
     loadingSaga(),
+    grammarSaga(),
   ])
 }
 

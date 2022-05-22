@@ -76,7 +76,7 @@ function Header() {
                 </Link>
               </li>
               <li onClick={(e) => handleClick(e, 2)} className="navbar-item">
-                <Link className={number === 2 ? "active" : ""} to="/course/grammar" >
+                <Link className={number === 2 ? "active" : ""} to="/grammar" >
                   <span>Ngữ pháp</span>
                 </Link>
               </li>
