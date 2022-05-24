@@ -1,7 +1,7 @@
 .part1 {
   padding-bottom: 32px;
 }
-.part1__heading{
+.part1__heading {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -15,12 +15,11 @@
 .part1__heading audio {
   margin-top: 12px;
 }
-.part1__qs{
-
+.part1__qs {
 }
-.part1__qs-title{
+.part1__qs-title {
   font-size: 16px;
-  
+
   padding-bottom: 6px;
 }
 .part1__qs-title--bold {
@@ -35,17 +34,17 @@
   cursor: pointer;
   margin: 12px;
 }
-.part1__qs-item.active strong{
-  background-color: #ee4046;
+.part1__qs-item.active strong {
+  background-color: #1a78c2;
   color: white;
-  border-color: #ee4046;
+  border-color: #1a78c2;
 }
-.part1__qs-item.correct strong{
+.part1__qs-item.correct strong {
   border-color: #34a853;
   background-color: #34a853;
   color: white;
 }
-.part1__qs-item.incorrect strong{
+.part1__qs-item.incorrect strong {
   border-color: #ea4335;
   background-color: #ea4335;
   color: white;

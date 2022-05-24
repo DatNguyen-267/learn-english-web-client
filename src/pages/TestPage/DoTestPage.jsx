@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Children, useEffect, useState } from "react";
 import { Part1 } from "../../components/TestQuestion/Part1";
 import { Part2 } from "../../components/TestQuestion/Part2";
 import { Part3 } from "../../components/TestQuestion/Part3";
@@ -6,25 +6,85 @@ import { Part4 } from "../../components/TestQuestion/Part4";
 import { Part5 } from "../../components/TestQuestion/Part5";
 import { Part6 } from "../../components/TestQuestion/Part6";
 import { Part7 } from "../../components/TestQuestion/Part7";
+import { getRemainingTimeUntilMsTimestamp } from "../../util/CountdownTimer";
 import "./DoTestPage.scss";
 import axios from "axios";
-
 import { SERVER_URL } from "./../../constants/index";
+import dayjs from "dayjs";
+import { ModelTimeOut } from "../../util/ModalTimeOut/ModalTimeOut";
+import { Chart as ChartJS, registerables } from "chart.js";
+import { Chart, Bar, Pie, Doughnut } from "react-chartjs-2";
+import { DoughnutChart } from "../../util/Chart/DoughnutChart";
+import { useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import * as actions from "./../../redux/actions/index";
+ChartJS.register(...registerables);
+
 export const DoTestPage = () => {
+  const dispatch = useDispatch();
+
   const [exam, setExam] = useState(undefined);
   const [lsAns, setlsAns] = useState([]);
   const [amount, setAmount] = useState(0);
   const [showModel, setShowModel] = useState(false);
   const [showAns, setShowAns] = useState(false);
-  // const [lsCheckAns, setlsCheckAns] = useState([]);
+  const [showPopUpTimeOut, setShowPopUpTimeOut] = useState(false);
+  const [startTime, setStartTime] = useState(null);
+  const [chartData, setChartData] = useState([]);
+  const [result, setResult] = useState(null);
+  const [intervalId, setIntervalId] = useState(null);
+  const search = useLocation().search;
+  const testId = new URLSearchParams(search).get("id-test");
+  const [remainingTime, setRemainingTime] = useState({
+    seconds: "00",
+    minutes: "00",
+    hours: "00",
+    days: "00",
+  });
+  // console.log(remainingTime);
 
   useEffect(() => {
-    // console.log(exam);
+    console.log(exam);
     console.log(lsAns);
-    // console.log(lsAns.length);
-  }, [exam, lsAns]);
+    console.log(result);
+  }, [exam, lsAns, result]);
+  function calculateTime() {
+    let hours = 0;
+    let minutes = 0;
+    let seconds = 0;
+    if (exam.type == "FULL TEST") {
+      seconds = 22;
+    } else {
+      seconds = 22;
+    }
+    let now2 = new dayjs()
+      .add(0, "hour")
+      .add(0, "minute")
+      .add(seconds, "second");
+    return now2.unix();
+  }
+  useEffect(() => {
+    if (exam) {
+      setStartTime(calculateTime());
+      const intervalId = setInterval(() => {
+        setRemainingTime((prev) => {
+          const time = getRemainingTimeUntilMsTimestamp(startTime);
+          if (
+            time.hours == "00" &&
+            time.minutes == "00" &&
+            time.seconds == "00"
+          ) {
+            setShowPopUpTimeOut((prev) => true);
+            clearInterval(intervalId);
+          }
+          return time;
+        });
+      }, 1000);
+      setIntervalId((prev) => intervalId);
+      return () => clearInterval(intervalId);
+    }
+  }, [startTime, exam]);
   const handleSelect = (e) => {
-    console.log(e.target);
     let input = e.target;
     let number = input.getAttribute("data-number");
     let ans = input.getAttribute("data-ans");
@@ -40,14 +100,14 @@ export const DoTestPage = () => {
     setlsAns([...lsAns]);
   };
   useEffect(() => {
+    dispatch(actions.onLoading());
     const getExam = async () => {
-      const res = await axios.get(
-        `${SERVER_URL}/exam/${"627fb2ff4d45f494e01322c8"}`
-      );
-      console.log(res);
+      const res = await axios.get(`${SERVER_URL}/exam/${testId}`);
+
       setExam({ ...res.data[0] });
     };
     getExam();
+    dispatch(actions.unLoadingRequest());
     return () => {};
   }, []);
   useEffect(() => {
@@ -76,8 +136,62 @@ export const DoTestPage = () => {
       setAmount(newLsAns.length);
     }
   }, [exam]);
+  const calResult = () => {
+    //{ type: "Part1", correct: 0, total: 0 }
+    let parts = [];
+    for (let i = 0; i < exam.big_questions.length; i++) {
+      let countCorrect = 0;
+      for (
+        let j = exam.big_questions[i].start;
+        j <= exam.big_questions[i].end;
+        j++
+      ) {
+        if (lsAns[j - 1].ans == lsAns[j - 1].userAns) {
+          countCorrect++;
+        }
+      }
+      console.log(
+        "type:" + exam.big_questions[i].type + "correct: " + countCorrect
+      );
+      console.log(parts);
+      const index = parts.findIndex(
+        (item) => item.type == exam.big_questions[i].type
+      );
+      console.log("index:" + index);
+      if (index !== -1) {
+        parts[index] = {
+          ...parts[index],
+          correct: parts[index].correct + countCorrect,
+          total:
+            parts[index].total +
+            (exam.big_questions[i].end - exam.big_questions[i].start + 1),
+        };
+      } else {
+        parts.push({
+          type: exam.big_questions[i].type,
+          correct: countCorrect,
+          total: exam.big_questions[i].end - exam.big_questions[i].start + 1,
+        });
+      }
+    }
+    let countTotalCorrect = 0;
+    for (let i = 0; i < parts.length; i++) {
+      countTotalCorrect += parts[i].correct;
+    }
+    setResult({ totalCorrect: countTotalCorrect, parts });
+  };
   const handleSubmit = () => {
+    let countCorrect = 0;
+    let countIncorrect = 0;
+    let countNoPick = 0;
+    calResult();
+    clearInterval(intervalId);
     for (let i = 0; i < lsAns.length; i++) {
+      if (lsAns[i].userAns === "") {
+        countNoPick++;
+      } else if (lsAns[i].ans == lsAns[i].userAns) {
+        countCorrect++;
+      } else countIncorrect++;
       const lsInput = document.querySelectorAll(
         `input[name="question-${i + 1}"]`
       );
@@ -127,9 +241,12 @@ export const DoTestPage = () => {
     for (let i = 0; i < lsExplain.length; i++) {
       lsExplain[i].style.display = "block";
     }
-
-    setShowAns((prev) => !prev);
-    setShowModel((prev) => !prev);
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    setShowAns((prev) => true);
+    setShowModel((prev) => false);
+    setChartData((prev) => [countCorrect, countIncorrect + countNoPick]);
+    // setResult({ correct: countCorrect, parts: parts });
   };
   const handlePopup = () => {
     setShowModel(true);
@@ -137,8 +254,15 @@ export const DoTestPage = () => {
   const handleHidePopup = () => {
     setShowModel(false);
   };
+  const handleAcceptPopUpTimeOut = () => {
+    setShowPopUpTimeOut((prev) => false);
+    handleSubmit();
+  };
   return (
     <div className="grid wide">
+      {showPopUpTimeOut && (
+        <ModelTimeOut handleAccept={handleAcceptPopUpTimeOut}></ModelTimeOut>
+      )}
       {showModel && (
         <div className="pop-up">
           <div className="modal">
@@ -168,6 +292,44 @@ export const DoTestPage = () => {
             <button className="dg-ts-pg__nav-item">Part 6</button>
             <button className="dg-ts-pg__nav-item">Part 7</button>
           </div> */}
+          {showAns && (
+            <div className="dg-ts-pg__result">
+              <div className="dg-ts-pg__result-chart">
+                <DoughnutChart data={chartData} options={null}></DoughnutChart>
+              </div>
+              <div className="dg-ts-pg__analysis">
+                <div className="dg-ts-pg__analysis-group">
+                  <div className="dg-ts-pg__analysis-heading">Kết quả</div>
+                  <div className="dg-ts-pg__analysis-sub">
+                    {chartData ? chartData[0] : ""}/{lsAns ? lsAns.length : 0}
+                  </div>
+                </div>
+                <div className="dg-ts-pg__analysis-group">
+                  <div className="dg-ts-pg__analysis-heading">
+                    Chi tiết từng part
+                  </div>
+                  <div className="row">
+                    {result &&
+                      result.parts.map((item, index) => (
+                        <div className="col l-4">
+                          <span className="dg-ts-pg__analysis-item">
+                            <span style={{ color: "#444" }}>{item.type}: </span>
+                            <span style={{ color: "#3CAE28", fontWeight: 700 }}>
+                              {item.correct}
+                            </span>
+                            <span></span>/
+                            <span style={{ color: "#333", fontWeight: 700 }}>
+                              {item.total}
+                            </span>
+                          </span>
+                        </div>
+                      ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
           <div className="dg-ts-pg__content">
             <div className="dg-ts-pg__content-title">
               PART 1: Look at the picture and listen to the sentences. Choose
@@ -302,32 +464,17 @@ export const DoTestPage = () => {
         </div>
         <div className="dg-ts-pg__right">
           <div className="dg-ts-pg__right-heading">
-            <div className="dg-ts-pg__right-heading-submit">
+            {/* <div className="dg-ts-pg__right-heading-submit">
               <i className="fa fa-check"></i> Chấm điểm
+            </div> */}
+            <div className="dg-ts-pg__right-heading-time">
+              {remainingTime.hours}:{remainingTime.minutes}:
+              {remainingTime.seconds}
             </div>
-            <div className="dg-ts-pg__right-heading-time">01 : 30 : 00</div>
           </div>
           <div className="dg-ts-pg__right-ls">
-            {/* <div className="row"> */}
-            {/* {amount !== 0 &&
-              Array.apply(null, Array(amount))
-                .map(function (x, i) {
-                  return i;
-                })
-                .map((item, index) => (
-                  // <div className="" key={index}>
-                  <a
-                    className="dg-ts-pg__right-item"
-                    key={index}
-                    href={`#target-${index + 1}`}
-                  >
-                    <div> {item + 1}</div>
-                  </a>
-                  // </div>
-                ))} */}
             {lsAns.length > 0 &&
               lsAns.map((item, index) => (
-                // <div className="" key={index}>
                 <a
                   className={
                     item.userAns !== ""
@@ -340,9 +487,7 @@ export const DoTestPage = () => {
                 >
                   <div> {index + 1}</div>
                 </a>
-                // </div>
               ))}
-            {/* </div> */}
           </div>
         </div>
       </div>

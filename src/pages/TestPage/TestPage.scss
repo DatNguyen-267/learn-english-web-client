@@ -1,4 +1,4 @@
-.test-item{
+.test-item {
   display: flex;
   flex-direction: row;
   padding: 8px 8px;
@@ -8,8 +8,8 @@
   cursor: pointer;
   margin-bottom: 36px;
 }
-.test-item__img{
-  padding-top:30%;
+.test-item__img {
+  padding-top: 30%;
   width: 30%;
   height: 50px;
   // background-image: url('https://sabercollege.edu/wp-content/uploads/2021/12/PTA_2022.jpg');
@@ -23,7 +23,7 @@
   flex-direction: column;
   margin: 0 0 8px 16px;
 }
-.test-item__name{
+.test-item__name {
   font-size: 20px;
   font-weight: 700;
 }
@@ -32,12 +32,11 @@
   flex-direction: row;
   align-items: center;
 }
-.test-item__time{
+.test-item__time {
   margin-right: 20px;
-  
 }
 
-.test-item__ques{
+.test-item__ques {
   position: relative;
 }
 .test-item__ques::before {
@@ -50,4 +49,43 @@
   transform: translateY(30%);
   background-color: black;
   border-left: 1px solid rgb(218, 218, 218);
+}
+.test-pg__modal-body {
+}
+.modal-body {
+  padding: 32px !important;
+}
+.test-pg__modal-title {
+  font-size: 22px;
+  font-weight: 900;
+  color: #ff3966;
+}
+.test-pg__modal-sub-title {
+  font-weight: 500;
+  font-size: 16px;
+}
+.test-pg__modal-sub-title span {
+}
+.test-pg__modal-option {
+  margin-top: 12px;
+}
+.test-pg__modal-option button {
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin: 0 16px;
+  // font-weight: 600;
+  font-size: 14px;
+}
+.test-pg__modal-option button:nth-child(1) {
+  // background-color: black;
+  border: 1px solid #c4c4c4;
+  background-color: white;
+  color: black;
+}
+.test-pg__modal-option button:nth-child(2) {
+  background-color: #ff3966;
+  color: whitesmoke;
 }

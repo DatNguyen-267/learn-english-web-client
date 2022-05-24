@@ -5,7 +5,7 @@ export const Part6 = ({ big_question, handleSelect }) => {
     <div className="part1">
       {big_question &&
         big_question.content.map((item, index) => (
-          <div
+          <div key={index}
             className="part_content"
             dangerouslySetInnerHTML={{ __html: big_question.content[index] }}
           ></div>
@@ -40,19 +40,19 @@ export const Part6 = ({ big_question, handleSelect }) => {
                       {index2 === 0
                         ? "A"
                         : index2 === 1
-                        ? "B"
-                        : index2 === 2
-                        ? "C"
-                        : "D"}
+                          ? "B"
+                          : index2 === 2
+                            ? "C"
+                            : "D"}
                     </strong>
                     <div>
                       {index2 === 0
                         ? item.a
                         : index2 === 1
-                        ? item.b
-                        : index2 === 2
-                        ? item.c
-                        : item.d}
+                          ? item.b
+                          : index2 === 2
+                            ? item.c
+                            : item.d}
                     </div>
                   </label>
                 ))}

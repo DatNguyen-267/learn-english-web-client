@@ -6,10 +6,9 @@
   min-height: 120px !important;
   width: 250px !important;
 }
-.dg-ts-pg__modal-title{
-
+.dg-ts-pg__modal-title {
 }
-.dg-ts-pg__modal-option{
+.dg-ts-pg__modal-option {
   display: flex;
   align-items: center;
 }
@@ -23,11 +22,11 @@
   border: 1px solid #4455;
 }
 .dg-ts-pg__modal-option button:nth-child(1):hover {
-  color:white;
+  color: white;
   background-color: #333;
 }
 .dg-ts-pg__modal-option button:nth-child(2):hover {
-  color:white;
+  color: white;
   background-color: #d45a5a;
 }
 .dg-ts-pg {
@@ -186,4 +185,41 @@
 }
 .dg-ts-pg__right::-webkit-scrollbar {
   width: 5px;
+}
+
+.dg-ts-pg__result {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 12px 0;
+}
+.dg-ts-pg__result-chart {
+  flex: 30%;
+}
+.dg-ts-pg__analysis {
+  flex: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.dg-ts-pg__analysis-group {
+}
+.dg-ts-pg__analysis-heading {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+}
+.dg-ts-pg__analysis-sub {
+  width: 100%;
+  text-align: center;
+  margin-top: -6px;
+  margin-bottom: 12px;
+  color: #3cae28;
+  font-weight: 900;
+  font-size: 32px;
 }
