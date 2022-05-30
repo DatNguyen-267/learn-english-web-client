@@ -5,7 +5,7 @@ import LsCourse from '../LsCourse/LsCourse';
 function LsPart({part}) {
     
     return (
-        <div className="col l-6 m-6 c-12">
+        <div className="col l-4 m-6 c-12">
              <Link to={`/practice-listen/part/${part._id}`}>
                 <div className="part" >
                     <div className="part__header">

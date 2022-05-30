@@ -16,7 +16,9 @@ export const fetchPracticeListen = () => axios.get(`${URL}/listen-topic`)
 export const fetchLsCourse = ({id}) => axios.get(`${URL}/listen-topic/course/${id}`)
 export const fetchLsPart = ({id}) => axios.get(`${URL}/listen-topic/part/${id}`)
 
-
+//GRAMMAR
 export const fetchGrammar = () => axios.get(`${URL}/grammar-topic`)
 export const findTopicGrammar = ({id}) => axios.get(`${URL}/grammar-topic/${id}`)
 
+//STORE
+export const findStoreWord = ({id}) => axios.get(`${URL}/store/id_user/${id}`)

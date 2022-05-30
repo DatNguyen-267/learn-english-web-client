@@ -16,6 +16,7 @@ import userProcessReducer from "./userProcessReducer";
 
 import grammarReducer from "./grammarReducer";
 import grammarTopicReducer from "./grammarTopicReducer";
+import storeReducer from "./storeReducer";
 
 const rootReducer = combineReducers({
     course: courseReducer,
@@ -32,7 +33,8 @@ const rootReducer = combineReducers({
     popup: popUpReducer,
     userProcess: userProcessReducer,
     grammar: grammarReducer,
-    grammarTopic: grammarTopicReducer
+    grammarTopic: grammarTopicReducer,
+    store: storeReducer 
 })
 
 export default rootReducer

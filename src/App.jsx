@@ -22,6 +22,7 @@ import { VocaPage } from "./pages/VocaPage/VocaPage";
 import ListenCoursePage from "./pages/ListenCoursePage/ListenCoursePage";
 import { PopUpLogin } from "./util/PopUpLogin/PopUpLogin";
 import { VocaLearnPage } from "./pages/LearningPage/VocaLearnPage";
+import StorePage from "./pages/StorePage/StorePage";
 
 axios.defaults.withCredentials = true;
 function App() {
@@ -32,7 +33,7 @@ function App() {
   const popup = useSelector(state => state.popup)
   
 
-  
+  console.log(auth)
   useEffect(()=> {
     const firstLogin = localStorage.getItem('firstLogin')
     if (firstLogin) {
@@ -55,12 +56,12 @@ function App() {
         // console.log(token)
         return fetchUser(token).then((res)=> {
           dispatch(actions.get_user(res.data))
-          // console.log(res)
+          console.log(res)
         })
       }
       getUser();
     }
-  }, [auth.isLogged])
+  }, [auth.isLogged, token])
   return (
     <div >
         { popup.login &&<PopUpLogin></PopUpLogin>}
@@ -81,6 +82,7 @@ function App() {
               <Route path="course" element={<CoursePage />}></Route>
               <Route path="practice-listen" element={<PracticeListenPage/>}></Route>
               <Route path="practice-listen/course/:id" element={<ListenCoursePage/>}></Route>
+              <Route path="store" element={<StorePage/>}></Route>
               <Route path="*" element={<NotFoundFage />}></Route>
             </Routes>
           </div>

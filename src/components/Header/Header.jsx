@@ -91,9 +91,9 @@ function Header() {
                 </Link>
               </li>
               <li onClick={handleClick} className="navbar-item">
-                <a href="">
+                <Link className={number === 5 ? "active" : ""} to="/store">
                   <span>Của Tôi</span>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
