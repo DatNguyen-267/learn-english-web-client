@@ -49,6 +49,29 @@ function StorePage() {
         speak.text = value;
         speechSynthesis.speak(speak)
     }
+    const handleDelete = (id, user) => {
+        console.log("word_id: ",id)
+        console.log("user_id: ",user._id)
+        try {
+            const removeWordToStore = async () => {
+              let res = await axios.post(
+                `${SERVER_URL}/courses/voca/removeWordOfStore`,
+                {
+                  idWord: id,
+                },
+                {
+                  headers: { Authorization: token },
+                }
+              );
+              if (res.data === "success") {
+                dispatch(actions.findStoreWordRequest(user._id))  
+              }
+              console.log(res);
+            };
+            removeWordToStore();
+          } catch (error) {}
+          
+    }
     return (
       <div className="grid wide"  >
             <div class="store-page-header">
@@ -78,7 +101,9 @@ function StorePage() {
                                                 <i class="store-item__right-icon fas fa-volume-up" onClick={()=>handleSpeech(item.english)}>
                                                     <audio src={`${item.audio}`}></audio>
                                                 </i>
+                                                <i class="store-item__right-icon fas fa-window-close" onClick={()=>handleDelete(item._id, user)}></i>
                                             </div>
+                                           
                                         </div>
                                         {
                                             item.meanings.map((item2,index2)=>{
