@@ -96,3 +96,32 @@
     background-color: var(--dark-blue);
     color: white;
   }
+  .store-page__action{
+    margin-top: 15px;
+    display: flex;
+    flex-direction:row;
+  }
+  .store-page__action-login{
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: var(--primary-color);
+    padding: 9px 20px;
+    cursor: pointer;
+    border-radius: 15px;
+  }
+  .store-page__sub{
+    margin-top: 14px;
+    margin-left: 12px;
+    font-size: 14px;
+   
+    color: var(--text-color) ;
+    display: flex;
+    flex-direction: column;
+    vertical-align:middle;
+    text-align: center;
+    justify-content: center;
+  }
+  .store-page-content-no-login{
+    display: flex;
+  }
