@@ -25,7 +25,8 @@ export const VocaLearnPage = () => {
   const token = useSelector((state) => state.token);
   const loading = useSelector((state) => state.loading);
   const navigate = useNavigate();
-
+  console.log(courseId);
+  console.log(topicId);
   useEffect(() => {
     dispatch(actions.onLoading());
     const firstLogin = localStorage.getItem("firstLogin");

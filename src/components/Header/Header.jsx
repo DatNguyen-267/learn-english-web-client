@@ -43,7 +43,8 @@ function Header() {
       avatar.addEventListener("click", () => {
         tippy.style.display = "block";
       });
-      avatar.addEventListener("blur", blurFunc);
+      // avatar.addEventListener("blur", blurFunc);
+      tippy.addEventListener("blur", blurFunc);
 
       window.addEventListener("mousedown", function (event) {
         if (event.target === avatar && tippy.style.display === "none") {
@@ -130,11 +131,11 @@ function Header() {
                     </div>
                   </div>
                   <div className="menu__user-body">
-                    <div className="menu__user-group">
+                    {/* <div className="menu__user-group">
                       <hr />
                       <a className="menu__user-group-item">Khóa học của tôi</a>
                       <a className="menu__user-group-item">Trang của tôi</a>
-                    </div>
+                    </div> */}
                     <div className="menu__user-group">
                       <hr />
                       <div

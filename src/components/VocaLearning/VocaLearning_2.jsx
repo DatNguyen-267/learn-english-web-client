@@ -415,7 +415,7 @@ export const VocaLearning_2 = ({ topic, courseId }) => {
         });
       }
       await getNextAudio(listCpn[currentIndex].word.english);
-
+      await sleep(1500);
       setIsCorrect(undefined);
       handleNext();
       setListCpn([...listCpn]);
@@ -548,7 +548,7 @@ export const VocaLearning_2 = ({ topic, courseId }) => {
                 className="btn learn__body-action-btn-incorrect"
                 onClick={handleIDontKnow}
               >
-                <i class="fa fa-exclamation"></i>
+                <i className="fa fa-exclamation"></i>
               </button>
             )}
             {/* <div className='learn__body-action-btn-tool'>

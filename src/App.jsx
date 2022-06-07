@@ -93,6 +93,10 @@ function App() {
               element={<LearnGrammarPage></LearnGrammarPage>}
             ></Route>
             <Route path="course/voca/:id" element={<VocaPage />}></Route>
+            <Route
+              path="course/voca/list-word"
+              element={<ListWordPage />}
+            ></Route>
             <Route path="course" element={<CoursePage />}></Route>
             <Route
               path="practice-listen"

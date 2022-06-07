@@ -61,7 +61,6 @@ ReactDOM.render(
           {/* <Route path="/test" element={<ProgressBar />}></Route> */}
           <Route path="/voca-review" element={<VocaReviewPage />}></Route>
 
-          <Route path="/test" element={<ProgressBar />}></Route>
           <Route path="/end" element={<ListenQuestionEnd />}></Route>
         </Routes>
       </React.StrictMode>

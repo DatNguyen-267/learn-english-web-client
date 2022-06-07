@@ -9,7 +9,9 @@ export const VocaInfo = ({ data, err }) => {
   const { speak, speakSlow } = useSelector((state) => state.speak);
   const token = useSelector((state) => state.token);
   const [isSave, setIsSave] = useState(data.isSave);
-
+  useEffect(() => {
+    setIsSave((prev) => data.isSave);
+  });
   const handleSpeech = () => {
     // speak.text = data.english;
     // speechSynthesis.speak(speak);
