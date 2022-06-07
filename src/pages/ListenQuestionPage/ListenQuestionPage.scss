@@ -20,7 +20,15 @@
     display: flex;
     margin: 3px 0 5px 0;
     width: 100%;
-    padding: 0 100px;
+    padding: 0 120px;
+    
+}
+.container__header__title span{
+    font-size: 18px;
+    font-weight: 700;
+    padding: 16px 0 ;
+    margin-left: 3px;
+
 }
 /* ---Số Câu Hỏi--- */
 .container__header__title .questions{

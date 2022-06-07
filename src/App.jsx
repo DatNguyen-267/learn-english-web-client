@@ -22,7 +22,8 @@ import axios from "axios";
 import { SERVER_URL } from "./constants/index";
 import { fetchUser } from "./api";
 import { UserPage } from "./pages/UserPage/UserPage";
-import GrammarPage from "./pages/CoursePage/GrammarPage";
+import GrammarPage from "./pages/GrammarPage/GrammarPage";
+import LearnGrammarPage from "./pages/GrammarPage/LearnGrammarPage";
 import { VocaPage } from "./pages/VocaPage/VocaPage";
 
 import ListenCoursePage from "./pages/ListenCoursePage/ListenCoursePage";
@@ -31,6 +32,7 @@ import { VocaLearnPage } from "./pages/LearningPage/VocaLearnPage";
 import { ListWordPage } from "./pages/ListWordPage/ListWordPage";
 import { TestPage } from "./pages/TestPage/TestPage";
 import { DoTestPage } from "./pages/TestPage/DoTestPage";
+import StorePage from "./pages/StorePage/StorePage";
 
 axios.defaults.withCredentials = true;
 function App() {
@@ -65,12 +67,12 @@ function App() {
         // console.log(token)
         return fetchUser(token).then((res) => {
           dispatch(actions.get_user(res.data));
-          // console.log(res)
+          console.log(res);
         });
       };
       getUser();
     }
-  }, [auth.isLogged]);
+  }, [auth.isLogged, token]);
   return (
     <div>
       {popup.login && <PopUpLogin></PopUpLogin>}
@@ -81,19 +83,16 @@ function App() {
         <div className="main-content">
           <Outlet></Outlet>
           <Routes>
-            <Route path="/" element={<Navigate to="/course" />}></Route>
+            {/* <Route path="*" element={<Navigate to="/home" />}></Route> */}
             {/* Navigate là chuyển hướng về trang khác */}
             <Route path="home" element={<HomePage />}></Route>
             <Route path="/user-infor" element={<UserPage />}></Route>
+            <Route path="grammar" element={<GrammarPage></GrammarPage>}></Route>
             <Route
-              path="course/grammar"
-              element={<GrammarPage></GrammarPage>}
+              path="grammar/:id"
+              element={<LearnGrammarPage></LearnGrammarPage>}
             ></Route>
             <Route path="course/voca/:id" element={<VocaPage />}></Route>
-            <Route
-              path="course/voca/list-word"
-              element={<ListWordPage />}
-            ></Route>
             <Route path="course" element={<CoursePage />}></Route>
             <Route
               path="practice-listen"
@@ -103,9 +102,9 @@ function App() {
               path="practice-listen/course/:id"
               element={<ListenCoursePage />}
             ></Route>
+            <Route path="store" element={<StorePage />}></Route>
             <Route path="test" element={<TestPage />}></Route>
             <Route path="doing-test" element={<DoTestPage />}></Route>
-            {/* <Route path="/" element={<CoursePage />}></Route> */}
             <Route path="*" element={<NotFoundFage />}></Route>
           </Routes>
         </div>

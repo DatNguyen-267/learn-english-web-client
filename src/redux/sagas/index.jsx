@@ -5,7 +5,8 @@ import courseSaga from './courseSaga'
 import loadingSaga from './loadingSaga'
 import practiceListenSaga from './practiceListenSaga'
 import { settingSpeakSaga } from './settingSpeakSaga'
-
+import grammarSaga from './grammarSaga'
+import storeSaga from './storeSaga'
 
 function *mySaga() {
   yield all([
@@ -14,6 +15,8 @@ function *mySaga() {
     practiceListenSaga(),
     settingSpeakSaga(),
     loadingSaga(),
+    grammarSaga(),
+    storeSaga(),
   ])
 }
 

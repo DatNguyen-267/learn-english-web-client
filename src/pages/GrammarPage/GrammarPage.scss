@@ -1,0 +1,77 @@
+/* HEADER */
+
+.grammar-page__header {
+  margin-top: 0px !important;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 115px;
+}
+.grammar-page__header-content{
+  border: 1px solid var(--border-color);
+  border-radius: 15px;
+  box-shadow: rgb(222, 224, 228) 0px 4px 2px;
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  line-height: 18px;
+}
+.grammar-page__header-content-title{
+  margin-left: 25px;
+  flex: 1;
+}
+.grammar-page__header-content-title h1{
+  font-weight: 800;
+}
+.grammar-page__header-content-title p{
+  font-size: 16px;
+  color: var(--sub-text-color-2);
+}
+
+/* NỘI DUNG */
+.grammar-content{
+
+}
+.grammar-list{
+
+}
+  /* PHẦN TỬ TRONG DANH SÁCH */
+  .grammar-item{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #c3c6d1;
+    border-radius: 10px;
+    padding: 10px 16px;
+    margin-bottom: 20px;
+    cursor: pointer;
+   
+  }
+    .grammar-item__topic{
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 3px;
+      color: var(--text-color);
+    }
+    .grammar-item__name{
+      font-size: 18px;
+      color: var(--text-color);
+    }
+    .grammar-item__info{
+      margin-top: 2px;
+    }
+      .grammar-item__info i {
+        font-size: 12px;
+        opacity: 0.7;
+      }
+      .grammar-item__info-view{
+        font-size: 14px;
+        opacity: 0.9;
+      }
+
+.grammar-item:hover {
+  border: 2px solid;
+  border-color: var(--blue-color-2);
+}

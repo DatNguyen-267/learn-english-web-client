@@ -1,18 +1,18 @@
 
 /* ----APP---- */
 .app-practice-listen{
-    padding:20px 0 0 0 ;
+    padding:10px 0 0 0 ;
     background-color: white;
 }
 
 /* -----HEADER--- */
 .listen__header {
     margin-top: 0px !important;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    height: 150px;
+    height: 115px;
 }
 .listen__header-content{
     border: 1px solid var(--border-color);
@@ -23,18 +23,17 @@
     display: flex;
     height: 100%;
     width: 100%;
-    line-height: 25px;
+    line-height: 18px;
 }
 .listen__header-content__title{
     margin-left: 25px;
     flex: 1;
 }
-.listen__header-content__title h2{
-    font-weight: 900;
-    font-size: 28px;
+.listen__header-content__title h1{
+    font-weight: 800;
 }
 .listen__header-content__title p{
-    font-size: 20px;
+    font-size: 16px;
     color: var(--sub-text-color-2);
 }
 .listen__header-content__img{
@@ -51,7 +50,7 @@
 /* ----VOCABULARY: -CONTENT---- */
 .listen__content {
     background-color: white;
-    padding-top: 35px ;
+    padding-top: 30px ;
     margin-top: 1px !important;
     border-radius: 5px;
 }

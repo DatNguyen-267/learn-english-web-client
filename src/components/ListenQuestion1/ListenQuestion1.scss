@@ -1,7 +1,7 @@
 /* ---CÂU HỎI--- */
 .question-1-item__header{
     width: 100%;
-    height: 320px;
+    height: 300px;
     padding: 0 10px;
     color: var(--text-color);
     display: flex;
@@ -10,9 +10,10 @@
     justify-content: center;
 }
 .question-1-item__header img{
-    width: 500px;
-    height: 320px;
+    width: 400px;
+    height: 300px;
     padding-bottom: 20px;
+    
 }
 .question-1-item__transcript{
     display: none;
