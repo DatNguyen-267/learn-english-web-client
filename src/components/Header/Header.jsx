@@ -25,6 +25,7 @@ function Header() {
       await axios.get(`${SERVER_URL}/user/logout`);
       localStorage.removeItem("firstLogin");
       dispatch(actions.logout());
+      dispatch(actions.resetToken(null))
       navigate("/login");
     } catch (error) {
       // window.location.href = '/'

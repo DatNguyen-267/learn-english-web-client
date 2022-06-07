@@ -20,13 +20,14 @@ function StorePage() {
     }
     const dispatch = useDispatch()
     useEffect(()=> {
-        if(token){
-            dispatch(actions.turn_off_popup_login())
-        }
-        else{
-            console.log("token",token)
-            dispatch(actions.turn_on_popup_login())
-        }
+        console.log("token: ", token)
+        // if(token){
+        //     dispatch(actions.turn_off_popup_login())
+        // }
+        // else{
+        //     console.log("token",token)
+        //     dispatch(actions.turn_on_popup_login())
+        // }
     },[token])
     useEffect(()=> {
         if(user){
@@ -56,53 +57,71 @@ function StorePage() {
                     <span>Lưu lại từ vựng bạn quan tâm, giúp đỡ quá trình ôn tập của bạn!</span>
                 </div> 
             </div>
-            <div class="store-page-content">
-                <h2>Danh sách</h2>
-                <div class="row store-list">
-                    {
-                            list_word.map((item, index)=>{
-                            return(
-                                <div class="col l-3 m-12 c-12">
-                                <div class="store-item">
-                                    <div class="store-item__header">
-                                        <div class="store-item__mid">
-                                            <div class="store-item__mid-header">
-                                                {item.english}
-                                            </div>
-                                            
-                                        </div>
-                                        <div class="store-item__right">
-                                            <i class="store-item__right-icon fas fa-volume-up" onClick={()=>handleSpeech(item.english)}>
-                                                <audio src={`${item.audio}`}></audio>
-                                            </i>
-                                        </div>
-                                    </div>
-                                    {
-                                        item.meanings.map((item2,index2)=>{
-                                            return(
-                                            <div class="store-item__content">
-                                                <div class="store-item__content-type">({item2.partOfSpeech})</div>
-                                                <div class="store-item__content-mean">    
-                                                    <span>
-                                                        {item2.synonyms} ({item2.vietnamese})
-                                                       
-                                                    </span>
+           {
+                token && (
+                    <div class="store-page-content">
+                    <h2>Danh sách</h2>
+                    <div class="row store-list">
+                        {
+                                list_word.map((item, index)=>{
+                                return(
+                                    <div class="col l-3 m-12 c-12">
+                                    <div class="store-item">
+                                        <div class="store-item__header">
+                                            <div class="store-item__mid">
+                                                <div class="store-item__mid-header">
+                                                    {item.english}
                                                 </div>
+                                                
                                             </div>
-                                            )
-                                        })
-                                    }
-                                </div>
-                                </div>
-                            )
-                        })
-                    }
-                    
+                                            <div class="store-item__right">
+                                                <i class="store-item__right-icon fas fa-volume-up" onClick={()=>handleSpeech(item.english)}>
+                                                    <audio src={`${item.audio}`}></audio>
+                                                </i>
+                                            </div>
+                                        </div>
+                                        {
+                                            item.meanings.map((item2,index2)=>{
+                                                return(
+                                                <div class="store-item__content">
+                                                    <div class="store-item__content-type">({item2.partOfSpeech})</div>
+                                                    <div class="store-item__content-mean">    
+                                                        <span>
+                                                            {item2.synonyms} ({item2.vietnamese})
+                                                           
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                )
+                                            })
+                                        }
+                                    </div>
+                                    </div>
+                                )
+                            })
+                        }
                         
+                            
+                            
                         
-                    
+                    </div>
                 </div>
-            </div>
+                )
+           }
+           {
+               !token && (
+                <div class="store-page-content-no-login">
+                     <div className="store-page__action">
+                        <Link to="/login" className="store-page__action-login">
+                            Đăng nhập
+                        </Link>
+                    </div>
+                    <div className='store-page__sub'>
+                        Đăng nhập để xem tài liệu của bạn!!!
+                    </div>
+                </div>
+               )
+           }
           
       </div>
     );
