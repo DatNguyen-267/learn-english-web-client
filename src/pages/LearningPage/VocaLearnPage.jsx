@@ -28,6 +28,7 @@ export const VocaLearnPage = () => {
   console.log(courseId);
   console.log(topicId);
   useEffect(() => {
+    console.log("Onloading");
     dispatch(actions.onLoading());
     const firstLogin = localStorage.getItem("firstLogin");
     if (firstLogin) {
@@ -44,10 +45,11 @@ export const VocaLearnPage = () => {
       };
       getToken();
     }
-    // dispatch(actions.unLoadingRequest())
+    // dispatch(actions.unLoadingRequest());
   }, []);
   useEffect(() => {
     if (token) {
+      console.log("Get token");
       try {
         const getTopic = async () => {
           let res = await axios.get(
@@ -81,6 +83,7 @@ export const VocaLearnPage = () => {
       }
     }
     dispatch(actions.unLoadingRequest());
+    console.log("Huy loading");
   }, [token]);
   const handleBack = () => {
     navigate(`/course/voca/${courseId}`);

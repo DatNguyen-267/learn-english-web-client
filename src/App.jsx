@@ -83,8 +83,9 @@ function App() {
         <div className="main-content">
           <Outlet></Outlet>
           <Routes>
-            {/* <Route path="*" element={<Navigate to="/home" />}></Route> */}
+            <Route path="/" element={<Navigate to="/course" />}></Route>
             {/* Navigate là chuyển hướng về trang khác */}
+            {/* <Route path="/" element={<CoursePage />}></Route> */}
             <Route path="home" element={<HomePage />}></Route>
             <Route path="/user-infor" element={<UserPage />}></Route>
             <Route path="grammar" element={<GrammarPage></GrammarPage>}></Route>

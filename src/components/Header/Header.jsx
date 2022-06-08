@@ -25,7 +25,7 @@ function Header() {
       await axios.get(`${SERVER_URL}/user/logout`);
       localStorage.removeItem("firstLogin");
       dispatch(actions.logout());
-      dispatch(actions.resetToken(null))
+      dispatch(actions.resetToken(null));
       navigate("/login");
     } catch (error) {
       // window.location.href = '/'
@@ -38,23 +38,26 @@ function Header() {
       let tippy = document.querySelector(".tippy-0");
       let menu = document.querySelector(".menu__user");
 
-      function blurFunc() {
+      function blurFunc(e) {
+        console.log("blur");
+        console.log(e.target);
         tippy.style.display = "none";
       }
-      avatar.addEventListener("click", () => {
-        tippy.style.display = "block";
-      });
+      // avatar.addEventListener("hover", () => {
+      //   tippy.style.display = "block";
+      // });
       // avatar.addEventListener("blur", blurFunc);
-      tippy.addEventListener("blur", blurFunc);
+      // tippy.addEventListener("blur", blurFunc);
+      console.log(tippy);
 
-      window.addEventListener("mousedown", function (event) {
-        if (event.target === avatar && tippy.style.display === "none") {
-          tippy.style.display = "block";
-        }
-        // } else if (event.target != menu ) {
-        //   tippy.style.display = 'none';
-        // }
-      });
+      // window.addEventListener("mousedown", function (event) {
+      //   console.log(event.target);
+      //   if (event.target === avatar && tippy.style.display === "none") {
+      //     tippy.style.display = "block";
+      //   } else if (event.target != menu) {
+      //     tippy.style.display = "none";
+      //   }
+      // });
     }
   }, [auth.isLogged]);
   const handleClick = (e, number) => {
@@ -112,7 +115,7 @@ function Header() {
           </div>
           {auth.isLogged && (
             <div className="navbar__action">
-              <i className="fas fa-bell navbar__action-notify"></i>
+              {/* <i className="fas fa-bell navbar__action-notify"></i> */}
               <img
                 className="navbar__action-avatar"
                 src="https://i.pinimg.com/originals/7c/c7/a6/7cc7a630624d20f7797cb4c8e93c09c1.png"

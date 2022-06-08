@@ -21,8 +21,8 @@ export const TestPage = () => {
     getAllTest();
   }, []);
   const handleClick = (item) => {
-    setShowPopUp((prev) => true);
     setTargetExam(item);
+    setShowPopUp((prev) => true);
   };
   const handleYes = () => {
     navigator(`/doing-test?id-test=${targetExam._id}`);
@@ -42,7 +42,8 @@ export const TestPage = () => {
               </div>
               <div className="test-pg__modal-sub-title">Test 1</div>
               <div className="test-pg__modal-sub-title">
-                <span>30 phút</span> <span>- </span> <span>20 câu</span>
+                <span>{targetExam.time} phút</span> <span>- </span>{" "}
+                <span>{targetExam.size} câu</span>
               </div>
               <div className="test-pg__modal-option">
                 <button onClick={handleNo}>No</button>

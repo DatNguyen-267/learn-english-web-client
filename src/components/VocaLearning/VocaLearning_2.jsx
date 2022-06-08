@@ -21,7 +21,7 @@ export const VocaLearning_2 = ({ topic, courseId }) => {
   let [isEnd, setIsEnd] = useState(false);
   let [progress, setProgress] = useState(0);
   let [isCorrect, setIsCorrect] = useState(undefined);
-  useEffect(() => {});
+  console.log(topic);
   useEffect(async () => {
     renderComponent();
     if (topic) {
@@ -123,6 +123,7 @@ export const VocaLearning_2 = ({ topic, courseId }) => {
     }
   };
   const createQuestion = (index) => {
+    console.log("Create question");
     let listRandom = [];
     while (listRandom.length !== 4) {
       let rd = Math.floor(Math.random() * topic.list_word.length);

@@ -129,6 +129,7 @@
 .navbar__action {
   display: flex;
   align-items: center;
+  position: relative;
   // justify-content: center;
   // flex: 1 1;
 }
@@ -149,6 +150,18 @@
   object-fit: cover;
   cursor: pointer;
 }
+.navbar__action:hover::after {
+  content: "";
+  position:absolute;
+  bottom: -10px;
+  left: 0;
+  height: 20px;
+  width: 50px;
+  // background-color: black;
+}
+.navbar__action:hover .tippy-0 {
+  display: block;
+}
 .navbar__action-notify {
   font-size: 22px;
   opacity: 0.5;
@@ -165,9 +178,11 @@
 .tippy-0 {
   z-index: 9999;
   position: absolute;
-  inset: 0px 0px auto auto;
+  // inset: 0px 0px auto auto;
+  right: 0;
+  top: -20px;
   margin: 0px;
-  transform: translate3d(-28px, 57px, 0px);
+  transform: translate3d(0px, 57px, 0px);
   display: none;
 }
 .menu__user {
