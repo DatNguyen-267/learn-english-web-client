@@ -16,6 +16,7 @@ import axios from "axios";
 import { SERVER_URL } from "./../../constants/index";
 function Header() {
   const auth = useSelector((state) => state.auth);
+  const user = useSelector((state) => state.user);
   const [number, setNumber] = useState(1);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -48,7 +49,6 @@ function Header() {
       // });
       // avatar.addEventListener("blur", blurFunc);
       // tippy.addEventListener("blur", blurFunc);
-      console.log(tippy);
 
       // window.addEventListener("mousedown", function (event) {
       //   console.log(event.target);
@@ -71,29 +71,30 @@ function Header() {
     // console.log( e.currentTarget.children);
     // e.currentTarget.firstChild.classList.add('active')
   };
-  const location = useLocation()
-  useEffect(()=>{
-    console.log(location)
-    if(location.pathname.includes('/store')){
-      setNumber(5)
+  const location = useLocation();
+  useEffect(() => {
+    if (location.pathname.includes("/store")) {
+      setNumber(5);
     }
-    if(location.pathname.includes('/test')){
-      setNumber(4)
+    if (location.pathname.includes("/test")) {
+      setNumber(4);
     }
-    if(location.pathname.includes('/doing-test')){
-      setNumber(4)
+    if (location.pathname.includes("/doing-test")) {
+      setNumber(4);
     }
-    if(location.pathname.includes('/practice-listen')){
-      setNumber(3)
+    if (location.pathname.includes("/practice-listen")) {
+      setNumber(3);
     }
-    if(location.pathname.includes('/grammar')){
-      setNumber(2)
+    if (location.pathname.includes("/grammar")) {
+      setNumber(2);
     }
-    if(location.pathname.includes('/course') && location.pathname.includes('/practice-listen') == false){
-      setNumber(1)
+    if (
+      location.pathname.includes("/course") &&
+      location.pathname.includes("/practice-listen") == false
+    ) {
+      setNumber(1);
     }
-    
-  })
+  });
   return (
     <div className="main-header">
       <div className="grid wide">
@@ -129,7 +130,7 @@ function Header() {
                   <span>Luyện Thi</span>
                 </Link>
               </li>
-              <li onClick={(e) =>handleClick(e, 5)} className="navbar-item">
+              <li onClick={(e) => handleClick(e, 5)} className="navbar-item">
                 <Link className={number === 5 ? "active" : ""} to="/store">
                   <span>Của Tôi</span>
                 </Link>
@@ -153,7 +154,9 @@ function Header() {
                       alt=""
                     ></img>
                     <div className="menu__user-header-info">
-                      <div className="menu__user-header-name">Nguyen Dat</div>
+                      <div className="menu__user-header-name">
+                        {user.data ? user.data.name : "Unknown"}
+                      </div>
                       <div className="menu__user-header-id">ID: 19520040</div>
                     </div>
                   </div>

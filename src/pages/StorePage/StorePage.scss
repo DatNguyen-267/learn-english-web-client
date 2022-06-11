@@ -127,3 +127,34 @@
   .store-page-content-no-login{
     display: flex;
   }
+  .test-pg__modal-body{
+
+  }
+  .modal-body{
+  
+  }
+  .store-pg__modal-title{
+  
+    margin-bottom: 12px;
+  }
+  .store-pg__modal-sub-title{
+  }
+  .store-pg__modal-option button{
+    width: 100px;
+    height: 30px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin: 0 16px;
+  // font-weight: 600;
+  font-size: 14px;
+  }
+  .store-pg__modal-option button:nth-child(1){
+    border: 1px solid #c4c4c4;
+    background-color: white;
+    color: black;
+  }
+  .store-pg__modal-option button:nth-child(2){
+    background-color: var(--dark-blue);
+    color: whitesmoke;
+  }

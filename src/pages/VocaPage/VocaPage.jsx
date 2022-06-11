@@ -20,7 +20,7 @@ export const VocaPage = () => {
 
   const [showReview, setshowReview] = useState(false);
   const [lsTopicPicked, setlsTopicPicked] = useState([]);
-
+  console.log(userProcess);
   useEffect(async () => {
     dispatch(actions.onLoading());
   }, []);

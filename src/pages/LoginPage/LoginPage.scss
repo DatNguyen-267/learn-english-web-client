@@ -40,11 +40,26 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: space-between;
   /* border: 1px solid #333; */
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   margin-top: 80px;
   border-radius: 10px;
+}
+.login-back {
+  margin-bottom: 24px;
+}
+.login-back a {
+  // color: var(--dark-blue-2);
+  color: #333;
+}
+.login-back a i {
+  font-size: 13px;
+  margin-right: 4px;
+}
+.login-back a span {
+  font-weight: 500;
 }
 .title {
   padding-bottom: 54px;
@@ -136,7 +151,7 @@ form {
   display: flex;
   justify-content: center;
   width: 100%;
-  padding: 16px 0;
+  // padding: 16px 0;
 }
 .btn-forget a {
   display: block;
@@ -154,9 +169,13 @@ form {
   background-color: var(--dark-blue-2);
   color: white;
 }
+.pass-to-register {
+  margin: 0;
+}
 .pass-to-register a {
   color: var(--dark-blue);
   font-weight: 700;
+  margin: 0;
 }
 @media screen and (min-width: 768px) and (max-width: 1280px){
   .login {
