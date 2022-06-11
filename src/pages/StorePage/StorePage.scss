@@ -79,16 +79,17 @@
   .store-item__right{
     flex: 0.1;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    align-items: flex-start;
     justify-content:flex-start;
   }
   .store-item__right-icon{
+    margin-left: 5px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 11px;
     opacity: 0.7;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-    padding: 7px 9px;
+    padding: 6px 7px;
     border-radius: 8px;
     background-color: rgb(236, 233, 233);
   }
@@ -102,13 +103,14 @@
     flex-direction:row;
   }
   .store-page__action-login{
-    color: #fff;
+    color: var(--text-color);
     font-size: 16px;
     font-weight: 700;
     background-color: var(--primary-color);
     padding: 9px 20px;
     cursor: pointer;
     border-radius: 15px;
+    box-shadow: rgba(0, 0, 0 ,0.2) 0px -2px 0px inset;
   }
   .store-page__sub{
     margin-top: 14px;
