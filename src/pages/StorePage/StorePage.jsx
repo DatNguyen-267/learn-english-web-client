@@ -50,10 +50,12 @@ function StorePage() {
     }
   }
   const { speak, speakSlow } = useSelector((state) => state.speak);
-  const handleSpeech = (value) => {
-    console.log(value);
-    speak.text = value;
-    speechSynthesis.speak(speak);
+  const handleSpeech = (sentence) => {
+    // console.log(value);
+    // speak.text = value;
+    // speechSynthesis.speak(speak);
+    let audio = new Audio(`https://600tuvungtoeic.com//audio/${sentence}.mp3`);
+    audio.play();
   };
   const handleDelete = (id, user, word) => {
     console.log("word_id: ", id);
@@ -137,7 +139,9 @@ function StorePage() {
                           class="store-item__right-icon fas fa-volume-up"
                           onClick={() => handleSpeech(item.english)}
                         >
-                          <audio src={`${item.audio}`}></audio>
+                          <audio
+                            src={`https://600tuvungtoeic.com/audio/${item.english}.mp3`}
+                          ></audio>
                         </i>
                         <i
                           class="store-item__right-icon fas fa-window-close"
