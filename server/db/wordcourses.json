@@ -1,0 +1,288 @@
+[{
+  "_id": {
+    "$oid": "62275090934289aaac921caa"
+  },
+  "name": "600 từ vựng TOEIC",
+  "desciption": "Chứa 51 chủ đề với 600 tự vựng thường gặp trong các đề thi toeic",
+  "image": "https://res.cloudinary.com/drwse3wye/image/upload/v1646719862/voca/voca_4_o9gu39.jpg",
+  "follow": 100231,
+  "list_topic": [
+    {
+      "$oid": "6246ca7f6e2bb7169e080b76"
+    },
+    {
+      "$oid": "6246ca7f6e2bb7169e080b77"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1646743696168"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1647255396398"
+    }
+  },
+  "__v": 4
+},{
+  "_id": {
+    "$oid": "622750f5f5bf4c1b08ae5381"
+  },
+  "name": "3000 từ vựng TOEIC",
+  "desciption": "Chứa 3000 tự vựng thường gặp trong các đề thi toeic",
+  "image": "https://efis.edu.vn/wp-content/uploads/2021/03/3000-tu-vung-toeic.png",
+  "follow": 25000,
+  "list_topic": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1646743797752"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1646743797752"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6227511b2169035a3505e570"
+  },
+  "name": "750 từ vựng TOEIC",
+  "desciption": "Chứa 750 tự vựng thường gặp trong các đề thi toeic",
+  "image": "https://product.hstatic.net/200000309675/product/toeic-min_8529bc8186944b58a613b67141d562f1_master.png",
+  "follow": 53756,
+  "list_topic": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1646743835160"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1646743835160"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6227518d9a75af48c9fadbc5"
+  },
+  "name": "Bộ đề từ vựng TOEIC mùa đông 2020",
+  "desciption": "Chứa các tự vựng thường gặp trong đề thi toeic mua đông 2020",
+  "image": "https://photo2.tinhte.vn/data/attachment-files/2021/07/5535825_tong-hop-nhung-cuon-sach-on-thi-toeic-hieu-qua-nhat-khong-the-bo-qua-312727182.png",
+  "follow": 53756,
+  "list_topic": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1646743949993"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1646743949993"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62281523ab1558ef2e06cda7"
+  },
+  "name": "Tổng hợp từ vựng ECONOMY-TOEIC",
+  "desciption": "Chứa các tự vựng thường gặp trong đề thi toeic mua đông 2020",
+  "image": "https://duhoc.eaut.edu.vn/wp-content/uploads/2021/08/NEW-ECONOMY-TOEIC.jpg",
+  "follow": 12001,
+  "list_topic": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1646794019342"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1646794019342"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6228155f362e2a19e9ea5528"
+  },
+  "name": "Bộ từ vựng YBM TOEIC",
+  "desciption": "Chứa các tự vựng thường gặp trong đề YBM TOEIC",
+  "image": "https://edulife.com.vn/wp-content/uploads/2021/10/ybm-toeic.jpg",
+  "follow": 68363,
+  "list_topic": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1646794079226"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1646794079226"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62281560362e2a19e9ea552b"
+  },
+  "name": "Bộ từ vựng YBM TOEIC",
+  "desciption": "Chứa các tự vựng thường gặp trong đề YBM TOEIC",
+  "image": "https://edulife.com.vn/wp-content/uploads/2021/10/ybm-toeic.jpg",
+  "follow": 68363,
+  "list_topic": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1646794080963"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1646794080963"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6228156e362e2a19e9ea552f"
+  },
+  "name": "Bộ từ vựng YBM TOEIC",
+  "desciption": "Chứa các tự vựng thường gặp trong đề YBM TOEIC",
+  "image": "https://edulife.com.vn/wp-content/uploads/2021/10/ybm-toeic.jpg",
+  "follow": 68363,
+  "list_topic": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1646794094903"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1646794094903"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "622815ba3a4f285f015ed46d"
+  },
+  "name": "Bộ từ vựng TOEIC cơ bản",
+  "desciption": "Chứa các tự vựng cơ bản của TOEIC",
+  "image": "https://www.zila.com.vn/wp-content/uploads/2021/08/toeic-la-gi-zila.png",
+  "follow": 124856,
+  "list_topic": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1646794170811"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1646794170811"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "622816f53a4f285f015ed471"
+  },
+  "name": "Bộ từ vựng TOEIC cơ bản",
+  "desciption": "Chứa các tự vựng cơ bản của TOEIC",
+  "image": "https://www.zila.com.vn/wp-content/uploads/2021/08/toeic-la-gi-zila.png",
+  "follow": 124856,
+  "list_topic": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1646794485343"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1646794485343"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "622817623a4f285f015ed475"
+  },
+  "name": "Bộ từ vựng TOEIC cơ bản",
+  "desciption": "Chứa các tự vựng cơ bản của TOEIC",
+  "image": "https://www.zila.com.vn/wp-content/uploads/2021/08/toeic-la-gi-zila.png",
+  "follow": 124856,
+  "list_topic": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1646794594391"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1646794594391"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "622818203a4f285f015ed479"
+  },
+  "name": "Bộ từ vựng TOEIC cơ bản",
+  "desciption": "Chứa các tự vựng cơ bản của TOEIC",
+  "image": "https://www.zila.com.vn/wp-content/uploads/2021/08/toeic-la-gi-zila.png",
+  "follow": 124856,
+  "list_topic": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1646794784557"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1646794784557"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "622818673a4f285f015ed47d"
+  },
+  "name": "Bộ từ vựng TOEIC cơ bản",
+  "desciption": "Chứa các tự vựng cơ bản của TOEIC",
+  "image": "https://www.zila.com.vn/wp-content/uploads/2021/08/toeic-la-gi-zila.png",
+  "follow": 124856,
+  "list_topic": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1646794855859"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1646794855859"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "622819e03a4f285f015ed481"
+  },
+  "name": "Bộ từ vựng TOEIC cơ bản",
+  "desciption": "Chứa các tự vựng cơ bản của TOEIC",
+  "image": "https://www.zila.com.vn/wp-content/uploads/2021/08/toeic-la-gi-zila.png",
+  "follow": 124856,
+  "list_topic": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1646795232516"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1646795232516"
+    }
+  },
+  "__v": 0
+}]

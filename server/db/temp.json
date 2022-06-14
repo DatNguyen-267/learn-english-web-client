@@ -1,0 +1,74 @@
+[
+  {
+    "english": "imply",
+    "meanings": [
+      {
+        "partOfSpeech": "v",
+        "vietnamese": "ngụ ý, hàm ý",
+        "synonyms": "indicate, mean"
+      }
+    ],
+    "phonetic": "/im'plai/",
+    "audio": "",
+    "definition": "to suggest that something is true without saying so directly.",
+    "example": {
+      "sentense": " The guarantee on the Walkman implied that all damages were covered under warranty for one year.",
+      "mean": "Giấy bảo đảm theo máy nghe nhạc Walkman đã ngụ ý rằng mọi hư hỏng đều được bao gồm trong thời hạn bảo hành là 1 năm",
+      "audio": ""
+    }
+  },
+  {
+    "english": "promise",
+    "meanings": [
+      {
+        "partOfSpeech": "n",
+        "vietnamese": "hứa hẹn, cam đoan",
+        "synonyms": "one's word that something will be done"
+      }
+    ],
+    "phonetic": "/promise/",
+    "audio": "",
+    "definition": "to tell somebody that you will definitely do or not do something",
+    "example": {
+      "sentense": "The sales associate promised that our new mattress would arrive by noon on Saturday",
+      "mean": "Người cộng tác kinh doanh hứa rằng tấm nệm mới của chúng ta sẽ đến trước trưa thứ Bảy",
+      "audio": ""
+    }
+  },
+  {
+    "english": "protect",
+    "meanings": [
+      {
+        "partOfSpeech": "v",
+        "vietnamese": "bảo vệ, bảo hộ",
+        "synonyms": "take care of"
+      }
+    ],
+    "phonetic": "/protect/",
+    "audio": "",
+    "definition": "to make sure that somebody / something is not harmed, injured",
+    "example": {
+      "sentense": "Consumer laws are designed to protect the public against unscrupulous vendors",
+      "mean": "Luật tiêu dùng được thiết kế để bảo vệ công chúng trước những kẻ bán hàng vô lương tâm",
+      "audio": ""
+    }
+  },
+  {
+    "english": "reputation",
+    "meanings": [
+      {
+        "partOfSpeech": "n",
+        "vietnamese": "danh tiếng, thanh danh",
+        "synonyms": "commonly held opinion of person's character"
+      }
+    ],
+    "phonetic": "/,repju:'teiʃn/",
+    "audio": "",
+    "definition": "the opinion that people have about what s.b/s.th is like, based on what has happened in the past",
+    "example": {
+      "sentense": "The company knew that the reputation of its products was the most important asset it had",
+      "mean": "Công ty biết rằng tiếng tăm sản phẩm của họ là thứ tài sản quan trọng nhất mà họ có",
+      "audio": ""
+    }
+  }
+]

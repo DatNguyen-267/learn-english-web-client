@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "621211f8421247beb23b803b"
+  },
+  "name": "Toiec",
+  "list_part": [
+    {
+      "$oid": "621211f8421247beb23b8039"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1645351416512"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1645351416512"
+    }
+  },
+  "__v": 0
+}]

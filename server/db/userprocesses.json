@@ -1,0 +1,56 @@
+[{
+  "_id": {
+    "$oid": "624937a87f713b0981b12125"
+  },
+  "id_user": {
+    "$oid": "62237358b92b5c2988cfb5e3"
+  },
+  "list_voca": [
+    {
+      "id_voca": {
+        "$oid": "62275090934289aaac921caa"
+      },
+      "process": 0,
+      "list_topic": [
+        {
+          "id_topic": {
+            "$oid": "6246ca7f6e2bb7169e080b76"
+          },
+          "process": 11,
+          "isSuccess": true,
+          "_id": {
+            "$oid": "62493999381a82bf7a7607d8"
+          }
+        },
+        {
+          "id_topic": {
+            "$oid": "6246ca7f6e2bb7169e080b77"
+          },
+          "process": 0,
+          "isSuccess": false,
+          "_id": {
+            "$oid": "62493999381a82bf7a7607d9"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "62493999381a82bf7a7607d7"
+      }
+    },
+    {
+      "id_voca": {
+        "$oid": "622750f5f5bf4c1b08ae5381"
+      },
+      "process": 0,
+      "list_topic": [],
+      "_id": {
+        "$oid": "62596f6c0a6a5d40246e26f7"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1651303885177"
+    }
+  }
+}]

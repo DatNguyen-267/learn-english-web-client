@@ -1,0 +1,18 @@
+[{
+  "_id": {
+    "$oid": "621211f8421247beb23b8037"
+  },
+  "name": "Photograph 1",
+  "source": "ETS 2008",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1645351416371"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1645351416371"
+    }
+  },
+  "__v": 0
+}]

@@ -1,0 +1,133 @@
+[{
+  "_id": {
+    "$oid": "62754f7bd0b47068a80782b1"
+  },
+  "name": "Photographs",
+  "part": 1,
+  "icon": "<i class=\"fas fa-images\"></i>",
+  "amount_part": 4,
+  "list_part": [
+    {
+      "$oid": "62754f7ad0b47068a8078291"
+    },
+    {
+      "$oid": "62754f7ad0b47068a8078293"
+    },
+    {
+      "$oid": "62754f7bd0b47068a8078295"
+    },
+    {
+      "$oid": "62754f7bd0b47068a8078297"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1651855227841"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1651855227841"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62754f7bd0b47068a80782b3"
+  },
+  "name": "Question and response",
+  "part": 2,
+  "icon": "<i class=\"far fa-comment\"></i>",
+  "amount_part": 4,
+  "list_part": [
+    {
+      "$oid": "62754f7bd0b47068a8078299"
+    },
+    {
+      "$oid": "62754f7bd0b47068a807829b"
+    },
+    {
+      "$oid": "62754f7bd0b47068a807829d"
+    },
+    {
+      "$oid": "62754f7bd0b47068a807829f"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1651855227902"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1651855227902"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62754f7bd0b47068a80782b5"
+  },
+  "name": "Conversations",
+  "part": 3,
+  "icon": "<i class=\"fas fa-user-friends\"></i>",
+  "amount_part": 4,
+  "list_part": [
+    {
+      "$oid": "62754f7bd0b47068a80782a1"
+    },
+    {
+      "$oid": "62754f7bd0b47068a80782a3"
+    },
+    {
+      "$oid": "62754f7bd0b47068a80782a5"
+    },
+    {
+      "$oid": "62754f7bd0b47068a80782a7"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1651855227968"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1651855227968"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62754f7cd0b47068a80782b7"
+  },
+  "name": "Short talks",
+  "part": 4,
+  "icon": "<i class=\"fas fa-phone-volume\"></i>",
+  "amount_part": 4,
+  "list_part": [
+    {
+      "$oid": "62754f7bd0b47068a80782a9"
+    },
+    {
+      "$oid": "62754f7bd0b47068a80782ab"
+    },
+    {
+      "$oid": "62754f7bd0b47068a80782ad"
+    },
+    {
+      "$oid": "62754f7bd0b47068a80782af"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1651855228018"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1651855228018"
+    }
+  },
+  "__v": 0
+}]

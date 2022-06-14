@@ -1,0 +1,58 @@
+[{
+  "_id": {
+    "$oid": "6220694484fe276d50e65a6d"
+  },
+  "email": "datnguyen2672001@gmail.com",
+  "password": "$2b$10$Mr8xCvMj8J8msxz471Y1wuHPWBhDj/.YoLPn9lp9C84L0KrBSf5Vq",
+  "name": "admin",
+  "sex": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1646291268972"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1646298308998"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62237358b92b5c2988cfb5e3"
+  },
+  "email": "datgaming267@gmail.com",
+  "password": "$2b$10$piBFqSsHIuKE9wCg5npzfurGOif.FvSgTQ5qo3iNW3Z8lS.NLc5va",
+  "name": "datng",
+  "sex": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1646490456949"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1648804118390"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "625a0c2f213eaa66bcbb52f6"
+  },
+  "email": "Dclone.c002@gmail.com",
+  "password": "$2b$10$wEaSSiaCUmrIQZYkTk5.6OrrHrwM8IuGb9wOwBQYgcNG40rHgtKwu",
+  "name": "Dclone.c002",
+  "sex": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1650068527142"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1650068527142"
+    }
+  },
+  "__v": 0
+}]

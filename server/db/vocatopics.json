@@ -1,0 +1,42 @@
+[
+  {
+    "_id": {
+      "$oid": "629f6eaaafa63e12e347b457"
+    },
+    "name": "Warranties",
+    "image": "",
+    "list_word": [
+      {
+        "$oid": "629f7002afa63e12e347b460"
+      },
+      {
+        "$oid": "629f7002afa63e12e347b461"
+      },
+      {
+        "$oid": "629f729fafa63e12e347b462"
+      },
+      {
+        "$oid": "629f729fafa63e12e347b463"
+      },
+      {
+        "$oid": "629f729fafa63e12e347b464"
+      },
+      {
+        "$oid": "629f729fafa63e12e347b465"
+      },
+      {
+        "$oid": "629f74abafa63e12e347b466"
+      },
+      {
+        "$oid": "629f74abafa63e12e347b467"
+      },
+      {
+        "$oid": "629f74abafa63e12e347b468"
+      },
+      {
+        "$oid": "629f74abafa63e12e347b469"
+      }
+    ],
+    "amount": ""
+  }
+]

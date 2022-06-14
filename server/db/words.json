@@ -1,0 +1,922 @@
+[
+  {
+    "_id": {
+      "$oid": "6232ec6f25e87f8a13df7bb5"
+    },
+    "english": "provision",
+    "meanings": [
+      {
+        "partOfSpeech": "n",
+        "vietnamese": "sự dự trữ, cung cấp; điều khoản",
+        "synonyms": "supplies",
+        "_id": {
+          "$oid": "6232ec6f25e87f8a13df7bb6"
+        }
+      }
+    ],
+    "phonetic": "/provision/",
+    "audio": "provision_omel8v",
+    "definition": "a condition or an arrangement in a legal document",
+    "example": {
+      "sentense": "The father made provision for his children through his will.",
+      "mean": "Người cha đã truyền lại di chúc cho những đứa con của mình.",
+      "audio": ""
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1647504495185"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1647504495185"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6232eb35628d0f1237e5b43f"
+    },
+    "english": "engage",
+    "meanings": [
+      {
+        "partOfSpeech": "v",
+        "vietnamese": "Tham gia, cam kết",
+        "synonyms": "use, hire for job",
+        "_id": {
+          "$oid": "6232eb35628d0f1237e5b440"
+        }
+      },
+      {
+        "partOfSpeech": "n",
+        "vietnamese": "sự hứa hẹn, hứa hôn",
+        "synonyms": "",
+        "_id": {
+          "$oid": "6232eb35628d0f1237e5b441"
+        }
+      }
+    ],
+    "phonetic": "/in'geidʤ/",
+    "audio": "engage_jypfeo",
+    "definition": "to become involved in, to participate",
+    "example": {
+      "sentense": "He engaged us in a fascinating discussion about current business law",
+      "mean": "Anh ấy cùng chúng tôi thảo luận sôi nổi về luật kinh doanh hiện hành.",
+      "audio": ""
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1647504181841"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1647504181841"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "62397b97ebac0105f8a2ccb1"
+    },
+    "english": "attract",
+    "meanings": [
+      {
+        "partOfSpeech": "v",
+        "vietnamese": "hấp dẫn, lôi cuốn, thu hút",
+        "synonyms": "draw attention",
+        "_id": {
+          "$oid": "62397b97ebac0105f8a2ccb2"
+        }
+      }
+    ],
+    "phonetic": "/ə'trækt/",
+    "audio": "attract_u6ouen",
+    "definition": "to draw by appeal",
+    "example": {
+      "sentense": "The display attracted a number of people at the convention",
+      "mean": "Việc trưng bày đã thu hút được một số người tại hội nghị.",
+      "audio": ""
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1647934359843"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1647934359843"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6232ec292086123f72002677"
+    },
+    "english": "party",
+    "meanings": [
+      {
+        "partOfSpeech": "n",
+        "vietnamese": "đảng, phái, đội, nhóm",
+        "synonyms": "social gathering, gang, group",
+        "_id": {
+          "$oid": "6232ec292086123f72002678"
+        }
+      }
+    ],
+    "phonetic": "/'pɑ:ti/",
+    "audio": "party_pnkuxu",
+    "definition": "one of the people or groups of people involved in a legal agreemen",
+    "example": {
+      "sentense": "The parties agreed to settlement in their contract dispute.",
+      "mean": "Các bên đã nhất trí đi đến một thỏa thuận trong hợp đồng gây tranh cãi của họ.",
+      "audio": ""
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1647504425173"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1647504425173"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6232eec545f5972e836807f5"
+    },
+    "english": "specific",
+    "meanings": [
+      {
+        "partOfSpeech": "adj",
+        "vietnamese": "riêng biệt, cụ thể",
+        "synonyms": "particular, distinguishing",
+        "_id": {
+          "$oid": "6232eec545f5972e836807f6"
+        }
+      }
+    ],
+    "phonetic": "/spi'sifik/",
+    "audio": "specific_job6jw",
+    "definition": "detailed abd exact",
+    "example": {
+      "sentense": "The customer's specific complaint was not addressed in his e-mail.",
+      "mean": "Khiếu nại cụ thể của khách hàng đã không được giải quyết trong Email gửi anh ấy.",
+      "audio": ""
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1647505093826"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1647505093826"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6232eb92a73264f56144c25b"
+    },
+    "english": "establish",
+    "meanings": [
+      {
+        "partOfSpeech": "v",
+        "vietnamese": "thiết lập, thành lập",
+        "synonyms": "set up, organize, authenticate, demonstrate",
+        "_id": {
+          "$oid": "6232eb92a73264f56144c25c"
+        }
+      }
+    ],
+    "phonetic": "/is'tæbliʃ/",
+    "audio": "establish_qig0fm",
+    "definition": "to start or create an organization, a system",
+    "example": {
+      "sentense": "The merger of the two company established a powerful new corporation",
+      "mean": "Sự liên kết giữa 2 công ty tạo nên một tập đoàn kinh tế hùng mạnh.",
+      "audio": ""
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1647504274101"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1647504274101"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6232e9fe22ae9ddc1071e817"
+    },
+    "english": "cancellation",
+    "meanings": [
+      {
+        "partOfSpeech": "n",
+        "vietnamese": "sự bãi bỏ, hủy bỏ",
+        "synonyms": "abandonment, abolition",
+        "_id": {
+          "$oid": "6232e9fe22ae9ddc1071e818"
+        }
+      }
+    ],
+    "phonetic": "/,kænse'leiʃn/",
+    "audio": "cancellation_fivlkr",
+    "definition": "a decision to stop something that has already been arranged from happening",
+    "example": {
+      "sentense": "The cancelation of her flight caused her problems for the rest of the week",
+      "mean": "Việc hủy chuyến bay đã gây cho cô ấy nhiều vấn đề trong những ngày còn lại của tuần.",
+      "audio": ""
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1647503870123"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1647503870123"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "62397ca2f878af399396df17"
+    },
+    "english": "competition",
+    "meanings": [
+      {
+        "partOfSpeech": "v",
+        "vietnamese": "cạnh tranh, tranh giành",
+        "synonyms": "contest",
+        "_id": {
+          "$oid": "62397ca2f878af399396df18"
+        }
+      }
+    ],
+    "phonetic": "/,kɔmpi'tiʃn/",
+    "audio": "compare_asdudl",
+    "definition": "a situation in which people or organizations compete with each other for something that not everyone can have",
+    "example": {
+      "sentense": "In the competition for afternoon dinners, Hector's has come out on top",
+      "mean": "Trong cuộc thi của các quán ăn chiều, của hàng Hector đã được xếp hạng nhất.",
+      "audio": ""
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1647934626371"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1647934626371"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6239812d3f82b7c84d7cfa85"
+    },
+    "english": "convince",
+    "meanings": [
+      {
+        "partOfSpeech": "v",
+        "vietnamese": "Thuyết phục",
+        "synonyms": "assure, persuade",
+        "_id": {
+          "$oid": "6239812d3f82b7c84d7cfa86"
+        }
+      }
+    ],
+    "phonetic": "/kən'vins/",
+    "audio": "convince_z6r0kk",
+    "definition": "to make somebody / yourselft believe that something is true",
+    "example": {
+      "sentense": "He convinced me that he was right.",
+      "mean": "Anh ấy đã thuyết phục tôi rằng anh ấy đã đúng.",
+      "audio": ""
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1647935789138"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1647935789138"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "62397ceb5067fb1736ae7398"
+    },
+    "english": "consume",
+    "meanings": [
+      {
+        "partOfSpeech": "v",
+        "vietnamese": "tiêu thụ, tiêu dùng",
+        "synonyms": "use up",
+        "_id": {
+          "$oid": "62397ceb5067fb1736ae7399"
+        }
+      }
+    ],
+    "phonetic": "/kən'sju:m/",
+    "audio": "consume_njvjqk",
+    "definition": "to use something, especially fuel, engery or time",
+    "example": {
+      "sentense": "The printer consumes more toner than the downstairs printer",
+      "mean": "Cái máy in ngốn nhiều ống mực hơn là cái máy in ở dưới nhà.",
+      "audio": ""
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1647934699813"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1647934699813"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "628f810f4164343335e1c19f"
+    },
+    "english": "currently",
+    "meanings": [
+      {
+        "partOfSpeech": "adv",
+        "vietnamese": "hiện thời, hiện nay, lúc này",
+        "synonyms": "assure, persuade",
+        "_id": {
+          "$oid": "6239812d3f82b7c84d7cfa86"
+        }
+      }
+    ],
+    "phonetic": "/ˈkʌrəntli/",
+    "audio": "convince_z6r0kk",
+    "definition": "to make somebody / yourselft believe that something is true",
+    "example": {
+      "sentense": "Currently, customers are demanding big discounts for bulk orders",
+      "mean": "Hiện nay, khách hàng đang đòi hỏi những khoản giảm giá nhiều cho những đơn hàng lớn",
+      "audio": ""
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6232ea58975737db354336e6"
+    },
+    "english": "determine",
+    "meanings": [
+      {
+        "partOfSpeech": "v",
+        "vietnamese": "quyết định, xác định",
+        "synonyms": "conclude, decide",
+        "_id": {
+          "$oid": "6232ea58975737db354336e7"
+        }
+      }
+    ],
+    "phonetic": "/di'tə:min/",
+    "audio": "determine_w2lydd",
+    "definition": "to discover the facts about something",
+    "example": {
+      "sentense": "After reading the contract, I was still unable to detemine if our company was liable for back wages.",
+      "mean": "Sau khi đọc hợp đồng, tôi vẫn không thể biết được liệu rằng công ty của chúng tôi có phải chịu trách nhiệm hoàn trả lại lương không",
+      "audio": ""
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1647503960558"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1647503960558"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6232ebc5b5279099facfdb8f"
+    },
+    "english": "obligate",
+    "meanings": [
+      {
+        "partOfSpeech": "v",
+        "vietnamese": "bắt buộc, ép buộc",
+        "synonyms": "require",
+        "_id": {
+          "$oid": "6232ebc5b5279099facfdb90"
+        }
+      }
+    ],
+    "phonetic": "/'ɔbligeit/",
+    "audio": "obligate_ur7spf",
+    "definition": "to bind legally or morally",
+    "example": {
+      "sentense": "The contractor was obligated by the contract to work 40 hours a week.",
+      "mean": "Nhà thầu buộc phải làm việc 40 tiếng mỗi tuần.",
+      "audio": ""
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1647504325986"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1647504325986"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6232ee86d67067dd7830e8dc"
+    },
+    "english": "resolve",
+    "meanings": [
+      {
+        "partOfSpeech": "v",
+        "vietnamese": "giải quyết",
+        "synonyms": "make up one's mind; find solution",
+        "_id": {
+          "$oid": "6232ee86d67067dd7830e8dd"
+        }
+      },
+      {
+        "partOfSpeech": "n",
+        "vietnamese": "sự kiên quyết / sự tin chắc",
+        "synonyms": "decision, determination",
+        "_id": {
+          "$oid": "6232ee86d67067dd7830e8de"
+        }
+      }
+    ],
+    "phonetic": "/ri'zɔlv/",
+    "audio": "resolve_bqoinp",
+    "definition": "to find an acceptable solution to a problem",
+    "example": {
+      "sentense": "The manager resolved to clean out all the files at the end of the week.",
+      "mean": "Cuối tuần, người quản lý đã quyết định xóa sạch tất cả các dữ liệu",
+      "audio": ""
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1647505030364"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1647505030364"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6232e8fbfba0af49082f131c"
+    },
+    "english": "agreement",
+    "meanings": [
+      {
+        "partOfSpeech": "n",
+        "vietnamese": "hợp đồng, giao kèo",
+        "synonyms": "compliance, compromise, accord",
+        "_id": {
+          "$oid": "6232e8fbfba0af49082f131d"
+        }
+      }
+    ],
+    "phonetic": "/ə'gri:mənt/",
+    "audio": "agreement_jmyslr",
+    "definition": "an arrangement, a promise or a contract made with somebody",
+    "example": {
+      "sentense": "According to the agreement, the caterer will also supply the flowers for the event",
+      "mean": "Theo như thỏa thuận, nhà cung cấp lương thực thực phẩm cũng sẽ cung cấp hoa cho sự kiện",
+      "audio": ""
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1647503611425"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1647503611425"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6232e969e9efb071f344c908"
+    },
+    "english": "assurance",
+    "meanings": [
+      {
+        "partOfSpeech": "n",
+        "vietnamese": "sự cam đoan, bảo đảm",
+        "synonyms": "guarantee, affirmation, assertion",
+        "_id": {
+          "$oid": "6232e969e9efb071f344c909"
+        }
+      }
+    ],
+    "phonetic": "/ə'ʃuərəns/",
+    "audio": "assurance_n2ei1q",
+    "definition": "a statement that something will certainly be true or will certainly happen",
+    "example": {
+      "sentense": "The sales associate gave his assurance that the missing keyboard would be replaced the next day",
+      "mean": "Đối tác bán hàng cam đoan rằng ngày mai bàn phím lỗi sẽ được thay.",
+      "audio": ""
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1647503721742"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1647503721742"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "62397c31575f6a49a803c44a"
+    },
+    "english": "compare",
+    "meanings": [
+      {
+        "partOfSpeech": "v",
+        "vietnamese": "so sánh, đối chiếu",
+        "synonyms": "examine in contrast",
+        "_id": {
+          "$oid": "62397c31575f6a49a803c44b"
+        }
+      }
+    ],
+    "phonetic": "/kəm'peə/",
+    "audio": "",
+    "definition": "to examine people or things to see how they are similar and how they are different",
+    "example": {
+      "sentense": "Once the customer compared the two products, her choice was easy.",
+      "mean": "Khi mà người khách hàng được so sánh 2 sản phẩm, sự lựa chọn của cô ta sẽ dễ dàng hơn.",
+      "audio": ""
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1647934513633"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1647934513633"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "629f6753cb1491e20c6b12d7"
+    },
+    "english": "currently",
+    "meanings": [
+      {
+        "partOfSpeech": "adv",
+        "vietnamese": "hiện thời, hiện nay, lúc này",
+        "synonyms": "anymore, now"
+      }
+    ],
+    "phonetic": "/ˈkʌrəntli/",
+    "audio": "",
+    "definition": " at the present time",
+    "example": {
+      "sentense": "Currently, customers are demanding big discounts for bulk orders.",
+      "mean": "Hiện nay, khách hàng đang đòi hỏi những khoản giảm giá nhiều cho những đơn hàng lớn.",
+      "audio": ""
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "629f67c8cb1491e20c6b12d8"
+    },
+    "english": "fad",
+    "meanings": [
+      {
+        "partOfSpeech": "n",
+        "vietnamese": "mốt nhất thời, dở hơi",
+        "synonyms": "anymore, now"
+      }
+    ],
+    "phonetic": "/fæd/",
+    "audio": "",
+    "definition": "something that people are interested in for only a short period of time.",
+    "example": {
+      "sentense": "The mini dress was a fad once thought to be finished, but now it is making a comeback.",
+      "mean": "Váy ngắn là mốt tạm thời mỗi khi ý tưởng bị hết, nhưng hiện giờ nó đang quay trở lại.",
+      "audio": ""
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "629f6b89cb1491e20c6b12ee"
+    },
+    "english": "inspiration",
+    "meanings": [
+      {
+        "partOfSpeech": "n",
+        "vietnamese": "‹sự/người/vật› truyền cảm hứng",
+        "synonyms": "idea, stimulus"
+      }
+    ],
+    "phonetic": "/,inspə'reiʃn/",
+    "audio": "",
+    "definition": "a thing or person that arouses a feeling.",
+    "example": {
+      "sentense": "His work is an inspiration to the marketing department.",
+      "mean": "Công việc của anh ta là một nguồn cảm hứng cho bộ phận tiếp thị.",
+      "audio": ""
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "629f6c59cb1491e20c6b12f7"
+    },
+    "english": "market",
+    "meanings": [
+      {
+        "partOfSpeech": "v",
+        "vietnamese": "thị trường, chợ",
+        "synonyms": "package and sell goods"
+      }
+    ],
+    "phonetic": "/'mɑ:kit/",
+    "audio": "",
+    "definition": "to advertise and offer a product for sale.",
+    "example": {
+      "sentense": "The market for brightly colored clothing was brisk last year, but it's moving sluggishly this year",
+      "mean": "Thị trường của trang phục màu sắc sặc sỡ rất phát đạt vào năm ngoái, nhưng nó lại chuyển động uể oải trong năm nay.",
+      "audio": ""
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "629f7002afa63e12e347b460"
+    },
+    "english": "characteristic",
+    "meanings": [
+      {
+        "partOfSpeech": "(adj, n)",
+        "vietnamese": "(adj) đặc thù, (n) đặc trưng",
+        "synonyms": "typical; distinguishing"
+      }
+    ],
+    "phonetic": "/,kæriktə'ristik/",
+    "audio": "",
+    "definition": "very typical of something or of somebody's character.",
+    "example": {
+      "sentense": "One characteristic of the store is that it is slow in mailing refund checks.",
+      "mean": "Một đặc điểm của cửa hàng là nó chậm chạp trong việc gửi hóa đơn hoàn trả",
+      "audio": ""
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1647504495185"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1647504495185"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "629f7002afa63e12e347b461"
+    },
+    "english": "consequence",
+    "meanings": [
+      {
+        "partOfSpeech": "n",
+        "vietnamese": "kết quả, hậu quả",
+        "synonyms": "result, outcome of action"
+      }
+    ],
+    "phonetic": "/'kɔnsikwəns/",
+    "audio": "",
+    "definition": "a result of something that has happened",
+    "example": {
+      "sentense": "As a consequence of not having seen a dentist for several years, Lydia had several cavities.",
+      "mean": "Là hậu quả của việc không đi khám nha sĩ trong vài năm, Lydia đã bị vài răng sâu rỗng",
+      "audio": ""
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1647504495185"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1647504495185"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "629f729fafa63e12e347b462"
+    },
+    "english": "consider",
+    "meanings": [
+      {
+        "partOfSpeech": "v",
+        "vietnamese": "cân nhắc, suy xét",
+        "synonyms": "turn over in one's mind"
+      }
+    ],
+    "phonetic": "/kən'sidə/",
+    "audio": "",
+    "definition": "to think about something carefully.",
+    "example": {
+      "sentense": "After considering all the options, Della decided to buy a used car.",
+      "mean": "Sau khi cân nhắc tất cả sự chọn lựa, Della đã quyết định mua chiếc xe cũ",
+      "audio": ""
+    }
+  },
+  {
+    "_id": {
+      "$oid": "629f729fafa63e12e347b463"
+    },
+    "english": "cover",
+    "meanings": [
+      {
+        "partOfSpeech": "v",
+        "vietnamese": "che, phủ, trùm",
+        "synonyms": "wrap, hide"
+      }
+    ],
+    "phonetic": "/'kʌvə/",
+    "audio": "",
+    "definition": "to include something; to deal with something",
+    "example": {
+      "sentense": "Will my medical insurance cover this surgery?.",
+      "mean": "Hợp đồng bảo hiểm y tế của tôi liệu có bao gồm cho ca phẫu thuật này không",
+      "audio": ""
+    }
+  },
+  {
+    "_id": {
+      "$oid": "629f729fafa63e12e347b464"
+    },
+    "english": "expiration",
+    "meanings": [
+      {
+        "partOfSpeech": "n",
+        "vietnamese": "sự mãn hạn, sự hết hạn",
+        "synonyms": "finish, demise"
+      }
+    ],
+    "phonetic": "/,ekspaiə'reiʃn/",
+    "audio": "",
+    "definition": "an ending of the period of time when an official document can be used",
+    "example": {
+      "sentense": "Have you checked the expriration date on this yogurt?.",
+      "mean": "Anh đã kiểm tra hạn sử dụng của món sữa chua này chưa?",
+      "audio": ""
+    }
+  },
+  {
+    "_id": {
+      "$oid": "629f729fafa63e12e347b465"
+    },
+    "english": "frequently",
+    "meanings": [
+      {
+        "partOfSpeech": "adv",
+        "vietnamese": "thường xuyên",
+        "synonyms": "commonly, repeatedly"
+      }
+    ],
+    "phonetic": "/ˈfriːkwəntli/",
+    "audio": "",
+    "definition": "often",
+    "example": {
+      "sentense": "Appliances frequently come with a one-year warranty",
+      "mean": "Trang thiết bị thường có bảo hành một năm",
+      "audio": ""
+    }
+  },
+  {
+    "_id": {
+      "$oid": "629f74abafa63e12e347b466"
+    },
+    "english": "imply",
+    "meanings": [
+      {
+        "partOfSpeech": "v",
+        "vietnamese": "ngụ ý, hàm ý",
+        "synonyms": "indicate, mean"
+      }
+    ],
+    "phonetic": "/im'plai/",
+    "audio": "",
+    "definition": "to suggest that something is true without saying so directly.",
+    "example": {
+      "sentense": " The guarantee on the Walkman implied that all damages were covered under warranty for one year.",
+      "mean": "Giấy bảo đảm theo máy nghe nhạc Walkman đã ngụ ý rằng mọi hư hỏng đều được bao gồm trong thời hạn bảo hành là 1 năm",
+      "audio": ""
+    }
+  },
+  {
+    "_id": {
+      "$oid": "629f74abafa63e12e347b467"
+    },
+    "english": "promise",
+    "meanings": [
+      {
+        "partOfSpeech": "n",
+        "vietnamese": "hứa hẹn, cam đoan",
+        "synonyms": "one's word that something will be done"
+      }
+    ],
+    "phonetic": "/promise/",
+    "audio": "",
+    "definition": "to tell somebody that you will definitely do or not do something",
+    "example": {
+      "sentense": "The sales associate promised that our new mattress would arrive by noon on Saturday",
+      "mean": "Người cộng tác kinh doanh hứa rằng tấm nệm mới của chúng ta sẽ đến trước trưa thứ Bảy",
+      "audio": ""
+    }
+  },
+  {
+    "_id": {
+      "$oid": "629f74abafa63e12e347b468"
+    },
+    "english": "protect",
+    "meanings": [
+      {
+        "partOfSpeech": "v",
+        "vietnamese": "bảo vệ, bảo hộ",
+        "synonyms": "take care of"
+      }
+    ],
+    "phonetic": "/protect/",
+    "audio": "",
+    "definition": "to make sure that somebody / something is not harmed, injured",
+    "example": {
+      "sentense": "Consumer laws are designed to protect the public against unscrupulous vendors",
+      "mean": "Luật tiêu dùng được thiết kế để bảo vệ công chúng trước những kẻ bán hàng vô lương tâm",
+      "audio": ""
+    }
+  },
+  {
+    "_id": {
+      "$oid": "629f74abafa63e12e347b469"
+    },
+    "english": "reputation",
+    "meanings": [
+      {
+        "partOfSpeech": "n",
+        "vietnamese": "danh tiếng, thanh danh",
+        "synonyms": "commonly held opinion of person's character"
+      }
+    ],
+    "phonetic": "/,repju:'teiʃn/",
+    "audio": "",
+    "definition": "the opinion that people have about what s.b/s.th is like, based on what has happened in the past",
+    "example": {
+      "sentense": "The company knew that the reputation of its products was the most important asset it had",
+      "mean": "Công ty biết rằng tiếng tăm sản phẩm của họ là thứ tài sản quan trọng nhất mà họ có",
+      "audio": ""
+    }
+  }
+]

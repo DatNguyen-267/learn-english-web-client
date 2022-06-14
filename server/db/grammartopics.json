@@ -1,0 +1,137 @@
+[{
+  "_id": {
+    "$oid": "6289040ec3387d92c72b3bfe"
+  },
+  "name": "Tense - Các thì hay xuất hiện trong bài thi TOEIC",
+  "list_part": [
+    {
+      "$oid": "6289040dc3387d92c72b3bea"
+    },
+    {
+      "$oid": "6289040dc3387d92c72b3bec"
+    },
+    {
+      "$oid": "6289040dc3387d92c72b3bee"
+    },
+    {
+      "$oid": "6289040dc3387d92c72b3bf0"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1653146638414"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1653146638414"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6289040ec3387d92c72b3c00"
+  },
+  "name": "Gerund and infinitive - Các dạng thức của động từ",
+  "list_part": [
+    {
+      "$oid": "6289040dc3387d92c72b3bf2"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1653146638483"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1653146638483"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6289040fc3387d92c72b3c02"
+  },
+  "name": "Modal verbs - Động từ khiếm khuyết",
+  "list_part": [
+    {
+      "$oid": "6289040ec3387d92c72b3bf4"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1653146639257"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1653146639257"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6289040fc3387d92c72b3c04"
+  },
+  "name": "Types of Words - Từ loại",
+  "list_part": [
+    {
+      "$oid": "6289040ec3387d92c72b3bf6"
+    },
+    {
+      "$oid": "6289040ec3387d92c72b3bf8"
+    },
+    {
+      "$oid": "6289040ec3387d92c72b3bfa"
+    },
+    {
+      "$oid": "6289040ec3387d92c72b3bfc"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1653146639313"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1653146639313"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6289040fc3387d92c72b3c06"
+  },
+  "name": "Comparison - So sánh trong Tiếng Anh",
+  "list_part": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1653146639365"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1653146639365"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6289040fc3387d92c72b3c08"
+  },
+  "name": "Passive Voice - Bị động",
+  "list_part": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1653146639427"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1653146639427"
+    }
+  },
+  "__v": 0
+}]

@@ -1,0 +1,516 @@
+[{
+  "_id": {
+    "$oid": "627fb2ff4d45f494e01322c9"
+  },
+  "type": "Part1",
+  "description": "",
+  "audio": "https://storage.googleapis.com/kstoeic/sound/eco2018_Test01_0101.mp3",
+  "images": [
+    "https://storage.googleapis.com/kstoeic/images/5656089_1562638419203.png"
+  ],
+  "sm_questions": [
+    {
+      "$oid": "627fb2ff4d45f494e01322ca"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652536064286"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652536064286"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62809bf2c9e36b485100671d"
+  },
+  "type": "Part1",
+  "description": "",
+  "audio": "https://storage.googleapis.com/kstoeic/sound/eco2018_Test01_0102.mp3",
+  "images": [
+    "https://storage.googleapis.com/kstoeic/images/3672944_1562638433179.png"
+  ],
+  "sm_questions": [
+    {
+      "$oid": "62809bf2c9e36b485100671e"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652595698805"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652595698805"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62809d9550647ff41d4ba0ec"
+  },
+  "type": "Part2",
+  "description": "",
+  "audio": "https://storage.googleapis.com/kstoeic/sound/eco2018_Test02_0222.mp3",
+  "images": [],
+  "sm_questions": [
+    {
+      "$oid": "62809d9550647ff41d4ba0ed"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652596117366"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652596117366"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62809fbc418a356eaaed661d"
+  },
+  "type": "Part2",
+  "description": "",
+  "audio": "https://storage.googleapis.com/kstoeic/sound/eco2018_Test02_0220.mp3",
+  "images": [],
+  "sm_questions": [
+    {
+      "$oid": "62809fbc418a356eaaed661e"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652596668797"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652596668797"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6280a171d8910a4daa2053e0"
+  },
+  "type": "Part3",
+  "description": "",
+  "audio": "https://storage.googleapis.com/kstoeic/sound/eco2018_Test03_0301.mp3",
+  "images": [],
+  "explanation": "<span>W: Hello, this is Julia Kramer calling from Human Resources. <b> I gave your department a laptop computer to be fixed last week and I still haven't received an update.</b> The keyboard needed to be replaced. <br>M: Ah, yes, Ms. Kramer. We have had a lot of work orders lately, so we are a little behind with repairs. Is the matter urgent? <br>W: <b> Well, I just forgot to copy an important file off the hard drive that I need for my work.</b><br>M: I can transfer that file onto a storage device for you.<b> Come to my office at your convenience.</b></span>",
+  "sm_questions": [
+    {
+      "$oid": "6280a171d8910a4daa2053e1"
+    },
+    {
+      "$oid": "6280a171d8910a4daa2053e2"
+    },
+    {
+      "$oid": "6280a171d8910a4daa2053e3"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652597105968"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652597105968"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6280a2677e77a3d4e9f504da"
+  },
+  "type": "Part4",
+  "description": "",
+  "audio": "https://storage.googleapis.com/kstoeic/sound/eco2018_Test04_0401.mp3",
+  "images": [],
+  "explanation": "<span>Attention, conference attendees. Thank you for your patience while you wait for US to solve this delay. <b> Unfortunately, the computer that is to be used during the keynote speaker's presentation is having problems</b>. As a result, we are currently transferring the necessary files onto a different computer. <b>  We plan to get  underway with the presentation in half an hour</b>. In the meantime, feel free to enjoy some of the refreshments provided near the entrance. <b> We will dim the lights in order to indicate that the presentation will be beginning</b>. Please return to your seats at that time.</span>",
+  "sm_questions": [
+    {
+      "$oid": "6280a2677e77a3d4e9f504db"
+    },
+    {
+      "$oid": "6280a2677e77a3d4e9f504dc"
+    },
+    {
+      "$oid": "6280a2677e77a3d4e9f504dd"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652597351317"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652597351317"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6280a2e789a5a73e7b46566c"
+  },
+  "type": "Part5",
+  "description": "",
+  "audio": "",
+  "images": [],
+  "explanation": "<span>After the verb to be will use the adjective (Adj).=>Choose B</span>",
+  "sm_questions": [
+    {
+      "$oid": "6280a2e789a5a73e7b46566d"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652597479635"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652597479635"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6280a9f965eaa563aa3cdc4b"
+  },
+  "type": "Part6",
+  "description": "",
+  "audio": "",
+  "images": [],
+  "content": [
+    "<div><b></b><b>Florist Wanted</b> <br>  Do you love making people smile? Does the idea of <b> (1) </b> _____  your day being creative and  working with nature appeal to you? If so, we would like to encourage you to apply to join <br> our team at Wild Flowers Florists. <b> (2) </b> _____. We are looking for someone who is customer- <b> (3) </b> _____  first. Creativity is important, but it is secondary to the vision of the client. If you think <b> (4) </b> _____  have what it takes to make people smile, please fill out our online application form on our website, www.WildFlowersFlorists.com.</div>"
+  ],
+  "sm_questions": [
+    {
+      "$oid": "6280a9f965eaa563aa3cdc4c"
+    },
+    {
+      "$oid": "6280a9f965eaa563aa3cdc4d"
+    },
+    {
+      "$oid": "6280a9f965eaa563aa3cdc4e"
+    },
+    {
+      "$oid": "6280a9f965eaa563aa3cdc4f"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652599289396"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652599289396"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6280ab81c300499d220c805c"
+  },
+  "type": "Part7",
+  "description": "",
+  "audio": "",
+  "images": [],
+  "content": [
+    "<div><h4 align=\"center\"></h4><h4 align=\"center\">MEMO</h4> To: All Employees<br> From: Betty Franklin, General Manager<br> Date: August 19<br> Subject: Receptionist<br> <br> To all employees,<br> - [1] - Greta Jones, the receptionist at our studio will be taking some time off to deal with a personal matter. She will be gone from August 21st to September 5th. - [2] - Ms. Blanche will take care of the regular responsibilities that Ms. Jones usually handles including taking phone calls, handling appointments, organizing schedules, and dealing with clients. Please welcome Ms. Blanche to the studio and be available for her to ask questions if she has any.<br> Furthermore, if you have any long time clients that you give special prices and discounts to, please let Ms. Blanche know ahead of time. - [3] - She will charge the fees that are programmed into the computer system.<br> If you have any urgent concerns you need to discuss with Ms. Jones, or if you need to purchase any special hair dyes, treatment shampoos, or other requests that customers have, please do so today and tomorrow before she leaves. '[4]- You can contact me at any time if you have any further questions.</div>"
+  ],
+  "sm_questions": [
+    {
+      "$oid": "6280ab81c300499d220c805d"
+    },
+    {
+      "$oid": "6280ab81c300499d220c805e"
+    },
+    {
+      "$oid": "6280ab81c300499d220c805f"
+    },
+    {
+      "$oid": "6280ab81c300499d220c8060"
+    },
+    {
+      "$oid": "6280ab81c300499d220c8061"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652599681703"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652599681703"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628b22967da47f97027da026"
+  },
+  "type": "Part1",
+  "description": "",
+  "audio": "https://storage.googleapis.com/kstoeic/sound/eco2018_Test02_0101.mp3",
+  "images": [
+    "https://storage.googleapis.com/kstoeic/images/634270_1562639747171.png"
+  ],
+  "sm_questions": [
+    {
+      "$oid": "628b235a7da47f97027da029"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652536064286"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652536064286"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628b233d7da47f97027da028"
+  },
+  "type": "Part1",
+  "description": "",
+  "audio": "https://storage.googleapis.com/kstoeic/sound/eco2018_Test02_0102.mp3",
+  "images": [
+    "https://storage.googleapis.com/kstoeic/images/419301_1562639748639.png"
+  ],
+  "sm_questions": [
+    {
+      "$oid": "628b22f07da47f97027da027"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652536064286"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652536064286"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628b23ba7da47f97027da02a"
+  },
+  "type": "Part2",
+  "description": "",
+  "audio": "src=\"https://storage.googleapis.com/kstoeic/sound/eco2018_Test03_0223.mp3\"",
+  "images": [],
+  "sm_questions": [
+    {
+      "$oid": "628b23da7da47f97027da02b"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652596117366"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652596117366"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628b24407da47f97027da02d"
+  },
+  "type": "Part2",
+  "description": "",
+  "audio": "https://storage.googleapis.com/kstoeic/sound/eco2018_Test03_0203.mp3",
+  "images": [],
+  "sm_questions": [
+    {
+      "$oid": "628b242e7da47f97027da02c"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652596117366"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652596117366"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628b24937da47f97027da02e"
+  },
+  "type": "Part3",
+  "description": "",
+  "audio": "https://storage.googleapis.com/kstoeic/sound/eco2018_Test04_0301.mp3",
+  "images": [],
+  "explanation": "<span>M:  Hello. <b> Last Thursday, I arranged to have cable television installed at my house this Wednesday. </b>Unfortunately, I will have to be out of town that day because of some urgent matters and would like to reschedule the appointment for Friday afternoon. <br>W:  OK, that shouldn’t be a problem. <b> However, I would like to warn you that there is a $5 rescheduling fee.</b> That’s our company’s policy. Can I have your name, please? <br>M: Oh, I see. My name is Charlie Kramer. I’m living in Hainesville. Do you know when I will have to pay this fee? <br>W: <b> I’ll e-mail you soon about a user name and temporary password that you can use on our website</b>. Please check the e-mail and pay all your bills through our website.</span>",
+  "sm_questions": [
+    {
+      "$oid": "628b251a7da47f97027da030"
+    },
+    {
+      "$oid": "628b25677da47f97027da031"
+    },
+    {
+      "$oid": "628b24de7da47f97027da02f"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652597105968"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652597105968"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628b25ce7da47f97027da032"
+  },
+  "type": "Part4",
+  "description": "",
+  "audio": "https://storage.googleapis.com/kstoeic/sound/eco2018_Test05_0401.mp3",
+  "images": [],
+  "explanation": "<span>Hello, Ms. Grayson. <b> This is Michael Cook calling from Alliance Financial Bank.   It has recently come to my attention that some clients who renewed their credit card this month were sent the wrong card</b>. We have had multiple calls from bank members saying that they were sent a credit card with someone else’s name on it. According to our records, you were also sent the wrong credit card. <b> We ask that you please dispose of the credit card by cutting it with a pair of scissors</b>. In the meantime, we will issue a new credit card and have it delivered by express mail. We apologize for the inconvenience.</span>",
+  "sm_questions": [
+    {
+      "$oid": "628b27517da47f97027da033"
+    },
+    {
+      "$oid": "628b277e7da47f97027da034"
+    },
+    {
+      "$oid": "628b27a87da47f97027da035"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652597351317"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652597351317"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628b28eb7da47f97027da036"
+  },
+  "type": "Part5",
+  "description": "",
+  "audio": "",
+  "images": [],
+  "explanation": "<span>The position you need to fill in after \"should\", so the verb will be in the whole form.</span>",
+  "sm_questions": [
+    {
+      "$oid": "628b29097da47f97027da037"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652597479635"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652597479635"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628b29927da47f97027da038"
+  },
+  "type": "Part6",
+  "description": "",
+  "audio": "",
+  "images": [],
+  "content": [
+    "<div><h4> City Realty</h4>City Realty is Washington’s number one real estate company, serving the state for over 50 years. We <b> (1) </b> _____  recognized as the state’s leading experts in the industry and many of our agents have been awarded for their excellence in service by Forbes Property Magazine. Our agents are <b> (2) </b> _____  to bringing their best knowledge and expertise to the table, and they have extensive know-how about the housing market dos and don’ts. Our agents specialize in different areas of the industry including corporate real estate, residential real estate, and rental properties. <b> (3) </b> _____. <br> Our headquarters is located in the central downtown area where you can meet with one of our agents <b> (4) </b> _____  a free consultation. You can also visit our website www.cityrealty.com for property listings and further information.</div>"
+  ],
+  "sm_questions": [
+    {
+      "$oid": "628b29bd7da47f97027da039"
+    },
+    {
+      "$oid": "628b29ef7da47f97027da03a"
+    },
+    {
+      "$oid": "628b2a547da47f97027da03b"
+    },
+    {
+      "$oid": "628b2a9c7da47f97027da03c"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652599289396"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652599289396"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628b2ad77da47f97027da03d"
+  },
+  "type": "Part7",
+  "description": "",
+  "audio": "",
+  "images": [],
+  "content": [
+    "<div><p align=\"right\"> Purchased by:Tim Bailey</p><h3 align=\"center\">Tate Theater</h3><h4 align=\"center\">The Kelly Cooper Concert</h4> <br>Time: 7:00 P.M. <br>Date: Friday, May 20 <br>Section: General Admission <br> Row: F Seat: 26<br><br>- Guests seated in general admission should arrive at least 30 minutes before the concert begins. <br>- For those coming by car, the location of the theater can be found on our website at www.tatetheater.com, <br>-All ticket sales are non-refundable.</div>"
+  ],
+  "sm_questions": [
+    {
+      "$oid": "628b2cab7da47f97027da03e"
+    },
+    {
+      "$oid": "628b2cfd7da47f97027da03f"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652599681703"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652599681703"
+    }
+  },
+  "__v": 0
+}]

@@ -1,0 +1,793 @@
+[{
+  "_id": {
+    "$oid": "627fb2ff4d45f494e01322ca"
+  },
+  "content": "",
+  "a": "The woman is talking on the phone.",
+  "b": "The woman is using her cell phone. ",
+  "c": "The woman is typing on the laptop.",
+  "d": "The woman is writing in her notebook.",
+  "correctAns": "a",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652536063529"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652536063529"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62809bf2c9e36b485100671e"
+  },
+  "content": "",
+  "a": "The woman is cooking some bacon.",
+  "b": "The woman is baking a cake.",
+  "c": "The woman is preparing for dinner.",
+  "d": "The woman is frying some fish.",
+  "correctAns": "a",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652595698744"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652595698744"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62809d9550647ff41d4ba0ed"
+  },
+  "content": "Don't you need to get to the airport at least three hours early? ",
+  "a": "I need a few hours to read it.",
+  "b": "No, that's unnecessary.",
+  "c": "She lost her boarding pass.",
+  "d": "",
+  "correctAns": "b",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652596117309"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652596117309"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62809fbc418a356eaaed661e"
+  },
+  "content": " The merger hasn't been finalized yet, has it? ",
+  "a": "They exceeded the initial sales forecast. ",
+  "b": "No, but it will be soon. ",
+  "c": "I'll return it by the end of the day.",
+  "d": "",
+  "correctAns": "b",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652596668748"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652596668748"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6280a171d8910a4daa2053e1"
+  },
+  "content": "Which department does the man most likely work in?",
+  "a": "Human Resources",
+  "b": "Accounting",
+  "c": "Marketing",
+  "d": "Technical Support",
+  "correctAns": "d",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652597105825"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652597105825"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6280a171d8910a4daa2053e2"
+  },
+  "content": "What is the woman unable to do?",
+  "a": "Contact a client",
+  "b": "Write an e-mail",
+  "c": "Access a file",
+  "d": "Purchase a laptop computer",
+  "correctAns": "c",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652597105878"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652597105878"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6280a171d8910a4daa2053e3"
+  },
+  "content": "What does the man suggest doing?",
+  "a": "Stopping by his office",
+  "b": "Enrolling in a class",
+  "c": "Replacing a part",
+  "d": "Reading a manual",
+  "correctAns": "a",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652597105922"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652597105922"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6280a2677e77a3d4e9f504db"
+  },
+  "content": "What is causing a delay?",
+  "a": "Bad weather",
+  "b": "A canceled flight",
+  "c": "A scheduling error  ",
+  "d": "A technical difficulty",
+  "correctAns": "d",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652597351160"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652597351160"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6280a2677e77a3d4e9f504dc"
+  },
+  "content": "According to the speaker, after how long will the presentation begin?",
+  "a": "5 minutes",
+  "b": "30 minutes",
+  "c": "45 minutes",
+  "d": "60 minutes",
+  "correctAns": "b",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652597351213"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652597351213"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6280a2677e77a3d4e9f504dd"
+  },
+  "content": "What will happen when the listeners should return?",
+  "a": "An announcement will be made.  ",
+  "b": "Lighting will be adjusted.",
+  "c": "A keynote speaker will appear on the stage.",
+  "d": "Refreshments will be served.",
+  "correctAns": "b",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652597351260"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652597351260"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6280a2e789a5a73e7b46566d"
+  },
+  "content": "Should the customer believe that the proposed color scheme is not _____ , the interior designer can make adjustments.",
+  "a": "attract",
+  "b": "attractive",
+  "c": "attracted",
+  "d": "attractively",
+  "correctAns": "b",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652597479585"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652597479585"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6280a9f965eaa563aa3cdc4c"
+  },
+  "content": "",
+  "a": "spend",
+  "b": "to spend",
+  "c": "spending",
+  "d": "spent",
+  "correctAns": "c",
+  "explanation": "<span>The position to be filled after of, will be a noun. So in this sentence, we see that only C is a verb-noun that makes sense.</span>",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652599289083"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652599289083"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6280a9f965eaa563aa3cdc4d"
+  },
+  "content": "",
+  "a": "You must be good with animals.",
+  "b": "Our company is committed to providing the best floral arrangements for our clients, no matter what their needs.",
+  "c": "We use the best fabrics in our designs.",
+  "d": "All people love our commitment to safety.",
+  "correctAns": "b",
+  "explanation": "<span>Easy to see, this paragraph is about flower arrangements, so in the answers given, only B is relevant. to this.</span>",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652599289168"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652599289168"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6280a9f965eaa563aa3cdc4e"
+  },
+  "content": "",
+  "a": "oriented",
+  "b": "prime",
+  "c": "located",
+  "d": "sourced",
+  "explanation": "<span>Based on the meaning to select the correct answer.</span>",
+  "correctAns": "a",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652599289246"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652599289246"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6280a9f965eaa563aa3cdc4f"
+  },
+  "content": "",
+  "a": "you",
+  "b": "I",
+  "c": "they",
+  "d": "we",
+  "correctAns": "a",
+  "explanation": "<span>Based on the meaning to select the correct answer.</span>",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652599289323"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652599289323"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6280ab81c300499d220c805d"
+  },
+  "content": "By when should employees contact Ms. Jones with urgent business?",
+  "a": "Before she leaves",
+  "b": "After she leaves",
+  "c": "Anytime",
+  "d": "When she gets back",
+  "correctAns": "a",
+  "explanation": "<span>Information in sentence “If you have any urgent concerns you need to discuss with Ms, Jones… please do so today and tomorrow before she leaves”</span>",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652599681067"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652599681067"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6280ab81c300499d220c805e"
+  },
+  "content": "Where do the recipients of the memo most likely work?",
+  "a": "At a department store",
+  "b": "At a hair salon",
+  "c": "At a movie studio",
+  "d": "At a photography studio",
+  "explanation": "<span>It can be deduced from the sentence “if you need to purchase any special hair dyes, treatment shampoos”</span>",
+  "correctAns": "b",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652599681199"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652599681199"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6280ab81c300499d220c805f"
+  },
+  "content": "In which of the positions marked [1], [2], [3] and [4] does the following sentence belong?“During this time, we have hired a temporary replacement, Judith Blanche.”",
+  "a": "[1]",
+  "b": "[2]",
+  "c": "[3]",
+  "d": "[4]",
+  "explanation": "<span>It is easy to see that this sentence is an introduction to Miss Blanche, so it can only be placed in position [2], after the announcement that Ms. Jones will be absent.</span>",
+  "correctAns": "b",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652599681322"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652599681322"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6280ab81c300499d220c8060"
+  },
+  "content": "What is indicated about Greta Jones?",
+  "a": "She is retiring.",
+  "b": "She is going on vacation.",
+  "c": "She will take some time off work.",
+  "d": "She will work only temporarily.",
+  "correctAns": "c",
+  "explanation": "<span>Information at the sentence “Greta Jones, the receptionist at our studio will be taking some time off to deal with personal matter. “</span>",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652599681447"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652599681447"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628b22f07da47f97027da027"
+  },
+  "content": "",
+  "a": "The woman is drinking a cup of coffee",
+  "b": "The woman is listening to music. ",
+  "c": "The woman is talking on her cell phone.",
+  "d": "The woman is looking at the screen.",
+  "correctAns": "a",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652536063529"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652536063529"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628b235a7da47f97027da029"
+  },
+  "content": "",
+  "a": "The plane is docked at the airport. ",
+  "b": "There is luggage being put onto the plane.",
+  "c": "There are many people boarding the plane. ",
+  "d": "There are maintenance workers fixing the plane.",
+  "correctAns": "a",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652536063529"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652536063529"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628b23da7da47f97027da02b"
+  },
+  "content": " Didn’t the courier already come today?",
+  "a": "I replaced the broken part. ",
+  "b": "No, he usually arrives after lunch. ",
+  "c": "It was an international carrier.",
+  "d": "",
+  "correctAns": "b",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652596117309"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652596117309"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628b242e7da47f97027da02c"
+  },
+  "content": "Jesse left an envelope for me, didn’t he? ",
+  "a": "It’s at the front desk. ",
+  "b": "No, turn right at the corner",
+  "c": "Yes, he will develop a new product",
+  "d": "",
+  "correctAns": "a",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652596117309"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652596117309"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628b24de7da47f97027da02f"
+  },
+  "content": "What will the woman include in an e-mail?",
+  "a": "A receipt",
+  "b": "A membership contract",
+  "c": "A membership contract",
+  "d": "Driving directions",
+  "correctAns": "b",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652596117309"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652596117309"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628b251a7da47f97027da030"
+  },
+  "content": "What did the man recently do?",
+  "a": "Purchased a house",
+  "b": "Went on a business trip",
+  "c": "Signed up for a service",
+  "d": "Installed a television",
+  "correctAns": "c",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652596117309"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652596117309"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628b25677da47f97027da031"
+  },
+  "content": "Why must the man pay a fee?",
+  "a": "He wants to change his schedule.",
+  "b": "He returned an item late.",
+  "c": "He lost his membership card.",
+  "d": "He needs an additional service.",
+  "correctAns": "a",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652596117309"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652596117309"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628b27517da47f97027da033"
+  },
+  "content": "Where does the speaker work?",
+  "a": "At a retail store",
+  "b": "At a bank",
+  "c": "At a gift shop",
+  "d": "At a shipping company",
+  "correctAns": "b",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652596117309"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652596117309"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628b277e7da47f97027da034"
+  },
+  "content": "What does the speaker apologize for?",
+  "a": "A delivery mistake",
+  "b": "An incorrect charge",
+  "c": "A scheduling error",
+  "d": "A defective product",
+  "correctAns": "a",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652596117309"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652596117309"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628b27a87da47f97027da035"
+  },
+  "content": "A defective product",
+  "a": "Return a call",
+  "b": "Renew his credit card",
+  "c": "Get rid of the recently delivered card",
+  "d": "Sign an application form",
+  "correctAns": "c",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652596117309"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652596117309"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628b29097da47f97027da037"
+  },
+  "content": "The manufacturing plant that was damaged in the typhoon should ______  its operations later this month.",
+  "a": "resumed",
+  "b": "be resuming",
+  "c": "had resumed",
+  "d": "resuming",
+  "correctAns": "b",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652596117309"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652596117309"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628b29bd7da47f97027da039"
+  },
+  "content": "",
+  "a": "been",
+  "b": "had been",
+  "c": "are being",
+  "d": "have been",
+  "correctAns": "d",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652596117309"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652596117309"
+    }
+  },
+  "__v": 0,
+  "explanation": "<span>There is no special time adverb in this sentence. However, the meaning of the sentence is about result so we choose the present perfect tense.</span>"
+},{
+  "_id": {
+    "$oid": "628b29ef7da47f97027da03a"
+  },
+  "content": "",
+  "a": "attached",
+  "b": "faithful",
+  "c": "committed",
+  "d": "loyal",
+  "correctAns": "c",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652596117309"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652596117309"
+    }
+  },
+  "__v": 0,
+  "explanation": "<span>Depending on the meaning to choose the correct answer</span>"
+},{
+  "_id": {
+    "$oid": "628b2a547da47f97027da03b"
+  },
+  "content": "",
+  "a": "You can be confident that they serve your specific needs.",
+  "b": "You can rent hundreds of properties from our listings.",
+  "c": "The agents in corporate real estate make the most earnings.",
+  "d": "The residential agents are very busy with the rising housing market.",
+  "correctAns": "a",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652596117309"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652596117309"
+    }
+  },
+  "__v": 0,
+  "explanation": "<span>Based on the meaning of the previous sentence, it lists a range of areas that agents specialize in. “Our agents specialize in various sectors of the industry, including corporate real estate, residential real estate and rental properties.</span>"
+},{
+  "_id": {
+    "$oid": "628b2a9c7da47f97027da03c"
+  },
+  "content": "",
+  "a": "with",
+  "b": "for",
+  "c": "to",
+  "d": "from",
+  "correctAns": "b",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652596117309"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652596117309"
+    }
+  },
+  "__v": 0,
+  "explanation": "<span>Based on the meaning to choose the right answer.</span>"
+},{
+  "_id": {
+    "$oid": "628b2cab7da47f97027da03e"
+  },
+  "content": "What is Mr. Bailey advised to do?",
+  "a": "Contact the theater for a refund",
+  "b": "Select his preferred seat on a website",
+  "c": "Arrive at the venue in advance",
+  "d": "Post a review later",
+  "correctAns": "b",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652596117309"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652596117309"
+    }
+  },
+  "__v": 0,
+  "explanation": "<span>First line: Guests seated in general admission should arrive at least 30 minutes before the concert begin.</span>"
+},{
+  "_id": {
+    "$oid": "628b2cfd7da47f97027da03f"
+  },
+  "content": "According to the ticket, what can be viewed on the theater’s website?",
+  "a": "A list of past performances",
+  "b": "Concert reviews",
+  "c": "Concert reviews",
+  "d": "Pictures of the theater",
+  "correctAns": "b",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652596117309"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652596117309"
+    }
+  },
+  "__v": 0,
+  "explanation": "<span>- Sentence 2:For those coming by car, the location of the theater can be found on our website at www / tatetheater.com.</span>"
+},{
+  "_id": {
+    "$oid": "628b2d437da47f97027da040"
+  },
+  "content": "According to the ticket, what can be viewed on the theater’s website?",
+  "a": "A list of past performances",
+  "b": "Concert reviews",
+  "c": "Concert reviews",
+  "d": "Pictures of the theater",
+  "correctAns": "b",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652596117309"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652596117309"
+    }
+  },
+  "__v": 0,
+  "explanation": "<span>- Sentence 2:For those coming by car, the location of the theater can be found on our website at www / tatetheater.com.</span>"
+}]
