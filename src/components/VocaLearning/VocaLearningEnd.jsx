@@ -1,19 +1,19 @@
-import axios from "axios";
-import React from "react";
-import { useSelector } from "react-redux";
-import "./VocaLearningEnd.scss";
-import { SERVER_URL } from "../../constants";
-import { useLocation, useNavigate } from "react-router-dom";
+import axios from 'axios';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import './VocaLearningEnd.scss';
+import { SERVER_URL } from '~/constants';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export const VocaLearningEnd = ({ topic, courseId }) => {
   let audio = new SpeechSynthesisUtterance();
   const token = useSelector((state) => state.token);
   const navigate = useNavigate();
   const search = useLocation().search;
-  const vocaCourseName = new URLSearchParams(search).get("voca-course-name");
+  const vocaCourseName = new URLSearchParams(search).get('voca-course-name');
 
   const handleSave = (e, id) => {
-    if (!e.target.classList.contains("active")) {
+    if (!e.target.classList.contains('active')) {
       try {
         const addWordToStore = async () => {
           let res = await axios.post(
@@ -25,9 +25,9 @@ export const VocaLearningEnd = ({ topic, courseId }) => {
               headers: { Authorization: token },
             }
           );
-          if (res.data === "success") {
-            console.log("add active");
-            e.target.classList.add("active");
+          if (res.data === 'success') {
+            console.log('add active');
+            e.target.classList.add('active');
           }
         };
         addWordToStore();
@@ -44,8 +44,8 @@ export const VocaLearningEnd = ({ topic, courseId }) => {
               headers: { Authorization: token },
             }
           );
-          if (res.data === "success") {
-            e.target.classList.remove("active");
+          if (res.data === 'success') {
+            e.target.classList.remove('active');
           }
         };
         removeWordToStore();
@@ -74,7 +74,7 @@ export const VocaLearningEnd = ({ topic, courseId }) => {
             headers: { Authorization: token },
           }
         );
-        if (res.data === "success") {
+        if (res.data === 'success') {
           navigate(
             `/learning/voca?course-id=${courseId}&topic-id=${res.data.next_topic}&voca-course-name=`
           );
@@ -86,9 +86,7 @@ export const VocaLearningEnd = ({ topic, courseId }) => {
   return (
     <div>
       <div className="voca-ln-end__header">
-        <div className="voca-ln-end__header-main-title">
-          Chúc mừng bạn đã hoàn thành
-        </div>
+        <div className="voca-ln-end__header-main-title">Chúc mừng bạn đã hoàn thành</div>
         <span className="voca-ln-end__header-sub-title">
           Hãy xem lại những từ này một lần nữa
         </span>
@@ -119,7 +117,7 @@ export const VocaLearningEnd = ({ topic, courseId }) => {
                   <i
                     onClick={(e) => handleSave(e, item._id)}
                     className={`${
-                      item.isSave ? "active" : ""
+                      item.isSave ? 'active' : ''
                     } voca-ln-end__item-option-heart fas fa-heart`}
                   ></i>
                   <i

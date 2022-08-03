@@ -1,14 +1,12 @@
-import React, { useCallback, useEffect, useState } from "react";
-import "./VocaLearning.scss";
-import { VocaInfo } from "./VocaInfo";
-import QuickQuestionABCD from "../QuickQuestionABCD/QuickQuestionABCD";
-import { QuickLsQuestion } from "../QuickQuestionABCD/QuickLsQuestion";
-import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-import axios from "axios";
-import { toBeRequired } from "@testing-library/jest-dom/dist/matchers";
-import { SERVER_URL } from "../../constants";
-import { VocaLearningEnd } from "./VocaLearningEnd";
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { SERVER_URL } from '~/constants';
+import QuickQuestionABCD from '~/components/QuickQuestionABCD/QuickQuestionABCD';
+
+import './VocaLearning.scss';
+import { VocaInfo } from '~/components/VocaLearning/VocaInfo';
+import { VocaLearningEnd } from '~/components/VocaLearning/VocaLearningEnd';
 
 export const VocaLearning_2 = ({ topic, courseId }) => {
   // redux state
@@ -42,45 +40,45 @@ export const VocaLearning_2 = ({ topic, courseId }) => {
       topic.list_word.forEach((word, index) => {
         if (index === 0) {
           newList.push({
-            type: "word",
-            className: "slide-item first",
+            type: 'word',
+            className: 'slide-item first',
             word: word,
           });
 
-          newListData.push({ type: "Word" });
+          newListData.push({ type: 'Word' });
         } else if (index % 2 !== 0) {
           newList.push({
-            type: "word",
-            className: "slide-item",
+            type: 'word',
+            className: 'slide-item',
             word: word,
           });
-          newListData.push({ type: "Word" });
+          newListData.push({ type: 'Word' });
 
           let question_1 = createQuestion(index);
           let question_2 = createQuestion(index - 1);
           newList.push({
-            type: "question",
-            className: "slide-item",
+            type: 'question',
+            className: 'slide-item',
             question: question_2,
             word: topic.list_word[index - 1],
             index: count,
           });
           newListData.push({
-            type: "Question",
+            type: 'Question',
             answer: question_2.answer,
             index: count,
             isCorrect: undefined,
           });
           count++;
           newList.push({
-            type: "question",
-            className: "slide-item",
+            type: 'question',
+            className: 'slide-item',
             question: question_1,
             word: word,
             index: count,
           });
           newListData.push({
-            type: "Question",
+            type: 'Question',
             answer: question_1.answer,
             index: count,
             isCorrect: undefined,
@@ -88,21 +86,21 @@ export const VocaLearning_2 = ({ topic, courseId }) => {
           count++;
         } else if (index === topic.list_word.length - 1) {
           newList.push({
-            type: "word",
-            className: "slide-item",
+            type: 'word',
+            className: 'slide-item',
             word: word,
           });
-          newListData.push({ type: "Word" });
+          newListData.push({ type: 'Word' });
           let question_1 = createQuestion(index);
           newList.push({
-            type: "question",
-            className: "slide-item",
+            type: 'question',
+            className: 'slide-item',
             question: question_1,
             word: topic.list_word[index],
             index: count,
           });
           newListData.push({
-            type: "Question",
+            type: 'Question',
             answer: question_1.answer,
             index: count,
             isCorrect: undefined,
@@ -110,11 +108,11 @@ export const VocaLearning_2 = ({ topic, courseId }) => {
           count++;
         } else {
           newList.push({
-            type: "word",
-            className: "slide-item",
+            type: 'word',
+            className: 'slide-item',
             word: word,
           });
-          newListData.push({ type: "Word" });
+          newListData.push({ type: 'Word' });
         }
       });
       setListCpn(newList);
@@ -123,7 +121,7 @@ export const VocaLearning_2 = ({ topic, courseId }) => {
     }
   };
   const createQuestion = (index) => {
-    console.log("Create question");
+    console.log('Create question');
     let listRandom = [];
     while (listRandom.length !== 4) {
       let rd = Math.floor(Math.random() * topic.list_word.length);
@@ -132,7 +130,7 @@ export const VocaLearning_2 = ({ topic, courseId }) => {
       }
     }
     let answer = Math.floor(Math.random() * 4);
-    let arr = ["a", "b", "c", "d"];
+    let arr = ['a', 'b', 'c', 'd'];
     listRandom[answer] = index;
     return {
       a: topic.list_word[listRandom[0]].meanings[0].vietnamese,
@@ -146,27 +144,22 @@ export const VocaLearning_2 = ({ topic, courseId }) => {
     return topic.list_word.findIndex((item) => item._id === word._id);
   };
   const handleNext = async (e) => {
-    if (
-      listData[currentIndex].type === "Word" &&
-      listCpn[currentIndex].err === undefined
-    )
+    if (listData[currentIndex].type === 'Word' && listCpn[currentIndex].err === undefined)
       setProgress(
-        (progress) =>
-          progress + Math.round(100 * (1 / (topic.list_word.length * 2)))
+        (progress) => progress + Math.round(100 * (1 / (topic.list_word.length * 2)))
       );
     else if (
-      listData[currentIndex].type === "Question" &&
+      listData[currentIndex].type === 'Question' &&
       listData[currentIndex].isCorrect
     ) {
       setProgress(
-        (progress) =>
-          progress + Math.round(100 * (1 / (topic.list_word.length * 2)))
+        (progress) => progress + Math.round(100 * (1 / (topic.list_word.length * 2)))
       );
     }
     if (currentIndex === listCpn.length - 1) {
       setIsEnd(true);
     } else {
-      if (listData[currentIndex + 1].type === "Word") {
+      if (listData[currentIndex + 1].type === 'Word') {
         getNextAudio(listCpn[currentIndex + 1].word.english);
       }
 
@@ -181,15 +174,15 @@ export const VocaLearning_2 = ({ topic, courseId }) => {
   const addComponent = () => {};
   const handleAnswerQ = async (e) => {
     const btn = e.currentTarget;
-    const index = btn.getAttribute("data-index");
-    const yourAnswer = btn.querySelector(".quick-q__answer-title").textContent;
+    const index = btn.getAttribute('data-index');
+    const yourAnswer = btn.querySelector('.quick-q__answer-title').textContent;
     const indexListData = listData.findIndex((item) => item.index == index);
 
     if (listData[indexListData].isCorrect === undefined) {
       let answer = listData.find((item) => item.index == index).answer;
       if (answer.toUpperCase() == yourAnswer.toUpperCase()) {
         // KHI LÀM ĐÚNG
-        btn.classList.add("success");
+        btn.classList.add('success');
         listData[indexListData].isCorrect = true;
         setIsCorrect(true);
       } else {
@@ -197,19 +190,17 @@ export const VocaLearning_2 = ({ topic, courseId }) => {
         // THAY ĐỔI GIAO DIỆN CÂU ĐÚNG SAI
         setIsCorrect(false);
 
-        btn.classList.add("error");
+        btn.classList.add('error');
         listData[indexListData].isCorrect = false;
         const allBtn = document.querySelectorAll(`[data-index="${index}"]`);
         for (let i = 0; i < allBtn.length; i++) {
           if (
             answer.toUpperCase() ===
-            allBtn[i]
-              .querySelector(".quick-q__answer-title")
-              .textContent.toUpperCase()
+            allBtn[i].querySelector('.quick-q__answer-title').textContent.toUpperCase()
           ) {
-            allBtn[i].classList.add("success");
+            allBtn[i].classList.add('success');
           }
-          allBtn[i].addEventListener("click", (event) => {
+          allBtn[i].addEventListener('click', (event) => {
             event.preventDefault();
           });
         }
@@ -220,23 +211,23 @@ export const VocaLearning_2 = ({ topic, courseId }) => {
         const question = createQuestion(indexOfWord);
         if (currentIndex + 1 < listCpn.length) {
           listCpn = insert(listCpn, currentIndex + 1, {
-            type: "word",
-            className: "slide-item",
+            type: 'word',
+            className: 'slide-item',
             word: topic.list_word[indexOfWord],
             err: true,
           });
           listData = insert(listData, currentIndex + 1, {
-            type: "Word",
+            type: 'Word',
           });
         } else {
           listCpn.push({
-            type: "word",
-            className: "slide-item",
+            type: 'word',
+            className: 'slide-item',
             word: topic.list_word[indexOfWord],
             err: true,
           });
           listData.push({
-            type: "Word",
+            type: 'Word',
           });
         }
 
@@ -244,18 +235,18 @@ export const VocaLearning_2 = ({ topic, courseId }) => {
           let isInsert = false;
           for (let i = currentIndex + 2; i < listCpn.length; i++) {
             if (
-              (listCpn[i].type === "word" && listCpn[i + 1].type === "word") ||
-              (listCpn[i].type === "word" && listCpn[i + 1].type === "question")
+              (listCpn[i].type === 'word' && listCpn[i + 1].type === 'word') ||
+              (listCpn[i].type === 'word' && listCpn[i + 1].type === 'question')
             ) {
               listCpn = insert(listCpn, i + 2, {
-                type: "question",
-                className: "slide-item",
+                type: 'question',
+                className: 'slide-item',
                 question: question,
                 word: topic.list_word[indexOfWord],
                 index: listCpn.length,
               });
               listData = insert(listData, i + 2, {
-                type: "Question",
+                type: 'Question',
                 answer: question.answer,
                 index: listData.length,
                 isCorrect: undefined,
@@ -266,14 +257,14 @@ export const VocaLearning_2 = ({ topic, courseId }) => {
           }
           if (!isInsert) {
             listCpn.push({
-              type: "question",
-              className: "slide-item",
+              type: 'question',
+              className: 'slide-item',
               question: question,
               word: topic.list_word[indexOfWord],
               index: listCpn.length,
             });
             listData.push({
-              type: "Question",
+              type: 'Question',
               answer: question.answer,
               index: listData.length,
               isCorrect: undefined,
@@ -281,14 +272,14 @@ export const VocaLearning_2 = ({ topic, courseId }) => {
           }
         } else {
           listCpn.push({
-            type: "question",
-            className: "slide-item",
+            type: 'question',
+            className: 'slide-item',
             question: question,
             word: topic.list_word[indexOfWord],
             index: listCpn.length,
           });
           listData.push({
-            type: "Question",
+            type: 'Question',
             answer: question.answer,
             index: listData.length,
             isCorrect: undefined,
@@ -327,13 +318,11 @@ export const VocaLearning_2 = ({ topic, courseId }) => {
       for (let i = 0; i < allBtn.length; i++) {
         if (
           answer.toUpperCase() ===
-          allBtn[i]
-            .querySelector(".quick-q__answer-title")
-            .textContent.toUpperCase()
+          allBtn[i].querySelector('.quick-q__answer-title').textContent.toUpperCase()
         ) {
-          allBtn[i].classList.add("error");
+          allBtn[i].classList.add('error');
         }
-        allBtn[i].addEventListener("click", (event) => {
+        allBtn[i].addEventListener('click', (event) => {
           event.preventDefault();
         });
       }
@@ -341,23 +330,23 @@ export const VocaLearning_2 = ({ topic, courseId }) => {
       const question = createQuestion(indexOfWord);
       if (currentIndex + 1 < listCpn.length) {
         listCpn = insert(listCpn, currentIndex + 1, {
-          type: "word",
-          className: "slide-item",
+          type: 'word',
+          className: 'slide-item',
           word: topic.list_word[indexOfWord],
           err: true,
         });
         listData = insert(listData, currentIndex + 1, {
-          type: "Word",
+          type: 'Word',
         });
       } else {
         listCpn.push({
-          type: "word",
-          className: "slide-item",
+          type: 'word',
+          className: 'slide-item',
           word: topic.list_word[indexOfWord],
           err: true,
         });
         listData.push({
-          type: "Word",
+          type: 'Word',
         });
       }
 
@@ -365,18 +354,18 @@ export const VocaLearning_2 = ({ topic, courseId }) => {
         let isInsert = false;
         for (let i = currentIndex + 2; i < listCpn.length; i++) {
           if (
-            (listCpn[i].type === "word" && listCpn[i + 1].type === "word") ||
-            (listCpn[i].type === "word" && listCpn[i + 1].type === "question")
+            (listCpn[i].type === 'word' && listCpn[i + 1].type === 'word') ||
+            (listCpn[i].type === 'word' && listCpn[i + 1].type === 'question')
           ) {
             listCpn = insert(listCpn, i + 2, {
-              type: "question",
-              className: "slide-item",
+              type: 'question',
+              className: 'slide-item',
               question: question,
               word: topic.list_word[indexOfWord],
               index: listCpn.length,
             });
             listData = insert(listData, i + 2, {
-              type: "Question",
+              type: 'Question',
               answer: question.answer,
               index: listData.length,
               isCorrect: undefined,
@@ -387,14 +376,14 @@ export const VocaLearning_2 = ({ topic, courseId }) => {
         }
         if (!isInsert) {
           listCpn.push({
-            type: "question",
-            className: "slide-item",
+            type: 'question',
+            className: 'slide-item',
             question: question,
             word: topic.list_word[indexOfWord],
             index: listCpn.length,
           });
           listData.push({
-            type: "Question",
+            type: 'Question',
             answer: question.answer,
             index: listData.length,
             isCorrect: undefined,
@@ -402,14 +391,14 @@ export const VocaLearning_2 = ({ topic, courseId }) => {
         }
       } else {
         listCpn.push({
-          type: "question",
-          className: "slide-item",
+          type: 'question',
+          className: 'slide-item',
           question: question,
           word: topic.list_word[indexOfWord],
           index: listCpn.length,
         });
         listData.push({
-          type: "Question",
+          type: 'Question',
           answer: question.answer,
           index: listData.length,
           isCorrect: undefined,
@@ -494,7 +483,7 @@ export const VocaLearning_2 = ({ topic, courseId }) => {
           </div>
         </div> */}
           <div className="slides" data={currentIndex}>
-            {listCpn.length > 0 && listCpn[currentIndex].type === "word" && (
+            {listCpn.length > 0 && listCpn[currentIndex].type === 'word' && (
               <div className={listCpn[currentIndex].className}>
                 <VocaInfo
                   data={listCpn[currentIndex].word}
@@ -502,7 +491,7 @@ export const VocaLearning_2 = ({ topic, courseId }) => {
                 ></VocaInfo>
               </div>
             )}
-            {listCpn.length > 0 && listCpn[currentIndex].type === "question" ? (
+            {listCpn.length > 0 && listCpn[currentIndex].type === 'question' ? (
               <div className={listCpn[currentIndex].className}>
                 <QuickQuestionABCD
                   index={listCpn[currentIndex].index}
@@ -512,21 +501,18 @@ export const VocaLearning_2 = ({ topic, courseId }) => {
                 ></QuickQuestionABCD>
               </div>
             ) : (
-              ""
+              ''
             )}
           </div>
           {/* CÁC NÚT TƯƠNG TÁC */}
           <div className="learn__body-action">
-            {listData.length > 0 && listData[currentIndex].type === "Word" && (
-              <button
-                className="btn learn__body-action-btn-next"
-                onClick={handleNext}
-              >
+            {listData.length > 0 && listData[currentIndex].type === 'Word' && (
+              <button className="btn learn__body-action-btn-next" onClick={handleNext}>
                 <span>Next</span>
               </button>
             )}
             {listData.length > 0 &&
-              listData[currentIndex].type === "Question" &&
+              listData[currentIndex].type === 'Question' &&
               listData[currentIndex].isCorrect === undefined && (
                 <button
                   className="btn learn__body-action-btn-dont-no"
@@ -562,9 +548,7 @@ export const VocaLearning_2 = ({ topic, courseId }) => {
         </div>
       )}
 
-      {isEnd && (
-        <VocaLearningEnd topic={topic} courseId={courseId}></VocaLearningEnd>
-      )}
+      {isEnd && <VocaLearningEnd topic={topic} courseId={courseId}></VocaLearningEnd>}
     </div>
   );
 };

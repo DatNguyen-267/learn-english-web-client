@@ -1,10 +1,10 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import "./TestPage.scss";
-import { SERVER_URL } from "./../../constants/index";
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './TestPage.scss';
+import { SERVER_URL } from '~/constants/index';
 
-export const TestPage = () => {
+const TestPage = () => {
   const [lsExam, setLsExam] = useState(null);
   const [showPopUp, setShowPopUp] = useState(false);
   const [targetExam, setTargetExam] = useState(null);
@@ -37,12 +37,10 @@ export const TestPage = () => {
           <div className="modal">
             <div className="modal-overlay" onClick={handleNo}></div>
             <div className="test-pg__modal-body modal-body">
-              <div className="test-pg__modal-title">
-                Bạn đã sẵn sàng bắt đầu làm bài
-              </div>
+              <div className="test-pg__modal-title">Bạn đã sẵn sàng bắt đầu làm bài</div>
               <div className="test-pg__modal-sub-title">Test 1</div>
               <div className="test-pg__modal-sub-title">
-                <span>{targetExam.time} phút</span> <span>- </span>{" "}
+                <span>{targetExam.time} phút</span> <span>- </span>{' '}
                 <span>{targetExam.size} câu</span>
               </div>
               <div className="test-pg__modal-option">
@@ -56,9 +54,7 @@ export const TestPage = () => {
       <div className="grid wide">
         <div className="base__page-heading">
           <h1>Luyện thi</h1>
-          <span>
-            Cung cấp các đề thi sát với đề thi thật, nâng cao khả năng làm bài
-          </span>
+          <span>Cung cấp các đề thi sát với đề thi thật, nâng cao khả năng làm bài</span>
         </div>
         <div className="base__group">
           <div className="base__group-title">Full test</div>
@@ -66,7 +62,7 @@ export const TestPage = () => {
             <div className="row">
               {lsExam &&
                 lsExam.map((item, index) => {
-                  if (item.type === "FULL TEST")
+                  if (item.type === 'FULL TEST')
                     return (
                       <div className="col l-4 m-6 c-12">
                         <div
@@ -88,9 +84,7 @@ export const TestPage = () => {
                               <div className="test-item__time">
                                 Thời gian: {item.time}
                               </div>
-                              <div className="test-item__ques">
-                                Câu hỏi: {item.size}
-                              </div>
+                              <div className="test-item__ques">Câu hỏi: {item.size}</div>
                             </div>
                           </div>
                         </div>
@@ -106,7 +100,7 @@ export const TestPage = () => {
             <div className="row">
               {lsExam &&
                 lsExam.map((item, index) => {
-                  if (item.type === "MINI TEST")
+                  if (item.type === 'MINI TEST')
                     return (
                       <div className="col l-4 m-6 c-12">
                         <div
@@ -127,9 +121,7 @@ export const TestPage = () => {
                               <div className="test-item__time">
                                 Thời gian: {item.time}
                               </div>
-                              <div className="test-item__ques">
-                                Câu hỏi: {item.size}
-                              </div>
+                              <div className="test-item__ques">Câu hỏi: {item.size}</div>
                             </div>
                           </div>
                         </div>
@@ -161,3 +153,5 @@ export const TestPage = () => {
     </div>
   );
 };
+
+export default TestPage;

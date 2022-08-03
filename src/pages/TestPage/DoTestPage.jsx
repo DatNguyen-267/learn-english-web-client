@@ -1,26 +1,26 @@
-import React, { Children, useEffect, useState } from "react";
-import { Part1 } from "../../components/TestQuestion/Part1";
-import { Part2 } from "../../components/TestQuestion/Part2";
-import { Part3 } from "../../components/TestQuestion/Part3";
-import { Part4 } from "../../components/TestQuestion/Part4";
-import { Part5 } from "../../components/TestQuestion/Part5";
-import { Part6 } from "../../components/TestQuestion/Part6";
-import { Part7 } from "../../components/TestQuestion/Part7";
-import { getRemainingTimeUntilMsTimestamp } from "../../util/CountdownTimer";
-import "./DoTestPage.scss";
-import axios from "axios";
-import { SERVER_URL } from "./../../constants/index";
-import dayjs from "dayjs";
-import { ModelTimeOut } from "../../util/ModalTimeOut/ModalTimeOut";
-import { Chart as ChartJS, registerables } from "chart.js";
-import { Chart, Bar, Pie, Doughnut } from "react-chartjs-2";
-import { DoughnutChart } from "../../util/Chart/DoughnutChart";
-import { useLocation } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import * as actions from "./../../redux/actions/index";
+import axios from 'axios';
+import { Chart as ChartJS, registerables } from 'chart.js';
+import dayjs from 'dayjs';
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useLocation } from 'react-router-dom';
+import { DoughnutChart } from '~/components/Common/Chart/DoughnutChart';
+import * as actions from '~/redux/actions/index';
+import { Part1 } from '~/components/Part/Part1';
+import { Part2 } from '~/components/Part/Part2';
+import { Part3 } from '~/components/Part/Part3';
+import { Part4 } from '~/components/Part/Part4';
+import { Part5 } from '~/components/Part/Part5';
+import { Part6 } from '~/components/Part/Part6';
+import { Part7 } from '~/components/Part/Part7';
+import { getRemainingTimeUntilMsTimestamp } from '~/util/CountdownTimer';
+import { ModelTimeOut } from '~/components/Common/ModalTimeOut/ModalTimeOut';
+import { SERVER_URL } from '~/constants/index';
+import './DoTestPage.scss';
+
 ChartJS.register(...registerables);
 
-export const DoTestPage = () => {
+export default function DoTestPage() {
   const dispatch = useDispatch();
 
   const [exam, setExam] = useState(undefined);
@@ -34,12 +34,12 @@ export const DoTestPage = () => {
   const [result, setResult] = useState(null);
   const [intervalId, setIntervalId] = useState(null);
   const search = useLocation().search;
-  const testId = new URLSearchParams(search).get("id-test");
+  const testId = new URLSearchParams(search).get('id-test');
   const [remainingTime, setRemainingTime] = useState({
-    seconds: "00",
-    minutes: "00",
-    hours: "00",
-    days: "00",
+    seconds: '00',
+    minutes: '00',
+    hours: '00',
+    days: '00',
   });
   // console.log(remainingTime);
 
@@ -52,15 +52,12 @@ export const DoTestPage = () => {
     let hours = 0;
     let minutes = 0;
     let seconds = 0;
-    if (exam.type == "FULL TEST") {
+    if (exam.type == 'FULL TEST') {
       seconds = 22;
     } else {
       seconds = 22;
     }
-    let now2 = new dayjs()
-      .add(0, "hour")
-      .add(0, "minute")
-      .add(seconds, "second");
+    let now2 = new dayjs().add(0, 'hour').add(0, 'minute').add(seconds, 'second');
     return now2.unix();
   }
   useEffect(() => {
@@ -69,11 +66,7 @@ export const DoTestPage = () => {
       const intervalId = setInterval(() => {
         setRemainingTime((prev) => {
           const time = getRemainingTimeUntilMsTimestamp(startTime);
-          if (
-            time.hours == "00" &&
-            time.minutes == "00" &&
-            time.seconds == "00"
-          ) {
+          if (time.hours == '00' && time.minutes == '00' && time.seconds == '00') {
             setShowPopUpTimeOut((prev) => true);
             clearInterval(intervalId);
           }
@@ -86,16 +79,14 @@ export const DoTestPage = () => {
   }, [startTime, exam]);
   const handleSelect = (e) => {
     let input = e.target;
-    let number = input.getAttribute("data-number");
-    let ans = input.getAttribute("data-ans");
-    let listBtn = document.querySelectorAll(
-      `input[name="${`question-${number}`}"]`
-    );
+    let number = input.getAttribute('data-number');
+    let ans = input.getAttribute('data-ans');
+    let listBtn = document.querySelectorAll(`input[name="${`question-${number}`}"]`);
     // console.log(listBtn);
     for (let i = 0; i < listBtn.length; i++) {
-      listBtn[i].parentNode.classList.remove("active");
+      listBtn[i].parentNode.classList.remove('active');
     }
-    input.parentNode.classList.add("active");
+    input.parentNode.classList.add('active');
     lsAns[number - 1].userAns = ans;
     setlsAns([...lsAns]);
   };
@@ -125,7 +116,7 @@ export const DoTestPage = () => {
         for (let j = 1; j <= end - start + 1; j++) {
           newLsAns.push({
             ans: tempExam.big_questions[i].sm_questions[j - 1].correctAns,
-            userAns: "",
+            userAns: '',
           });
         }
         count = count + element.sm_questions.length;
@@ -141,23 +132,15 @@ export const DoTestPage = () => {
     let parts = [];
     for (let i = 0; i < exam.big_questions.length; i++) {
       let countCorrect = 0;
-      for (
-        let j = exam.big_questions[i].start;
-        j <= exam.big_questions[i].end;
-        j++
-      ) {
+      for (let j = exam.big_questions[i].start; j <= exam.big_questions[i].end; j++) {
         if (lsAns[j - 1].ans == lsAns[j - 1].userAns) {
           countCorrect++;
         }
       }
-      console.log(
-        "type:" + exam.big_questions[i].type + "correct: " + countCorrect
-      );
+      console.log('type:' + exam.big_questions[i].type + 'correct: ' + countCorrect);
       console.log(parts);
-      const index = parts.findIndex(
-        (item) => item.type == exam.big_questions[i].type
-      );
-      console.log("index:" + index);
+      const index = parts.findIndex((item) => item.type == exam.big_questions[i].type);
+      console.log('index:' + index);
       if (index !== -1) {
         parts[index] = {
           ...parts[index],
@@ -187,17 +170,15 @@ export const DoTestPage = () => {
     calResult();
     clearInterval(intervalId);
     for (let i = 0; i < lsAns.length; i++) {
-      if (lsAns[i].userAns === "") {
+      if (lsAns[i].userAns === '') {
         countNoPick++;
       } else if (lsAns[i].ans == lsAns[i].userAns) {
         countCorrect++;
       } else countIncorrect++;
-      const lsInput = document.querySelectorAll(
-        `input[name="question-${i + 1}"]`
-      );
+      const lsInput = document.querySelectorAll(`input[name="question-${i + 1}"]`);
       for (let j = 0; j < lsInput.length; j++) {
-        lsInput[j].style.pointerEvents = "none";
-        lsInput[j].parentElement.style.pointerEvents = "none";
+        lsInput[j].style.pointerEvents = 'none';
+        lsInput[j].parentElement.style.pointerEvents = 'none';
       }
 
       let inputChecked = null;
@@ -205,41 +186,31 @@ export const DoTestPage = () => {
         if (lsInput[j].checked === true) inputChecked = lsInput[j];
       }
       if (inputChecked) {
-        const userAns = inputChecked.getAttribute("data-ans");
+        const userAns = inputChecked.getAttribute('data-ans');
         if (lsAns[i].ans === lsAns[i].userAns) {
-          inputChecked.parentElement.classList.remove("active");
-          inputChecked.parentElement.classList.add("correct");
-          document
-            .querySelector(`#ls-nav-qs-${i + 1}`)
-            .classList.remove("active");
-          document
-            .querySelector(`#ls-nav-qs-${i + 1}`)
-            .classList.add("correct");
+          inputChecked.parentElement.classList.remove('active');
+          inputChecked.parentElement.classList.add('correct');
+          document.querySelector(`#ls-nav-qs-${i + 1}`).classList.remove('active');
+          document.querySelector(`#ls-nav-qs-${i + 1}`).classList.add('correct');
         } else {
-          inputChecked.parentElement.classList.remove("active");
-          inputChecked.parentElement.classList.add("incorrect");
+          inputChecked.parentElement.classList.remove('active');
+          inputChecked.parentElement.classList.add('incorrect');
           document
             .querySelector(`#question-${i + 1}-${lsAns[i].ans.toUpperCase()}`)
-            .parentElement.classList.add("correct");
-          document
-            .querySelector(`#ls-nav-qs-${i + 1}`)
-            .classList.remove("active");
-          document
-            .querySelector(`#ls-nav-qs-${i + 1}`)
-            .classList.add("incorrect");
+            .parentElement.classList.add('correct');
+          document.querySelector(`#ls-nav-qs-${i + 1}`).classList.remove('active');
+          document.querySelector(`#ls-nav-qs-${i + 1}`).classList.add('incorrect');
         }
       } else {
         document
           .querySelector(`#question-${i + 1}-${lsAns[i].ans.toUpperCase()}`)
-          .parentElement.classList.add("incorrect");
-        document
-          .querySelector(`#ls-nav-qs-${i + 1}`)
-          .classList.add("incorrect");
+          .parentElement.classList.add('incorrect');
+        document.querySelector(`#ls-nav-qs-${i + 1}`).classList.add('incorrect');
       }
     }
-    const lsExplain = document.querySelectorAll(".qs-explanation");
+    const lsExplain = document.querySelectorAll('.qs-explanation');
     for (let i = 0; i < lsExplain.length; i++) {
-      lsExplain[i].style.display = "block";
+      lsExplain[i].style.display = 'block';
     }
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
@@ -268,9 +239,7 @@ export const DoTestPage = () => {
           <div className="modal">
             <div className="modal-overlay" onClick={handleHidePopup}></div>
             <div className="dg-ts-pg__modal-body modal-body">
-              <div className="dg-ts-pg__modal-title">
-                Bạn chắc chắn muốn nộp bài
-              </div>
+              <div className="dg-ts-pg__modal-title">Bạn chắc chắn muốn nộp bài</div>
               <div className="dg-ts-pg__modal-option">
                 <button onClick={handleHidePopup}>No</button>
                 <button onClick={handleSubmit}>Yes</button>
@@ -301,24 +270,22 @@ export const DoTestPage = () => {
                 <div className="dg-ts-pg__analysis-group">
                   <div className="dg-ts-pg__analysis-heading">Kết quả</div>
                   <div className="dg-ts-pg__analysis-sub">
-                    {chartData ? chartData[0] : ""}/{lsAns ? lsAns.length : 0}
+                    {chartData ? chartData[0] : ''}/{lsAns ? lsAns.length : 0}
                   </div>
                 </div>
                 <div className="dg-ts-pg__analysis-group">
-                  <div className="dg-ts-pg__analysis-heading">
-                    Chi tiết từng part
-                  </div>
+                  <div className="dg-ts-pg__analysis-heading">Chi tiết từng part</div>
                   <div className="row">
                     {result &&
                       result.parts.map((item, index) => (
                         <div className="col l-4">
                           <span className="dg-ts-pg__analysis-item">
-                            <span style={{ color: "#444" }}>{item.type}: </span>
-                            <span style={{ color: "#3CAE28", fontWeight: 700 }}>
+                            <span style={{ color: '#444' }}>{item.type}: </span>
+                            <span style={{ color: '#3CAE28', fontWeight: 700 }}>
                               {item.correct}
                             </span>
                             <span></span>/
-                            <span style={{ color: "#333", fontWeight: 700 }}>
+                            <span style={{ color: '#333', fontWeight: 700 }}>
                               {item.total}
                             </span>
                           </span>
@@ -332,14 +299,14 @@ export const DoTestPage = () => {
 
           <div className="dg-ts-pg__content">
             <div className="dg-ts-pg__content-title">
-              PART 1: Look at the picture and listen to the sentences. Choose
-              the sentence that best describes the picture:
+              PART 1: Look at the picture and listen to the sentences. Choose the sentence
+              that best describes the picture:
             </div>
 
             {exam &&
               exam.count &&
               exam.big_questions.map((item, index) => {
-                if (item.type === "Part1") {
+                if (item.type === 'Part1') {
                   return (
                     <div key={index} id={`target-${item.start}`}>
                       <Part1
@@ -353,55 +320,46 @@ export const DoTestPage = () => {
                 }
               })}
             <div className="dg-ts-pg__content-title">
-              Part 2: Listen to the question and the three responses. Choose the
-              response that best answers the question:
+              Part 2: Listen to the question and the three responses. Choose the response
+              that best answers the question:
             </div>
             {exam &&
               exam.count &&
               exam.big_questions.map((item, index) => {
-                if (item.type === "Part2") {
+                if (item.type === 'Part2') {
                   return (
                     <div key={index} id={`target-${item.start}`}>
-                      <Part2
-                        big_question={item}
-                        handleSelect={handleSelect}
-                      ></Part2>
+                      <Part2 big_question={item} handleSelect={handleSelect}></Part2>
                     </div>
                   );
                 }
               })}
             <div className="dg-ts-pg__content-title">
-              Part 3: Listen to the dialogue. Then read each question and choose
-              the best answer:
+              Part 3: Listen to the dialogue. Then read each question and choose the best
+              answer:
             </div>
             {exam &&
               exam.count &&
               exam.big_questions.map((item, index) => {
-                if (item.type === "Part3") {
+                if (item.type === 'Part3') {
                   return (
                     <div key={index} id={`target-${item.start}`}>
-                      <Part3
-                        big_question={item}
-                        handleSelect={handleSelect}
-                      ></Part3>
+                      <Part3 big_question={item} handleSelect={handleSelect}></Part3>
                     </div>
                   );
                 }
               })}
             <div className="dg-ts-pg__content-title">
-              Part 4: Listen to the talk. Then read each question and choose the
-              best answer:
+              Part 4: Listen to the talk. Then read each question and choose the best
+              answer:
             </div>
             {exam &&
               exam.count &&
               exam.big_questions.map((item, index) => {
-                if (item.type === "Part4") {
+                if (item.type === 'Part4') {
                   return (
                     <div key={index} id={`target-${item.start}`}>
-                      <Part4
-                        big_question={item}
-                        handleSelect={handleSelect}
-                      ></Part4>
+                      <Part4 big_question={item} handleSelect={handleSelect}></Part4>
                     </div>
                   );
                 }
@@ -412,13 +370,10 @@ export const DoTestPage = () => {
             {exam &&
               exam.count &&
               exam.big_questions.map((item, index) => {
-                if (item.type === "Part5") {
+                if (item.type === 'Part5') {
                   return (
                     <div key={index} id={`target-${item.start}`}>
-                      <Part5
-                        big_question={item}
-                        handleSelect={handleSelect}
-                      ></Part5>
+                      <Part5 big_question={item} handleSelect={handleSelect}></Part5>
                     </div>
                   );
                 }
@@ -429,13 +384,10 @@ export const DoTestPage = () => {
             {exam &&
               exam.count &&
               exam.big_questions.map((item, index) => {
-                if (item.type === "Part6") {
+                if (item.type === 'Part6') {
                   return (
                     <div key={index} id={`target-${item.start}`}>
-                      <Part6
-                        big_question={item}
-                        handleSelect={handleSelect}
-                      ></Part6>
+                      <Part6 big_question={item} handleSelect={handleSelect}></Part6>
                     </div>
                   );
                 }
@@ -446,13 +398,10 @@ export const DoTestPage = () => {
             {exam &&
               exam.count &&
               exam.big_questions.map((item, index) => {
-                if (item.type === "Part7") {
+                if (item.type === 'Part7') {
                   return (
                     <div key={index} id={`target-${item.start}`}>
-                      <Part7
-                        big_question={item}
-                        handleSelect={handleSelect}
-                      ></Part7>
+                      <Part7 big_question={item} handleSelect={handleSelect}></Part7>
                     </div>
                   );
                 }
@@ -468,8 +417,7 @@ export const DoTestPage = () => {
               <i className="fa fa-check"></i> Chấm điểm
             </div> */}
             <div className="dg-ts-pg__right-heading-time">
-              {remainingTime.hours}:{remainingTime.minutes}:
-              {remainingTime.seconds}
+              {remainingTime.hours}:{remainingTime.minutes}:{remainingTime.seconds}
             </div>
           </div>
           <div className="dg-ts-pg__right-ls">
@@ -477,9 +425,9 @@ export const DoTestPage = () => {
               lsAns.map((item, index) => (
                 <a
                   className={
-                    item.userAns !== ""
-                      ? " dg-ts-pg__right-item active"
-                      : " dg-ts-pg__right-item"
+                    item.userAns !== ''
+                      ? ' dg-ts-pg__right-item active'
+                      : ' dg-ts-pg__right-item'
                   }
                   id={`ls-nav-qs-${index + 1}`}
                   key={index}
@@ -493,4 +441,4 @@ export const DoTestPage = () => {
       </div>
     </div>
   );
-};
+}

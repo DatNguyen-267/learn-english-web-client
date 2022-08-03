@@ -1,21 +1,21 @@
-import React from 'react'
-import './UserPage.scss'
+import React from 'react';
+import './UserPage.scss';
 
-
-export const UserPage = () => {
+export default function UserPage() {
   return (
     <div className="user-page">
-      <div className='grid wide'>
+      <div className="grid wide">
         <div className="container">
-          <div className='infor row'>
+          <div className="infor row">
             <div className="col l-1">
-              <div className='avatar' alt="" />
+              <div className="avatar" alt="" />
             </div>
-            <div className='col l-11'>
+            <div className="col l-11">
               <div className="infor-detail">
                 <div className="infor-name">Đạt Nguyễn</div>
                 <div className="infor-email">
-                  <i className="fa fa-envelope"></i>dat@gmail.com</div>
+                  <i className="fa fa-envelope"></i>dat@gmail.com
+                </div>
               </div>
             </div>
           </div>
@@ -25,7 +25,7 @@ export const UserPage = () => {
               <div className="row group-list">
                 <div className="col l-3">
                   <div className="group-item">
-                      {/* <div className="course__item-img" >
+                    {/* <div className="course__item-img" >
                         <button class="btn course__item-btn">Xem khóa học</button>
                       </div> */}
                     <div className="course__item-name">
@@ -43,6 +43,5 @@ export const UserPage = () => {
         </div>
       </div>
     </div>
-
-  )
+  );
 }

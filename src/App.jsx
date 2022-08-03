@@ -1,38 +1,26 @@
-import {
-  BrowserRouter,
-  Route,
-  Routes,
-  Navigate,
-  useLocation,
-  Router,
-  Outlet,
-} from "react-router-dom";
-import HomePage from "./pages/HomePage/HomePage";
-import CoursePage from "./pages/CoursePage/CoursePage";
-import Header from "./components/Header/Header";
-import NotFoundFage from "./pages/NotFoundPage/NotFoundPage";
-import { Loading_1 } from "./components/Loading/Loading_1";
-import * as courseAction from "./redux/actions/index";
-import PracticeListenPage from "./pages/PracticeListenPage/PracticeListenPage";
+import { Navigate, Outlet, Route, Routes } from 'react-router-dom';
+import Header from '~/components/Layout/Header/Header';
+import { Loading_1 } from '~/components/Loading/Loading_1';
+import CoursePage from '~/pages/CoursePage/CoursePage';
+import HomePage from '~/pages/HomePage/HomePage';
+import NotFoundFage from '~/pages/NotFoundPage/NotFoundPage';
 
-import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
-import * as actions from "./redux/actions/index";
-import axios from "axios";
-import { SERVER_URL } from "./constants/index";
-import { fetchUser } from "./api";
-import { UserPage } from "./pages/UserPage/UserPage";
-import GrammarPage from "./pages/GrammarPage/GrammarPage";
-import LearnGrammarPage from "./pages/GrammarPage/LearnGrammarPage";
-import { VocaPage } from "./pages/VocaPage/VocaPage";
-
-import ListenCoursePage from "./pages/ListenCoursePage/ListenCoursePage";
-import { PopUpLogin } from "./util/PopUpLogin/PopUpLogin";
-import { VocaLearnPage } from "./pages/LearningPage/VocaLearnPage";
-import { ListWordPage } from "./pages/ListWordPage/ListWordPage";
-import { TestPage } from "./pages/TestPage/TestPage";
-import { DoTestPage } from "./pages/TestPage/DoTestPage";
-import StorePage from "./pages/StorePage/StorePage";
+import axios from 'axios';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchUser } from '~/api';
+import ListWordPage from '~/pages/VocaPage/ListWordPage/ListWordPage';
+import GrammarPage from '~/pages/GrammarPage/GrammarPage';
+import LearnGrammarPage from '~/pages/GrammarPage/LearnGrammarPage';
+import ListenCoursePage from '~/pages/ListenPage/ListenCoursePage/ListenCoursePage';
+import PracticeListenPage from '~/pages/ListenPage/PracticeListenPage/PracticeListenPage';
+import StorePage from '~/pages/StorePage/StorePage';
+import DoTestPage from '~/pages/TestPage/DoTestPage';
+import TestPage from '~/pages/TestPage/TestPage';
+import UserPage from '~/pages/UserPage/UserPage';
+import VocaPage from '~/pages/VocaPage/VocaPage';
+import * as actions from '~/redux/actions/index';
+import { PopUpLogin } from '~/components/Common/PopUpLogin/PopUpLogin';
 
 axios.defaults.withCredentials = true;
 function App() {
@@ -43,22 +31,19 @@ function App() {
   const popup = useSelector((state) => state.popup);
 
   useEffect(() => {
-    const firstLogin = localStorage.getItem("firstLogin");
+    const firstLogin = localStorage.getItem('firstLogin');
     if (firstLogin) {
       const getToken = async () => {
-        const res = await axios.get(
-          `http://localhost:5000/user/refresh_token`,
-          {
-            withCredentials: true,
-          }
-        );
-        console.log("Lấy token thành công");
+        const res = await axios.get(`http://localhost:5000/user/refresh_token`, {
+          withCredentials: true,
+        });
+        console.log('Lấy token thành công');
         dispatch(actions.getToken(res.data.access_token));
         dispatch(actions.login_success());
       };
       getToken();
     }
-    console.log("bắt unloading");
+    console.log('bắt unloading');
     dispatch(actions.unLoadingRequest());
   }, []);
   useEffect(() => {
@@ -76,7 +61,7 @@ function App() {
   return (
     <div>
       {popup.login && <PopUpLogin></PopUpLogin>}
-      {loading.isLoading ? <Loading_1 /> : ""}
+      {loading.isLoading ? <Loading_1 /> : ''}
       <Header></Header>
       <div className="body">
         {/* Nội dung trang */}
@@ -94,15 +79,9 @@ function App() {
               element={<LearnGrammarPage></LearnGrammarPage>}
             ></Route>
             <Route path="course/voca/:id" element={<VocaPage />}></Route>
-            <Route
-              path="course/voca/list-word"
-              element={<ListWordPage />}
-            ></Route>
+            <Route path="course/voca/list-word" element={<ListWordPage />}></Route>
             <Route path="course" element={<CoursePage />}></Route>
-            <Route
-              path="practice-listen"
-              element={<PracticeListenPage />}
-            ></Route>
+            <Route path="practice-listen" element={<PracticeListenPage />}></Route>
             <Route
               path="practice-listen/course/:id"
               element={<ListenCoursePage />}

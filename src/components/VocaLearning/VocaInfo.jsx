@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { ErrMsg } from "../../util/Notify/Notification";
-import speak from "../../util/speech";
-import "./VocaInfo.scss";
-import axios from "axios";
-import { SERVER_URL } from "./../../constants/index";
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { SERVER_URL } from '~/constants/index';
+import './VocaInfo.scss';
 export const VocaInfo = ({ data, err }) => {
   const { speak, speakSlow } = useSelector((state) => state.speak);
   const token = useSelector((state) => state.token);
@@ -15,9 +13,7 @@ export const VocaInfo = ({ data, err }) => {
   const handleSpeech = () => {
     // speak.text = data.english;
     // speechSynthesis.speak(speak);
-    let audio = new Audio(
-      `https://600tuvungtoeic.com//audio/${data.english}.mp3`
-    );
+    let audio = new Audio(`https://600tuvungtoeic.com//audio/${data.english}.mp3`);
     audio.play();
   };
   const handleSpeechEx = () => {
@@ -37,7 +33,7 @@ export const VocaInfo = ({ data, err }) => {
               headers: { Authorization: token },
             }
           );
-          if (res.data === "success") {
+          if (res.data === 'success') {
             data.isSave = true;
             setIsSave(data.isSave);
           }
@@ -57,7 +53,7 @@ export const VocaInfo = ({ data, err }) => {
               headers: { Authorization: token },
             }
           );
-          if (res.data === "success") {
+          if (res.data === 'success') {
             data.isSave = false;
             setIsSave(data.isSave);
           }
@@ -74,15 +70,13 @@ export const VocaInfo = ({ data, err }) => {
       )}
       <div className="learn__body-item">
         <div className="learn__body-item-content main">
-          {data ? data.english : ""}
+          {data ? data.english : ''}
           <i
             className="learn__body-item-icon fas fa-volume-up"
             onClick={handleSpeech}
           ></i>
           <i
-            className={`learn__body-item-icon fa fa-heart ${
-              isSave ? "active" : ""
-            }`}
+            className={`learn__body-item-icon fa fa-heart ${isSave ? 'active' : ''}`}
             onClick={handleSave}
           ></i>
         </div>
@@ -91,21 +85,21 @@ export const VocaInfo = ({ data, err }) => {
       <div className="learn__body-item">
         <div className="learn__body-item-title">Tiếng việt</div>
         <div className="learn__body-item-content">
-          ({data ? data.meanings[0].partOfSpeech : ""}){" "}
-          {data ? data.meanings[0].vietnamese : ""}
+          ({data ? data.meanings[0].partOfSpeech : ''}){' '}
+          {data ? data.meanings[0].vietnamese : ''}
         </div>
       </div>
       <div className="learn__body-item">
         <div className="learn__body-item-title">Đồng nghĩa</div>
         <div className="learn__body-item-content">
-          {data ? data.meanings[0].synonyms : ""}
+          {data ? data.meanings[0].synonyms : ''}
         </div>
       </div>
       <div className="learn__body-item">
         <div className="learn__body-item-title">Ví dụ</div>
         <div className="learn__body-item-example">
           <i className="fas fa-volume-up" onClick={handleSpeechEx}></i>
-          <span>{data ? data.example.sentense : ""}</span>
+          <span>{data ? data.example.sentense : ''}</span>
         </div>
       </div>
     </div>

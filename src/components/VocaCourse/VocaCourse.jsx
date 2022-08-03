@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./VocaCourse.scss";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './VocaCourse.scss';
 export const VocaCourse = ({ data }) => {
   return (
     <div className="voca-course__item col l-3 m-4 c-12">

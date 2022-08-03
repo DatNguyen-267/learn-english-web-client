@@ -1,16 +1,16 @@
-import React from "react";
-import { VocaTopic } from "../../components/VocaCourse/VocaTopic";
-import "./VocaPage.scss";
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { SERVER_URL } from "../../constants";
-import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
-import * as actions from "./../../redux/actions/index";
-import { useNavigate } from "react-router-dom";
+import React from 'react';
+import { VocaTopic } from '../../components/VocaCourse/VocaTopic';
+import './VocaPage.scss';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { SERVER_URL } from '../../constants';
+import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import * as actions from '../../redux/actions/index';
+import { useNavigate } from 'react-router-dom';
 
 axios.defaults.withCredentials = true;
-export const VocaPage = () => {
+export default function VocaPage() {
   const dispatch = useDispatch();
   const voca = useSelector((state) => state.voca);
   const token = useSelector((state) => state.token);
@@ -63,7 +63,7 @@ export const VocaPage = () => {
   const handleChecked = (e) => {
     console.log(e.target);
 
-    const id = e.target.getAttribute("id");
+    const id = e.target.getAttribute('id');
     const isChecked = e.target.checked;
     const isExists = lsTopicPicked.includes(id);
     console.log(id);
@@ -80,7 +80,7 @@ export const VocaPage = () => {
   };
 
   const handleAccept = () => {
-    navigate(`/voca-review?ls-id=${lsTopicPicked.join("-")}&course-id=${id}`);
+    navigate(`/voca-review?ls-id=${lsTopicPicked.join('-')}&course-id=${id}`);
   };
   return (
     <div className="grid wide">
@@ -89,7 +89,7 @@ export const VocaPage = () => {
           <div className="voca-header">
             <div className="voca-info">
               <div className="voca-info__title">
-                <h2>{voca.data != undefined ? voca.data.name : ""}</h2>
+                <h2>{voca.data != undefined ? voca.data.name : ''}</h2>
               </div>
               <div className="voca-info__description">
                 Cung cấp 600 từ vựng thông dụng trong các đề thi toeic
@@ -166,13 +166,8 @@ export const VocaPage = () => {
                       {voca.data &&
                         voca.data.list_topic.map((item, index) => (
                           <div className="col l-3 m-4 c-12" key={index}>
-                            <label
-                              className="voca-review__ls-item"
-                              htmlFor={item._id}
-                            >
-                              <div className="voca-review__ls-item-name">
-                                {item.name}
-                              </div>
+                            <label className="voca-review__ls-item" htmlFor={item._id}>
+                              <div className="voca-review__ls-item-name">{item.name}</div>
                               <div className="voca-review__ls-item-checked">
                                 <input
                                   type="checkbox"
@@ -196,4 +191,4 @@ export const VocaPage = () => {
       </div>
     </div>
   );
-};
+}

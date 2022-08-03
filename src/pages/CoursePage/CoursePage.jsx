@@ -1,12 +1,10 @@
-import React, { Component, useEffect } from "react";
-import "./CoursePage.scss";
-import { Link } from "react-router-dom";
-import { VocaCourse } from "../../components/VocaCourse/VocaCourse";
-import { Search } from "../../components/Search/Search";
-import { useDispatch, useSelector } from "react-redux";
-import * as actions from "./../../redux/actions/index";
-import { SERVER_URL } from "./../../constants/index";
-import axios from "axios";
+import axios from 'axios';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { VocaCourse } from '~/components/VocaCourse/VocaCourse';
+import { SERVER_URL } from '~/constants/index';
+import * as actions from '~/redux/actions/index';
+import './CoursePage.scss';
 
 axios.defaults.withCredentials = true;
 function CoursePage() {
@@ -32,8 +30,7 @@ function CoursePage() {
         <div className="base__page-heading">
           <h1>Từ vựng</h1>
           <span>
-            Cung cấp các khóa học về từ vựng, ngữ pháp, đang thịnh hành trên
-            trang web
+            Cung cấp các khóa học về từ vựng, ngữ pháp, đang thịnh hành trên trang web
           </span>
         </div>
         {/* <div className="course-page__tab">

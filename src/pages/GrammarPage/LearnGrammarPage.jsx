@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import "./LearnGrammarPage.scss";
-import LsTopic from "./../../components/LsTopic/LsTopic";
-import { useLocation, useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { useEffect, useState } from "react";
-import * as actions from "./../../redux/actions/index";
+import React, { Component } from 'react';
+import './LearnGrammarPage.scss';
+import LsTopic from '~/components/Listen/LsTopic/LsTopic';
+import { useLocation, useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { useEffect, useState } from 'react';
+import * as actions from '~/redux/actions/index';
 
 function LearnGrammarPage() {
   const param = useParams();
@@ -70,7 +70,7 @@ function LearnGrammarPage() {
                 </ul>
               </div>
             ) : (
-              ""
+              ''
             )}
           </div>
         </div>
