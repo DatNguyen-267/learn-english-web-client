@@ -1,36 +1,35 @@
 .learn__body-info-errMsg {
-    color: #721c24;
-    background-color: #f8d7da;
-    border-color: #f5c6cb;
-    text-align: center;
-    padding: 8px 16px;
-    letter-spacing: 1.3px;
-    margin-bottom: 8px;
-    width: 100%;
-    border-radius: 5px;
-    font-size: 20px;
-    font-weight: 600;
-    cursor: default;
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  text-align: center;
+  padding: 8px 16px;
+  letter-spacing: 1.3px;
+  margin-bottom: 8px;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: default;
 }
-.learn__body-info{
-  
+.learn__body-info {
   flex: 85%;
 }
-.learn__body-item{
+.learn__body-item {
   display: flex;
   flex-direction: column;
   padding-bottom: 16px;
   width: fit-content;
 }
 
-.learn__body-item-title{
+.learn__body-item-title {
   font-size: 12px;
   font-weight: 700;
   color: var(--text-color);
   opacity: 0.7;
   margin-bottom: 8px;
 }
-.learn__body-item-content{
+.learn__body-item-content {
   font-size: 24px;
   color: var(--text-color);
   font-weight: 500;
@@ -60,13 +59,11 @@
 .learn__body-item-content.main .learn__body-item-icon {
   margin: 0 8px;
   font-size: 24px;
-  cursor:pointer;
+  cursor: pointer;
   color: rgb(134, 134, 135);
-
 }
 .learn__body-item-content.main .learn__body-item-icon.active {
   color: red;
-
 }
 .sub-info {
   color: var(--text-color-2);

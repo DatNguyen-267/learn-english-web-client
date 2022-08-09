@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { SERVER_URL } from '~/constants/index';
+
 import './VocaInfo.scss';
 export const VocaInfo = ({ data, err }) => {
   const { speak, speakSlow } = useSelector((state) => state.speak);

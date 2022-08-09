@@ -10,7 +10,6 @@
 .slide {
   width: auto;
   display: flex;
-  
 }
 .slide-item {
   min-width: 849.6px;
@@ -34,14 +33,14 @@
   // padding: 12px 6px;
   margin: 0 16px;
   background-color: #f33a58;
-  box-shadow: rgba(0 ,0 ,0 , 0.2) 0px -4px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px -4px 0px inset;
   color: whitesmoke;
   word-wrap: break-word;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  animation: popup ease-in forwards 0.2s ;
+  animation: popup ease-in forwards 0.2s;
 }
 .learn__body-action-btn-correct {
   width: 100% !important;
@@ -50,14 +49,14 @@
   // padding: 12px 6px;
   margin: 0 16px;
   background-color: #349592;
-  box-shadow: rgba(0 ,0 ,0 , 0.2) 0px -4px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px -4px 0px inset;
   color: whitesmoke;
   word-wrap: break-word;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  animation: popup ease-in forwards 0.2s ;
+  animation: popup ease-in forwards 0.2s;
 }
 @keyframes popup {
   0% {
@@ -73,7 +72,7 @@
 .learn__body-action-btn-correct i {
   margin-bottom: 6px;
 }
-.learn__body-action-btn-dont-no{
+.learn__body-action-btn-dont-no {
   width: 100% !important;
   margin: 0 12px;
   height: auto;
@@ -90,13 +89,12 @@
   padding: 42px 0;
   margin: 0 16px;
   background-color: var(--primary-color);
-  box-shadow: rgba(0 ,0 ,0 , 0.2) 0px -4px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px -4px 0px inset;
   color: var(--dark-blue);
   font-weight: 700;
   font-size: 18px;
 }
 .learn__body-action-btn-next:hover {
-  
 }
 .learn__body-action-btn-tool {
   width: 100%;
@@ -123,11 +121,11 @@
   margin-top: 8px;
 }
 .learn__body-action-btn-item.active {
-  background-color:#0C31A6 ;
+  background-color: #0c31a6;
   border: 2px solid rgb(36, 66, 167);
 }
 .learn__body-action-btn-item.active i {
-  color: #94A5DC;
+  color: #94a5dc;
 }
 .learn__body-action-btn-item.active div {
   color: white;
@@ -162,6 +160,7 @@
 .learn__body-item-example span {
   font-size: 20px;
   line-height: 30px;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans',
+    Arial, sans-serif;
   font-weight: 500;
 }

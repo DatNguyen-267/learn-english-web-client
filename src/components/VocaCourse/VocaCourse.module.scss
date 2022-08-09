@@ -11,17 +11,15 @@
   background-size: cover;
   resize: both;
   background-repeat: no-repeat;
-  // background-position: 50%;
-  // background-color: rgba(0, 0, 0, .1);
   position: relative;
   overflow: hidden;
-  // border: 1px solid rgba(0, 0, 0, .1);
+  animation: slidein 1s ease;
 }
 
 .voca-course__item-img:hover .voca-course__item-btn {
   display: block;
-  animation: slidein 0.3s ease;
-  transition: all .3s ease;
+
+  transition: all 0.3s ease;
 }
 
 .voca-course__item-btn {
@@ -46,7 +44,7 @@
 }
 
 .voca-course__item-img:hover::after {
-  content: "";
+  content: '';
   position: absolute;
   /* inset: 0; */
   /* opacity: 00; */
@@ -57,8 +55,8 @@
   /* visibility: hidden; */
   transform: scale(1.2);
   animation: fadeIn 0.2s ease-in;
-  transition: all .3s ease 0s;
-  background-color: rgba(0, 0, 0, .5);
+  transition: all 0.3s ease 0s;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .voca-course__item-name {
@@ -67,7 +65,6 @@
 }
 
 .voca-course__item-name a {
-
   color: #292929;
   font-size: 18px;
   font-weight: 550;
@@ -89,7 +86,6 @@
   flex-direction: row;
   align-items: center;
   cursor: default;
-
 }
 
 .voca-course__item-info-number-follow {
