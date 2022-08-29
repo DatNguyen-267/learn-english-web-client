@@ -57,7 +57,45 @@
 
 /* ----VOCABULARY: -CONTENT: Parts---- */
 
+/* ----Modal---- */
+.lscourse-page__modal-body {
+    padding: 32px !important;
+}
 
+.lscourse-page__modal-title {
+  font-size: 22px;
+  font-weight: 900;
+  color: #ff3966;
+}
+.lscourse-page__modal-sub-title {
+  font-weight: 500;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.lscourse-page__modal-option {
+  margin-top: 12px;
+}
+.lscourse-page__modal-option button {
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin: 0 16px;
+  // font-weight: 600;
+  font-size: 14px;
+}
+.lscourse-page__modal-option button:nth-child(1) {
+  // background-color: black;
+  border: 1px solid #c4c4c4;
+  background-color: white;
+  color: black;
+}
+.lscourse-page__modal-option button:nth-child(2) {
+  background-color: #ff3966;
+  color: whitesmoke;
+}
 
 
 

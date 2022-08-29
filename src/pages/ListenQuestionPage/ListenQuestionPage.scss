@@ -6,45 +6,65 @@
     padding-bottom: 110px; 
     background-color: white;
 }
-
-.container_lsquestion{
-    display:block;
-}
-
-.container__header{
+.header_lsquestion{
+    position: fixed;
+    z-index: 10;
+    display: flex;
+    width: 100%;
+    font-weight: bold;
+    align-content: center;
     align-items: center;
     justify-content: center;
     margin: 0;
+    color: rgb(213, 230, 235);
+    //background: rgba(59, 60, 84, 0.7); xanh đen
+    //background: rgba(44, 44, 44, 0.8); đen 
+    background: rgba(0, 0, 0, 0.05); // đen mờ
+    // background:linear-gradient( rgba(55, 55, 68, 0.8), rgba(75, 75, 90, 0.6)); // pha màu
+    padding: 8px 0px;
+   
 }
-.container__header__title{
+.header_lsquestion__title{
     display: flex;
-    margin: 3px 0 5px 0;
+    margin: 3px 0 3px 0;
     width: 100%;
-    padding: 0 120px;
+    padding: 0 210px;
     
 }
-.container__header__title span{
-    font-size: 18px;
+.header_lsquestion__title span{
+    font-size: 19px;
     font-weight: 700;
-    padding: 16px 0 ;
     margin-left: 3px;
-
 }
 /* ---Số Câu Hỏi--- */
-.container__header__title .questions{
+.header_lsquestion__title .questions{
     float: left;
     flex: 1;
-    color: var(--text-color);
+    color: #333;
+    display: flex;
+    align-items: center;
+    font-weight: 800;
 }
-/* ---Số Câu Đúng--- */
+/* ---BTN Kiem Tra--- */
 
-.container__header__title .correct span{
-    color: #58CC02;
+.header_lsquestion__title .correct span{
+    color: white;
 }
-
+.header_lsquestion__title .correct{
+    background: rgb(87, 203, 2);
+    height: 40px;
+    width: 120px;
+    box-shadow: rgb(62, 147, 2) 0px 3px 1px;
+}
+/* --- Container ---*/
+.container_lsquestion{
+    display:block;
+    margin-top: 80px !important;
+}
 .container__content{
     overflow: hidden;
 }
 .container__content__questions{
     display: flex;        
 }
+
