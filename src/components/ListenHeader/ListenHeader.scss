@@ -1,7 +1,7 @@
 /* ----HEADER---- */
 .ls-header {
     position: fixed;
-    height: 70px;
+    height: 60px;
     width: 100%;
     z-index: 10;
     display: flex;
@@ -11,7 +11,7 @@
     font-weight: bold;
 }
 .ls-header-content{
-    height: 70px;
+    height: 60px;
     width: 100%;
     z-index: 10;
     display: flex;
@@ -21,11 +21,11 @@
 .ls-header__title{
     display: flex;
     flex: 1;
-    font-size: 14px;
+    font-size: 13px;
 }
 .ls-header__title i{
     transform: scale(1.2);
-    margin-right: 15px;
+    margin-right: 10px;
     color: var(--white-color)
 }
 .ls-header__title h1{
