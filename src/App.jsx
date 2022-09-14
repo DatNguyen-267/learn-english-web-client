@@ -33,7 +33,7 @@ import { ListWordPage } from "./pages/ListWordPage/ListWordPage";
 import { TestPage } from "./pages/TestPage/TestPage";
 import { DoTestPage } from "./pages/TestPage/DoTestPage";
 import StorePage from "./pages/StorePage/StorePage";
-
+import { NotePage } from "./pages/NotePage/NotePage";
 axios.defaults.withCredentials = true;
 function App() {
   const loading = useSelector((state) => state.loading);
@@ -77,6 +77,7 @@ function App() {
     <div>
       {popup.login && <PopUpLogin></PopUpLogin>}
       {loading.isLoading ? <Loading_1 /> : ""}
+      <NotePage></NotePage>
       <Header></Header>
       <div className="body">
         {/* Nội dung trang */}

@@ -1,0 +1,45 @@
+//=== note-report ====
+.note-report__modal-body {
+  padding: 32px !important;
+  width: 400px;
+}
+
+.note-report__modal-title {
+font-size: 25px;
+font-weight: 900;
+color: #ff3966;
+}
+.note-report__modal-sub-title {
+font-weight: 500;
+font-size: 18px;
+margin: 10px 0px;
+text-align: center;
+color: #333;
+}
+
+.note-report__modal-option {
+margin-top: 12px;
+}
+.note-report__modal-option button {
+width: 100px;
+height: 30px;
+border-radius: 5px;
+border: none;
+cursor: pointer;
+margin: 0 16px;
+// font-weight: 600;
+font-size: 14px;
+}
+
+.note-report__modal-option button:nth-child(1) {
+background-color: #ff3966;
+
+color: whitesmoke;
+}
+
+.color-title-success{
+  color: rgb(24, 159, 255) !important;
+}
+.color-btn-success{
+  background-color: rgb(67, 133, 245) !important;
+}

@@ -17,7 +17,7 @@ import userProcessReducer from "./userProcessReducer";
 import grammarReducer from "./grammarReducer";
 import grammarTopicReducer from "./grammarTopicReducer";
 import storeReducer from "./storeReducer";
-
+import noteReducer from "./noteReducer";
 const rootReducer = combineReducers({
     course: courseReducer,
     practiceListen: practiceListenReducer,
@@ -34,7 +34,8 @@ const rootReducer = combineReducers({
     userProcess: userProcessReducer,
     grammar: grammarReducer,
     grammarTopic: grammarTopicReducer,
-    store: storeReducer 
+    store: storeReducer,
+    note: noteReducer,
 })
 
 export default rootReducer

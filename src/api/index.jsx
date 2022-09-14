@@ -22,3 +22,8 @@ export const findTopicGrammar = ({id}) => axios.get(`${URL}/grammar-topic/${id}`
 
 //STORE
 export const findStoreWord = ({id}) => axios.get(`${URL}/store/id_user/${id}`)
+
+//NOTE
+export const fetchNote = () => axios.get(`${URL}/note`)
+export const addNote = (payload) => axios.post(`${URL}/note/addNote`,payload )
+export const updateNote = (payload) => axios.post(`${URL}/note/updateNote`,payload )

@@ -7,7 +7,7 @@ import practiceListenSaga from './practiceListenSaga'
 import { settingSpeakSaga } from './settingSpeakSaga'
 import grammarSaga from './grammarSaga'
 import storeSaga from './storeSaga'
-
+import noteSaga from "./noteSaga"
 function *mySaga() {
   yield all([
     authSaga(),
@@ -17,6 +17,7 @@ function *mySaga() {
     loadingSaga(),
     grammarSaga(),
     storeSaga(),
+    noteSaga(),
   ])
 }
 

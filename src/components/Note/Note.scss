@@ -1,0 +1,195 @@
+
+.note{
+  z-index: 9999999;
+}
+
+// notepad
+// .app-note .modal-body{
+//    align-items: flex-start !important;
+// }
+
+// .note__modal-body {
+//     align-items: flex-start;
+//     width: 600px;
+//     padding: 15px 32px !important;
+//     background-image: linear-gradient(rgba(137, 136, 136, 0.3) 8%,rgba(111, 111, 111, 0.23) 8%),url(../../assets/img/ls-question/8note5.webp);
+//     background-size:100% ;
+// }
+// .note__modal-body-main{
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   width: 65%;
+// }
+// .note__modal-title {  
+//   margin-bottom: 10px;
+//   padding: 0 15px;
+//   font-size: 30px;
+//   font-weight: 900;
+//   color: white;
+//   background-color: rgba(72, 117, 251, 0.65);
+//   border: none;
+//   border-radius: 15px;
+//   text-align: center;
+// }
+// .note__modal-sub-title {
+//   font-weight: 500;
+//   font-size: 18px;
+//   margin: 10px 0;
+// }
+// .note__modal-content{
+//     width: 100%;
+//     height: 60vh;
+//     overflow-y: auto;
+//     background-color: rgb(255, 255, 255);
+//     border-radius: 5px;
+//     border: none;
+    
+// }
+// .note__modal-content-main{
+//     width: 100%;
+//     padding: 10px;
+//     padding-left: 20px;
+//     min-height: 100%;
+//     background-color: rgb(255, 255, 255);
+//     background-image: linear-gradient(rgba(53,85,131,0.1) 0%,rgba(255,255,255,0.2) 8%),url(https://www.memonotepad.com/img/paperfibers.png);
+//     // background-image: linear-gradient(rgba(43, 39, 39, 0.2) 0%,rgba(255,255,255,0.2) 8%);
+//     background-size:100% 25px, 10% 10%;
+//     border: none;
+//     line-height: 25px;
+//     font-size: 16px;
+//     color: var(--text-color);
+    
+// }
+
+// .note__icon-content{
+//     position: absolute;
+//     width: 75px;
+//     height: 60px;
+//     right: 5px;
+//     bottom: 60px;
+// }
+// .note__icon-content img{
+//     width: 100%;
+// }
+
+// .note__modal-option {
+//   margin-top: 12px;
+// }
+// .note__modal-option button {
+//   width: 100px;
+//   height: 30px;
+//   border-radius: 5px;
+//   border: none;
+//   cursor: pointer;
+//   margin: 0 5px;
+//   // font-weight: 600;
+//   font-size: 14px;
+// }
+// .note__modal-option button:nth-child(1) {
+//   // background-color: black;
+//   border: 1px solid #c4c4c4;
+//   background-color: white;
+//   color: black;
+// }
+// .note__modal-option button:nth-child(2) {
+//   background-color: #ff3966;
+//   color: whitesmoke;
+// }
+
+//notepad2
+.note .modal{
+  z-index: 9999999;
+}
+
+.note__modal-body {
+    width: 500px;
+    padding:0 0 15px 0 !important;
+}
+
+.note__modal-title {  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-size: 30px;
+  font-weight: 900;
+  color: white;
+  // background-color: rgb(70, 130, 180);
+  background-color: rgb(24, 49, 83);
+  text-align: center;
+  border-top-left-radius: 7px ;
+  border-top-right-radius: 7px ;
+ 
+}
+.note__modal-title img {  
+  width: 38px;
+  height: 36px;
+  margin-right: 4px;
+ 
+}
+.note__modal-title span {  
+  transform: translateY(3px);
+ 
+}
+.note__modal-content{
+    width: 100%;
+    height: 60vh;
+    padding: 10px;
+    padding-left: 20px;
+    overflow-y: auto;
+    outline: none;
+    background-color: rgb(255, 255, 255);
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid rgb(107, 107, 107);
+}
+
+
+.note__icon-content{
+    position: absolute;
+    width: 75px;
+    height: 60px;
+    right: 5px;
+    bottom: 60px;
+}
+.note__icon-content img{
+    width: 100%;
+}
+
+.note__modal-option {
+  margin-top: 20px;
+}
+.note__modal-option button {
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin: 0 5px;
+  // font-weight: 600;
+  font-size: 14px;
+}
+.note__modal-option button:nth-child(1) {
+  // background-color: black;
+  border: 1px solid #c4c4c4;
+  background-color: white;
+  color: black;
+}
+.note__modal-option button:nth-child(2) {
+  background-color: #ff3966;
+  color: whitesmoke;
+}
+
+[placeholder]:empty::before {
+  content: attr(placeholder);
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(176, 175, 175); 
+}
+
+[placeholder]:empty:focus::before {
+  content: "";
+}
+
+
+
