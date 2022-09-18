@@ -20,11 +20,12 @@
 }
 .ls-header__title{
     display: flex;
-    flex: 1;
+    width: 90%;
     font-size: 13px;
 }
 .ls-header__title i{
     transform: scale(1.2);
+    margin-left: 5px;
     margin-right: 10px;
     color: var(--white-color)
 }
@@ -33,10 +34,15 @@
     margin-left: 0px;
    
 }
+.ls-header__active{
+    width: 10%;
+}
 .ls-header__active__close{
     font-size: 18px;
     transform: scale(2);
     color: #fff;
     cursor: pointer;
+    float: right;
+    margin-right: 10px;
 }
 

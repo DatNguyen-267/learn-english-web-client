@@ -1,7 +1,10 @@
 /* ---CÂU HỎI--- */
+.question-1-item{
+    width: 100%;
+}
 .question-1-item__header{
     height: 300px;
-    margin: 0px 200px 16px 200px;
+    margin: 0px 10% 16px 10%;
     padding: 18px 10px;
     color: var(--text-color);
     display: flex;
@@ -21,12 +24,14 @@
     // padding-bottom: 20px;
     
 }
+.question-1-item__content{
+    margin:  0 10%;
+}
 .question-1-item__transcript{
     display: none;
-    width: calc(100%);
     margin-top: 25px;
-    margin-left: 180px;
-    margin-right: 180px;
+    margin-left: 10%;
+    margin-right: 10%;
     padding: 10px 30px 10px 30px;
     color: var(--text-color);
     flex-direction: row;

@@ -1,4 +1,95 @@
+  // --------------------------
+  // -------- tab bar ---------
+  // --------------------------
+  .store-page__tab {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    
+  }
+  .store-page__tab-item i {
+    margin-left: 12px;
+    margin-right: 12px;
+    font-size: 16px;
+  }
+  .store-page__tab-item {
+     
+      position: relative;
+      display: flex;
+     
+      width: 150px;
+      height: 100%;
+      padding: 10px 0;
+      margin-right: 12px;
+      
+      border-radius: 5px;
+      border: 1px solid rgba(0,0,0, 0.2);
+      
+      align-items: center;
+      justify-content: left;
+      text-align: center;
+      font-weight: 600;
+      font-size: 16px;
+      color: #333;
+  }
+  .store-page__tab-item span{
+     transform: translatey(1.8px);
+      
+  }
+  .store-page__tab-item.active {
+      background-color: var(--orange-color);
+      border-color: var(--orange-color);
+      color: white;
 
+  }
+  // --------------------------
+  // -------- Search ----------
+  // --------------------------
+  .store-page__search{
+    width: 100%;
+    height: 50px;
+    margin-bottom: 25px;
+  }
+  .store-page__search-input{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:0 2px ;
+    width: 300px;
+    height: 45px;
+    border-radius: 8px ;
+    border: 2.3px solid #bebebe;
+    // box-shadow: rgb(183, 186, 195) 1px 3px 3px;
+  }
+  
+  .store-page__search-input::placeholder { 
+    color: rgb(195, 198, 216);
+  }
+  .store-page__search-input input{
+    border: none;
+    height: 100%;
+    flex: 1;
+    font-size: 16px;
+    padding:0 30px 0 10px ;
+    
+  }
+  .store-page__search-input input:focus{
+    border: none;
+    outline: none;
+   
+  }
+  .store-page__search-input i{
+    position:absolute;
+    right: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    color: rgb(134, 132, 132);
+    cursor: pointer;
+  }
+  // --------------------------
+  // --------- Item -----------
+  // --------------------------
   .store-item{
     margin-bottom: 36px;
     display: flex;
