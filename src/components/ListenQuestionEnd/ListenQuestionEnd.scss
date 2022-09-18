@@ -45,12 +45,14 @@
 /*------------------------------------*/
 .lsquestion-end__questions {
   margin-top: 30px !important;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .lsquestion-end__questions__title {
   font-size: 25px;
   font-weight: 700;
-  margin: 0 210px;
+  margin: 0 11%;
   padding: 0 !important;
   border-bottom: 2px solid var(--dark-blue);
   color: var(--text-color);
@@ -84,14 +86,16 @@
   justify-content: center;
   margin-bottom: 20px;
 }
+.lsquestion-end-item__content{
+  margin: 0 10%;
+}
 /*---------Question Transcript----------*/
 
 .lsquestion-end-item__transcript {
   display: none;
-  width: calc(100%-100px);
   margin-top: 25px;
-  margin-left: 180px;
-  margin-right: 180px;
+  margin-left: 10%;
+  margin-right: 10%;
   margin-bottom: 20px;
   padding: 10px 30px 10px 30px;
   color: var(--text-color);

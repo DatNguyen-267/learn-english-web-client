@@ -10,7 +10,7 @@ import { NoteReport } from "../../components/Note/NoteReport";
 export const NotePage = () => {
 
     const dispatch = useDispatch()
-    useEffect(()=>{
+    useEffect(() => {
         dispatch(actions.getNoteRequest())
     }, [dispatch])
 
@@ -23,39 +23,39 @@ export const NotePage = () => {
     const [showReportLogin, setShowReportLogin] = useState(false);
     const [titleNoteChoose, setTitleNoteChoose] = useState();
     const navigator = useNavigate();
-    
+
     const handleClick = () => {
         handleLoadNote()
-        console.log("Danh sach note: ",notes)
-        if(token){
+        console.log("Danh sach note: ", notes)
+        if (token) {
             setShowNoteTitle(true);
         }
-        else{
+        else {
             setShowReportLogin(true)
         }
     };
     const handleLogin = () => {
-       navigator("./login")
+        navigator("./login")
     };
     const handleOff = () => {
         setShowReportLogin(false)
     };
-    const handleAddNote = (payload) =>{
+    const handleAddNote = (payload) => {
         dispatch(actions.addNoteRequest(payload))
     }
-    const handleLoadNote = () =>{
+    const handleLoadNote = () => {
         dispatch(actions.getNoteRequest())
     }
-    const handlePost = (payload)=>{
+    const handlePost = (payload) => {
         dispatch(actions.udateNoteRequest(payload))
     }
     return (
         <div className="app-note-page">
-              {showReportLogin && (
-                <NoteReport 
-                    title={"Warning!!!"} 
-                    titlesub={"Bạn cần đăng nhập tài khoản cá nhân"} 
-                    onClick={handleLogin} 
+            {showReportLogin && (
+                <NoteReport
+                    title={"Warning!!!"}
+                    titlesub={"Bạn cần đăng nhập tài khoản cá nhân"}
+                    onClick={handleLogin}
                     modalClick={handleOff}
                     btnname={"Đăng nhập"}
                 ></NoteReport>
@@ -76,31 +76,34 @@ export const NotePage = () => {
                 //     </div>
                 // </div>
             )}
-            <Note 
-                notes = {notes}
-                showNote={showNote} 
+            <Note
+                notes={notes}
+                showNote={showNote}
                 setShowNote={setShowNote}
                 titleNoteChoose={titleNoteChoose}
-                handlePost = {handlePost}
-                isUpdateSuccess = {isUpdateSuccess}
+                handlePost={handlePost}
+                isUpdateSuccess={isUpdateSuccess}
             ></Note>
-            <NoteTitle 
-                showNoteTitle={showNoteTitle} 
-                setShowNoteTitle={setShowNoteTitle} 
+            <NoteTitle
+                showNoteTitle={showNoteTitle}
+                setShowNoteTitle={setShowNoteTitle}
                 setShowNote={setShowNote}
-                notes = {notes}
-                handleAddNote = {handleAddNote}
-                handleLoadNote = {handleLoadNote}
-                isAddSuccess = {isAddSuccess}
-                setTitleNoteChoose = {setTitleNoteChoose}
+                notes={notes}
+                handleAddNote={handleAddNote}
+                handleLoadNote={handleLoadNote}
+                isAddSuccess={isAddSuccess}
+                setTitleNoteChoose={setTitleNoteChoose}
             ></NoteTitle>
-            
+
             <div className="note-page" onClick={handleClick}>
                 <div className="note-page-header">
                     <img src={require(`../../assets/img/note/note1.png`)} alt="" />
                 </div>
                 <div className="note-page-content">
-                    NotePad
+                    <span>
+                        NotePad
+                    </span>
+
                 </div>
 
             </div>

@@ -8,6 +8,8 @@ import * as actions from "../../redux/actions/index";
 import { SERVER_URL } from "../../constants";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import { NoteStore } from '../../components/Store/NoteStore'
+import { Note } from "./../../components/Note/Note";
 
 axios.defaults.withCredentials = true;
 function StorePage() {
@@ -25,6 +27,11 @@ function StorePage() {
     id = user._id;
   }
   const dispatch = useDispatch();
+  const notes = useSelector(state => state.note.data)
+  const [tab, setTab] = useState(0);
+  const [showNote, setShowNote] = useState(false);
+  const [titleNoteChoose, setTitleNoteChoose] = useState();
+  const isUpdateSuccess = useSelector(state => state.note.isUpdateSuccess)
   useEffect(() => {
     console.log("token: ", token);
     // if(token){
@@ -94,8 +101,39 @@ function StorePage() {
   const handleNo = () => {
     setpopUp((prev) => false);
   };
+  const handleTranfer = (e, value) => {
+    console.log("value: ", value)
+
+    var list_item = document.querySelectorAll('.store-page__tab-item')
+    list_item.forEach((item, index) => {
+      item.classList.remove('active')
+      if (index == value) {
+        item.classList.add('active')
+      }
+    })
+    setTab(value)
+  }
+  const handlePost = (payload) => {
+    dispatch(actions.udateNoteRequest(payload))
+  }
+  const loadSearchByName = (list, name) =>{
+    
+  }
+  const handdleSearch = (value) => {
+    if(tab == 0){
+      loadSearchByName(list_word, value)
+    }
+  }
   return (
     <div className="grid wide">
+      <Note
+        notes={notes}
+        showNote={showNote}
+        setShowNote={setShowNote}
+        titleNoteChoose={titleNoteChoose}
+        handlePost={handlePost}
+        isUpdateSuccess={isUpdateSuccess}
+      ></Note>
       {popUp && (
         <div className="pop-up">
           <div className="modal">
@@ -124,9 +162,28 @@ function StorePage() {
       </div>
       {token && (
         <div class="store-page-content">
-          <h2>Danh sách</h2>
+          <div className="store-page__tab">
+            <a className='store-page__tab-item active' href='#' onClick={(e) => handleTranfer(e, 0)}>
+              <i className="fas fa-book"></i>
+              <span>Từ vựng</span>
+            </a>
+            <a className='store-page__tab-item' href='#' onClick={(e) => handleTranfer(e, 1)}>
+              <i className="fas fa-spell-check"></i>
+              <span>Câu hỏi</span>
+            </a>
+            <a className='store-page__tab-item' href='#' onClick={(e) => handleTranfer(e, 2)}>
+              <i class="fas fa-edit"></i>
+              <span>NotePad</span>
+            </a>
+          </div>
+          <div className='store-page__search'>
+            <div className='store-page__search-input'>
+              <input type="text" placeholder='Search by name' />
+              <i class="fas fa-search"></i>
+            </div>
+          </div>
           <div class="row store-list">
-            {list_word.map((item, index) => {
+            {tab == 0 && list_word.map((item, index) => {
               return (
                 <div class="col l-3 m-12 c-12">
                   <div class="store-item">
@@ -168,7 +225,24 @@ function StorePage() {
                   </div>
                 </div>
               );
-            })}
+            })
+            }
+            {
+              tab == 2 && notes &&
+
+              notes.map((item, index) => {
+                return (
+                  <div class="col l-3 m-12 c-12">
+                    <NoteStore
+                      note={item}
+                      index={index}
+                      setShowNote={setShowNote}
+                      setTitleNoteChoose={setTitleNoteChoose}
+                    ></NoteStore>
+                  </div>
+                )
+              })
+            }
           </div>
         </div>
       )}

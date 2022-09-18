@@ -1,5 +1,5 @@
 .min-question{
-    margin: 0px 200px 10px 200px;
+    margin: 0px 0 10px 0;
     border: 1px solid var(--border-color);
     border-radius: 15px;
     box-shadow: rgb(215, 219, 230) 0px 3px 1px;
@@ -34,7 +34,6 @@
     width: 20px;
     height: 20px;
     cursor: pointer;
-    
 }
 .answers-item__radio input{
     cursor: pointer;

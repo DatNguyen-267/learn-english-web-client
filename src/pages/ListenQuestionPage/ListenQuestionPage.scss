@@ -28,18 +28,18 @@
     display: flex;
     margin: 3px 0 3px 0;
     width: 100%;
-    padding: 0 210px;
-    
+    // padding: 0 10px;
+
 }
 .header_lsquestion__title span{
     font-size: 19px;
     font-weight: 700;
-    margin-left: 3px;
+    margin-left: 10%;
+    flex: 1;
 }
 /* ---Số Câu Hỏi--- */
 .header_lsquestion__title .questions{
     float: left;
-    flex: 1;
     color: #333;
     display: flex;
     align-items: center;
@@ -51,6 +51,7 @@
     color: white;
 }
 .header_lsquestion__title .correct{
+    margin-right: 10%;
     background: rgb(87, 203, 2);
     height: 40px;
     width: 120px;
@@ -59,12 +60,15 @@
 /* --- Container ---*/
 .container_lsquestion{
     display:block;
+    width: 100%;
     margin-top: 80px !important;
 }
 .container__content{
     overflow: hidden;
+    width: 100%;
 }
 .container__content__questions{
-    display: flex;        
+    display: flex;   
+    width: 100%;     
 }
 
