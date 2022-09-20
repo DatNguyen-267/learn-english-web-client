@@ -18,11 +18,13 @@ import { DoughnutChart } from "../../util/Chart/DoughnutChart";
 import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import * as actions from "./../../redux/actions/index";
+import WapperQuestion from "./WapperQuestion";
+import { saveQuestion } from "../../api";
 ChartJS.register(...registerables);
 
 export const DoTestPage = () => {
   const dispatch = useDispatch();
-
+  const user = useSelector((state) => state.user.data);
   const [exam, setExam] = useState(undefined);
   const [lsAns, setlsAns] = useState([]);
   const [amount, setAmount] = useState(0);
@@ -42,9 +44,9 @@ export const DoTestPage = () => {
     days: "00",
   });
   // console.log(remainingTime);
-
+  console.log(user);
   useEffect(() => {
-    console.log(exam);
+    console.log("exam", exam);
     console.log(lsAns);
     console.log(result);
   }, [exam, lsAns, result]);
@@ -258,6 +260,16 @@ export const DoTestPage = () => {
     setShowPopUpTimeOut((prev) => false);
     handleSubmit();
   };
+  const handleSaveQuestion = (item) => {
+    console.log(item);
+    const postData = saveQuestion({
+      _idQuestion: item._id,
+      _type: item.type,
+      _userId: user._id,
+    })
+      .then((res) => console.log(res))
+      .catch((error) => console.log(error));
+  };
   return (
     <div className="grid wide">
       {showPopUpTimeOut && (
@@ -342,12 +354,16 @@ export const DoTestPage = () => {
                 if (item.type === "Part1") {
                   return (
                     <div key={index} id={`target-${item.start}`}>
-                      <Part1
-                        showAns={showAns}
-                        big_question={item}
-                        handleSelect={handleSelect}
-                        // lsCheckAns={}
-                      ></Part1>
+                      <WapperQuestion
+                        handleSaveQuestion={(e) => handleSaveQuestion(item)}
+                      >
+                        <Part1
+                          showAns={showAns}
+                          big_question={item}
+                          handleSelect={handleSelect}
+                          // lsCheckAns={}
+                        ></Part1>
+                      </WapperQuestion>
                     </div>
                   );
                 }
@@ -362,10 +378,14 @@ export const DoTestPage = () => {
                 if (item.type === "Part2") {
                   return (
                     <div key={index} id={`target-${item.start}`}>
-                      <Part2
-                        big_question={item}
-                        handleSelect={handleSelect}
-                      ></Part2>
+                      <WapperQuestion
+                        handleSaveQuestion={(e) => handleSaveQuestion(item)}
+                      >
+                        <Part2
+                          big_question={item}
+                          handleSelect={handleSelect}
+                        ></Part2>
+                      </WapperQuestion>
                     </div>
                   );
                 }
@@ -380,10 +400,14 @@ export const DoTestPage = () => {
                 if (item.type === "Part3") {
                   return (
                     <div key={index} id={`target-${item.start}`}>
-                      <Part3
-                        big_question={item}
-                        handleSelect={handleSelect}
-                      ></Part3>
+                      <WapperQuestion
+                        handleSaveQuestion={(e) => handleSaveQuestion(item)}
+                      >
+                        <Part3
+                          big_question={item}
+                          handleSelect={handleSelect}
+                        ></Part3>
+                      </WapperQuestion>
                     </div>
                   );
                 }
@@ -398,10 +422,14 @@ export const DoTestPage = () => {
                 if (item.type === "Part4") {
                   return (
                     <div key={index} id={`target-${item.start}`}>
-                      <Part4
-                        big_question={item}
-                        handleSelect={handleSelect}
-                      ></Part4>
+                      <WapperQuestion
+                        handleSaveQuestion={(e) => handleSaveQuestion(item)}
+                      >
+                        <Part4
+                          big_question={item}
+                          handleSelect={handleSelect}
+                        ></Part4>
+                      </WapperQuestion>
                     </div>
                   );
                 }
@@ -415,10 +443,14 @@ export const DoTestPage = () => {
                 if (item.type === "Part5") {
                   return (
                     <div key={index} id={`target-${item.start}`}>
-                      <Part5
-                        big_question={item}
-                        handleSelect={handleSelect}
-                      ></Part5>
+                      <WapperQuestion
+                        handleSaveQuestion={(e) => handleSaveQuestion(item)}
+                      >
+                        <Part5
+                          big_question={item}
+                          handleSelect={handleSelect}
+                        ></Part5>
+                      </WapperQuestion>
                     </div>
                   );
                 }
@@ -432,10 +464,14 @@ export const DoTestPage = () => {
                 if (item.type === "Part6") {
                   return (
                     <div key={index} id={`target-${item.start}`}>
-                      <Part6
-                        big_question={item}
-                        handleSelect={handleSelect}
-                      ></Part6>
+                      <WapperQuestion
+                        handleSaveQuestion={(e) => handleSaveQuestion(item)}
+                      >
+                        <Part6
+                          big_question={item}
+                          handleSelect={handleSelect}
+                        ></Part6>
+                      </WapperQuestion>
                     </div>
                   );
                 }
@@ -449,10 +485,14 @@ export const DoTestPage = () => {
                 if (item.type === "Part7") {
                   return (
                     <div key={index} id={`target-${item.start}`}>
-                      <Part7
-                        big_question={item}
-                        handleSelect={handleSelect}
-                      ></Part7>
+                      <WapperQuestion
+                        handleSaveQuestion={(e) => handleSaveQuestion(item)}
+                      >
+                        <Part7
+                          big_question={item}
+                          handleSelect={handleSelect}
+                        ></Part7>
+                      </WapperQuestion>
                     </div>
                   );
                 }
