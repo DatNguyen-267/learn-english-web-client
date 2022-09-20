@@ -10,10 +10,7 @@ import { NoteReport } from "../../components/Note/NoteReport";
 export const NotePage = () => {
 
     const dispatch = useDispatch()
-    useEffect(() => {
-        dispatch(actions.getNoteRequest())
-    }, [dispatch])
-
+    
     const token = useSelector(state => state.token)
     const notes = useSelector(state => state.note.data)
     const isAddSuccess = useSelector(state => state.note.isAddSuccess)
@@ -22,8 +19,18 @@ export const NotePage = () => {
     const [showNoteTitle, setShowNoteTitle] = useState(false);
     const [showReportLogin, setShowReportLogin] = useState(false);
     const [titleNoteChoose, setTitleNoteChoose] = useState();
+    const [showPopUp, setShowPopUp] = useState(false);
     const navigator = useNavigate();
-
+    useEffect(() => {
+        dispatch(actions.getNoteRequest())
+    }, [dispatch])
+   
+    useEffect(() => {
+        console.log("update result:", isUpdateSuccess)
+        if (!isUpdateSuccess) {
+            setShowPopUp(true)
+        }
+    }, [isUpdateSuccess])
     const handleClick = () => {
         handleLoadNote()
         console.log("Danh sach note: ", notes)
@@ -46,11 +53,22 @@ export const NotePage = () => {
     const handleLoadNote = () => {
         dispatch(actions.getNoteRequest())
     }
-    const handlePost = (payload) => {
-        dispatch(actions.udateNoteRequest(payload))
-    }
+    const handleOK = () => {
+        setShowPopUp(false)
+        handleLoadNote()
+      };
     return (
         <div className="app-note-page">
+            {showPopUp && isUpdateSuccess != undefined && (
+                <NoteReport
+                    title={isUpdateSuccess ? "Success!!!" : "Warning!!!"}
+                    titlesub={isUpdateSuccess ? "Đã lưu thành công!!!" : "Không thể lưu Note!!!"}
+                    onClick={handleOK}
+                    modalClick={handleOK}
+                    btnname={"OK"}
+                ></NoteReport>
+
+            )}
             {showReportLogin && (
                 <NoteReport
                     title={"Warning!!!"}
@@ -81,8 +99,9 @@ export const NotePage = () => {
                 showNote={showNote}
                 setShowNote={setShowNote}
                 titleNoteChoose={titleNoteChoose}
-                handlePost={handlePost}
+                // handlePost={handlePost}
                 isUpdateSuccess={isUpdateSuccess}
+                handleLoadNote={handleLoadNote}
             ></Note>
             <NoteTitle
                 showNoteTitle={showNoteTitle}

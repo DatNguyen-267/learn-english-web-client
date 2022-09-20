@@ -41,7 +41,7 @@ function App() {
   const token = useSelector((state) => state.token);
   const auth = useSelector((state) => state.auth);
   const popup = useSelector((state) => state.popup);
-
+  const note = useSelector((state)=> state.note)
   useEffect(() => {
     const firstLogin = localStorage.getItem("firstLogin");
     if (firstLogin) {
@@ -76,7 +76,7 @@ function App() {
   return (
     <div>
       {popup.login && <PopUpLogin></PopUpLogin>}
-      {loading.isLoading ? <Loading_1 /> : ""}
+      {loading.isLoading || note.isLoading ? <Loading_1 /> : ""}
       <NotePage></NotePage>
       <Header></Header>
       <div className="body">

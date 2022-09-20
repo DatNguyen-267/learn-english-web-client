@@ -6,7 +6,6 @@ export const NoteTitle = ({ notes, handleAddNote, handleLoadNote, showNoteTitle,
     const [showPopUp, setShowPopUp] = useState(false);
     useEffect(() => {
         if (isAddSuccess || isAddSuccess == false) {
-            setShowNoteTitle(false);
             setShowPopUp(true)
         }
     }, [isAddSuccess])
@@ -30,6 +29,7 @@ export const NoteTitle = ({ notes, handleAddNote, handleLoadNote, showNoteTitle,
                     title: input.value,
                     content: "",
                 })
+                setShowNoteTitle(false);
             }
             else {
                 setShowNote(true)

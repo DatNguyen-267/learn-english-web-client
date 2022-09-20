@@ -36,7 +36,7 @@ export const addNoteFailure = () => {
   }
 }
 //UPDATE ONE NOTE
-export const udateNoteRequest = (payload) => {
+export const updateNoteRequest = (payload) => {
   return {
     type: actionTypes.UPDATE_NOTE_REQUEST,
     payload
@@ -50,6 +50,23 @@ export const updateNoteSuccess = () => {
 export const updateNoteFailure = () => {
   return {
     type: actionTypes.UPDATE_NOTE_FAILURE
+  }
+}
+//REMOVE ONE NOTE
+export const removeNoteRequest = (payload) => {
+  return {
+    type: actionTypes.REMOVE_NOTE_REQUEST,
+    payload
+  }
+}
+export const removeNoteSuccess = () => {
+  return {
+    type: actionTypes.REMOVE_NOTE_SUCCESS
+  }
+}
+export const removeNoteFailure = () => {
+  return {
+    type: actionTypes.REMOVE_NOTE_FAILURE
   }
 }
 
