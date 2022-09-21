@@ -37,3 +37,5 @@ export const updateNote = (payload) =>
 // SAVE QUESTION IN EXAM
 export const saveQuestion = (payload) =>
   axios.post(`${URL}/exam/save-question`, payload);
+export const unSaveQuestion = (payload) =>
+  axios.post(`${URL}/exam/unsave-question`, payload);

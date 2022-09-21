@@ -3,13 +3,17 @@ import classNames from "classnames/bind";
 import styles from "./WapperQuestion.module.scss";
 
 const cx = classNames.bind(styles);
-const WapperQuestion = ({ children, handleSaveQuestion }) => {
+const WapperQuestion = ({ children, handleSaveQuestion, showAns, isSave }) => {
+  console.log("isSave", isSave);
   return (
     // <div className={cx("container")}>
     <>
-      <button className={cx("save-btn")} onClick={handleSaveQuestion}>
-        Save
-      </button>
+      {showAns && (
+        <button className={cx("save-btn")} onClick={handleSaveQuestion}>
+          {isSave ? "Saved" : "Save"}
+        </button>
+      )}
+
       <div className={cx("content")}>{children}</div>
     </>
 

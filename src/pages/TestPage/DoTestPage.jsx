@@ -19,12 +19,14 @@ import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import * as actions from "./../../redux/actions/index";
 import WapperQuestion from "./WapperQuestion";
-import { saveQuestion } from "../../api";
+import { saveQuestion, unSaveQuestion } from "../../api";
 ChartJS.register(...registerables);
 
 export const DoTestPage = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.data);
+  const token = useSelector((state) => state.token);
+
   const [exam, setExam] = useState(undefined);
   const [lsAns, setlsAns] = useState([]);
   const [amount, setAmount] = useState(0);
@@ -44,7 +46,7 @@ export const DoTestPage = () => {
     days: "00",
   });
   // console.log(remainingTime);
-  console.log(user);
+  console.log(exam);
   useEffect(() => {
     console.log("exam", exam);
     console.log(lsAns);
@@ -66,7 +68,7 @@ export const DoTestPage = () => {
     return now2.unix();
   }
   useEffect(() => {
-    if (exam) {
+    if (exam && !showAns) {
       setStartTime(calculateTime());
       const intervalId = setInterval(() => {
         setRemainingTime((prev) => {
@@ -104,17 +106,19 @@ export const DoTestPage = () => {
   useEffect(() => {
     dispatch(actions.onLoading());
     const getExam = async () => {
-      const res = await axios.get(`${SERVER_URL}/exam/${testId}`);
-
-      setExam({ ...res.data[0] });
+      const res = await axios.get(`${SERVER_URL}/exam/${testId}`, {
+        headers: { Authorization: token },
+      });
+      setExam({ ...res.data });
     };
     getExam();
     dispatch(actions.unLoadingRequest());
     return () => {};
-  }, []);
+  }, [token]);
   useEffect(() => {
-    if (exam != undefined && !exam.count) {
+    if (exam != undefined && !exam.count && !showAns) {
       let tempExam = exam;
+      console.log(tempExam);
       let count = 0;
       let newLsAns = [];
       for (let i = 0; i < tempExam.big_questions.length; i++) {
@@ -261,14 +265,44 @@ export const DoTestPage = () => {
     handleSubmit();
   };
   const handleSaveQuestion = (item) => {
-    console.log(item);
-    const postData = saveQuestion({
-      _idQuestion: item._id,
-      _type: item.type,
-      _userId: user._id,
-    })
-      .then((res) => console.log(res))
-      .catch((error) => console.log(error));
+    if (item.isSave) {
+      const postData = unSaveQuestion({
+        _idQuestion: item._id,
+        _type: item.type,
+        _idUser: user._id,
+      })
+        .then((res) => {
+          const { message, idQuestion } = res.data;
+          const index = exam.big_questions.findIndex(
+            (item) => item._id.toString() === idQuestion.toString()
+          );
+          if (index >= 0) {
+            exam.big_questions[index].isSave = false;
+            setExam({ ...exam });
+          }
+        })
+        .catch((error) => console.log(error));
+    } else {
+      const postData = saveQuestion({
+        _idQuestion: item._id,
+        _type: item.type,
+        _idUser: user._id,
+      })
+        .then((res) => {
+          const { message, idQuestion } = res.data;
+          console.log("idQuestion", idQuestion);
+          const index = exam.big_questions.findIndex(
+            (item) => item._id.toString() === idQuestion.toString()
+          );
+          console.log("index", index);
+          if (index >= 0) {
+            console.log(exam);
+            exam.big_questions[index].isSave = true;
+            setExam({ ...exam });
+          }
+        })
+        .catch((error) => console.log(error));
+    }
   };
   return (
     <div className="grid wide">
@@ -356,6 +390,8 @@ export const DoTestPage = () => {
                     <div key={index} id={`target-${item.start}`}>
                       <WapperQuestion
                         handleSaveQuestion={(e) => handleSaveQuestion(item)}
+                        showAns={showAns}
+                        isSave={item.isSave}
                       >
                         <Part1
                           showAns={showAns}
@@ -380,6 +416,8 @@ export const DoTestPage = () => {
                     <div key={index} id={`target-${item.start}`}>
                       <WapperQuestion
                         handleSaveQuestion={(e) => handleSaveQuestion(item)}
+                        showAns={showAns}
+                        isSave={item.isSave}
                       >
                         <Part2
                           big_question={item}
@@ -402,6 +440,8 @@ export const DoTestPage = () => {
                     <div key={index} id={`target-${item.start}`}>
                       <WapperQuestion
                         handleSaveQuestion={(e) => handleSaveQuestion(item)}
+                        showAns={showAns}
+                        isSave={item.isSave}
                       >
                         <Part3
                           big_question={item}
@@ -424,6 +464,8 @@ export const DoTestPage = () => {
                     <div key={index} id={`target-${item.start}`}>
                       <WapperQuestion
                         handleSaveQuestion={(e) => handleSaveQuestion(item)}
+                        showAns={showAns}
+                        isSave={item.isSave}
                       >
                         <Part4
                           big_question={item}
@@ -445,6 +487,8 @@ export const DoTestPage = () => {
                     <div key={index} id={`target-${item.start}`}>
                       <WapperQuestion
                         handleSaveQuestion={(e) => handleSaveQuestion(item)}
+                        showAns={showAns}
+                        isSave={item.isSave}
                       >
                         <Part5
                           big_question={item}
@@ -466,6 +510,8 @@ export const DoTestPage = () => {
                     <div key={index} id={`target-${item.start}`}>
                       <WapperQuestion
                         handleSaveQuestion={(e) => handleSaveQuestion(item)}
+                        showAns={showAns}
+                        isSave={item.isSave}
                       >
                         <Part6
                           big_question={item}
@@ -487,6 +533,8 @@ export const DoTestPage = () => {
                     <div key={index} id={`target-${item.start}`}>
                       <WapperQuestion
                         handleSaveQuestion={(e) => handleSaveQuestion(item)}
+                        showAns={showAns}
+                        isSave={item.isSave}
                       >
                         <Part7
                           big_question={item}
