@@ -1,13 +1,16 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./TestPage.scss";
 import { SERVER_URL } from "./../../constants/index";
+import { useSelector } from "react-redux";
 
 export const TestPage = () => {
   const [lsExam, setLsExam] = useState(null);
   const [showPopUp, setShowPopUp] = useState(false);
   const [targetExam, setTargetExam] = useState(null);
+  const token = useSelector((state) => state.token);
+
   const navigator = useNavigate();
   useEffect(() => {
     console.log(lsExam);
@@ -20,6 +23,7 @@ export const TestPage = () => {
     };
     getAllTest();
   }, []);
+  useEffect(() => {}, [token]);
   const handleClick = (item) => {
     setTargetExam(item);
     setShowPopUp((prev) => true);
@@ -60,83 +64,101 @@ export const TestPage = () => {
             Cung cấp các đề thi sát với đề thi thật, nâng cao khả năng làm bài
           </span>
         </div>
-        <div className="base__group">
-          <div className="base__group-title">Full test</div>
-          <div className="test-ls">
-            <div className="row">
-              {lsExam &&
-                lsExam.map((item, index) => {
-                  if (item.type === "FULL TEST")
-                    return (
-                      <div className="col l-4 m-6 c-12">
-                        <div
-                          className="test-item"
-                          key={index}
-                          onClick={() => handleClick(item)}
-                        >
-                          {/* tên, số câu, -> bao điểm -> kết quả lần trước */}
-                          <div
-                            className="test-item__img"
-                            style={{
-                              backgroundImage:
-                                "url('https://res.cloudinary.com/drwse3wye/image/upload/v1652241913/test_img/unnamed_2_sky6j0.png')",
-                            }}
-                          ></div>
-                          <div className="test-item__gr">
-                            <div className="test-item__name">{item.name}</div>
-                            <div className="test-item__info">
-                              <div className="test-item__time">
-                                Thời gian: {item.time}
-                              </div>
-                              <div className="test-item__ques">
-                                Câu hỏi: {item.size}
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    );
-                })}
+        {!token && (
+          <div class="store-page-content-no-login">
+            <div className="store-page__action">
+              <Link to="/login" className="store-page__action-login">
+                Đăng nhập
+              </Link>
+            </div>
+            <div className="store-page__sub">
+              Đăng nhập để xem tài liệu của bạn!!!
             </div>
           </div>
-        </div>
-        <div className="base__group">
-          <div className="base__group-title">Mini test</div>
-          <div className="test-ls">
-            <div className="row">
-              {lsExam &&
-                lsExam.map((item, index) => {
-                  if (item.type === "MINI TEST")
-                    return (
-                      <div className="col l-4 m-6 c-12">
-                        <div
-                          className="test-item"
-                          key={index}
-                          onClick={() => handleClick(item)}
-                        >
-                          <div
-                            className="test-item__img"
-                            style={{
-                              backgroundImage:
-                                "url('https://res.cloudinary.com/drwse3wye/image/upload/v1652241913/test_img/unnamed_cz1js8.png')",
-                            }}
-                          ></div>
-                          <div className="test-item__gr">
-                            <div className="test-item__name">{item.name}</div>
-                            <div className="test-item__info">
-                              <div className="test-item__time">
-                                Thời gian: {item.time}
-                              </div>
-                              <div className="test-item__ques">
-                                Câu hỏi: {item.size}
+        )}
+        {token && (
+          <div>
+            <div className="base__group">
+              <div className="base__group-title">Full test</div>
+              <div className="test-ls">
+                <div className="row">
+                  {lsExam &&
+                    lsExam.map((item, index) => {
+                      if (item.type === "FULL TEST")
+                        return (
+                          <div className="col l-4 m-6 c-12">
+                            <div
+                              className="test-item"
+                              key={index}
+                              onClick={() => handleClick(item)}
+                            >
+                              {/* tên, số câu, -> bao điểm -> kết quả lần trước */}
+                              <div
+                                className="test-item__img"
+                                style={{
+                                  backgroundImage:
+                                    "url('https://res.cloudinary.com/drwse3wye/image/upload/v1652241913/test_img/unnamed_2_sky6j0.png')",
+                                }}
+                              ></div>
+                              <div className="test-item__gr">
+                                <div className="test-item__name">
+                                  {item.name}
+                                </div>
+                                <div className="test-item__info">
+                                  <div className="test-item__time">
+                                    Thời gian: {item.time}
+                                  </div>
+                                  <div className="test-item__ques">
+                                    Câu hỏi: {item.size}
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                      </div>
-                    );
-                })}
-              {/* <div className="col l-4 m-6 c-12">
+                        );
+                    })}
+                </div>
+              </div>
+            </div>
+            <div className="base__group">
+              <div className="base__group-title">Mini test</div>
+              <div className="test-ls">
+                <div className="row">
+                  {lsExam &&
+                    lsExam.map((item, index) => {
+                      if (item.type === "MINI TEST")
+                        return (
+                          <div className="col l-4 m-6 c-12">
+                            <div
+                              className="test-item"
+                              key={index}
+                              onClick={() => handleClick(item)}
+                            >
+                              <div
+                                className="test-item__img"
+                                style={{
+                                  backgroundImage:
+                                    "url('https://res.cloudinary.com/drwse3wye/image/upload/v1652241913/test_img/unnamed_cz1js8.png')",
+                                }}
+                              ></div>
+                              <div className="test-item__gr">
+                                <div className="test-item__name">
+                                  {item.name}
+                                </div>
+                                <div className="test-item__info">
+                                  <div className="test-item__time">
+                                    Thời gian: {item.time}
+                                  </div>
+                                  <div className="test-item__ques">
+                                    Câu hỏi: {item.size}
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                    })}
+                  {/* <div className="col l-4 m-6 c-12">
                 <div className="test-item">
                   <div
                     className="test-item__img"
@@ -154,9 +176,11 @@ export const TestPage = () => {
                   </div>
                 </div>
               </div> */}
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

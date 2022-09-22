@@ -45,13 +45,7 @@ export const DoTestPage = () => {
     hours: "00",
     days: "00",
   });
-  // console.log(remainingTime);
-  console.log(exam);
-  useEffect(() => {
-    console.log("exam", exam);
-    console.log(lsAns);
-    console.log(result);
-  }, [exam, lsAns, result]);
+
   function calculateTime() {
     let hours = 0;
     let minutes = 0;
