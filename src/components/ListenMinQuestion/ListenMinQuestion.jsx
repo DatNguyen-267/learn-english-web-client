@@ -71,7 +71,7 @@ function ListenMinQuestion({min_question, index, index_qs, setQuestionTrue, ques
 
                     min_question.list_answer.map((item,index_min_qs)=>{
                        return(
-                        <div class="col l-12 m-12 c-12">
+                        <div class="col l-12 m-12 c-12" key={index_min_qs}>
                             <div class="answers-item" data-value={item._id}>
                                 <div class="answers-item__radio" >
                                     <input  type="radio" 

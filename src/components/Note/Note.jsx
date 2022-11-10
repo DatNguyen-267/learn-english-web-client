@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import './Note.scss'
 
 import * as actions from "../../redux/actions/index";
-export const Note = ({ showNote, setShowNote, titleNoteChoose, notes, isUpdateSuccess, handleLoadNote }) => {
+export const Note = ({ showNote, setShowNote, titleNoteChoose, notes, isUpdateSuccess, handleLoadNote, token }) => {
    
     const [note, setNote] = useState(undefined);
    
@@ -16,10 +16,8 @@ export const Note = ({ showNote, setShowNote, titleNoteChoose, notes, isUpdateSu
     // }, [isUpdateSuccess])
     useEffect(() => {
         setNote(findNote(titleNoteChoose))
-        
-    }, [titleNoteChoose, notes, dispatch])
-   
-   
+    }, [titleNoteChoose, notes])
+
     // console.log("note title:", titleNoteChoose)
     // console.log("note:", note)
     const findNote = (title) => {
@@ -51,7 +49,7 @@ export const Note = ({ showNote, setShowNote, titleNoteChoose, notes, isUpdateSu
     };
    
     const handlePost = (payload) => {
-        dispatch(actions.updateNoteRequest(payload))
+        dispatch(actions.updateNoteRequest(payload, token))
       }
     return (
         <div className="note">

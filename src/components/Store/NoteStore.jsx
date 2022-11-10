@@ -12,7 +12,7 @@ function formatDate(value) {
     var year = date.getFullYear()
     return day + "/" + month + "/" + year
 }
-export const NoteStore = ({ note, index, setShowNote, setTitleNoteChoose, handleLoadNote }) => {
+export const NoteStore = ({ note, index, setShowNote, setTitleNoteChoose, handleLoadNote, token }) => {
     const dispatch = useDispatch();
     const [popUp, setpopUp] = useState(false);
 
@@ -26,7 +26,7 @@ export const NoteStore = ({ note, index, setShowNote, setTitleNoteChoose, handle
         setpopUp(true)
     }
     const handleYes = () => {
-        dispatch(actions.removeNoteRequest(note))
+        dispatch(actions.removeNoteRequest(note, token))
         setpopUp(false);
     }
     const handleNo = () => {
@@ -34,7 +34,7 @@ export const NoteStore = ({ note, index, setShowNote, setTitleNoteChoose, handle
     }
 
     return (
-        <div>
+        <div className="note-store">
 
             {popUp && (
                 <div className="pop-up">
@@ -57,18 +57,19 @@ export const NoteStore = ({ note, index, setShowNote, setTitleNoteChoose, handle
             {/* <i className="fas fa-ellipsis-v remove-icon"></i> */}
             <div className="note-store-item" onClick={handleClick}>
                 <i class="note-store-item__remove fas fa-window-close" onClick={() => handleDelete(note._id)}></i>
-
-                <div className="note-store-item__img">
+                {/* <div className="note-store-item__img">
                     <span>Note Pad</span>
-                </div>
+                </div> */}
                 <div className="note-store-item__gr">
-                    <div className="note-store-item__name">{note.title ? note.title : ""}</div>
                     <div className="note-store-item__info">
                         <div className="note-store-item__time">
-                            <i class="far fa-clock"></i>
+                            {/* <i class="far fa-clock"></i> */}
                             {formatDate(note.createdAt)}
                         </div>
                     </div>
+                    <div className="note-store-item__name">{note.title ? note.title : ""}</div>
+                    <div className="note-store-item__content" contenteditable="false" dangerouslySetInnerHTML={{ __html: note ? note.content : "" }}></div>
+
                 </div>
             </div>
         </div>

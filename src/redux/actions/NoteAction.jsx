@@ -1,8 +1,9 @@
 import * as actionTypes from './../../constants/actionTypes'
 // FETCH ALL
-export const getNoteRequest = () => {
+export const getNoteRequest = (payload) => {
   return {
     type: actionTypes.FETCH_NOTE_REQUEST,
+    payload
   }
 }
 export const getNoteSuccess = (payload) => {
@@ -19,10 +20,11 @@ export const getNoteFailure = (error) => {
 }
 
 //ADD ONE NOTE
-export const addNoteRequest = (payload) => {
+export const addNoteRequest = (payload, token) => {
   return {
     type: actionTypes.ADD_NOTE_REQUEST,
-    payload
+    payload,
+    token
   }
 }
 export const addNoteSuccess = () => {
@@ -36,10 +38,11 @@ export const addNoteFailure = () => {
   }
 }
 //UPDATE ONE NOTE
-export const updateNoteRequest = (payload) => {
+export const updateNoteRequest = (payload, token) => {
   return {
     type: actionTypes.UPDATE_NOTE_REQUEST,
-    payload
+    payload,
+    token
   }
 }
 export const updateNoteSuccess = () => {
@@ -53,10 +56,11 @@ export const updateNoteFailure = () => {
   }
 }
 //REMOVE ONE NOTE
-export const removeNoteRequest = (payload) => {
+export const removeNoteRequest = (payload, token) => {
   return {
     type: actionTypes.REMOVE_NOTE_REQUEST,
-    payload
+    payload,
+    token
   }
 }
 export const removeNoteSuccess = () => {

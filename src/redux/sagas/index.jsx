@@ -8,6 +8,7 @@ import { settingSpeakSaga } from './settingSpeakSaga'
 import grammarSaga from './grammarSaga'
 import storeSaga from './storeSaga'
 import noteSaga from "./noteSaga"
+import speakSaga from "./speakSaga"
 function *mySaga() {
   yield all([
     authSaga(),
@@ -18,6 +19,7 @@ function *mySaga() {
     grammarSaga(),
     storeSaga(),
     noteSaga(),
+    speakSaga(),
   ])
 }
 

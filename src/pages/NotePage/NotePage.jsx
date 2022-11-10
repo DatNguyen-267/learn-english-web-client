@@ -7,6 +7,8 @@ import { NoteTitle } from "./../../components/Note/NoteTitle";
 import { useNavigate } from "react-router-dom";
 import * as actions from './../../redux/actions/index'
 import { NoteReport } from "../../components/Note/NoteReport";
+import axios from 'axios'
+import { SERVER_URL } from './../../constants/index'
 export const NotePage = () => {
 
     const dispatch = useDispatch()
@@ -22,7 +24,7 @@ export const NotePage = () => {
     const [showPopUp, setShowPopUp] = useState(false);
     const navigator = useNavigate();
     useEffect(() => {
-        dispatch(actions.getNoteRequest())
+        //dispatch(actions.getNoteRequest({token}))
     }, [dispatch])
    
     useEffect(() => {
@@ -31,15 +33,27 @@ export const NotePage = () => {
             setShowPopUp(true)
         }
     }, [isUpdateSuccess])
+    console.log("note: ",notes)
     const handleClick = () => {
-        handleLoadNote()
-        console.log("Danh sach note: ", notes)
-        if (token) {
-            setShowNoteTitle(true);
+        try {
+            const checkLogin = async () => {
+                try {
+                const res = await axios.get(`${SERVER_URL}/user/checkLogin`, { headers: { Authorization: token } })
+                if (res.data) {
+                    setShowNoteTitle(true);
+                    handleLoadNote()
+                }
+                } catch (error) {
+                setShowReportLogin(true)
+                }
+            }
+            checkLogin()
+        } catch (error) {
+    
         }
-        else {
-            setShowReportLogin(true)
-        }
+        
+       
+       
     };
     const handleLogin = () => {
         navigator("./login")
@@ -48,15 +62,18 @@ export const NotePage = () => {
         setShowReportLogin(false)
     };
     const handleAddNote = (payload) => {
-        dispatch(actions.addNoteRequest(payload))
+        dispatch(actions.addNoteRequest(payload, token))
     }
     const handleLoadNote = () => {
-        dispatch(actions.getNoteRequest())
+        dispatch(actions.getNoteRequest({
+            token
+        }))
     }
     const handleOK = () => {
         setShowPopUp(false)
         handleLoadNote()
-      };
+    };
+    
     return (
         <div className="app-note-page">
             {showPopUp && isUpdateSuccess != undefined && (
@@ -102,6 +119,7 @@ export const NotePage = () => {
                 // handlePost={handlePost}
                 isUpdateSuccess={isUpdateSuccess}
                 handleLoadNote={handleLoadNote}
+                token={token}
             ></Note>
             <NoteTitle
                 showNoteTitle={showNoteTitle}

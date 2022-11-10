@@ -73,6 +73,9 @@ function Header() {
   };
   const location = useLocation();
   useEffect(() => {
+    if (location.pathname.includes("/speaking")) {
+      setNumber(6);
+    }
     if (location.pathname.includes("/store")) {
       setNumber(5);
     }
@@ -123,6 +126,14 @@ function Header() {
                   to="/practice-listen"
                 >
                   <span>Luyện Nghe</span>
+                </Link>
+              </li>
+              <li onClick={(e) => handleClick(e, 3)} className="navbar-item">
+                <Link
+                  className={number === 6 ? "active" : ""}
+                  to="/speaking"
+                >
+                  <span>Luyện Nói</span>
                 </Link>
               </li>
               <li onClick={(e) => handleClick(e, 4)} className="navbar-item">

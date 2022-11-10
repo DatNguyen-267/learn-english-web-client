@@ -1,0 +1,62 @@
+.record{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+}
+.record-button-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.record-title{
+  font-weight: 700;
+  font-size: 17px;
+  margin-left: 13px;
+  margin-bottom: 5px !important;
+  margin-top: 5px !important;
+}
+.record-button {
+    height: 6rem;
+    width: 6rem;
+    border: 1px solid #f3f3f3 !important;
+    border-radius: 50% !important;
+    background-color: white;
+    margin-bottom: 15px;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+.record-button img{
+   width: 90%;
+   vertical-align: middle;
+   height: auto;
+}
+
+.record-button:hover {
+  box-shadow: 0 0.3rem 1rem rgba(0,0,0,.15)!important;
+}
+
+.recorded-audio-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.record-time{
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.record-time span{
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-color);
+  padding: 0 10px;
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+  background-color: rgb(248, 247, 247);
+}
+  

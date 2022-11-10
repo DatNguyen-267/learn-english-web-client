@@ -1,0 +1,166 @@
+//Audio
+.speak-question-5 audio{
+    height: 45px;
+}
+/* ---CÂU HỎI--- */
+.speak-question-5{
+    width: 100%;
+}
+.speak-question-5__situation{
+    margin: 0px 10% 10px 10%;
+    background-color: #fcf8e3;
+    border: 1px solid #faebcc;
+    border-radius: 4px;
+    padding:5px 10px;
+}
+.speak-question-5__situation p{
+    font-weight: 700;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.speak-question-5__title {
+    margin: 0 10%;
+    border: 1px solid #6666;
+    padding: 8px;
+    font-size: 17px;
+    border-radius: 5px;
+    background-color: #183153;
+    color: white;
+    font-weight: 500;
+}
+.speak-question-5__header{
+    min-height: 100px;
+    margin: 0 10%;
+    padding: 15px 15px;
+    //padding-bottom: 0;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    // border-top-left-radius: 0;
+    // border-top-right-radius: 0;
+    box-shadow: rgb(215, 219, 230) 0px 3px 1px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.speak-question-5__content-title{
+    margin: 0 !important;
+    font-weight: 700;
+    font-size: 17px;
+    margin-left: 13px;
+    margin-bottom: 5px !important;
+    margin-top: 5px !important;
+}
+.speak-question-5__header span{
+    font-size: 17px;
+}
+.speak-question-5__header-number{
+    font-weight: 700;
+    //margin-right: 8px;
+}
+.speak-question-5__header-number span{
+    font-weight: 400;
+    margin-left: 8px;
+}
+
+
+// Content-item
+.speak-question-5__content{
+    margin: 5px 10%;
+    padding: 1px;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: #faf7f7;
+}
+.speak-question-5__content-header{
+   display: flex;
+   flex-direction: row;
+   justify-content:space-between;
+   padding:5px 15px;
+}
+.speak-question-5__content-main{
+    border-top: 1px solid #c8c9cc;
+    margin: 0px 20px 10px 15px;
+    padding: 10px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    //justify-content: center;
+    align-items: center;
+}
+.speak-question-5__frames{
+    display: flex;
+    flex-wrap:wrap;
+}
+.speak-question-5__frames-row{
+    width: 100%;
+    display: flex;
+    flex-wrap:wrap;
+}
+.speak-question-5__audio {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.speak-question-5__content audio::-webkit-media-controls-panel {
+    background-color:rgb(215, 213, 213) !important;
+  }
+// action buttons
+.speak-question-5__action{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.speak-question-5__action .speak-btn__speak,
+.speak-question-5__action .speak-btn__trans {
+   background-color: #fffefe;
+}
+.speak-btn__speak,
+.speak-btn__trans{
+    width: 65px;
+    height: 30px;
+    color: var(--blue-color-3) ;
+    background-color:var(--white-color);
+    border-radius: 10px;
+    border: 2px solid var(--blue-color-3) ;
+    border-bottom: 3px solid rgb(54, 193, 239);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    transition: all 0.1s ease-out;
+    cursor: pointer;
+}
+.speak-btn__speak span,
+.speak-btn__trans span{
+  font-weight: bold;
+  font-size: 11px;
+  //margin-top: 4px;
+}
+
+.speak-btn__trans{
+  margin-right: 4px;
+}
+.speak-question-5 .speak-btn__speak:hover,
+.speak-question-5 .speak-btn__trans:hover{
+  background-color: var(--blue-color-3);
+  color: white;
+  border: none;
+  border-bottom: 3px solid rgb(41, 148, 184);
+}
+
+// Record
+
+.speak-question-5__record {
+    margin: 10px 10%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+

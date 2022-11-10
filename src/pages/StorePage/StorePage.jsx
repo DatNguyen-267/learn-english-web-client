@@ -11,6 +11,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { NoteStore } from '../../components/Store/NoteStore'
 import { Note } from "./../../components/Note/Note";
 import { NoteReport } from "./../../components/Note/NoteReport";
+import { Part1 } from "../../components/TestQuestion/Part1";
+import { Part2 } from "../../components/TestQuestion/Part2";
+import { Part3 } from "../../components/TestQuestion/Part3";
+import { Part4 } from "../../components/TestQuestion/Part4";
+import { Part5 } from "../../components/TestQuestion/Part5";
+import { Part6 } from "../../components/TestQuestion/Part6";
+import { Part7 } from "../../components/TestQuestion/Part7";
 
 axios.defaults.withCredentials = true;
 function StorePage() {
@@ -36,7 +43,9 @@ function StorePage() {
   const isRemoveSuccess = useSelector(state => state.note.isRemoveSuccess)
   const { speak, speakSlow } = useSelector((state) => state.speak);
   const data = useSelector((state) => state.store.data);
+  const questions = useSelector((state) => state.storeQuestion.data);
   const [listword, setlistword] = useState();
+  const [listquestion, setlistquestion] = useState();
   const [listnote, setlistnote] = useState();
   const [showReport, setShowReport] = useState(false);
 
@@ -53,27 +62,39 @@ function StorePage() {
   useEffect(() => {
     if (user) {
       dispatch(actions.findStoreWordRequest(user._id));
+      dispatch(actions.findStoreQuestionRequest(user._id));
+      dispatch(actions.getNoteRequest({token}))
       console.log("user: ", user._id);
     }
   }, [user]);
   useEffect(() => {
     var input = document.getElementById('search-input')
-    if (input) {
+    if (input && tab != 1) {
       input.value = null
     }
+    // if( tab == 1){
+    //   input.selectedIndex = 0
+    // }
     if (notes) {
       setlistnote(notes);
     }
     if (data && data.list_word) {
       setlistword(data.list_word);
     }
+    // if (questions && questions[0].list) {
+    //   setlistquestion(questions[0].list);
+    // }
 
     console.log("data: ", data);
-  }, [data, notes, tab])
+  }, [data, notes, tab, 
+  //  questions
+  ])
+ 
   useEffect(() => {
     setShowReport(true)
   }, [isRemoveSuccess, dispatch])
-  console.log("listword: ", listword)
+  // console.log("listword: ", listword)
+  // console.log("questions: ", listquestion)
 
   const handleSpeech = (sentence) => {
     // console.log(value);
@@ -132,7 +153,7 @@ function StorePage() {
     setTab(value)
   }
   const handleLoadNote = () => {
-    dispatch(actions.getNoteRequest())
+    dispatch(actions.getNoteRequest({token}))
   }
   const handleSearch = () => {
     var value = document.getElementById('search-input').value
@@ -201,6 +222,7 @@ function StorePage() {
         // handlePost={handlePost}
         isUpdateSuccess={isUpdateSuccess}
         handleLoadNote={handleLoadNote}
+        token={token}
       ></Note>
       {popUp && (
         <div className="pop-up">
@@ -245,10 +267,27 @@ function StorePage() {
             </a>
           </div>
           <div className='store-page__search'>
-            <div className='store-page__search-input'>
-              <input onKeyPress={handleKeyPress} type="text" id="search-input" placeholder='Search by name' />
-              <i class="fas fa-search" onClick={handleSearch}></i>
-            </div>
+            {
+              tab != 1 && 
+              <div className='store-page__search-input'>
+                <input onKeyPress={handleKeyPress} type="text" id="search-input" placeholder='Search by name' />
+                <i class="fas fa-search" onClick={handleSearch}></i>
+              </div>
+            }
+            {/* {
+              tab == 1 && 
+              <div className='store-page__search-input'>
+                <select id="search-input">
+                  {
+                    listquestion.map((item, index) => {
+                      return (
+                        <option key={index} value={item.typeQuestion}>{item.typeQuestion}</option>
+                      )
+                    })
+                  }
+                </select>
+              </div>
+            } */}
           </div>
           <div class="row store-list">
             {tab == 0 && listword ? listword.map((item, index) => {
@@ -295,9 +334,7 @@ function StorePage() {
               );
             }) : ""
             }
-            {
-              tab == 2 && notes && listnote ?
-
+            { tab == 2 && notes && listnote ?
                 listnote.map((item, index) => {
                   return (
                     <div class="col l-3 m-12 c-12">
@@ -308,11 +345,28 @@ function StorePage() {
                         setTitleNoteChoose={setTitleNoteChoose}
                         isRemoveSuccess={isRemoveSuccess}
                         handleLoadNote={handleLoadNote}
+                        token= {token}
                       ></NoteStore>
                     </div>
                   )
                 }) : ""
             }
+            {/* { tab == 1  && listquestion ?
+                listquestion.map((item, index) => {
+                  if (item.typeQuestion == "Part1"){
+                    item.list_question.map((question, index) => {
+                      return (
+                        <div class="col l-6 m-12 c-12">
+                          <Part1
+                            big_question={question}
+                          ></Part1>
+                        </div>
+                      )
+                    })
+                  }
+                }) : ""
+            } */}
+           
           </div>
         </div>
       )}

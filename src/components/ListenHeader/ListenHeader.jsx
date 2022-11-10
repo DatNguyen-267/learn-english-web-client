@@ -30,14 +30,14 @@ function ListenHeader({name, part_id, ls}) {
     console.log(ls_course_id)
     return (
        
-        <div class="ls-header">
-            <div class="grid wide ls-header-content">
-                <div class="ls-header__title">
-                    <h1> <i class="fas fa-headphones"></i> {name}</h1>
+        <div className="ls-header">
+            <div className="grid wide ls-header-content">
+                <div className="ls-header__title">
+                    <h1> <i className="fas fa-headphones"></i> {name}</h1>
                 </div>
-                <div class="ls-header__active">
+                <div className="ls-header__active">
                     <a onClick={handleLogout} >
-                        <i class="fas fa-window-close ls-header__active__close"></i>
+                        <i className="fas fa-window-close ls-header__active__close"></i>
                     </a>
                 </div>
             </div>

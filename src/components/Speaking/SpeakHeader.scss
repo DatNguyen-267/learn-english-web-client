@@ -1,0 +1,48 @@
+/* ----HEADER---- */
+.speak-header {
+    position: fixed;
+    height: 60px;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    background-color:var(--blue-color-3);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    font-weight: bold;
+}
+.speak-header-content{
+    height: 60px;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+.speak-header__title{
+    display: flex;
+    width: 90%;
+    font-size: 13px;
+}
+.speak-header__title i{
+    transform: scale(1.2);
+    margin-left: 5px;
+    margin-right: 10px;
+    color: var(--white-color)
+}
+.speak-header__title h1{
+    color: var(--text-color);
+    margin-left: 0px;
+   
+}
+.speak-header__active{
+    width: 10%;
+}
+.speak-header__active__close{
+    font-size: 18px;
+    transform: scale(2);
+    color: #fff;
+    cursor: pointer;
+    float: right;
+    margin-right: 10px;
+}
+

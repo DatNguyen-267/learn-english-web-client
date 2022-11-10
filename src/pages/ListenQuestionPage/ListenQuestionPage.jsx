@@ -11,6 +11,7 @@ import ListenQuestion1 from '../../components/ListenQuestion1/ListenQuestion1';
 import ListenQuestion2 from '../../components/ListenQuestion2/ListenQuestion2';
 import ListenQuestion3 from '../../components/ListenQuestion3/ListenQuestion3';
 import ListenQuestionEnd from '../../components/ListenQuestionEnd/ListenQuestionEnd';
+import { NotePage } from '../NotePage/NotePage';
 function ListenQuestionPage() {
     const param = useParams()
     const id = param.id
@@ -149,7 +150,7 @@ function ListenQuestionPage() {
         // kiem tra dung sai
         min_questions.forEach(min_quest => {
             const min_questiontitle = min_quest.querySelector('.min-question__title')
-            min_questiontitle.querySelector('span').classList.remove("hide-content")
+            min_questiontitle.querySelector('span').classNameList.remove("hide-content")
             var answers = min_quest.querySelectorAll('.answers-item')
             var min_question = question.list_min_question[i]
             answers.forEach(item => {
@@ -197,26 +198,26 @@ function ListenQuestionPage() {
             <ListenHeader name={lspart.name ? lspart.name : ""} part_id={lspart._id} ls={ls}></ListenHeader>
             {
                 !isEnd &&
-                <div class="app-question-listen">
-                    <div class="header_lsquestion">
-                        <div class="header_lsquestion__title grid wide">
-                            <span class="questions">Câu: {list_question.length > 0 ? index_qs_header + 1 : 0}
+                <div className="app-question-listen">
+                    <div className="header_lsquestion">
+                        <div className="header_lsquestion__title grid wide">
+                            <span className="questions">Câu: {list_question.length > 0 ? index_qs_header + 1 : 0}
                                 {list_question.length > 0 && list_question[question_playing].list_min_question.length > 1 ? "-" + (list_question[question_playing].list_min_question.length + index_qs_header) + " " : " "}
                                 / {total_question}
                             </span>
-                            <button class="correct btn" onClick={checkResult}><span>Kiểm tra</span></button>
-                            {/* <h2 class="correct">Đúng: <span>{question_true!== undefined ? question_true: ''}</span></h2> */}
+                            <button className="correct btn" onClick={checkResult}><span>Kiểm tra</span></button>
+                            {/* <h2 className="correct">Đúng: <span>{question_true!== undefined ? question_true: ''}</span></h2> */}
                         </div>
                     </div>
-                    <div class="container_lsquestion grid wide">
+                    <div className="container_lsquestion grid wide">
 
-                        <div class="container__content">
-                            <div class="container__content__questions" id="slider">
+                        <div className="container__content">
+                            <div className="container__content__questions" id="slider">
                                 {
                                     list_question.map((item, index) => {
                                         index_qs = index_qs+item.list_min_question.length
                                         return (
-                                            <div class="col l-12 m-12 c-12">
+                                            <div className="col l-12 m-12 c-12" key={index}>
                                                 <ListenQuestion1 
                                                     question={item} 
                                                     index_qs={index_qs} 
@@ -246,7 +247,8 @@ function ListenQuestionPage() {
             }
             {
                 isEnd &&
-                <div class="app-question-listen">
+                <div className="app-question-listen">
+                    <NotePage></NotePage>
                     <ListenQuestionEnd 
                         total_question={total_question} 
                         setQuestionTrue={setQuestionTrue}

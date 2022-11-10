@@ -17,7 +17,11 @@ import userProcessReducer from "./userProcessReducer";
 import grammarReducer from "./grammarReducer";
 import grammarTopicReducer from "./grammarTopicReducer";
 import storeReducer from "./storeReducer";
+import storeQuestionReducer from "./storeQuestionReducer";
 import noteReducer from "./noteReducer";
+import speakLessonReducer from "./speakLessonReducer";
+import speakQuestionReducer from "./speakQuestionReducer";
+import speakGrammarReducer from "./speakGrammarReducer";
 const rootReducer = combineReducers({
     course: courseReducer,
     practiceListen: practiceListenReducer,
@@ -35,7 +39,11 @@ const rootReducer = combineReducers({
     grammar: grammarReducer,
     grammarTopic: grammarTopicReducer,
     store: storeReducer,
+    storeQuestion: storeQuestionReducer,
     note: noteReducer,
+    speakLesson: speakLessonReducer,
+    speakQuestion: speakQuestionReducer,
+    speakGrammar: speakGrammarReducer,
 })
 
 export default rootReducer

@@ -9,6 +9,7 @@ import axios from "axios";
 import { toBeRequired } from "@testing-library/jest-dom/dist/matchers";
 import { SERVER_URL } from "../../constants";
 import { VocaLearningEnd } from "./VocaLearningEnd";
+import { NotePage } from "../../pages/NotePage/NotePage";
 
 export const VocaLearning_2 = ({ topic, courseId }) => {
   // redux state
@@ -564,6 +565,9 @@ export const VocaLearning_2 = ({ topic, courseId }) => {
 
       {isEnd && (
         <VocaLearningEnd topic={topic} courseId={courseId}></VocaLearningEnd>
+      )}
+      {isEnd && (
+        <NotePage></NotePage>
       )}
     </div>
   );

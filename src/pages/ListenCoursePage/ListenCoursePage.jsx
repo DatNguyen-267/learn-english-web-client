@@ -78,9 +78,9 @@ function ListenCoursePage() {
                     <div className="listen-part__content">
                         <div className="parts row">
                             {
-                                list_part.map((item) => {
+                                list_part.map((item, index) => {
                                     return (
-                                        <LsPart part={item} handleClick={handleClick}/>
+                                        <LsPart key={index} part={item} handleClick={handleClick}/>
                                     )
                                 })
                             }

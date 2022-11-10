@@ -35,7 +35,7 @@ function GrammarPage() {
                     {
                         listdata !=undefined ? listdata.map((item, index)=>{
                             return(
-                                <div className="col l-12 m-12 c-12">
+                                <div className="col l-12 m-12 c-12" key={index}>
                                     <div className="grammar-item">
                                         <Link to={`/grammar/${item._id}`}>
                                             <div className="grammar-item__topic">
