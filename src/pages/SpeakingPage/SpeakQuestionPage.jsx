@@ -46,26 +46,39 @@ function SpeakQuestionPage() {
 
         var x = 0
         if (value.question_playing >= value.length - 1) {
-            let list = []
-            const listcontent = document.querySelectorAll('.recorded-audio-container')
-            listcontent.forEach(element => {
-                if (element.childNodes) {
-                    list.push(element.childNodes[0] ? element.childNodes[0].src : "")
-                }
-            });
-            setlistRecord(list)
-            console.log('danh sach ghi am:', list)
-            setIsEnd(true)
+            if (isRecord) {
+                toast(
+                    <span className='toast'>
+                        <span className='toast_title'>Thông báo:</span>
+                        <span>
+                            Hãy hoàn thành ghi âm trước khi chuyển câu!!!
+                        </span>
+                    </span>,
+                )
+            }
+            else {
+                let list = []
+                const listcontent = document.querySelectorAll('.recorded-audio-container')
+                listcontent.forEach(element => {
+                    if (element.childNodes) {
+                        list.push(element.childNodes[0] ? element.childNodes[0].src : "")
+                    }
+                });
+                setlistRecord(list)
+                console.log('danh sach ghi am:', list)
+                setIsEnd(true)
+            }
+
         }
         if (value.length > 0 && value.question_playing < value.length - 1) {
             if (isRecord) {
-               toast(
-                <span className='toast'>
-                    <span className='toast_title'>Thông báo:</span>
-                    <span>
-                        Hãy hoàn thành ghi âm trước khi chuyển câu!!!
-                    </span>
-                </span>,
+                toast(
+                    <span className='toast'>
+                        <span className='toast_title'>Thông báo:</span>
+                        <span>
+                            Hãy hoàn thành ghi âm trước khi chuyển câu!!!
+                        </span>
+                    </span>,
                 )
             }
             else {
@@ -80,11 +93,24 @@ function SpeakQuestionPage() {
     const onClickPre = (value) => {
         var x = 0
         if (value.length > 0 && value.question_playing > 0) {
-            x = value.question_playing
-            dispatch(actions.setQuestionPlaying(x - 1))
-            setQuestionPlaying(x - 1)
-            document.getElementById(`question-${x}`).style.display = "none"
-            document.getElementById(`question-${x - 1}`).style.display = "block"
+            if (isRecord) {
+                toast(
+                    <span className='toast'>
+                        <span className='toast_title'>Thông báo:</span>
+                        <span>
+                            Hãy hoàn thành ghi âm trước khi chuyển câu!!!
+                        </span>
+                    </span>,
+                )
+            }
+            else {
+
+                x = value.question_playing
+                dispatch(actions.setQuestionPlaying(x - 1))
+                setQuestionPlaying(x - 1)
+                document.getElementById(`question-${x}`).style.display = "none"
+                document.getElementById(`question-${x - 1}`).style.display = "block"
+            }
         }
     }
     const handleToggleSuggest = () => {
@@ -122,19 +148,19 @@ function SpeakQuestionPage() {
                                         return (
                                             <div className="col l-12 m-12 c-12" id={`question-${index}`} key={index} >
                                                 {
-                                                    data[0] && data[0].type == "Part1" ? <SpeakQuestion1 question={question} question_playing={index} setIsRecord={setIsRecord} isRecord={isRecord}></SpeakQuestion1>:""
+                                                    data[0] && data[0].type == "Part1" ? <SpeakQuestion1 question={question} question_playing={index} setIsRecord={setIsRecord} isRecord={isRecord}></SpeakQuestion1> : ""
                                                 }
                                                 {
-                                                    data[0] && data[0].type == "Part2" ? <SpeakQuestion2 question={question} question_playing={index} img={question.img} setIsRecord={setIsRecord} isRecord={isRecord} ></SpeakQuestion2>:""
+                                                    data[0] && data[0].type == "Part2" ? <SpeakQuestion2 question={question} question_playing={index} img={question.img} setIsRecord={setIsRecord} isRecord={isRecord} ></SpeakQuestion2> : ""
                                                 }
                                                 {
-                                                    data[0] && data[0].type == "Part3" ? <SpeakQuestion3 question={question} question_playing={index} setIsRecord={setIsRecord} isRecord={isRecord} ></SpeakQuestion3>:""
+                                                    data[0] && data[0].type == "Part3" ? <SpeakQuestion3 question={question} question_playing={index} setIsRecord={setIsRecord} isRecord={isRecord} ></SpeakQuestion3> : ""
                                                 }
                                                 {
-                                                    data[0] && data[0].type == "Part4" ? <SpeakQuestion4 question={question} question_playing={index} img={question.img} setIsRecord={setIsRecord} isRecord={isRecord} ></SpeakQuestion4>:""
+                                                    data[0] && data[0].type == "Part4" ? <SpeakQuestion4 question={question} question_playing={index} img={question.img} setIsRecord={setIsRecord} isRecord={isRecord} ></SpeakQuestion4> : ""
                                                 }
                                                 {
-                                                    data[0] && data[0].type == "Part5" ? <SpeakQuestion5 question={question} question_playing={index} setIsRecord={setIsRecord} isRecord={isRecord} ></SpeakQuestion5>:""
+                                                    data[0] && data[0].type == "Part5" ? <SpeakQuestion5 question={question} question_playing={index} setIsRecord={setIsRecord} isRecord={isRecord} ></SpeakQuestion5> : ""
                                                 }
 
                                             </div>

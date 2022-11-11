@@ -15,19 +15,30 @@ function SpEnd5({ question, index, record }) {
     const loadtext = () => {
         const str = question.list_word
         const str2 = question.list_phonetic
-        const listword = str.split(" ")
-        const listphonetic = str2.split(" ")
-        let list = []
+        const paragraph1 = str.split("\n")
+        const paragraph2 = str2.split("\n")
+        let paragraph = []
         let i = 0
-        listword.forEach(element => {
-            const item = {
-                word: element,
-                phonetic: listphonetic[i]
-            }
-            list.push(item)
+        paragraph1.forEach(element => {
+            const listword = element.split(" ")
+            const listphonetic = paragraph2[i].split(" ")
+            let list = []
+            let j = 0
+            listword.forEach(word =>{
+                const item = {
+                    word: word,
+                    phonetic: listphonetic[j]
+                }
+                list.push(item)
+                j++
+            })
+            
+            paragraph.push(list)
             i++
         });
-        settext(list)
+        console.log("list word:", paragraph)
+        settext(paragraph)
+        
     }
     const handleToogleTrans = () => {
         setToogle(!toogle)
@@ -64,12 +75,22 @@ function SpEnd5({ question, index, record }) {
                     </div>
                 </div>
                 <div className='speak-question-end-5__content-main'>
-                    <div className='speak-question-end-5__frames'>
+                <div>
                         {
-                            text ? text.map((item, index) => {
-                                return (
-                                    <VocaTranscript item={item} index={index} toogle={toogle} />
+                            text ? text.map((item, index) => {    
+                                return(
+                                    <div className='speak-question-5__frames'>
+                                    {
+                                        item? item.map((word, index) =>{
+                                            return(
+                                                <VocaTranscript item={word} index={index} toogle={toogle} /> 
+                                            )
+                                        }):""
+                                    }
+                                    </div>
                                 )
+                             
+                                
                             }) : ""
                         }
                     </div>
