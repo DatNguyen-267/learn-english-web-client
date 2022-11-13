@@ -19,4 +19,23 @@ export const findStoreWordFailure = (error) => {
     error
   }
 }
+// FIND STORE Question BY ID USER 
+export const findStoreQuestionRequest = (id) => {
+  return {
+    type: actionTypes.FIND_STORE_QUESTION_REQUEST,
+    id
+  }
+}
+export const findStoreQuestionSuccess = (payload) => {
+  return {
+    type: actionTypes.FIND_STORE_QUESTION_SUCCESS,
+    payload
+  }
+}
+export const findStoreQuestionFailure = (error) => {
+  return {
+    type: actionTypes.FIND_STORE_QUESTION_FAILURE,
+    error
+  }
+}
 

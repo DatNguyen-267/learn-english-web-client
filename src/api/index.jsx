@@ -25,17 +25,23 @@ export const fetchGrammar = () => axios.get(`${URL}/grammar-topic`);
 export const findTopicGrammar = ({ id }) =>
   axios.get(`${URL}/grammar-topic/${id}`);
 
-//STORE
-export const findStoreWord = ({ id }) =>
-  axios.get(`${URL}/store/id_user/${id}`);
 
-//NOTE
-export const fetchNote = () => axios.get(`${URL}/note`);
-export const addNote = (payload) => axios.post(`${URL}/note/addNote`, payload);
-export const updateNote = (payload) =>
-  axios.post(`${URL}/note/updateNote`, payload);
 // SAVE QUESTION IN EXAM
 export const saveQuestion = (payload) =>
   axios.post(`${URL}/exam/save-question`, payload);
 export const unSaveQuestion = (payload) =>
   axios.post(`${URL}/exam/unsave-question`, payload);
+export const findStoreWord = ({id}) => axios.get(`${URL}/store/id_user/${id}`)
+export const findStoreQuestion = ({idUser}) => axios.get(`${URL}/store/question/${idUser}`)
+
+//NOTE
+export const fetchNote = (token) => axios.get(`${URL}/note`, {headers: { Authorization: token }})
+export const addNote = (payload, token) => axios.post(`${URL}/note/addNote`,payload, {headers: { Authorization: token }})
+export const updateNote = (payload, token) => axios.post(`${URL}/note/updateNote`,payload, {headers: { Authorization: token }} )
+export const removeNote = (payload, token) => axios.post(`${URL}/note/removeNote`,payload, {headers: { Authorization: token }} )
+
+//SPEAK
+export const fetchSpeakLesson = (type) => axios.get(`${URL}/speak/part/${type}`)
+export const findSpeakQuestion = (id) => axios.get(`${URL}/speak/part_id/${id}`)
+export const fetchSpeakGrammar = () => axios.get(`${URL}/speak/grammar`)
+export const findSpeakGrammar = ({id}) => axios.get(`${URL}/speak/grammar/${id}`)

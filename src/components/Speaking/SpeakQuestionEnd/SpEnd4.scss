@@ -1,0 +1,206 @@
+//Audio
+.speak-question-end-4 audio {
+  height: 45px;
+}
+
+/* ---CÂU HỎI--- */
+.speak-question-end-4 {
+  width: 100%;
+}
+
+.speak-question-end-4__title {
+  margin: 0 10%;
+  border: 1px solid #6666;
+  padding: 0px 0 0px 8px;
+  font-size: 17px;
+  border-radius: 5px;
+  background-color: #183153;
+  color: white;
+  font-weight: 500;
+}
+
+.speak-question-end-4__header {
+  position: relative;
+  height: 280px;
+  margin: 0px 10% 5px 10%;
+  padding: 3px 10px;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--border-color);
+  border-radius: 5px;
+  box-shadow: rgb(213, 216, 224) 1px 3px 3px;
+  background-color: #ffffff;
+}
+.speak-question-end-4__header audio{
+  width: 250px;
+  height: 32px;
+  margin: 8px 0  0 0 ;
+}
+.speak-question-end-4__header audio::-webkit-media-controls-panel {
+  background-color:rgb(220, 217, 217) !important;
+}
+.speak-question-end-4__header img {
+  border-radius: 5px;
+  box-shadow: rgb(213, 216, 224) 1px 1px 1px;
+  width: 450px;
+  height: 85%;
+  // padding-bottom: 20px;
+
+}
+
+// Content-item
+.speak-question-end-4__content {
+
+  margin: 20px 10%;
+  padding: 1px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background-color: #faf7f7;
+  // border-top-left-radius: 0;
+  // border-top-right-radius: 0;
+}
+
+.speak-question-end-4__content-header {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px 15px;
+  //background-color: #183153;
+
+}
+
+.speak-question-end-4__content-title {
+  margin: 0 !important;
+  font-weight: 700;
+  font-size: 17px;
+  margin-left: 13px;
+  margin-bottom: 5px !important;
+  margin-top: 5px !important;
+}
+
+.speak-question-end-4__content-main {
+  border-top: 1px solid #c8c9cc;
+  margin: 0px 20px 10px 15px;
+  padding: 10px 0px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  //justify-content: center;
+  //align-items: center;
+  
+
+}
+.speak-question-end-4__content-main__question {
+  font-size: 15px !important;
+  font-weight: 700;
+  margin: 5px 0 2px 0  !important;
+  color: #333;
+}
+.speak-question-end-4__content-main__answer {
+  font-size: 15px !important;
+  font-weight: 700;
+  margin: 20px 0 2px 0  !important;
+  color: #333;
+}
+
+.speak-question-end-4__frames {
+  display: flex;
+  flex-wrap: wrap;
+}
+.speak-question-end-4 .vocaTranscript__word {
+  font-size: 16px;
+  color: #333;
+  font-weight: 400 !important;
+  
+}
+.speak-question-end-4 .question-content {
+  font-size: 16px;
+  color: #333;
+  font-weight: 400 !important;
+  
+}
+.speak-question-end-4__audio {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.speak-question-end-4__content audio::-webkit-media-controls-panel {
+  background-color:rgb(215, 213, 213) !important;
+}
+// action buttons
+.speak-question-end-4__action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.speak-question-end-4__action .speak-btn__speak,
+.speak-question-end-4__action .speak-btn__trans {
+ background-color: #fffefe;
+}
+
+.speak-btn__speak,
+.speak-btn__trans {
+  width: 65px !important;
+  height: 30px !important;
+  color: var(--blue-color-3);
+  background-color: var(--white-color);
+  border-radius: 10px;
+  border: 2px solid var(--blue-color-3);
+  border-bottom: 3px solid rgb(54, 193, 239);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  transition: all 0.1s ease-out;
+  cursor: pointer;
+}
+
+.speak-btn__speak span,
+.speak-btn__trans span {
+  font-weight: bold;
+  font-size: 11px;
+  //margin-top: 4px;
+}
+
+.speak-btn__trans {
+  margin-right: 4px;
+}
+
+.speak-question-end-4 .speak-btn__speak:hover,
+.speak-question-end-4 .speak-btn__trans:hover {
+  background-color: var(--blue-color-3);
+  color: white;
+  border: none;
+  border-bottom: 3px solid rgb(41, 148, 184);
+}
+
+
+
+// Record
+
+.speak-question-end-4__record {
+  margin: 0 10%;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.speak-question-end-4__record span {
+  width: 100%;
+  font-weight: 700;
+  font-size: 17px;
+  margin-left: 13px;
+  margin-bottom: 5px !important;
+  margin-top: 5px !important;
+  margin-bottom: 10px;
+}

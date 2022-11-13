@@ -7,25 +7,30 @@ export default function* practiceListenSaga() {
   yield takeLatest(actionTypes.FETCH_NOTE_REQUEST, fetchNote)
   yield takeLatest(actionTypes.ADD_NOTE_REQUEST, addNote)
   yield takeLatest(actionTypes.UPDATE_NOTE_REQUEST, updateNote)
+  yield takeLatest(actionTypes.REMOVE_NOTE_REQUEST, removeNote)
   // yield takeLatest(actionTypes.FIND_TOPIC_GRAMMAR_REQUEST, findTopicGammmar)
  
 }
 
 function* fetchNote(action) {
   try {
-    const note = yield call(api.fetchNote)
-    console.log(note)
+    const token = action.payload.token
+    console.log("token: ",token)
+    const note = yield call(api.fetchNote, token)
+    console.log("data note saga: ",note)
     yield put(actions.getNoteSuccess(note.data))
   }
   catch(err) {
+    console.log("Loi khi lay note", err)
     yield put(actions.getNoteFailure(err))
   }
 }
 function* addNote(action) {
   try {
     const note = action.payload
+    const token = action.token
     console.log("note:", note)
-    const result = yield call(api.addNote, note)
+    const result = yield call(api.addNote, note, token)
     console.log("sau khi add: ",result.data)
     if(result.data == "success"){
       console.log("Kiem tra add thanh cong")
@@ -42,8 +47,9 @@ function* addNote(action) {
 function* updateNote(action) {
   try {
     const note = action.payload
+    const token = action.token
     console.log("note:", note)
-    const result = yield call(api.updateNote, note)
+    const result = yield call(api.updateNote, note, token)
     console.log("sau khi update: ",result.data)
     if(result.data == "success"){
       console.log("Kiem tra update thanh cong")
@@ -57,6 +63,27 @@ function* updateNote(action) {
   }
   catch(err) {
     yield put(actions.updateNoteFailure())
+  }
+}
+function* removeNote(action) {
+  try {
+    const note = action.payload
+    const token = action.token
+    console.log("note:", note)
+    const result = yield call(api.removeNote, note, token)
+    console.log("sau khi remove: ",result.data)
+    if(result.data == "success"){
+      console.log("Kiem tra remove thanh cong")
+      yield put(actions.removeNoteSuccess())
+    }
+    else{
+      console.log("Kiem tra remove thất bại")
+      yield put(actions.removeNoteFailure())
+    }
+   
+  }
+  catch(err) {
+    yield put(actions.removeNoteFailure())
   }
 }
 

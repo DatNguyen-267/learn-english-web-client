@@ -34,6 +34,10 @@ import { TestPage } from "./pages/TestPage/TestPage";
 import { DoTestPage } from "./pages/TestPage/DoTestPage";
 import StorePage from "./pages/StorePage/StorePage";
 import { NotePage } from "./pages/NotePage/NotePage";
+import SpeakingPage from "./pages/SpeakingPage/SpeakingPage";
+import SpeakPartPage from "./pages/SpeakingPage/SpeakPartPage";
+import SpeakGrammarPage from "./pages/SpeakingPage/SpeakGrammarPage";
+
 axios.defaults.withCredentials = true;
 function App() {
   const loading = useSelector((state) => state.loading);
@@ -41,7 +45,7 @@ function App() {
   const token = useSelector((state) => state.token);
   const auth = useSelector((state) => state.auth);
   const popup = useSelector((state) => state.popup);
-
+  const note = useSelector((state)=> state.note)
   useEffect(() => {
     const firstLogin = localStorage.getItem("firstLogin");
     if (firstLogin) {
@@ -76,7 +80,7 @@ function App() {
   return (
     <div>
       {popup.login && <PopUpLogin></PopUpLogin>}
-      {loading.isLoading ? <Loading_1 /> : ""}
+      {loading.isLoading || note.isLoading ? <Loading_1 /> : ""}
       <NotePage></NotePage>
       <Header></Header>
       <div className="body">
@@ -112,6 +116,9 @@ function App() {
             <Route path="test" element={<TestPage />}></Route>
             <Route path="doing-test" element={<DoTestPage />}></Route>
             <Route path="*" element={<NotFoundFage />}></Route>
+            <Route path="speaking" element={<SpeakingPage />}></Route> 
+            <Route path="speaking/:part" element={<SpeakPartPage/>}></Route> 
+            <Route path="speaking/speak_grammar/:id" element={<SpeakGrammarPage/>}></Route> 
           </Routes>
         </div>
       </div>

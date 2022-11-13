@@ -32,9 +32,9 @@ function PracticeListenPage() {
                 <div className="listen__content">        
                     <div className="topic">
                        {
-                           ls.map((item)=>{
+                           ls.map((item, index)=>{
                                 return(
-                                    <LsTopic topic={item}/>
+                                    <LsTopic topic={item} key={index}/>
                                 )
                            })
                        }

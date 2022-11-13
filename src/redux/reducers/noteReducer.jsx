@@ -3,7 +3,8 @@ import * as actionTypes from '../../constants/actionTypes'
 const initialState = {
   data: [],
   isAddSuccess: undefined,
-  isUpdateSuccess: false,
+  isUpdateSuccess: undefined,
+  isRemoveSuccess: undefined,
   isLoading: false,
 }
 export default function noteReducer(state = initialState, action) {
@@ -11,14 +12,18 @@ export default function noteReducer(state = initialState, action) {
     case actionTypes.FETCH_NOTE_REQUEST:
       return {
         ...state,
-        isLoading: true,
+        isLoading: false,
         isAddSuccess: undefined,
-        isUpdateSuccess: false,
+        isUpdateSuccess: undefined,
+        isRemoveSuccess: undefined,
       }
     case actionTypes.FETCH_NOTE_SUCCESS: {
       return {
         ...state,
         isLoading: false,
+        isAddSuccess: undefined,
+        isUpdateSuccess: undefined,
+        isRemoveSuccess: undefined,
         data: action.payload,
       }
     }
@@ -26,8 +31,16 @@ export default function noteReducer(state = initialState, action) {
       return {
         ...state,
         isLoading: false,
+        isAddSuccess: undefined,
+        isUpdateSuccess: undefined,
+        isRemoveSuccess: undefined,
       }
     }
+    case actionTypes.ADD_NOTE_REQUEST:
+      return {
+        ...state,
+        isLoading: true,
+      }
     case actionTypes.ADD_NOTE_SUCCESS: {
       return {
         ...state,
@@ -42,6 +55,12 @@ export default function noteReducer(state = initialState, action) {
         isLoading: false,
       }
     }
+    case actionTypes.UPDATE_NOTE_REQUEST:
+      return {
+        ...state,
+        isLoading: true,
+        isUpdateSuccess: undefined,
+      }
     case actionTypes.UPDATE_NOTE_SUCCESS: {
       return {
         ...state,
@@ -53,6 +72,25 @@ export default function noteReducer(state = initialState, action) {
       return {
         ...state,
         isUpdateSuccess: false,
+        isLoading: false,
+      }
+    }
+    case actionTypes.REMOVE_NOTE_REQUEST:
+      return {
+        ...state,
+        isLoading: true,
+      }
+    case actionTypes.REMOVE_NOTE_SUCCESS: {
+      return {
+        ...state,
+        isRemoveSuccess: true,
+        isLoading: false,
+      }
+    }
+    case actionTypes.REMOVE_NOTE_FAILURE: {
+      return {
+        ...state,
+        isRemoveSuccess: false,
         isLoading: false,
       }
     }

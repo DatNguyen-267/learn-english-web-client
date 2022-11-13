@@ -4,12 +4,15 @@ import { NoteReport } from "./NoteReport";
 export const NoteTitle = ({ notes, handleAddNote, handleLoadNote, showNoteTitle, setShowNoteTitle, setShowNote, isAddSuccess, setTitleNoteChoose }) => {
     
     const [showPopUp, setShowPopUp] = useState(false);
+    const [listnote, setlistnote] = useState(notes);
     useEffect(() => {
         if (isAddSuccess || isAddSuccess == false) {
-            setShowNoteTitle(false);
             setShowPopUp(true)
         }
     }, [isAddSuccess])
+    useEffect(() => {
+       setlistnote(notes)
+    }, [notes])
     const findNoteByTitle = (title) => {
         var note = undefined
         notes.forEach((item) => {
@@ -29,7 +32,8 @@ export const NoteTitle = ({ notes, handleAddNote, handleLoadNote, showNoteTitle,
                 handleAddNote({
                     title: input.value,
                     content: "",
-                })
+                },)
+                setShowNoteTitle(false);
             }
             else {
                 setShowNote(true)
@@ -79,7 +83,25 @@ export const NoteTitle = ({ notes, handleAddNote, handleLoadNote, showNoteTitle,
 
 
     }
-
+    const handleSearch = () => {
+        var value = document.getElementById("modal-input").value
+        //console.log("Bạn đã viết: ", value)
+        if (value) {
+            var listData = []
+            notes.forEach((item, index) => {
+            if (item.title.search(value) == 0) {
+                listData.push(item)
+            }
+            })
+            setlistnote(listData)
+        
+        }
+        else {
+            if (notes) {
+                setlistnote(notes);
+            }
+        }
+    }
     return (
         <div className="note-title">
             {showPopUp && (
@@ -122,10 +144,10 @@ export const NoteTitle = ({ notes, handleAddNote, handleLoadNote, showNoteTitle,
                                 <div class="note-title__modal-group">
                                     <span class="note-title__modal-label">Title</span>
                                     <div className="note-title__modal-input">
-                                        <input name="" id="" className="modal-input-control" placeholder="Chose or create new ..." />
+                                        <input name="" id="modal-input" className="modal-input-control" placeholder="Chose or create new ..." onInput={handleSearch} />
                                         <span className="modal-input-message">
                                             {
-                                                notes != undefined ? notes.map((item, index) => {
+                                                listnote != undefined ? listnote.map((item, index) => {
                                                     return (
                                                         <p className="message-value">{item.title}</p>
                                                     )

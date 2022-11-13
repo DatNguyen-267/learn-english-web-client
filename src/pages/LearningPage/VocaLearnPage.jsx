@@ -13,6 +13,7 @@ import { SERVER_URL } from "./../../constants/index";
 import * as actions from "./../../redux/actions/index";
 import { VocaLearning_2 } from "../../components/VocaLearning/VocaLearning_2";
 import { Loading_1 } from "../../components/Loading/Loading_1";
+import { NotePage } from "../NotePage/NotePage";
 
 export const VocaLearnPage = () => {
   const dispatch = useDispatch();

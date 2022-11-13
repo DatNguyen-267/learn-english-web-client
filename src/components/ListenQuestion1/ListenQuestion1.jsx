@@ -64,7 +64,8 @@ function ListenQuestion1({question, index_qs, setQuestionTrue, question_true}) {
                {
                    list_min_question.map((item,index)=>{
                     return(
-                        <ListenMinQuestion  min_question={item} 
+                        <ListenMinQuestion  key={index} 
+                                            min_question={item} 
                                             index={list_min_question.length === 1? 0:index} 
                                             index_qs={index_qs-list_min_question.length} setQuestionTrue={setQuestionTrue} 
                                             question_true={question_true}

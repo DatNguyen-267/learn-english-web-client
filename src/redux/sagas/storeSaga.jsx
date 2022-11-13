@@ -6,6 +6,7 @@ import { findTopicGammmarFailure } from '../actions/GrammarAction'
 
 export default function* practiceListenSaga() {
   yield takeLatest(actionTypes.FIND_STORE_WORD_REQUEST, findStoreWord)
+  yield takeLatest(actionTypes.FIND_STORE_QUESTION_REQUEST, findStoreQuestion)
  
 }
 
@@ -18,6 +19,18 @@ function* findStoreWord(action) {
   }
   catch(err) {
     yield put(actions.findStoreWordFailure(err))
+  }
+}
+
+function* findStoreQuestion(action) {
+  try {
+    const idUser = action.id
+    const ls = yield call(api.findStoreQuestion,{idUser})
+    console.log("nam",ls)
+    yield put(actions.findStoreQuestionSuccess(ls.data))
+  }
+  catch(err) {
+    yield put(actions.findStoreQuestionFailure(err))
   }
 }
 

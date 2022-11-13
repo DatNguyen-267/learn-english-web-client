@@ -1,17 +1,25 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from 'react-redux';
 import './Note.scss'
-import { NoteReport } from "./NoteReport";
 
-export const Note = ({ showNote, setShowNote, titleNoteChoose, notes, handlePost, isUpdateSuccess }) => {
+import * as actions from "../../redux/actions/index";
+export const Note = ({ showNote, setShowNote, titleNoteChoose, notes, isUpdateSuccess, handleLoadNote, token }) => {
+   
     const [note, setNote] = useState(undefined);
-    const [showPopUp, setShowPopUp] = useState(false);
+   
+    const dispatch = useDispatch();
+    // useEffect(() => {
+    //     console.log("update result:", isUpdateSuccess)
+    //     if(isUpdateSuccess == true){
+    //         setShowPopUp(true)
+    //     }
+    // }, [isUpdateSuccess])
     useEffect(() => {
         setNote(findNote(titleNoteChoose))
-
     }, [titleNoteChoose, notes])
 
-    console.log("note title:", titleNoteChoose)
-    console.log("note:", note)
+    // console.log("note title:", titleNoteChoose)
+    // console.log("note:", note)
     const findNote = (title) => {
         var note = undefined
         notes.forEach((item) => {
@@ -23,55 +31,29 @@ export const Note = ({ showNote, setShowNote, titleNoteChoose, notes, handlePost
     }
     const handleYes = () => {
         var content = document.querySelector('.note__modal-content').innerHTML
-        var newnote = note
-        newnote.content = `${content}`
-        setNote(newnote)
-        handlePost(note)
-
+        var newnote = {
+            _id: note._id,
+            title: note.title,
+            content:`${content}`
+        }
+        
+        handlePost(newnote)
         setShowNote(false)
-        setShowPopUp(true)
-
+        // const timeout = setTimeout(()=>{
+            
+        // }, 1000)
+        // timeout()
     };
     const handleNo = () => {
         setShowNote(false);
     };
-    const handleOK = () => {
-        if (isUpdateSuccess) {
-            setShowPopUp(false)
-        }
-        else {
-            setShowNote(true);
-            setShowPopUp(false);
-        }
-    };
+   
+    const handlePost = (payload) => {
+        dispatch(actions.updateNoteRequest(payload, token))
+      }
     return (
         <div className="note">
-
-            {showPopUp && (
-                <NoteReport
-                    title={isUpdateSuccess ? "Success!!!" : "Warning!!!"}
-                    titlesub={isUpdateSuccess ? "Đã lưu thành công!!!": "Không thể lưu Note!!!"}
-                    onClick={handleOK}
-                    modalClick={handleOK}
-                    btnname={"OK"}
-                ></NoteReport>
-                // <div className="pop-up">
-                //     <div className="modal">
-                //         <div className="modal-overlay" onClick={handleOK}></div>
-                //         <div className="note-report__modal-body modal-body">
-                //             <div className="note-report__modal-title">
-                //                 {
-                //                     isUpdateSuccess ? "Đã lưu thành công!!!": "Không thể lưu Note!!!"
-                //                 }         
-                //             </div>
-                //             <div className="note-report__modal-option">
-                //                 <button onClick={handleOK}>OK</button>
-                //             </div>
-                //         </div>
-                //     </div>
-                // </div>
-            )}
-
+           
             {showNote && (
                 <div className="pop-up">
                     <div className="modal">

@@ -1,0 +1,70 @@
+/* --speak-footer-- */
+.speak-footer {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    background-color: #ffffff;
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    font-weight: bold;
+    bottom: 0;
+}
+.speak-footer-content{
+   
+    padding: 8px 0 8px 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    //align-items: center;
+    font-weight: bold;
+    justify-content: center;
+    display: flex
+}
+
+/* --BTN Next */
+.btn-previous,
+.btn-next{
+    width: 75px;
+    height: 35px;
+    color: var(--white-color);
+    background:rgb(255, 194, 26) !important;
+    border-radius: 10px;
+    border: none;
+    border-bottom: 3px solid rgb(190, 144, 17);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    transition: all 0.1s ease-out;
+    cursor: pointer;
+}
+
+.btn-next span,
+.btn-previous span{
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 4px;
+}
+.btn-previous:hover,
+.btn-next:hover{
+    background-color:  rgb(224, 166, 4) !important
+}
+.btn-previous i{
+    margin-right: 5px ;
+    font-size: 20px;
+
+}
+.btn-next i{
+    margin-left: 5px ;
+    font-size: 20px;
+}
+
+.num-question span{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: rgb(72, 71, 71);
+    margin: 3px 50px 0 50px;
+}
