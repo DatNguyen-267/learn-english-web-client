@@ -1,4 +1,8 @@
 //=== note-report ====
+
+.note-report .modal {
+  z-index: 9999999;
+}
 .note-report__modal-body {
   padding: 32px !important;
   width: 400px;

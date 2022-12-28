@@ -1,0 +1,81 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:800);
+/* ----Thông báo---- */
+.toast{
+    display: flex;
+    flex-direction: column;
+}
+.toast_title {
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+/* ----APP---- */
+.app-write-question{
+    padding-top:  60px;
+    padding-bottom: 110px; 
+    background-color: white;
+}
+.header_write_question{
+    position: fixed;
+    z-index: 10;
+    display: flex;
+    width: 100%;
+    font-weight: bold;
+    margin: 0;
+    color: rgb(213, 230, 235);
+    background: rgba(0, 0, 0, 0.05); 
+    padding: 7px 0px;
+   
+}
+.header_write_question__title{
+    display: flex;
+    margin: 3px 0 3px 0;
+    width: 100%;
+    padding-bottom: 3px;
+
+}
+.header_write_question__title span{
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 10.8%;
+    flex: 1;
+}
+/* ---Số Câu Hỏi--- */
+.header_write_question__title .questions{
+    float: left;
+    color: #333;
+    display: flex;
+    align-items: center;
+    font-weight: 800;
+}
+/* ---BTN Kiem Tra--- */
+
+.header_write_question__title .correct span{
+    color: white;
+    margin: 0px !important;
+}
+.header_write_question__title .correct{
+    margin-right: 10%;
+    width: 70px;
+    height: 30px;
+    background: rgb(87, 203, 2);
+    box-shadow: rgb(62, 147, 2) 0px 3px 1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+/* --- Container ---*/
+.container_write_question{
+    display:block;
+    width: 100%;
+    margin-top: 55px !important;
+}
+.container_write__content{
+    overflow: hidden;
+    width: 100%;
+}
+.container_write__content__questions{
+    display: flex;   
+    width: 100%;     
+}
+

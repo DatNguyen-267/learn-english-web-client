@@ -132,7 +132,7 @@ export const NoteTitle = ({ notes, handleAddNote, handleLoadNote, showNoteTitle,
             )}
             {
                 showNoteTitle && (
-                    <div className="pop-up">
+                    <div className="pop-up note-title__pop-up">
                         <div className="modal">
                             <div className="modal-overlay" onClick={handleNo}></div>
                             <div className="note-title__modal-body modal-body" onClick={handleToggle}>

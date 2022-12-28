@@ -45,3 +45,9 @@ export const fetchSpeakLesson = (type) => axios.get(`${URL}/speak/part/${type}`)
 export const findSpeakQuestion = (id) => axios.get(`${URL}/speak/part_id/${id}`)
 export const fetchSpeakGrammar = () => axios.get(`${URL}/speak/grammar`)
 export const findSpeakGrammar = ({id}) => axios.get(`${URL}/speak/grammar/${id}`)
+
+//WRITE
+export const fetchWriteLesson = (type) => axios.get(`${URL}/write/part/${type}`)
+export const findWriteQuestion = (id) => axios.get(`${URL}/write/part_id/${id}`)
+export const fetchWriteGrammar = () => axios.get(`${URL}/write/grammar`)
+export const findWriteGrammar = ({id}) => axios.get(`${URL}/write/grammar/${id}`)

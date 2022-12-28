@@ -101,7 +101,10 @@
 .note .modal{
   z-index: 9999999;
 }
-
+.note .modal-body{
+  margin-top: 80px;
+  padding:0 0 32px 0 !important;
+}
 .note__modal-body {
     width: 500px;
     padding:0 0 15px 0 !important;

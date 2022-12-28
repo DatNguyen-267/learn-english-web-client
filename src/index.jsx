@@ -32,6 +32,7 @@ import { ProgressBar } from "./util/ProgressBar/ProgressBar";
 import VocaReviewPage from "./pages/VocaReviewPage/VocaReviewPage";
 import ListenQuestionEnd from "./components/ListenQuestionEnd/ListenQuestionEnd";
 import SpeakQuestionPage from "./pages/SpeakingPage/SpeakQuestionPage";
+import WriteQuestionPage from "./pages/WritingPage/WriteQuestionPage";
 
 ReactDOM.render(
   <Provider store={store}>
@@ -65,6 +66,7 @@ ReactDOM.render(
           {/* <Route path="/test" element={<ProgressBar />}></Route> */}
           <Route path="/end" element={<ListenQuestionEnd />}></Route>
           <Route path="/speaking/part/:name/:id" element={<SpeakQuestionPage />}></Route>
+          <Route path="/writing/part/:name/:id" element={<WriteQuestionPage />}></Route>
         </Routes>
       </React.StrictMode>
     </BrowserRouter>

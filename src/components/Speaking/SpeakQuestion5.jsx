@@ -13,34 +13,57 @@ function SpeakQuestion5({ question, question_playing, setIsRecord, isRecord }) {
         if (question && question.list_word && question.type=="Question5") {
             loadtext()
         }
-    }, [question.type])
+    }, [question])
     const loadtext = () => {
         const str = question.list_word
         const str2 = question.list_phonetic
-        const paragraph1 = str.split("\n")
-        const paragraph2 = str2.split("\n")
+        const paragraph1 = str.split("<br>")
+        const paragraph2 = str2.split("<br>")
         let paragraph = []
         let i = 0
         paragraph1.forEach(element => {
-            const listword = element.split(" ")
-            const listphonetic = paragraph2[i].split(" ")
-            let list = []
+            let listphonetic = []
+            if(paragraph2.length > 1){
+                listphonetic = paragraph2[i].split(" ")
+            }
+            else{
+                listphonetic = paragraph2[0].split(" ")
+            }
+            let strong = false
+            let newlist = []
+            let list = element.split(" ")
             let j = 0
-            listword.forEach(word =>{
-                const item = {
-                    word: word,
-                    phonetic: listphonetic[j]
+            list.forEach((word, index) => {
+                if (word.includes("<strong>")) {
+                    strong = true
                 }
-                list.push(item)
+                if (strong) {
+                    const item = {
+                        word: "<strong>" + word,
+                        phonetic: listphonetic[j],
+                    }
+                    newlist.push(item)
+                }
+                else {
+                    const item = {
+                        word: word,
+                        phonetic: listphonetic[j],
+                    }
+                    newlist.push(item)
+                }
+
+
+                if (word.includes("</strong>")) {
+                    strong = false
+                }
                 j++
             })
-            
-            paragraph.push(list)
+            paragraph.push(newlist)
             i++
+
         });
         console.log("list word:", paragraph)
         settext(paragraph)
-        
     }
     const handleToogleTrans = () => {
         setToogle(!toogle)

@@ -1,0 +1,168 @@
+  // --------------------------
+  // -------- tab bar ---------
+  // --------------------------
+  .writing-page__tab {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    
+  }
+  .writing-page__tab-item i {
+    margin-left: 12px;
+    margin-right: 12px;
+    font-size: 16px;
+  }
+  .writing-page__tab-item {
+     
+      position: relative;
+      display: flex;
+     
+      width: 150px;
+      height: 100%;
+      padding: 10px 0;
+      margin-right: 12px;
+      
+      border-radius: 5px;
+      border: 1px solid rgba(0,0,0, 0.2);
+      
+      align-items: center;
+      justify-content: left;
+      text-align: center;
+      font-weight: 600;
+      font-size: 16px;
+      color: #333;
+  }
+  .writing-page__tab-item span{
+     transform: translatey(1.8px);
+      
+  }
+  .writing-page__tab-item.active {
+      background-color: var(--orange-color);
+      border-color: var(--orange-color);
+      color: white;
+
+  }
+
+// item writing
+
+.writing-item {
+  display: flex;
+  flex-direction: row;
+  padding: 8px 8px;
+  // border: solid 1px #333;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 0px 3px;
+  cursor: pointer;
+  margin-bottom: 36px;
+}
+.writing-item__img {
+  padding-top: 30%;
+  width: 35%;
+  height: 50px;
+  background-image: url('../../assets/img/writing/toeic-writing.jpg');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+}
+.writing-item__gr {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 8px 16px;
+  color: #333 !important;
+}
+.writing-item__name {
+  font-size: 20px;
+  font-weight: 700;
+  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+}
+.writing-item__info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.writing-item__time {
+  margin-right: 20px;
+}
+
+.writing-item__ques {
+  position: relative;
+}
+
+// Grammar
+
+.writing-grammar-item {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  padding: 8px 8px;
+  // border: solid 1px #333;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 0px 3px;
+  cursor: pointer;
+  margin-bottom: 36px;
+  height: 140px ;
+}
+.writing-grammar-item__img {
+  //padding-top: 30%;
+  width: 22%;
+  height: 100%;
+  // background-image: url('https://sabercollege.edu/wp-content/uploads/2021/12/PTA_2022.jpg');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+}
+.writing-grammar-item__gr {
+  position: relative;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 0px 16px;
+  color: #333 !important;
+}
+.writing-grammar-item__name {
+  
+  font-size: 20px;
+  font-weight: 700;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+  word-wrap: break-word;
+  margin-bottom: 10px;
+}
+.writing-grammar-item__info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+ 
+}
+.writing-grammar-item__des {
+ 
+  font-size: 16px;
+  font-weight: 400;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.writing-grammar-item__ques {
+  position: relative;
+}
+
+  
+  

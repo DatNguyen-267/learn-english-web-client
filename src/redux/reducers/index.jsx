@@ -22,6 +22,9 @@ import noteReducer from "./noteReducer";
 import speakLessonReducer from "./speakLessonReducer";
 import speakQuestionReducer from "./speakQuestionReducer";
 import speakGrammarReducer from "./speakGrammarReducer";
+import writeLessonReducer from "./writeLessonReducer";
+import writeQuestionReducer from "./writeQuestionReducer";
+import writeGrammarReducer from "./writeGrammarReducer";
 const rootReducer = combineReducers({
     course: courseReducer,
     practiceListen: practiceListenReducer,
@@ -44,6 +47,9 @@ const rootReducer = combineReducers({
     speakLesson: speakLessonReducer,
     speakQuestion: speakQuestionReducer,
     speakGrammar: speakGrammarReducer,
+    writeLesson: writeLessonReducer,
+    writeQuestion: writeQuestionReducer,
+    writeGrammar: writeGrammarReducer,
 })
 
 export default rootReducer
