@@ -2,7 +2,9 @@
 .note-title .modal{
   z-index: 9999999;
 }
-
+.note-title .note-title__pop-up .modal-body{
+  padding:0 0 32px 0 !important;
+}
 .note-title__modal-body {
     width: 500px;
     padding:0 0 15px 0 !important;

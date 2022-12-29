@@ -7,7 +7,7 @@ export const NoteReport = ({ title, titlesub, btnname,onClick, modalClick}) => {
     };
     return (
 
-        <div className="pop-up">
+        <div className="pop-up note-report">
             <div className="modal">
                 <div className="modal-overlay" onClick={modalClick}></div>
                 <div className="note-report__modal-body modal-body">

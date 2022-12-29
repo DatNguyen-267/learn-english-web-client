@@ -13,7 +13,7 @@ function SpeakQuestion3({ question, question_playing, setIsRecord, isRecord }) {
         if (question && question.list_word && question.type=="Question3") {
             loadtext()
         }
-    }, [question.type])
+    }, [question])
     const loadtext = () => {
         const str = question.list_word
         const str2 = question.list_phonetic
@@ -21,10 +21,26 @@ function SpeakQuestion3({ question, question_playing, setIsRecord, isRecord }) {
         const listphonetic = str2.split(" ")
         let list = []
         let i = 0
+        let strong = false
         listword.forEach(element => {
-            const item = {
-                word: element,
-                phonetic: listphonetic[i]
+            let item ={}
+            if (element.includes("<strong>")) {
+                strong = true
+            }
+            if (strong) {
+                item = {
+                    word: "<strong>" + element,
+                    phonetic: listphonetic[i],
+                }
+            }
+            else {
+                item = {
+                    word: element,
+                    phonetic: listphonetic[i],
+                }
+            }
+            if (element.includes("</strong>")) {
+                strong = false
             }
             list.push(item)
             i++

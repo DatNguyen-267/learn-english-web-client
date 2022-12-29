@@ -1,0 +1,171 @@
+//Audio
+.wrend-3 audio{
+  height: 45px;
+}
+/* ---CÂU HỎI--- */
+.wrend-3{
+  width: 100%;
+}
+.wrend-3__situation{
+  margin: 0px 10% 10px 10%;
+  background-color: #fcf8e3;
+  border: 1px solid #faebcc;
+  border-radius: 4px;
+  padding:5px 10px;
+}
+.wrend-3__situation p{
+  font-weight: 700;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.wrend-3__title {
+  margin: 0 10%;
+  border: 1px solid #6666;
+  padding: 8px;
+  font-size: 17px;
+  border-radius: 5px;
+  background-color: #183153;
+  color: white;
+  font-weight: 500;
+}
+.wrend-3__header{
+  min-height: 100px;
+  margin: 0 10%;
+  padding: 15px 15px;
+  //padding-bottom: 0;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  // border-top-left-radius: 0;
+  // border-top-right-radius: 0;
+  box-shadow: rgb(215, 219, 230) 0px 3px 1px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.wrend-3__content-title{
+  margin: 0 !important;
+  font-weight: 700;
+  font-size: 17px;
+  margin-left: 13px;
+  margin-bottom: 5px !important;
+  margin-top: 5px !important;
+}
+.wrend-3__header span{
+  font-size: 17px;
+}
+.wrend-3__header-number{
+  font-weight: 700;
+  //margin-right: 8px;
+}
+.wrend-3__header-number span{
+  font-weight: 400;
+  margin-left: 8px;
+}
+
+
+// Content-item
+.wrend-3__content{
+  margin: 5px 10%;
+  padding: 1px;
+  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background-color: #faf7f7;
+}
+.wrend-3__content-header{
+ display: flex;
+ flex-direction: row;
+ justify-content:space-between;
+ padding:5px 15px;
+}
+.wrend-3__content-main{
+  border-top: 1px solid #c8c9cc;
+  margin: 0px 20px 10px 15px;
+  padding: 10px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  //justify-content: center;
+  align-items: center;
+}
+.wrend-3__frames{
+  display: flex;
+  flex-wrap:wrap;
+}
+.wrend-3__paragraph{
+  display: flex;
+  flex-wrap:wrap;
+  margin-bottom: 5px;
+}
+.wrend-3__trans {
+  margin-top: 10px;
+  width: 100%;
+  background-color: #FCF8E3;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-weight: 500;
+  // color: rgb(111, 109, 109);
+  color: rgb(85, 83, 83);
+  border: 1px solid #faebcc;
+
+}
+.wrend-3__trans br{
+  display: block; /* makes it have a width */
+  content: ""; /* clears default height */
+  margin-bottom: 10px; 
+}
+
+
+// action buttons
+.wrend-3__action{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrend-3__action .write-btn__trans {
+ background-color: #fffefe;
+}
+.write-btn__trans{
+  width: 65px;
+  height: 30px;
+  color: var(--blue-color-3) ;
+  background-color:var(--white-color);
+  border-radius: 10px;
+  border: 2px solid var(--blue-color-3) ;
+  border-bottom: 3px solid rgb(54, 193, 239);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  transition: all 0.1s ease-out;
+  cursor: pointer;
+  margin-right: 4px;
+}
+.write-btn__trans span{
+font-weight: bold;
+font-size: 11px;
+//margin-top: 4px;
+}
+.wrend-3 .write-btn__trans:hover{
+background-color: var(--blue-color-3);
+color: white;
+border: none;
+border-bottom: 3px solid rgb(41, 148, 184);
+}
+
+// Record
+
+.wrend-3__input {
+  margin: 20px 10%;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrend-3__input .write-input-content{
+  height: 150px;
+}
+
+
+

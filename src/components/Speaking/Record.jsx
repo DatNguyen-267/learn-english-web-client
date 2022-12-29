@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import "./Record.scss"
+
 function Record({question_playing, setIsRecord, isRecord}) {
     let chunks = []; //will be used later to record audio
     const [mediaRecorder, setMediaRecorder] = useState(null); //will be used later to record audio
@@ -32,6 +33,8 @@ function Record({question_playing, setIsRecord, isRecord}) {
         console.log("stop record")
     }
     const record = () => {
+        var play = require("../../assets/img/icon/voice-record-icon.png")
+        var pause = require("../../assets/img/icon/pause-record-icon.png")
         const recordButton = document.getElementById(`recordButton${question_playing}`);
         //TODO start recording
         const recordButtonImage = recordButton.firstElementChild;
@@ -42,9 +45,12 @@ function Record({question_playing, setIsRecord, isRecord}) {
 
         // browser supports getUserMedia
         // change image in button
-        recordButtonImage.src = `${mediaRecorder && mediaRecorder.state === 'recording' ?
-            'https://www.pngkey.com/png/full/207-2078579_mobile-voice-recording-voice-record-red-icon.png'
-            : 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Eo_circle_red_pause.svg/768px-Eo_circle_red_pause.svg.png'}`;
+        // recordButtonImage.src = process.env.PUBLIC_URL+`${mediaRecorder && mediaRecorder.state === 'recording' ?
+        // `../../assets/img/icon/voice-record-icon.png`
+        //     : `../../assets/img/icon/pause-record-icon.png`}`;
+
+        recordButtonImage.src = mediaRecorder && mediaRecorder.state === 'recording' ? play
+            : pause;
 
         if (!mediaRecorder) {
            
@@ -76,7 +82,7 @@ function Record({question_playing, setIsRecord, isRecord}) {
                 .catch((err) => {
                     alert(`The following error occurred: ${err}`);
                     // change image in button
-                    recordButtonImage.src = 'https://www.pngkey.com/png/full/207-2078579_mobile-voice-recording-voice-record-red-icon.png';
+                    recordButtonImage.src = play;
                 });
         } else {
             // stop recording
@@ -125,7 +131,7 @@ function Record({question_playing, setIsRecord, isRecord}) {
                
                 <button className="record-button"
                     id={`recordButton${question_playing}`} onClick={record}>
-                    <img src="https://www.pngkey.com/png/full/207-2078579_mobile-voice-recording-voice-record-red-icon.png"
+                    <img src={require(`../../assets/img/icon/voice-record-icon.png`)}
                         alt="Record" className="img-fluid" />
                 </button>
             </div>

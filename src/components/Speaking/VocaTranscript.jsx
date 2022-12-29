@@ -34,10 +34,10 @@ function VocaTranscript({ item ,toogle}) {
     }
     return (
         <div className="vocaTranscript" onClick={()=>onclick(item.word)}>
-            <div className="vocaTranscript__word">
-                {
+            <div className="vocaTranscript__word" dangerouslySetInnerHTML={{__html: item? item.word:""}}>
+                {/* {
                     item ? item.word:""
-                }
+                } */}
             </div>
            
             {

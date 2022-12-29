@@ -73,6 +73,9 @@ function Header() {
   };
   const location = useLocation();
   useEffect(() => {
+    if (location.pathname.includes("/writing")) {
+      setNumber(7);
+    }
     if (location.pathname.includes("/speaking")) {
       setNumber(6);
     }
@@ -134,6 +137,14 @@ function Header() {
                   to="/speaking"
                 >
                   <span>Luyện Nói</span>
+                </Link>
+              </li>
+              <li onClick={(e) => handleClick(e, 3)} className="navbar-item">
+                <Link
+                  className={number === 7 ? "active" : ""}
+                  to="/writing"
+                >
+                  <span>Luyện viết</span>
                 </Link>
               </li>
               <li onClick={(e) => handleClick(e, 4)} className="navbar-item">

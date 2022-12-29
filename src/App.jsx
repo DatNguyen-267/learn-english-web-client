@@ -37,6 +37,9 @@ import { NotePage } from "./pages/NotePage/NotePage";
 import SpeakingPage from "./pages/SpeakingPage/SpeakingPage";
 import SpeakPartPage from "./pages/SpeakingPage/SpeakPartPage";
 import SpeakGrammarPage from "./pages/SpeakingPage/SpeakGrammarPage";
+import WritingPage from "./pages/WritingPage/WritingPage";
+import WritePartPage from "./pages/WritingPage/WritePartPage";
+import WriteGrammarPage from "./pages/WritingPage/WriteGrammarPage";
 
 axios.defaults.withCredentials = true;
 function App() {
@@ -119,6 +122,9 @@ function App() {
             <Route path="speaking" element={<SpeakingPage />}></Route> 
             <Route path="speaking/:part" element={<SpeakPartPage/>}></Route> 
             <Route path="speaking/speak_grammar/:id" element={<SpeakGrammarPage/>}></Route> 
+            <Route path="writing" element={<WritingPage />}></Route> 
+            <Route path="writing/:part" element={<WritePartPage/>}></Route>
+            <Route path="writing/write_grammar/:id" element={<WriteGrammarPage/>}></Route> 
           </Routes>
         </div>
       </div>

@@ -97,10 +97,10 @@ function SpeakingPage() {
                 <div className="speaking-item">
                   <div
                     className="speaking-item__img"
-                    style={{
-                      backgroundImage:
-                        "url('https://jaxtina.com/wp-content/uploads/2021/10/toeic-speaking.jpg')",
-                    }}
+                    // style={{
+                    //   backgroundImage:
+                    //     "url('https://jaxtina.com/wp-content/uploads/2021/10/toeic-speaking.jpg')",
+                    // }}
                   ></div>
                   <div className="speaking-item__gr">
                     <div className="speaking-item__name">Read aloud</div>
@@ -121,13 +121,13 @@ function SpeakingPage() {
                 <div className="speaking-item">
                   <div
                     className="speaking-item__img"
-                    style={{
-                      backgroundImage:
-                        "url('https://jaxtina.com/wp-content/uploads/2021/10/toeic-speaking.jpg')",
-                    }}
+                    // style={{
+                    //   backgroundImage:
+                    //     "url('https://jaxtina.com/wp-content/uploads/2021/10/toeic-speaking.jpg')",
+                    // }}
                   ></div>
                   <div className="speaking-item__gr">
-                    <div className="speaking-item__name">Describle a picture</div>
+                    <div className="speaking-item__name">Describe a picture</div>
                     <div className="speaking-item__info">
                       <div className="speaking-item__time">
                         Số bài: {CountPart("Part2")}
@@ -145,10 +145,10 @@ function SpeakingPage() {
                 <div className="speaking-item">
                   <div
                     className="speaking-item__img"
-                    style={{
-                      backgroundImage:
-                        "url('https://jaxtina.com/wp-content/uploads/2021/10/toeic-speaking.jpg')",
-                    }}
+                    // style={{
+                    //   backgroundImage:
+                    //     "url('https://jaxtina.com/wp-content/uploads/2021/10/toeic-speaking.jpg')",
+                    // }}
                   ></div>
                   <div className="speaking-item__gr">
                     <div className="speaking-item__name">Respond to Questions</div>
@@ -169,10 +169,10 @@ function SpeakingPage() {
                 <div className="speaking-item">
                   <div
                     className="speaking-item__img"
-                    style={{
-                      backgroundImage:
-                        "url('https://jaxtina.com/wp-content/uploads/2021/10/toeic-speaking.jpg')",
-                    }}
+                    // style={{
+                    //   backgroundImage:
+                    //     "url('https://jaxtina.com/wp-content/uploads/2021/10/toeic-speaking.jpg')",
+                    // }}
                   ></div>
                   <div className="speaking-item__gr">
                     <div className="speaking-item__name">Respond to questions with information</div>
@@ -193,10 +193,10 @@ function SpeakingPage() {
                 <div className="speaking-item">
                   <div
                     className="speaking-item__img"
-                    style={{
-                      backgroundImage:
-                        "url('https://jaxtina.com/wp-content/uploads/2021/10/toeic-speaking.jpg')",
-                    }}
+                    // style={{
+                    //   backgroundImage:
+                    //     "url('https://jaxtina.com/wp-content/uploads/2021/10/toeic-speaking.jpg')",
+                    // }}
                   ></div>
                   <div className="speaking-item__gr">
                     <div className="speaking-item__name">Express an Opinion</div>

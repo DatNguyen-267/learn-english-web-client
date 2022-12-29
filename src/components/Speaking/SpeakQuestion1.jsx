@@ -14,7 +14,7 @@ function SpeakQuestion1({ question, img, question_playing, setIsRecord , isRecor
             console.log("dữ lieuj load: ", text)
             loadtext()
         }
-    }, [question.type])
+    }, [question])
     const loadtext = () => {
         const str = question.list_word
         const str2 = question.list_phonetic

@@ -203,7 +203,7 @@ function StorePage() {
     handleLoadNote()
   };
   return (
-    <div className="grid wide">
+    <div className="grid wide store-page">
       {showReport && isRemoveSuccess != undefined && (
         <NoteReport
           title={isRemoveSuccess ? "Success!!!" : "Warning!!!"}
@@ -257,7 +257,7 @@ function StorePage() {
               <i className="fas fa-book"></i>
               <span>Từ vựng</span>
             </a>
-            <a className='store-page__tab-item' href='#' onClick={(e) => handleTranfer(e, 1)}>
+            <a className='store-page__tab-item none' href='#' onClick={(e) => handleTranfer(e, 1)}>
               <i className="fas fa-spell-check"></i>
               <span>Câu hỏi</span>
             </a>
